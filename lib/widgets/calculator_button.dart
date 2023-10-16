@@ -16,15 +16,14 @@ class CalculatorButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(4.0),
+        padding: const EdgeInsets.all(1.0),
         child: ElevatedButton(
           onPressed: onPressed, // Render text otherwise
           style: ElevatedButton.styleFrom(
             backgroundColor: bgColor,
           ),
-          child: label is IconData // Check if label is of type IconData
-              ? Icon(label,
-                  color: Colors.black, size: 18) // Render icon if true
+          child: label is IconData
+              ? Icon(label, color: Colors.black, size: 18)
               : Text(label,
                   style: const TextStyle(
                       color: Colors.black,
