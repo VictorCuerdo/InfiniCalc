@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: "X⟺E",
+                  label: "x ⟺ E",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
@@ -75,15 +75,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: Icons.arrow_forward_ios,
+                  label: Icons.functions,
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: Icons.backspace,
+                  label: "∫ dx",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: "AC",
+                  label: "CONV",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
             ],
@@ -92,27 +92,27 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               CalculatorButton(
-                  label: "DRG",
+                  label: 'π',
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: "X⟺E",
+                  label: "sin",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: "",
+                  label: "cos",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: Icons.arrow_forward_ios,
+                  label: "tan",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: Icons.backspace,
+                  label: "i",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: "AC",
+                  label: "e",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
             ],
@@ -121,11 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               CalculatorButton(
-                  label: "DRG",
-                  onPressed: () {},
-                  bgColor: const Color(0xFFBAC2CD)),
-              CalculatorButton(
-                  label: "X⟺E",
+                  label: "",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
@@ -133,15 +129,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: Icons.arrow_forward_ios,
+                  label: FontAwesomeIcons.squareRootVariable,
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: Icons.backspace,
+                  label: "",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: "AC",
+                  label: "log",
+                  onPressed: () {},
+                  bgColor: const Color(0xFFBAC2CD)),
+              CalculatorButton(
+                  label: "ln",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
             ],
@@ -150,11 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               CalculatorButton(
-                  label: "DRG",
-                  onPressed: () {},
-                  bgColor: const Color(0xFFBAC2CD)),
-              CalculatorButton(
-                  label: "X⟺E",
+                  label: "D°M'S",
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
@@ -162,17 +158,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {},
                   bgColor: const Color(0xFFBAC2CD)),
               CalculatorButton(
-                  label: Icons.arrow_forward_ios,
+                  label: FontAwesomeIcons.x,
                   onPressed: () {},
-                  bgColor: const Color(0xFFBAC2CD)),
+                  bgColor: const Color(0xFFBAC2CD),
+                  textColor: const Color(
+                      0xFF2C91D9)), // Add the textColor property here
               CalculatorButton(
-                  label: Icons.backspace,
+                  label: "XY,M",
                   onPressed: () {},
-                  bgColor: const Color(0xFFBAC2CD)),
+                  bgColor: const Color(0xFFBAC2CD),
+                  textColor: const Color(0xFF2C91D9)), // And here
               CalculatorButton(
-                  label: "AC",
+                  label: "MR",
                   onPressed: () {},
-                  bgColor: const Color(0xFFBAC2CD)),
+                  bgColor: const Color(0xFFBAC2CD),
+                  textColor: const Color(0xFF2C91D9)), // And here
+              CalculatorButton(
+                  label: "x→M",
+                  onPressed: () {},
+                  bgColor: const Color(0xFFBAC2CD),
+                  textColor: const Color(0xFF2C91D9)), // And here
             ],
           ),
           //ROW 6
@@ -181,23 +186,33 @@ class _HomeScreenState extends State<HomeScreen> {
               CalculatorButton(
                   label: "7",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "8",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "9",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "(",
                   onPressed: () {},
-                  bgColor: const Color(0xFF6F6F71)),
+                  bgColor: const Color(0xFF6F6F71),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: ")",
                   onPressed: () {},
-                  bgColor: const Color(0xFF6F6F71)),
+                  bgColor: const Color(0xFF6F6F71),
+                  textColor: Colors.white,
+                  textSize: 25),
             ],
           ),
           //ROW 7
@@ -206,23 +221,33 @@ class _HomeScreenState extends State<HomeScreen> {
               CalculatorButton(
                   label: "4",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "5",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "6",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: FontAwesomeIcons.xmark,
                   onPressed: () {},
-                  bgColor: const Color(0xFF6F6F71)),
+                  bgColor: const Color(0xFF6F6F71),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: FontAwesomeIcons.divide,
                   onPressed: () {},
-                  bgColor: const Color(0xFF6F6F71)),
+                  bgColor: const Color(0xFF6F6F71),
+                  textColor: Colors.white,
+                  textSize: 25),
             ],
           ),
           //ROW 8
@@ -231,23 +256,33 @@ class _HomeScreenState extends State<HomeScreen> {
               CalculatorButton(
                   label: "1",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "2",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "3",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: FontAwesomeIcons.plus,
                   onPressed: () {},
-                  bgColor: const Color(0xFF6F6F71)),
+                  bgColor: const Color(0xFF6F6F71),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: FontAwesomeIcons.minus,
                   onPressed: () {},
-                  bgColor: const Color(0xFF6F6F71)),
+                  bgColor: const Color(0xFF6F6F71),
+                  textColor: Colors.white,
+                  textSize: 25),
             ],
           ),
           //ROW 9
@@ -256,23 +291,33 @@ class _HomeScreenState extends State<HomeScreen> {
               CalculatorButton(
                   label: "0",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: ".",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "+/-",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: "EXP",
                   onPressed: () {},
-                  bgColor: const Color(0xFF1C1C1C)),
+                  bgColor: const Color(0xFF1C1C1C),
+                  textColor: Colors.white,
+                  textSize: 25),
               CalculatorButton(
                   label: FontAwesomeIcons.check,
                   onPressed: () {},
-                  bgColor: const Color(0xFF6F6F71)),
+                  bgColor: const Color(0xFF6F6F71),
+                  textColor: Colors.white,
+                  textSize: 25),
             ],
           ),
         ],
