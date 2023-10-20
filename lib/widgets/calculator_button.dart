@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CalculatorButton extends StatelessWidget {
-  final dynamic label; // Dynamic allows for both String and IconData
+  final dynamic label;
   final Function() onPressed;
   final Color bgColor;
   final Color textColor;
@@ -10,8 +10,8 @@ class CalculatorButton extends StatelessWidget {
   final FontWeight fontWeight;
   final double iconSize;
   final FontStyle fontStyle;
-  final double? height; // New
-  final double? width; // New
+  final double? height;
+  final double? width;
 
   const CalculatorButton({
     Key? key,
@@ -31,8 +31,8 @@ class CalculatorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 35,
-      width: 65,
+      height: height ?? 35,
+      width: width ?? 65,
       padding: const EdgeInsets.all(1.0),
       child: ElevatedButton(
         onPressed: onPressed,
@@ -52,7 +52,9 @@ class CalculatorButton extends StatelessWidget {
                     ))
                 : label is Image
                     ? label
-                    : const SizedBox(), // Removed .square() for simplicity
+                    : label is Widget // <-- Handle the case for Widget type labels
+                        ? label
+                        : const SizedBox(),
       ),
     );
   }
