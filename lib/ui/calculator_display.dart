@@ -11,13 +11,13 @@ class CalculatorDisplay extends StatelessWidget {
       children: [
         // Black Container
         Container(
-          height: 50,
+          height: 40,
           color: Colors.black,
         ),
         // Your existing Container
         Container(
           padding:
-              const EdgeInsets.only(top: 100, left: 0, right: 0, bottom: 50),
+              const EdgeInsets.only(top: 90, left: 0, right: 0, bottom: 50),
           width: double.infinity,
           color: const Color(0xFFEDF2F6),
           child: Text(

@@ -33,7 +33,7 @@ class CalculatorButton extends StatelessWidget {
     return Container(
       height: height ?? 35,
       width: width ?? 65,
-      padding: const EdgeInsets.all(1.0),
+      padding: const EdgeInsets.all(1),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

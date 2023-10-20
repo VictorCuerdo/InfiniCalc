@@ -37,15 +37,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // ROW 1 (Using ButtonRow for a cleaner look and uniformity)
           ButtonRow(
-            buttonHeight: 30,
+            buttonHeight: 33,
             buttonWidth: 65,
             labels: const [
-              "SHIFT",
-              "MENU",
+              Text("SHIFT",
+                  style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
+              Text("MENU",
+                  style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
               Icons.arrow_back_ios,
               Icons.arrow_forward_ios,
               Icons.backspace,
-              "AC",
+              Text("AC",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
             ],
             bgColors: const [
               Color(0xFF54C295),
@@ -59,18 +71,36 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: const [
-              '',
-              '',
-              '',
-              '',
-              '',
-              '',
+              Text(
+                '',
+                style: TextStyle(fontSize: 8),
+              ),
+              Text(
+                '',
+                style: TextStyle(fontSize: 8),
+              ),
+              Text(
+                '',
+                style: TextStyle(fontSize: 8),
+              ),
+              Text(
+                '',
+                style: TextStyle(fontSize: 8),
+              ),
+              Text(
+                '',
+                style: TextStyle(fontSize: 8),
+              ),
+              Text(
+                '',
+                style: TextStyle(fontSize: 8),
+              ),
             ],
           ),
 
           // ROW 2 (Using ButtonRow for a cleaner look and uniformity)
           ButtonRow(
-            buttonHeight: 30,
+            buttonHeight: 33,
             buttonWidth: 65,
             labels: [
               "DRG",
@@ -94,27 +124,75 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: const [
-              '▶DRG',
-              'FSE',
-              'MTRX',
-              'Π',
-              'd/dx',
-              'CNST',
+              Text('▶DRG',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              Text('FSE',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              Text('MTRX',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              Text('Π',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              Text('d/dx',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              Text('CNST',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
             ],
           ),
 
 // ROW 3 (Using ButtonRow for a cleaner look and uniformity)
           ButtonRow(
-            buttonHeight: 30,
+            buttonHeight: 33,
             buttonWidth: 65,
             labels: const [
-              "π",
-              "sin",
-              "cos",
-              "tan",
-              "i",
-              //TextStyle(fontStyle: FontStyle.italic),
-              "e",
+              Text("π",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
+              Text("sin",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
+              Text("cos",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
+              Text("tan",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
+              Text("i",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.normal)),
+              Text("e",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
             ],
             bgColors: const [
               Color(0xFFBAC2CD),
@@ -128,26 +206,35 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: [
-              'hyp',
+              const Text('hyp',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
               Math.tex(r'\sin^{-1}',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
               Math.tex(r'\cos^{-1}',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
               Math.tex(r'\tan^{-1}',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
-              '∠',
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
+              const Text('∠',
+                  style: TextStyle(
+                    fontSize: 8,
+                    color: Color(0xFFBAC2CD),
+                    fontWeight: FontWeight.bold,
+                  )),
               Math.tex(r'\log_x Y',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
             ],
           ),
 
           // ROW 4 (Using ButtonRow for a cleaner look and uniformity)
           ButtonRow(
-            buttonHeight: 30,
+            buttonHeight: 33,
             buttonWidth: 65,
             labels: [
               Math.tex(r'x^{-1}',
@@ -156,17 +243,22 @@ class _HomeScreenState extends State<HomeScreen> {
               Math.tex(r'x^{2}',
                   textStyle:
                       const TextStyle(color: Colors.black, fontSize: 16.0)),
-
               Math.tex(r'\sqrt{x}',
                   textStyle:
                       const TextStyle(color: Colors.black, fontSize: 16.0)),
-
               Math.tex(r'x^{y}',
                   textStyle:
                       const TextStyle(color: Colors.black, fontSize: 16.0)),
-              "log",
-              //TextStyle(fontStyle: FontStyle.italic),
-              "ln",
+              const Text("log",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
+              const Text("ln",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
             ],
             bgColors: const [
               Color(0xFFBAC2CD),
@@ -180,34 +272,42 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: [
-              'lim',
+              const Text('lim',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
               Math.tex(r'x^3',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
               Math.tex(r'\sqrt[3]{x}',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
               Math.tex(r'\sqrt[x]{y}',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 9.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
               Math.tex(r'10^x',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
               Math.tex(r'e^x',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 12.0)),
             ],
           ),
 
 // ROW 5 (Using ButtonRow for a cleaner look and uniformity)
           ButtonRow(
-            buttonHeight: 30,
+            buttonHeight: 33,
             buttonWidth: 65,
             labels: [
-              "D°M'S",
+              const Text("D°M'S",
+                  style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal)),
               Math.tex(r' \; d/c',
                   textStyle:
-                      const TextStyle(color: Colors.black, fontSize: 16.0)),
+                      const TextStyle(color: Colors.black, fontSize: 15.0)),
               const Text("X",
                   style: TextStyle(
                       color: Color(0xFF2C91D9),
@@ -241,14 +341,34 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: [
-              'STAT',
+              const Text('STAT',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
               Math.tex(r' a \; b/c',
-                  textStyle:
-                      const TextStyle(color: Colors.grey, fontSize: 10.0)),
-              'Y',
-              'HISTORY',
-              'M+',
-              'M-',
+                  textStyle: const TextStyle(
+                      color: Color(0xFFBAC2CD), fontSize: 11.0)),
+              const Text('Y',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              const Text('HISTORY',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              const Text('M+',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
+              const Text('M-',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFFBAC2CD),
+                  )),
             ],
           ),
 
@@ -259,11 +379,21 @@ class _HomeScreenState extends State<HomeScreen> {
             buttonHeight: 45,
             buttonWidth: 80,
             labels: const [
-              Text("7", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("8", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("9", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("(", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text(")", style: TextStyle(color: Colors.white, fontSize: 16)),
+              Text("7",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("8",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("9",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("(",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text(")",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
             ],
             bgColors: const [
               Color(0xFF1C1C1C),
@@ -276,11 +406,16 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: const [
-              'CPLX',
-              '∞',
-              '',
-              '%',
-              'mod',
+              Text('CPLX',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('∞',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('%',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('mod',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
             ],
           ),
 
@@ -289,14 +424,20 @@ class _HomeScreenState extends State<HomeScreen> {
             buttonHeight: 45,
             buttonWidth: 80,
             labels: const [
-              Text("4", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("5", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("6", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Icon(FontAwesomeIcons.xmark, color: Colors.white, size: 16),
+              Text("4",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("5",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("6",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Icon(FontAwesomeIcons.xmark, color: Colors.white, size: 18),
               Icon(
                 FontAwesomeIcons.divide,
                 color: Colors.white,
-                size: 16,
+                size: 18,
               ),
             ],
             bgColors: const [
@@ -310,11 +451,16 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: const [
-              'n!',
-              'nCr',
-              'nPr',
-              '▶BIN',
-              '▶OCT',
+              Text('n!',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('nCr',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('nPr',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('▶BIN',
+                  style: TextStyle(fontSize: 10, color: Color(0xFFBAC2CD))),
+              Text('▶OCT',
+                  style: TextStyle(fontSize: 10, color: Color(0xFFBAC2CD))),
             ],
           ),
 
@@ -323,14 +469,20 @@ class _HomeScreenState extends State<HomeScreen> {
             buttonHeight: 45,
             buttonWidth: 80,
             labels: const [
-              Text("1", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("2", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("3", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Icon(FontAwesomeIcons.plus, color: Colors.white, size: 16),
+              Text("1",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("2",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("3",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Icon(FontAwesomeIcons.plus, color: Colors.white, size: 18),
               Icon(
                 FontAwesomeIcons.minus,
                 color: Colors.white,
-                size: 16,
+                size: 18,
               ),
             ],
             bgColors: const [
@@ -344,11 +496,16 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: const [
-              'gcd',
-              'lcm',
-              'abs',
-              '▶DEC',
-              '▶HEX',
+              Text('gcd',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('lcm',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('abs',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('▶DEC',
+                  style: TextStyle(fontSize: 10, color: Color(0xFFBAC2CD))),
+              Text('▶HEX',
+                  style: TextStyle(fontSize: 10, color: Color(0xFFBAC2CD))),
             ],
           ),
 
@@ -357,11 +514,19 @@ class _HomeScreenState extends State<HomeScreen> {
             buttonHeight: 45,
             buttonWidth: 80,
             labels: const [
-              Text("0", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text(".", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("+/-", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Text("EXP", style: TextStyle(color: Colors.white, fontSize: 16)),
-              Icon(FontAwesomeIcons.check, color: Colors.white, size: 16),
+              Text("0",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text(".",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("+/-",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Text("EXP",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 18, fontFamily: 'Barlow')),
+              Icon(FontAwesomeIcons.check, color: Colors.white, size: 18),
             ],
             bgColors: const [
               Color(0xFF1C1C1C),
@@ -374,11 +539,16 @@ class _HomeScreenState extends State<HomeScreen> {
               // Handle button press here
             },
             tags: const [
-              'OTHER',
-              'ran#',
-              'Ans',
-              'EXP SI',
-              '"=,<,>',
+              Text('OTHER',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('ran#',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('Ans',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('EXP SI',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
+              Text('=,<,>',
+                  style: TextStyle(fontSize: 12, color: Color(0xFFBAC2CD))),
             ],
           ),
         ],

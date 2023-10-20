@@ -7,7 +7,7 @@ import 'calculator_button.dart';
 class ButtonRow extends StatelessWidget {
   final List<dynamic> labels;
   final Function(dynamic) onPressed;
-  final List<dynamic> tags; // Changed type to dynamic
+  final List<dynamic> tags;
   final List<Color> bgColors;
   final double? buttonHeight;
   final double? buttonWidth;
@@ -26,15 +26,19 @@ class ButtonRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      // Inside the List.generate method...
       children: List.generate(labels.length, (index) {
         final label = labels[index];
 
         final hasTag = index < tags.length;
 
+        // Check if the index exists within the bgColors list
+        final bgColor = index < bgColors.length
+            ? bgColors[index]
+            : Colors.grey; // Default color if not provided
+
         return Column(
           children: [
-            if (hasTag) // Check if there's a corresponding tag
+            if (hasTag)
               if (tags[index] is String)
                 Text(
                   tags[index],
@@ -45,11 +49,11 @@ class ButtonRow extends StatelessWidget {
                 )
               else if (tags[index] is Widget)
                 tags[index],
-            const SizedBox(height: 1.5), // Spacing between tag and button
+            const SizedBox(height: 0.5),
             CalculatorButton(
               label: label,
               onPressed: () => onPressed(label),
-              bgColor: bgColors[index],
+              bgColor: bgColor,
               fontWeight: FontWeight.normal,
               height: buttonHeight,
               width: buttonWidth,
