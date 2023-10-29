@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infinicalc/widgets/settings.dart';
 
 import 'ui/home_screen.dart';
 
@@ -15,6 +16,9 @@ class InfiniCalc extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const HomeScreen(),
+      routes: {
+        '/settings': (context) => const SettingsScreen(), // <-- Add this line
+      },
     );
   }
 }

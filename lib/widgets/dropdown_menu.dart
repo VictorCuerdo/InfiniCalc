@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:infinicalc/controllers/navigation_utils.dart';
 
 class DropdownMenu extends StatelessWidget {
   final void Function(Color) onColorSelected;
@@ -35,7 +36,7 @@ class DropdownMenu extends StatelessWidget {
             label: 'Settings',
             onTap: () {
               closeDropdown();
-              onSettingsSelected();
+              context.navigateTo('/settings');
             },
           ),
           _buildMenuItem(

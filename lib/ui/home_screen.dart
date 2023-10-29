@@ -20,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
       const Color(0xFF464648); // Adjust as necessary// Default background color
   final CalculatorModel _model = CalculatorModel();
   late final CalculatorController _controller;
-  final double _dropdownPositionAdjustment = 1.0;
 
   final GlobalKey buttonRowKey = GlobalKey();
 
@@ -681,8 +680,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         _overlayEntry = OverlayEntry(
           builder: (context) => Positioned(
-            left:
-                leftPadding + _dropdownPositionAdjustment, // adjusted position
+            left: leftPadding + 1.5, // adjusted position
             top: offset.dy + size.height,
             width: dropdownWidth,
             child: Material(
