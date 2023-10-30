@@ -7,8 +7,6 @@ import 'package:infinicalc/controllers/navigation_utils.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// Import the required packages at the beginning of your file
-
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -22,23 +20,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool commaSelected = false;
   bool statusBarVisible = true;
   static const double smallFontSize = 14.0;
-  static const double mediumFontSize = 18.0;
-  static const double largeFontSize = 22.0;
+  static const double mediumFontSize = 17.0;
+  static const double largeFontSize = 20.0;
 
-  // Class variable to store the current font size
   double fontSize = mediumFontSize;
 
   @override
   void initState() {
     super.initState();
-    _loadFontSize();
+    _loadSettings();
   }
 
-  Future<void> _loadFontSize() async {
+  Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      fontSize = (prefs.getDouble('fontSize') ?? mediumFontSize);
+      fontSize = prefs.getDouble('fontSize') ?? mediumFontSize;
+      // Here you can load other settings like hapticFeedback, pointSelected, etc.
     });
+
+    // Update the provider value
+    Provider.of<FontSizeProvider>(context, listen: false).fontSize = fontSize;
   }
 
   _saveFontSize() async {
@@ -72,13 +73,147 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
 
             const SizedBox(height: 40),
+            //FONT SIZE  ROW
+            ListTile(
+              title: Center(
+                child: Text(
+                  'Pick Font Size',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: fontSize, // Use the dynamic font size here
+                  ),
+                ),
+              ),
+              subtitle: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 10),
+                  Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min, // This centers the row
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.text_fields, size: 23),
+                              color: fontSize == smallFontSize
+                                  ? Colors.lightBlue
+                                  : Colors.grey[850],
+                              onPressed: () {
+                                setState(() {
+                                  fontSize = smallFontSize;
+                                  _saveFontSize();
+                                });
+                                // Update the provider value
+                                Provider.of<FontSizeProvider>(context,
+                                        listen: false)
+                                    .fontSize = smallFontSize;
+                              },
+                            ),
+                            Text(
+                              'S',
+                              style: TextStyle(
+                                fontSize: fontSize, // Dynamic font size
+                                color: fontSize == smallFontSize
+                                    ? Colors.lightBlue
+                                    : Colors.grey[850],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.text_fields, size: 33),
+                              color: fontSize == mediumFontSize
+                                  ? Colors.lightBlue
+                                  : Colors.grey[850],
+                              onPressed: () {
+                                setState(() {
+                                  fontSize = mediumFontSize;
+                                  _saveFontSize();
+                                });
+                                // Update the provider value
+                                Provider.of<FontSizeProvider>(context,
+                                        listen: false)
+                                    .fontSize = mediumFontSize;
+                              },
+                            ),
+                            Text(
+                              'M',
+                              style: TextStyle(
+                                fontSize: fontSize, // Dynamic font size
+                                color: fontSize == mediumFontSize
+                                    ? Colors.lightBlue
+                                    : Colors.grey[850],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.text_fields, size: 43),
+                              color: fontSize == largeFontSize
+                                  ? Colors.lightBlue
+                                  : Colors.grey[850],
+                              onPressed: () {
+                                setState(() {
+                                  fontSize = largeFontSize;
+                                  _saveFontSize();
+                                });
+                                // Update the provider value
+                                Provider.of<FontSizeProvider>(context,
+                                        listen: false)
+                                    .fontSize = largeFontSize;
+                              },
+                            ),
+                            Text(
+                              'L',
+                              style: TextStyle(
+                                fontSize: fontSize, // Dynamic font size
+                                color: fontSize == largeFontSize
+                                    ? Colors.lightBlue
+                                    : Colors.grey[850],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              contentPadding: const EdgeInsets.all(8),
+              tileColor: Colors.transparent,
+            ),
+
+            const SizedBox(height: 5),
+            const Divider(
+              color: Colors.white,
+              thickness: 2,
+            ),
+            const SizedBox(height: 5),
             // NUMBER FORMATING ROW********
             // Decimal Separator Settings
-            const Text(
-              'Pick decimal separator:',
-              style: TextStyle(fontSize: 17, color: Colors.white),
-              textAlign: TextAlign.left,
+            Consumer<FontSizeProvider>(
+              builder: (context, fontSizeProvider, child) {
+                return Text(
+                  'Pick decimal separator:',
+                  style: TextStyle(
+                      fontSize: fontSizeProvider.fontSize, color: Colors.white),
+                  textAlign: TextAlign.left,
+                );
+              },
             ),
+
             const SizedBox(height: 10),
             buildSwitchListTile(
               'Point',
@@ -127,10 +262,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // Settings UI
             // STATUS BAR ROW
+            // Status Bar SwitchListTile
             SwitchListTile(
-              title: const Text(
-                'Status bar',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+              title: Consumer<FontSizeProvider>(
+                builder: (context, fontSizeProvider, child) {
+                  return Text(
+                    'Status bar',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: fontSizeProvider.fontSize),
+                  );
+                },
               ),
               value: statusBarVisible,
               onChanged: (bool value) {
@@ -144,9 +286,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 });
               },
               secondary: const Icon(Icons.sim_card, size: 38),
-              subtitle: const Text(
-                'Enable or disable visibility of status bar',
-                style: TextStyle(color: Colors.white70),
+              subtitle: Consumer<FontSizeProvider>(
+                builder: (context, fontSizeProvider, child) {
+                  return Text(
+                    'Enable or disable visibility of status bar',
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: fontSizeProvider.fontSize),
+                  );
+                },
               ),
               isThreeLine: true,
               dense: false,
@@ -172,11 +320,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             const SizedBox(height: 5),
 
-            // HAPTIC BUTTON ROW
+            // Haptic Button SwitchListTile
             SwitchListTile(
-              title: const Text(
-                'Button Haptic Feedback',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+              title: Consumer<FontSizeProvider>(
+                builder: (context, fontSizeProvider, child) {
+                  return Text(
+                    'Button Haptic Feedback',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: fontSizeProvider.fontSize),
+                  );
+                },
               ),
               value: hapticFeedback,
               onChanged: (bool value) {
@@ -185,9 +339,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 });
               },
               secondary: const Icon(Icons.touch_app, size: 38),
-              subtitle: const Text(
-                'Enable or disable haptic feedback for the buttons',
-                style: TextStyle(color: Colors.white70),
+              subtitle: Consumer<FontSizeProvider>(
+                builder: (context, fontSizeProvider, child) {
+                  return Text(
+                    'Enable or disable haptic feedback for the buttons',
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: fontSizeProvider.fontSize),
+                  );
+                },
               ),
               isThreeLine: true,
               dense: false,
@@ -211,66 +371,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             const SizedBox(height: 5),
             const Divider(color: Colors.white, thickness: 2),
             const SizedBox(height: 5),
-            ListTile(
-              title: Text(
-                'Font Size',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: fontSize), // Use the dynamic font size here
-              ),
-              subtitle: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.text_fields, size: 20),
-                    color: fontSize == smallFontSize
-                        ? Colors.lightBlue
-                        : Colors.white,
-                    onPressed: () {
-                      setState(() {
-                        fontSize = smallFontSize;
-                        _saveFontSize();
-                      });
-                      // Update the provider value
-                      Provider.of<FontSizeProvider>(context, listen: false)
-                          .fontSize = smallFontSize;
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.text_fields, size: 30),
-                    color: fontSize == mediumFontSize
-                        ? Colors.lightBlue
-                        : Colors.white,
-                    onPressed: () {
-                      setState(() {
-                        fontSize = mediumFontSize;
-                        _saveFontSize();
-                      });
-                      // Update the provider value
-                      Provider.of<FontSizeProvider>(context, listen: false)
-                          .fontSize = mediumFontSize;
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.text_fields, size: 40),
-                    color: fontSize == largeFontSize
-                        ? Colors.lightBlue
-                        : Colors.white,
-                    onPressed: () {
-                      setState(() {
-                        fontSize = largeFontSize;
-                        _saveFontSize();
-                      });
-                      // Update the provider value
-                      Provider.of<FontSizeProvider>(context, listen: false)
-                          .fontSize = largeFontSize;
-                    },
-                  ),
-                ],
-              ),
-              contentPadding: const EdgeInsets.all(8),
-              tileColor: Colors.grey[850],
-            ),
+
             const SizedBox(height: 5),
             const Divider(color: Colors.white, thickness: 2),
             const SizedBox(height: 5),
@@ -284,16 +385,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
   SwitchListTile buildSwitchListTile(String title, String subtitle, bool value,
       Widget secondaryWidget, void Function(bool) onChanged) {
     return SwitchListTile(
-      title: Text(
-        title,
-        style: const TextStyle(color: Colors.white, fontSize: 18),
+      title: Consumer<FontSizeProvider>(
+        builder: (context, fontSizeProvider, child) {
+          return Text(
+            title,
+            style: TextStyle(
+                color: Colors.white, fontSize: fontSizeProvider.fontSize),
+          );
+        },
       ),
       value: value,
       onChanged: onChanged,
       secondary: secondaryWidget,
-      subtitle: Text(
-        subtitle,
-        style: const TextStyle(color: Colors.white70),
+      subtitle: Consumer<FontSizeProvider>(
+        builder: (context, fontSizeProvider, child) {
+          return Text(
+            subtitle,
+            style: TextStyle(
+                color: Colors.white70, fontSize: fontSizeProvider.fontSize),
+          );
+        },
       ),
       isThreeLine: true,
       dense: false,
