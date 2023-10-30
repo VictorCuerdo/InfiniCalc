@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infinicalc/controllers/font_size_provider.dart';
@@ -18,7 +19,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool hapticFeedback = false;
   bool pointSelected = true;
   bool commaSelected = false;
-  bool statusBarVisible = true;
+  bool statusBarVisible = false;
   static const double smallFontSize = 14.0;
   static const double mediumFontSize = 17.0;
   static const double largeFontSize = 20.0;
@@ -371,57 +372,93 @@ class _SettingsScreenState extends State<SettingsScreen> {
             const SizedBox(height: 5),
             const Divider(color: Colors.white, thickness: 2),
             const SizedBox(height: 5),
-
+            ListTile(
+              title: Text("language".tr(),
+                  style: TextStyle(color: Colors.white, fontSize: fontSize)),
+              subtitle: Wrap(
+                spacing: 10,
+                children: [
+                  languageButton(const Locale('es', 'ES'), 'Español',
+                      'assets/images/spain_flag.png'),
+                  languageButton(const Locale('en', 'US'), 'English',
+                      'assets/images/usa_flag.png'),
+                  languageButton(const Locale('de', 'DE'), 'Deutsch',
+                      'assets/images/germany_flag.png'),
+                  languageButton(const Locale('fr', 'FR'), 'Français',
+                      'assets/images/france_flag.png'),
+                  languageButton(const Locale('pt', 'BR'), 'português',
+                      'assets/images/portugal_flag.png'),
+                  languageButton(const Locale('ru', 'RU'), 'Русский',
+                      'assets/images/russia_flag.png'),
+                  // Add other languages here
+                ],
+              ),
+            ),
             const SizedBox(height: 5),
             const Divider(color: Colors.white, thickness: 2),
             const SizedBox(height: 5),
-// Add other UI components for different settings here
+            // Add other UI components for different settings here
           ],
         ),
       ),
     );
   }
 
-  SwitchListTile buildSwitchListTile(String title, String subtitle, bool value,
-      Widget secondaryWidget, void Function(bool) onChanged) {
-    return SwitchListTile(
-      title: Consumer<FontSizeProvider>(
-        builder: (context, fontSizeProvider, child) {
-          return Text(
-            title,
-            style: TextStyle(
-                color: Colors.white, fontSize: fontSizeProvider.fontSize),
-          );
-        },
-      ),
-      value: value,
-      onChanged: onChanged,
-      secondary: secondaryWidget,
-      subtitle: Consumer<FontSizeProvider>(
-        builder: (context, fontSizeProvider, child) {
-          return Text(
-            subtitle,
-            style: TextStyle(
-                color: Colors.white70, fontSize: fontSizeProvider.fontSize),
-          );
-        },
-      ),
-      isThreeLine: true,
-      dense: false,
-      contentPadding: const EdgeInsets.all(8),
-      activeColor: Colors.lightBlue,
-      inactiveThumbColor: Colors.white,
-      inactiveTrackColor: Colors.white.withOpacity(0.5),
-      activeTrackColor: Colors.lightBlue.withOpacity(0.5),
-      tileColor: Colors.grey[850],
-      selected: value,
-      selectedTileColor: Colors.black,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      controlAffinity: ListTileControlAffinity.trailing,
-      autofocus: false,
-      visualDensity: VisualDensity.comfortable,
+  Widget languageButton(Locale locale, String name, String assetPath) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          icon: Image.asset(assetPath),
+          onPressed: () {
+            context.setLocale(locale);
+          },
+        ),
+        Text(name, style: TextStyle(color: Colors.white, fontSize: fontSize)),
+      ],
     );
   }
+}
+
+SwitchListTile buildSwitchListTile(String title, String subtitle, bool value,
+    Widget secondaryWidget, void Function(bool) onChanged) {
+  return SwitchListTile(
+    title: Consumer<FontSizeProvider>(
+      builder: (context, fontSizeProvider, child) {
+        return Text(
+          title,
+          style: TextStyle(
+              color: Colors.white, fontSize: fontSizeProvider.fontSize),
+        );
+      },
+    ),
+    value: value,
+    onChanged: onChanged,
+    secondary: secondaryWidget,
+    subtitle: Consumer<FontSizeProvider>(
+      builder: (context, fontSizeProvider, child) {
+        return Text(
+          subtitle,
+          style: TextStyle(
+              color: Colors.white70, fontSize: fontSizeProvider.fontSize),
+        );
+      },
+    ),
+    isThreeLine: true,
+    dense: false,
+    contentPadding: const EdgeInsets.all(8),
+    activeColor: Colors.lightBlue,
+    inactiveThumbColor: Colors.white,
+    inactiveTrackColor: Colors.white.withOpacity(0.5),
+    activeTrackColor: Colors.lightBlue.withOpacity(0.5),
+    tileColor: Colors.grey[850],
+    selected: value,
+    selectedTileColor: Colors.black,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+    controlAffinity: ListTileControlAffinity.trailing,
+    autofocus: false,
+    visualDensity: VisualDensity.comfortable,
+  );
 }
