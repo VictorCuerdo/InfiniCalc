@@ -1,8 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:infinicalc/controllers/font_size_provider.dart';
 import 'package:infinicalc/widgets/button_row.dart';
 import 'package:infinicalc/widgets/dropdown_menu.dart' as my_widgets;
+import 'package:provider/provider.dart';
 
 import '../controllers/calculator_controller.dart';
 import '../models/calculator_model.dart';
@@ -25,6 +27,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _HomeScreenState() {
     _controller = CalculatorController(_model);
+  }
+  void _changeFontSize(double newSize) {
+    // Get the FontSizeProvider instance
+    FontSizeProvider fontSizeProvider =
+        Provider.of<FontSizeProvider>(context, listen: false);
+
+    // Update the font size
+    fontSizeProvider.fontSize = newSize;
   }
 
   @override

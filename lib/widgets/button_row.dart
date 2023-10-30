@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '/controllers/font_size_provider.dart';
 import 'calculator_button.dart';
 
 class ButtonRow extends StatelessWidget {
@@ -7,7 +9,7 @@ class ButtonRow extends StatelessWidget {
   final Function(dynamic) onPressed;
   final List<dynamic> tags;
   final List<Color> bgColors;
-  final bool isFirstRow; // Added this parameter
+  final bool isFirstRow;
   final double? buttonWidth;
   final double? buttonHeight;
 
@@ -18,13 +20,14 @@ class ButtonRow extends StatelessWidget {
     required this.bgColors,
     required this.tags,
     this.isFirstRow = false,
-    this.buttonWidth, // adding the new parameter here
-    this.buttonHeight, // and here
+    this.buttonWidth,
+    this.buttonHeight,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final fontSize = Provider.of<FontSizeProvider>(context).fontSize;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -39,22 +42,18 @@ class ButtonRow extends StatelessWidget {
               if (hasTag)
                 if (tags[index] is String && tags[index].isNotEmpty)
                   Padding(
-                    padding: EdgeInsets.only(
-                        bottom:
-                            0.005 * screenWidth), // Reduced padding for tags
+                    padding: EdgeInsets.only(bottom: 0.005 * screenWidth),
                     child: Text(
                       tags[index],
                       style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 0.02 * screenWidth,
+                        fontSize: fontSize, // Set the font size dynamically
                       ),
                     ),
                   )
                 else if (tags[index] is Widget)
                   Padding(
-                    padding: EdgeInsets.only(
-                        bottom: 0.005 *
-                            screenWidth), // Reduced padding for widget tags
+                    padding: EdgeInsets.only(bottom: 0.005 * screenWidth),
                     child: tags[index],
                   ),
               CalculatorButton(
@@ -62,8 +61,8 @@ class ButtonRow extends StatelessWidget {
                 onPressed: () => onPressed(label),
                 bgColor: bgColor,
                 fontWeight: FontWeight.normal,
-                customWidth: buttonWidth, // pass the custom width here
-                customHeight: buttonHeight, // pass the custom height here
+                customWidth: buttonWidth,
+                customHeight: buttonHeight,
               ),
             ],
           ),

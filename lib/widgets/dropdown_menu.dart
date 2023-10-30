@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:infinicalc/controllers/navigation_utils.dart';
+import 'package:provider/provider.dart';
+
+import '/controllers/font_size_provider.dart';
 
 class DropdownMenu extends StatelessWidget {
   final void Function(Color) onColorSelected;
@@ -8,7 +11,7 @@ class DropdownMenu extends StatelessWidget {
   final void Function() onHistorySelected;
   final void Function() onHelpSelected;
   final void Function() onShareSelected;
-  final VoidCallback closeDropdown; // Added callback to close the dropdown
+  final VoidCallback closeDropdown;
 
   const DropdownMenu({
     super.key,
@@ -17,11 +20,13 @@ class DropdownMenu extends StatelessWidget {
     required this.onHistorySelected,
     required this.onHelpSelected,
     required this.onShareSelected,
-    required this.closeDropdown, // Added parameter
+    required this.closeDropdown,
   });
 
   @override
   Widget build(BuildContext context) {
+    final fontSize = Provider.of<FontSizeProvider>(context).fontSize;
+
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -30,6 +35,7 @@ class DropdownMenu extends StatelessWidget {
             icon: Icons.palette,
             label: 'Theme Color',
             onTap: () => _selectColor(context),
+            fontSize: fontSize,
           ),
           _buildMenuItem(
             icon: Icons.settings,
@@ -38,6 +44,7 @@ class DropdownMenu extends StatelessWidget {
               closeDropdown();
               context.navigateTo('/settings');
             },
+            fontSize: fontSize,
           ),
           _buildMenuItem(
             icon: Icons.history,
@@ -46,6 +53,7 @@ class DropdownMenu extends StatelessWidget {
               closeDropdown();
               onHistorySelected();
             },
+            fontSize: fontSize,
           ),
           _buildMenuItem(
             icon: Icons.help,
@@ -54,6 +62,7 @@ class DropdownMenu extends StatelessWidget {
               closeDropdown();
               onHelpSelected();
             },
+            fontSize: fontSize,
           ),
           _buildMenuItem(
             icon: Icons.share,
@@ -62,6 +71,7 @@ class DropdownMenu extends StatelessWidget {
               closeDropdown();
               onShareSelected();
             },
+            fontSize: fontSize,
           ),
         ],
       ),
@@ -225,11 +235,12 @@ class DropdownMenu extends StatelessWidget {
     required IconData icon,
     required String label,
     required VoidCallback onTap,
+    required double fontSize,
   }) {
     return ListTile(
       leading: Icon(icon, color: Colors.white, size: 32),
       title: Text(label,
-          style: const TextStyle(color: Colors.white, fontSize: 20)),
+          style: TextStyle(color: Colors.white, fontSize: fontSize)),
       onTap: onTap,
     );
   }
