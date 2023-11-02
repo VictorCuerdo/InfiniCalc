@@ -2,9 +2,11 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:infinicalc/controllers/font_size_provider.dart';
 import 'package:infinicalc/widgets/button_row.dart';
 import 'package:infinicalc/widgets/dropdown_menu.dart' as my_widgets;
+import 'package:infinicalc/widgets/dropdown_menuformat.dart';
 import 'package:provider/provider.dart';
 
 import '../controllers/calculator_controller.dart';
@@ -23,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       const Color(0xFF464648); // Adjust as necessary// Default background color
   final CalculatorModel _model = CalculatorModel();
   late final CalculatorController _controller;
-
+  final GlobalKey xEButtonKey = GlobalKey();
   final GlobalKey buttonRowKey = GlobalKey();
 
   _HomeScreenState() {
@@ -113,8 +115,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
 
-/*
-
           // ROW 2 (Using ButtonRow for a cleaner look and uniformity)
           ButtonRow(
             labels: [
@@ -123,11 +123,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 14,
                       color: Colors.black,
                       fontWeight: FontWeight.normal)),
-              const Text("x ⟺ E",
-                  style: TextStyle(
-                      fontSize: 12.5,
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal)),
+              const Text(
+                "x ⟺ E",
+                style: TextStyle(
+                    fontSize: 12.5,
+                    color: Colors.black,
+                    fontWeight: FontWeight.normal),
+              ),
               Image.asset('assets/images/matriz.png'),
               Math.tex(r'\sum',
                   textStyle:
@@ -152,7 +154,11 @@ class _HomeScreenState extends State<HomeScreen> {
               Color(0xFFBAC2CD),
             ],
             onPressed: (label) {
-              // Handle button press here
+              if (label is Text && label.data == "x ⟺ E") {
+                _showDropdownMenu(context, label);
+              } else {
+                // Handle other button presses
+              }
             },
             tags: const [
               Center(
@@ -200,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   )),
             ],
           ),
-
+/*
 // ROW 3 (Using ButtonRow for a cleaner look and uniformity)
           ButtonRow(
             labels: const [
@@ -670,34 +676,55 @@ class _HomeScreenState extends State<HomeScreen> {
   OverlayEntry? _overlayEntry;
 
   void _showDropdownMenu(BuildContext context, dynamic label) {
-    // If the label is a Text widget, extract the text from it. Otherwise, convert the label to a string.
     final String labelText =
         label is Text ? label.data! : label.toString().tr();
 
-    if (labelText == "MENU") {
-      if (_overlayEntry != null) {
-        // Close the dropdown if it is already open
-        closeDropdown();
-      } else {
-        // Show the dropdown
-        final RenderBox renderBox =
-            buttonRowKey.currentContext!.findRenderObject() as RenderBox;
-        final Offset offset = renderBox.localToGlobal(Offset.zero);
-        final Size size = renderBox.size;
+    if (_overlayEntry != null) {
+      // Close the dropdown if it is already open
+      closeDropdown();
+      return; // Return early if we're just closing the current overlay
+    }
 
-        double screenWidth = MediaQuery.of(context).size.width;
-        double dropdownWidth =
-            size.width * 0.65; // 25% less wider than the button row
-        double leftPadding = (screenWidth - dropdownWidth) / 2;
+    final RenderBox renderBox =
+        buttonRowKey.currentContext!.findRenderObject() as RenderBox;
+    final Offset offset = renderBox.localToGlobal(Offset.zero);
+    final Size size = renderBox.size;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double dropdownWidth = size.width * 0.65;
+    double leftPadding = (screenWidth - dropdownWidth) / 2;
 
-        _overlayEntry = OverlayEntry(
-          builder: (context) => Positioned(
-            left: leftPadding + 1.5, // adjusted position
-            top: offset.dy + size.height,
-            width: dropdownWidth,
-            child: Material(
-              elevation: 10,
-              color: Colors.transparent,
+    // Check for the "x ⟺ E" label to display the new menu
+    if (labelText == "x ⟺ E") {
+      _overlayEntry = OverlayEntry(
+        builder: (context) => Positioned(
+          left: leftPadding + 1.5,
+          top: offset.dy + size.height + 58,
+          width: dropdownWidth * 1.1,
+          child: Material(
+            elevation: 10,
+            child: Container(
+              color: Colors.black, // Container color to black
+              height: 270, // or some other appropriate height
+              child: DropdownMenuFormat(
+                closeDropdown:
+                    closeDropdown, // Pass the closeDropdown method here
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+    // Check for the "MENU" label to display the original menu
+    else if (labelText == "MENU") {
+      _overlayEntry = OverlayEntry(
+        builder: (context) => Positioned(
+          left: leftPadding + 1.5,
+          top: offset.dy + size.height,
+          width: dropdownWidth,
+          child: Material(
+            elevation: 10,
+            color: Colors.transparent,
+            child: Container(
               child: Container(
                 color: Colors.black, // Container color to black
                 height: 300, // or some other appropriate height
@@ -725,12 +752,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-        );
-
-        Overlay.of(context)!.insert(_overlayEntry!);
-      }
+        ),
+      );
     } else {
-      // Handle other button presses
+      // Handle other labels if necessary
+    }
+
+    // Insert the overlay into the widget tree if we created one
+    if (_overlayEntry != null) {
+      Overlay.of(context)!.insert(_overlayEntry!);
     }
   }
 

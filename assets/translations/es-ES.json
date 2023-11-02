@@ -22,5 +22,6 @@
   "Cancel": "Cancelar",
   "Select": "Seleccionar",
   "Copy Link": "Copiar enlace",
-  "Close": "Cerrar"
+  "Close": "Cerrar",
+  "Link copied to clipboard" : "Enlace copiado al portapapeles"
 }

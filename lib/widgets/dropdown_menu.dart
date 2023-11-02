@@ -281,27 +281,75 @@ class DropdownMenu extends StatelessWidget {
                 height: 200,
                 width: 200,
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 25),
               SelectableText(
                 appLink,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline,
+                ),
                 textAlign: TextAlign.center,
               ), // Making it selectable for easier copying
-              TextButton(
+              const SizedBox(height: 25),
+
+              ElevatedButton(
                 onPressed: () {
                   Clipboard.setData(ClipboardData(text: appLink)).then((_) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
+                      /*const SnackBar(
                         content: Text('Link copied to clipboard'),
-                      ),
+                        duration: Duration(seconds: 3),
+                      ), */
+                      SnackBar(
+                        content: const Text(
+                          'Link copied to clipboard',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ).tr(),
+                        backgroundColor: const Color(
+                            0xFF1B3A4B), // Change the background color of the SnackBar
+                        duration: const Duration(
+                            seconds: 3), // How long the SnackBar will be shown
+                        margin: const EdgeInsets.all(
+                            10), // Outer margin of the SnackBar
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20), // Inner padding of the SnackBar
+                        behavior: SnackBarBehavior
+                            .floating, // Makes SnackBar floating above the bottom of the screen
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              20), // Rounded corners for the SnackBar
+                        ),
+                        elevation: 6.0, // The elevation of the SnackBar
+                      ), // The width of the SnackBar. This is useful when behavior is floating
                     );
                   });
                 },
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  ),
+                ),
                 child: const Text(
                   'Copy Link',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
                 ).tr(),
               ),
+              const SizedBox(height: 20),
             ],
           ),
           actions: <Widget>[
