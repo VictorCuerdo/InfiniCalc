@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:infinicalc/controllers/navigation_utils.dart';
 import 'package:provider/provider.dart';
@@ -51,7 +53,7 @@ class DropdownMenu extends StatelessWidget {
             label: 'History',
             onTap: () {
               closeDropdown();
-              onHistorySelected();
+              context.navigateTo('/history');
             },
             fontSize: fontSize,
           ),
@@ -60,7 +62,7 @@ class DropdownMenu extends StatelessWidget {
             label: 'Help',
             onTap: () {
               closeDropdown();
-              onHelpSelected();
+              context.navigateTo('/help');
             },
             fontSize: fontSize,
           ),
@@ -69,7 +71,7 @@ class DropdownMenu extends StatelessWidget {
             label: 'Share the App',
             onTap: () {
               closeDropdown();
-              onShareSelected();
+              _shareApp(context);
             },
             fontSize: fontSize,
           ),
@@ -176,7 +178,7 @@ class DropdownMenu extends StatelessWidget {
               fontSize: 20,
               color: Color(0xFF1B3A4B),
             ),
-          ),
+          ).tr(),
           content: SizedBox(
             height: 300, // or whatever height you want
             width:
@@ -207,7 +209,7 @@ class DropdownMenu extends StatelessWidget {
                   fontSize: 18,
                   color: Color(0xFF1B3A4B),
                 ), // Set your desired text color
-              ),
+              ).tr(),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -219,7 +221,7 @@ class DropdownMenu extends StatelessWidget {
                   fontSize: 18,
                   color: Color(0xFF1B3A4B),
                 ), // Set your desired text color
-              ),
+              ).tr(),
               onPressed: () {
                 onColorSelected(selectedColor);
                 Navigator.of(context).pop();
@@ -239,9 +241,82 @@ class DropdownMenu extends StatelessWidget {
   }) {
     return ListTile(
       leading: Icon(icon, color: Colors.white, size: 32),
-      title: Text(label,
-          style: TextStyle(color: Colors.white, fontSize: fontSize)),
+      title: Text(
+        label.tr(), // Use .tr() to translate the label
+        style: TextStyle(color: Colors.white, fontSize: fontSize),
+      ),
       onTap: onTap,
+    );
+  }
+
+  void _shareApp(BuildContext context) {
+    String appLink =
+        "https://play.google.com/store/apps/details?id=com.yourapp"; // Placeholder link
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          scrollable: true,
+          backgroundColor: Colors.white,
+          shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              borderSide: const BorderSide(
+                color: Color(0xFF1B3A4B),
+                width: 5.0,
+              )),
+          title: const Text(
+            'Share the App',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ).tr(),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(height: 25),
+              Image.asset(
+                'assets/images/qrcode.png', // QR code image in assets
+                height: 200,
+                width: 200,
+              ),
+              const SizedBox(height: 50),
+              SelectableText(
+                appLink,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ), // Making it selectable for easier copying
+              TextButton(
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: appLink)).then((_) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Link copied to clipboard'),
+                      ),
+                    );
+                  });
+                },
+                child: const Text(
+                  'Copy Link',
+                  style: TextStyle(fontSize: 16),
+                ).tr(),
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text(
+                'Close',
+                style: TextStyle(fontSize: 18),
+              ).tr(),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

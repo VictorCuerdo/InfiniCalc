@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart'; // Import easy_locali
 import 'package:flutter/material.dart';
 import 'package:infinicalc/controllers/font_size_provider.dart';
 import 'package:infinicalc/ui/home_screen.dart';
+import 'package:infinicalc/widgets/help.dart';
+import 'package:infinicalc/widgets/history.dart';
 import 'package:infinicalc/widgets/settings.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +24,11 @@ void main() async {
         Locale('ru', 'RU'),
         Locale('ar', 'SA'),
         Locale('hi', 'IN'),
+        Locale('it', 'IT'),
+        Locale('ko', 'KR'),
+        Locale('th', 'TH'),
+        Locale('tr', 'TR'),
+        Locale('vi', 'VN')
       ],
       path: 'assets/translations', // Path to your translations folder
       fallbackLocale: const Locale('en',
@@ -53,6 +60,8 @@ class InfiniCalc extends StatelessWidget {
         home: const HomeScreen(),
         routes: {
           '/settings': (context) => const SettingsScreen(),
+          '/help': (context) => const HelpScreen(),
+          '/history': (context) => const HistoryScreen(),
         },
         localizationsDelegates:
             context.localizationDelegates, // Add localization delegates

@@ -1,8 +1,24 @@
 {
-    "app_name": "InfiniCalc",
-    "welcome_message": "Willkommen bei InfiniCalc",
-    "settings": "Einstellungen",
-    "language": "Sprache",
-    "font_size": "Schriftgröße"
-  }
-  
+  "language": "Sprache",
+  "Pick Font Size": "Schriftgröße auswählen",
+  "Pick decimal separator:": "Dezimaltrennzeichen auswählen:",
+  "Point": "Punkt",
+  "As the decimal separator                        For example 3.1416": "Als Dezimaltrennzeichen                        Beispiel: 3.1416",
+  "Comma": "Komma",
+  "As the decimal separator                        For example 3,1416": "Als Dezimaltrennzeichen                        Beispiel: 3,1416",
+  "Status bar": "Statusleiste",
+  "Enable or disable visibility of status bar": "Sichtbarkeit der Statusleiste aktivieren oder deaktivieren",
+  "Button Haptic Feedback": "Haptisches Feedback für Tasten",
+  "Enable or disable haptic feedback for the buttons": "Haptisches Feedback für die Tasten aktivieren oder deaktivieren",
+  "S": "Klein",
+  "M": "Mittel",
+  "L": "Groß",
+  "Theme Color": "Themenfarbe",
+  "Settings": "Einstellungen",
+  "History": "Verlauf",
+  "Help": "Hilfe",
+  "Share the App": "App teilen",
+  "Scroll and pick a color!": "Scrollen und Farbe auswählen!",
+  "Cancel": "Abbrechen",
+  "Select": "Auswählen"
+}
