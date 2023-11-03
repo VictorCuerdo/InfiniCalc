@@ -132,7 +132,7 @@ class _UnitConversionState extends State<UnitConversion> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => context.navigateTo('/'),
                     icon: const Icon(Icons.arrow_back,
                         color: Colors.grey, size: 40),
                   ),
