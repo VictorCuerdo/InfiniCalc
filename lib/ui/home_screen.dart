@@ -2,6 +2,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
+import 'package:infinicalc/controllers/navigation_utils.dart';
 import 'package:infinicalc/widgets/button_row.dart';
 import 'package:infinicalc/widgets/dropdown_menu.dart' as my_widgets;
 import 'package:infinicalc/widgets/dropdown_menuformat.dart';
@@ -165,6 +166,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 _showDropdownMenu(context, label);
               } else if (label is Image && label.key == matrixImageKey) {
                 print("image button pressed once with label: $label");
+              } else if (label is Text && label.data == "CONV") {
+                context.navigateTo('/unit');
               }
             },
             onLongPressed: (label) {

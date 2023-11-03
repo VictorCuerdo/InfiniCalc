@@ -2,9 +2,11 @@ import 'package:easy_localization/easy_localization.dart'; // Import easy_locali
 import 'package:flutter/material.dart';
 import 'package:infinicalc/controllers/font_size_provider.dart';
 import 'package:infinicalc/ui/home_screen.dart';
+import 'package:infinicalc/widgets/conversions/distance.dart';
 import 'package:infinicalc/widgets/help.dart';
 import 'package:infinicalc/widgets/history.dart';
 import 'package:infinicalc/widgets/settings.dart';
+import 'package:infinicalc/widgets/unit_conversion.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -62,6 +64,8 @@ class InfiniCalc extends StatelessWidget {
           '/settings': (context) => const SettingsScreen(),
           '/help': (context) => const HelpScreen(),
           '/history': (context) => const HistoryScreen(),
+          '/unit': (context) => const UnitConversion(),
+          '/distance': (context) => const DistanceUnitConverter(),
         },
         localizationsDelegates:
             context.localizationDelegates, // Add localization delegates
