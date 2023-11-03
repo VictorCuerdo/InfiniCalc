@@ -7,6 +7,7 @@ import 'calculator_button.dart';
 class ButtonRow extends StatelessWidget {
   final List<dynamic> labels;
   final Function(dynamic) onPressed;
+  final void Function(dynamic label)? onLongPressed;
   final List<dynamic> tags;
   final List<Color> bgColors;
   final bool isFirstRow;
@@ -22,6 +23,7 @@ class ButtonRow extends StatelessWidget {
     this.isFirstRow = false,
     this.buttonWidth,
     this.buttonHeight,
+    this.onLongPressed, // Add this line
   }) : super(key: key);
 
   @override
@@ -59,6 +61,9 @@ class ButtonRow extends StatelessWidget {
               CalculatorButton(
                 label: label,
                 onPressed: () => onPressed(label),
+                onLongPressed: onLongPressed != null
+                    ? () => onLongPressed!(label)
+                    : null, // Pass the onLongPressed callback
                 bgColor: bgColor,
                 fontWeight: FontWeight.normal,
                 customWidth: buttonWidth,

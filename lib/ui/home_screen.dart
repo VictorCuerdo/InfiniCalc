@@ -1,13 +1,11 @@
 // ignore_for_file: library_private_types_in_public_api
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
-import 'package:infinicalc/controllers/font_size_provider.dart';
 import 'package:infinicalc/widgets/button_row.dart';
 import 'package:infinicalc/widgets/dropdown_menu.dart' as my_widgets;
 import 'package:infinicalc/widgets/dropdown_menuformat.dart';
-import 'package:provider/provider.dart';
+import 'package:infinicalc/widgets/matrix_menus.dart';
 
 import '../controllers/calculator_controller.dart';
 import '../models/calculator_model.dart';
@@ -21,27 +19,35 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Color backgroundColor =
-      const Color(0xFF464648); // Adjust as necessary// Default background color
+  Color backgroundColor = const Color(0xFF464648);
   final CalculatorModel _model = CalculatorModel();
   late final CalculatorController _controller;
   final GlobalKey xEButtonKey = GlobalKey();
   final GlobalKey buttonRowKey = GlobalKey();
 
+  // Declare a Key for your image, but don't assign it yet
+  late final GlobalKey matrixImageKey;
+
+  // Declare the Image widget, but don't assign it yet
+  late final Image matrixImage;
+
+  // Constructor
   _HomeScreenState() {
     _controller = CalculatorController(_model);
+    // Initialize the matrixImageKey here if it doesn't depend on the context
+    matrixImageKey = GlobalKey();
   }
-  void _changeFontSize(double newSize) {
-    // Get the FontSizeProvider instance
-    FontSizeProvider fontSizeProvider =
-        Provider.of<FontSizeProvider>(context, listen: false);
 
-    // Update the font size
-    fontSizeProvider.fontSize = newSize;
+  @override
+  void initState() {
+    super.initState();
+    // Assign the matrixImage here where it's safe to access other instance members
+    matrixImage = Image.asset('assets/images/matriz.png', key: matrixImageKey);
   }
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Column(
@@ -130,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.black,
                     fontWeight: FontWeight.normal),
               ),
-              Image.asset('assets/images/matriz.png'),
+              matrixImage,
               Math.tex(r'\sum',
                   textStyle:
                       const TextStyle(color: Colors.black, fontSize: 10.0)),
@@ -154,10 +160,18 @@ class _HomeScreenState extends State<HomeScreen> {
               Color(0xFFBAC2CD),
             ],
             onPressed: (label) {
+              print("Button pressed with label: $label");
               if (label is Text && label.data == "x ⟺ E") {
                 _showDropdownMenu(context, label);
-              } else {
-                // Handle other button presses
+              } else if (label is Image && label.key == matrixImageKey) {
+                print("image button pressed once with label: $label");
+              }
+            },
+            onLongPressed: (label) {
+              // The action to take on long press
+              if (label is Image && label.key == matrixImageKey) {
+                // The matrix image was long-pressed, handle the action
+                _showDropdownMenu(context, label);
               }
             },
             tags: const [
@@ -675,95 +689,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   OverlayEntry? _overlayEntry;
 
-  void _showDropdownMenu(BuildContext context, dynamic label) {
-    final String labelText =
-        label is Text ? label.data! : label.toString().tr();
-
-    if (_overlayEntry != null) {
-      // Close the dropdown if it is already open
-      closeDropdown();
-      return; // Return early if we're just closing the current overlay
-    }
-
-    final RenderBox renderBox =
-        buttonRowKey.currentContext!.findRenderObject() as RenderBox;
-    final Offset offset = renderBox.localToGlobal(Offset.zero);
-    final Size size = renderBox.size;
-    double screenWidth = MediaQuery.of(context).size.width;
-    double dropdownWidth = size.width * 0.65;
-    double leftPadding = (screenWidth - dropdownWidth) / 2;
-
-    // Check for the "x ⟺ E" label to display the new menu
-    if (labelText == "x ⟺ E") {
-      _overlayEntry = OverlayEntry(
-        builder: (context) => Positioned(
-          left: leftPadding + 1.5,
-          top: offset.dy + size.height + 58,
-          width: dropdownWidth * 1.1,
-          child: Material(
-            elevation: 10,
-            child: Container(
-              color: Colors.black, // Container color to black
-              height: 270, // or some other appropriate height
-              child: DropdownMenuFormat(
-                closeDropdown:
-                    closeDropdown, // Pass the closeDropdown method here
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-    // Check for the "MENU" label to display the original menu
-    else if (labelText == "MENU") {
-      _overlayEntry = OverlayEntry(
-        builder: (context) => Positioned(
-          left: leftPadding + 1.5,
-          top: offset.dy + size.height,
-          width: dropdownWidth,
-          child: Material(
-            elevation: 10,
-            color: Colors.transparent,
-            child: Container(
-              child: Container(
-                color: Colors.black, // Container color to black
-                height: 300, // or some other appropriate height
-                child: my_widgets.DropdownMenu(
-                  onColorSelected: _changeBackgroundColor,
-                  onSettingsSelected: () {
-                    // Navigate to Settings Screen
-                    closeDropdown();
-                  },
-                  onHistorySelected: () {
-                    // Navigate to History Screen
-                    closeDropdown();
-                  },
-                  onHelpSelected: () {
-                    // Navigate to Help Screen
-                    closeDropdown();
-                  },
-                  onShareSelected: () {
-                    // Navigate to Share Screen
-                    closeDropdown();
-                  },
-                  closeDropdown:
-                      closeDropdown, // Pass the closeDropdown method here
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
-    } else {
-      // Handle other labels if necessary
-    }
-
-    // Insert the overlay into the widget tree if we created one
-    if (_overlayEntry != null) {
-      Overlay.of(context)!.insert(_overlayEntry!);
-    }
-  }
-
   void closeDropdown() {
     _overlayEntry?.remove();
     _overlayEntry = null;
@@ -773,5 +698,198 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       backgroundColor = color;
     });
+  }
+
+  void _showDropdownMenu(BuildContext context, dynamic label) {
+    // Acquire render box of the button row using the global key
+    final RenderBox renderBox =
+        buttonRowKey.currentContext!.findRenderObject() as RenderBox;
+    final Offset offset = renderBox.localToGlobal(Offset.zero);
+    final Size size = renderBox.size;
+
+    // Calculate the position and size for the overlay
+    double screenWidth = MediaQuery.of(context).size.width;
+    double dropdownWidth = size.width * 0.65;
+    double leftPadding = (screenWidth - dropdownWidth) / 2;
+
+    // If an overlay is already displayed, we remove it
+    if (_overlayEntry != null) {
+      closeDropdown();
+      return; // Early return if we're closing the current overlay
+    }
+
+    // Check for image label
+    if (label is Image && label.image is AssetImage) {
+      final AssetImage labelAssetImage = label.image as AssetImage;
+      if (matrixImage.image is AssetImage) {
+        final AssetImage matrixAssetImage = matrixImage.image as AssetImage;
+        if (labelAssetImage.assetName == matrixAssetImage.assetName) {
+          // Now we know that both images are the same asset
+          _overlayEntry = createMatrixImageOverlay(
+              context, offset, size, leftPadding, dropdownWidth);
+          // Insert the overlay into the widget tree if it was created
+          Overlay.of(context)!.insert(_overlayEntry!);
+          return; // Early return since we've handled the Image case
+        }
+      }
+    }
+
+    // Since we didn't return, label is not an Image or the Image doesn't match matrixImage
+    // Proceed to check for text label
+    if (label is Text) {
+      final String labelText = label.data ?? label.toString().tr();
+      if (labelText == "x ⟺ E") {
+        // Create overlay for "x ⟺ E"
+        _overlayEntry =
+            createXOverlay(context, offset, size, leftPadding, dropdownWidth);
+      } else if (labelText == "MENU") {
+        // Create overlay for "MENU"
+        _overlayEntry = createMenuOverlay(
+            context, offset, size, leftPadding, dropdownWidth);
+      } else {
+        // Handle other text labels if necessary
+        // _overlayEntry = createOtherOverlay(...);
+      }
+
+      // Insert the overlay into the widget tree if it was created
+      if (_overlayEntry != null) {
+        Overlay.of(context)!.insert(_overlayEntry!);
+      }
+    }
+  }
+
+  OverlayEntry createMatrixImageOverlay(BuildContext context, Offset offset,
+      Size size, double leftPadding, double dropdownWidth) {
+    return OverlayEntry(
+      builder: (BuildContext context) {
+        return GestureDetector(
+          onTap: closeDropdown,
+          behavior: HitTestBehavior.translucent,
+          child: Container(
+            color: Colors.transparent,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Stack(
+              children: <Widget>[
+                Positioned(
+                  left: leftPadding + 50,
+                  top: offset.dy,
+                  width: dropdownWidth * 1.1,
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Material(
+                      elevation: 10,
+                      child: Container(
+                        color: Colors.black,
+                        height: 580,
+                        child: MatrixMenus(
+                          closeDropdown: closeDropdown,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  OverlayEntry createXOverlay(BuildContext context, Offset offset, Size size,
+      double leftPadding, double dropdownWidth) {
+    return OverlayEntry(
+      builder: (BuildContext context) {
+        return GestureDetector(
+          onTap: closeDropdown,
+          behavior: HitTestBehavior.translucent,
+          child: Container(
+            color: Colors.transparent,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Stack(
+              children: <Widget>[
+                Positioned(
+                  left: leftPadding + 1.5,
+                  top: offset.dy + size.height + 58,
+                  width: dropdownWidth * 1.1,
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Material(
+                      elevation: 10,
+                      child: Container(
+                        color: Colors.black,
+                        height: 270,
+                        child: DropdownMenuFormat(
+                          closeDropdown: closeDropdown,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  OverlayEntry createMenuOverlay(BuildContext context, Offset offset, Size size,
+      double leftPadding, double dropdownWidth) {
+    return OverlayEntry(
+      builder: (BuildContext context) {
+        return GestureDetector(
+          onTap: closeDropdown,
+          behavior: HitTestBehavior.translucent,
+          child: Container(
+            color: Colors.transparent,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Stack(
+              children: <Widget>[
+                Positioned(
+                  left: leftPadding + 1.5,
+                  top: offset.dy + size.height,
+                  width: dropdownWidth,
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Material(
+                      elevation: 10,
+                      color: Colors.transparent,
+                      child: Container(
+                        color: Colors.black,
+                        height: 300,
+                        child: my_widgets.DropdownMenu(
+                          onColorSelected: _changeBackgroundColor,
+                          onSettingsSelected: () {
+                            closeDropdown();
+                            // Navigate to Settings Screen
+                          },
+                          onHistorySelected: () {
+                            closeDropdown();
+                            // Navigate to History Screen
+                          },
+                          onHelpSelected: () {
+                            closeDropdown();
+                            // Navigate to Help Screen
+                          },
+                          onShareSelected: () {
+                            closeDropdown();
+                            // Navigate to Share Screen
+                          },
+                          closeDropdown: closeDropdown,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 }
