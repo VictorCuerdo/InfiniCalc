@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 import 'dart:io';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infinicalc/controllers/navigation_utils.dart';
@@ -26,13 +27,15 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
   String fromPrefix = 'm';
   String toPrefix = 'cm';
   final ScreenshotController screenshotController = ScreenshotController();
-
+  String _conversionFormula = '';
   @override
   void initState() {
     super.initState();
     // Add the convert function as a listener to both text controllers.
     fromController.addListener(convert);
     toController.addListener(convert);
+    // Initialize the conversion formula text
+    _conversionFormula = _getConversionFormula();
   }
 
   @override
@@ -50,7 +53,6 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
       final directory = await getTemporaryDirectory();
       final imagePath = await File('${directory.path}/screenshot.png').create();
       await imagePath.writeAsBytes(imageBytes);
-
       // Using shareXFiles
       await Share.shareXFiles([XFile(imagePath.path)],
           text: 'Check out my distance result!');
@@ -58,32 +60,180 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
   }
 
   void convert() {
-    // Check if the text in fromController is not empty and is a valid number before converting
     if (fromController.text.isEmpty) return;
     var fromValue = double.tryParse(fromController.text);
     if (fromValue == null)
-      return; // Could not parse the number, handle this case appropriately.
+      return; // If it can't be parsed into a number, return.
+    double toValue = 0; // Initialize toValue to a default value
+    // Conversion constants
+    const double meterToCentimeter = 100;
+    const double meterToPicometer = 1e12;
+    const double meterToNanometer = 1e9;
+    const double meterToMicrometer = 1e6;
+    const double meterToMillimeter = 1e3;
+    const double meterToKilometer = 1e-3;
+    const double meterToAngstrom = 1e10;
+    const double meterToThou = 39370.0787;
+    const double meterToInch = 39.3700787;
+    const double meterToFoot = 3.2808399;
+    const double meterToYard = 1.0936133;
+    const double meterToChain = 0.0497097;
+    const double meterToFurlong = 0.00497097;
+    const double meterToMile = 0.000621371;
+    const double meterToFathom = 0.546806649;
+    const double meterToCable = 0.005399568;
+    const double meterToNauticalMile = 0.000539957;
+    const double meterToAstronomicalUnit = 6.68458712e-12;
+    const double meterToParsec = 3.24077929e-17;
 
-    double toValue;
+    switch (fromUnit) {
+      case 'Meters':
+        switch (toUnit) {
+          case 'Centimeters':
+            toValue = fromValue * meterToCentimeter;
+            break;
 
-    if (fromUnit == 'Meters' && toUnit == 'Centimeters') {
-      // If converting from Meters to Centimeters, multiply by 100
-      toValue = fromValue * 100;
-    } else if (fromUnit == 'Centimeters' && toUnit == 'Meters') {
-      // If converting from Centimeters to Meters, divide by 100
-      toValue = fromValue / 100;
-    } else {
-      // If neither Meters nor Centimeters is selected, do not convert
-      // You will later add more conditions here for other units
-      return;
+          case 'Picometers':
+            toValue = fromValue * meterToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * meterToNanometer;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * meterToMicrometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * meterToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * meterToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * meterToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * meterToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * meterToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * meterToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * meterToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * meterToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * meterToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * meterToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * meterToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * meterToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * meterToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * meterToAstronomicalUnit;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * meterToParsec;
+            break;
+          default:
+            return;
+        }
+        break;
+      case 'Picometers':
+        toValue = toUnit == 'Meters' ? fromValue / meterToPicometer : 0;
+        break;
+
+      case 'Centimeters':
+        toValue = toUnit == 'Meters' ? fromValue / meterToCentimeter : 0;
+        break;
+      case 'Nanometers':
+        toValue = toUnit == 'Meters' ? fromValue / meterToNanometer : 0;
+        break;
+      case 'Micrometers':
+        toValue = toUnit == 'Meters' ? fromValue / meterToMicrometer : 0;
+        break;
+
+      case 'Millimeters':
+        toValue = toUnit == 'Meters' ? fromValue / meterToMillimeter : 0;
+        break;
+      case 'Kilometers':
+        toValue = toUnit == 'Meters' ? fromValue / meterToKilometer : 0;
+        break;
+      case 'Angstrom':
+        toValue = toUnit == 'Meters' ? fromValue / meterToAngstrom : 0;
+        break;
+      case 'Thou':
+        toValue = toUnit == 'Meters' ? fromValue / meterToThou : 0;
+        break;
+      case 'Inches':
+        toValue = toUnit == 'Meters' ? fromValue / meterToInch : 0;
+        break;
+      case 'Feet':
+        toValue = toUnit == 'Meters' ? fromValue / meterToFoot : 0;
+        break;
+      case 'Yards':
+        toValue = toUnit == 'Meters' ? fromValue / meterToYard : 0;
+        break;
+      case 'Chains':
+        toValue = toUnit == 'Meters' ? fromValue / meterToChain : 0;
+        break;
+      case 'Furlongs':
+        toValue = toUnit == 'Meters' ? fromValue / meterToFurlong : 0;
+        break;
+      case 'Miles':
+        toValue = toUnit == 'Meters' ? fromValue / meterToMile : 0;
+        break;
+      case 'Fathoms':
+        toValue = toUnit == 'Meters' ? fromValue / meterToFathom : 0;
+        break;
+      case 'Cables':
+        toValue = toUnit == 'Meters' ? fromValue / meterToCable : 0;
+        break;
+      case 'Nautical miles':
+        toValue = toUnit == 'Meters' ? fromValue / meterToNauticalMile : 0;
+        break;
+      case 'Astronomical units':
+        toValue = toUnit == 'Meters' ? fromValue / meterToAstronomicalUnit : 0;
+        break;
+      case 'Parsecs':
+        toValue = toUnit == 'Meters' ? fromValue / meterToParsec : 0;
+        break;
+      // ... (other reverse cases)
+
+      // Add all the other cases for the reverse conversions similarly
+      // ...
+      // Add more cases here
+      default:
+        // Optional: Handle an unknown unit conversion or set toValue as zero
+        toValue = 0;
+        break;
     }
 
-    // Update the 'to' field with the converted value
-    // Ensure that you update the UI on the main thread
     setState(() {
-      toController.text = toValue
-          .toStringAsFixed(2); // Formats the number to have 2 decimal places
+      toController.text = _formatNumber(toValue);
+      _conversionFormula =
+          _getConversionFormula(); // Make sure this function handles the new units
     });
+  }
+
+  String _formatNumber(double value) {
+    String str = value.toStringAsFixed(10); // Adjust the precision as needed
+    // RegExp pattern to remove trailing zeros and optionally the decimal point
+    RegExp regExp = RegExp(r"([.]*0+)(?!.*\d)");
+    str = str.replaceAll(regExp, '');
+    return str;
   }
 
   void swapUnits() {
@@ -101,7 +251,54 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
       toController.text = tempValue;
 
       convert();
+      _conversionFormula = _getConversionFormula(); // Update formula text
     });
+  }
+
+  String _getConversionFormula() {
+    String formula;
+    switch (fromUnit) {
+      case 'Meters':
+        switch (toUnit) {
+          case 'Picometers':
+            formula = 'Multiply the length value by 1,000,000,000,000';
+            break;
+          case 'Nanometers':
+            formula = ''; // Add the appropriate formula text
+            break;
+          case 'Micrometers':
+            formula = ''; // Add the appropriate formula text
+            break;
+          case 'Millimeters':
+            formula = ''; // Add the appropriate formula text
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 100';
+            break;
+          case 'Kilometers':
+            formula = ''; // Add the appropriate formula text
+            break;
+          // ... Continue for all units
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Picometers':
+        switch (toUnit) {
+          case 'Meters':
+            formula = 'Divide the length value by 1,000,000,000,000';
+            break;
+          // Add other cases for Picometers to other units
+          // ...
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      // ... Repeat the same structure for all initial units
+      default:
+        formula = 'Select both units to see the formula';
+    }
+    return formula;
   }
 
   void copyToClipboard(String text, BuildContext context) {
@@ -162,7 +359,7 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
                     icon: const Icon(
                       Icons
                           .swap_horiz, // Changed to swap_vert for a more intuitive design
-                      color: Colors.lightBlue,
+                      color: Color.fromARGB(255, 183, 218, 234),
                       size: 40,
                     ), // Size increased
                     onPressed: swapUnits,
@@ -172,10 +369,30 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
                 ],
               ),
               const SizedBox(height: 30),
-              const Text(
-                'Conversion formula will be displayed here',
-                style: TextStyle(color: Colors.white),
+              RichText(
                 textAlign: TextAlign.center,
+                text: TextSpan(
+                  children: [
+                    const TextSpan(
+                      text: 'Formula:  ',
+                      style: TextStyle(
+                        color:
+                            Colors.orange, // Set the color for 'Hola' to white
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          _conversionFormula, // Keep the original formula style
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -250,35 +467,43 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
             controller: controller,
             keyboardType: TextInputType.number,
             textAlign: TextAlign.center,
-            onSubmitted: (value) => convert(), // <-- Add this line
+            onSubmitted: (value) =>
+                convert(), // Use your existing convert function
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
             decoration: InputDecoration(
-              // Removed prefix from labelText
-              labelText: label,
+              labelText: label, // Keep the label
               filled: true,
               fillColor: Colors.white,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
               enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                borderSide: BorderSide(color: Colors.blue, width: 3.0),
               ),
-              // Removed floatingLabelBehavior as we are no longer using the label as a prefix
-              floatingLabelBehavior: FloatingLabelBehavior.always,
+              //floatingLabelBehavior: FloatingLabelBehavior.always,
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               isDense: true,
-              // Add a prefix Text widget with the prefix variable
-              prefix: Text('$prefix ',
-                  style: const TextStyle(
+              prefix: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  AutoSizeText(
+                    '$prefix ',
+                    style: const TextStyle(
                       color: Colors.lightBlue,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic)),
+                      fontStyle: FontStyle.italic,
+                    ),
+                    maxLines: 1,
+                  ),
+                  // You can add more Widgets here if you need to
+                ],
+              ),
               suffixIcon: IconButton(
                 icon: const Icon(Icons.content_copy),
                 onPressed: () => copyToClipboard(controller.text, context),
@@ -318,13 +543,21 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     ].map<DropdownMenuItem<String>>((String value) {
       return DropdownMenuItem<String>(
         value: value,
-        child: Text(
-          '${_getPrefix(value)} - $value', // '$value${_getPrefix(value)}-', // Swap these to put prefix before unit name
-          style: const TextStyle(
-            color: Color(0xFF9CC0C5),
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                '${_getPrefix(value)} - $value',
+                style: const TextStyle(
+                  color: Color(0xFF9CC0C5),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+                overflow:
+                    TextOverflow.ellipsis, // Use ellipsis for text overflow
+              ),
+            ),
+          ],
         ),
       );
     }).toList();
