@@ -65,7 +65,8 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     if (fromValue == null)
       return; // If it can't be parsed into a number, return.
     double toValue = 0; // Initialize toValue to a default value
-    // Conversion constants
+
+    // Conversion constants for Meters to other units
     const double meterToCentimeter = 100;
     const double meterToPicometer = 1e12;
     const double meterToNanometer = 1e9;
@@ -85,14 +86,150 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     const double meterToNauticalMile = 0.000539957;
     const double meterToAstronomicalUnit = 6.68458712e-12;
     const double meterToParsec = 3.24077929e-17;
+    const double meterToLightYear = 1 / (299792458 * 31557600);
 
+    // Conversion constants for Picometers to other units
+    const double picometerToCentimeter = 1e10;
+    const double picometerToNanometer = 1e3;
+    const double picometerToMicrometer = 1e6;
+    const double picometerToMillimeter = 1e9;
+    const double picometerToKilometer = 1e15;
+    const double picometerToAngstrom = 1e2;
+    const double picometerToThou = 1e12 / meterToThou;
+    const double picometerToInch = 1e12 / meterToInch;
+    const double picometerToFoot = 1e12 / meterToFoot;
+    const double picometerToYard = 1e12 / meterToYard;
+    const double picometerToChain = 1e12 / meterToChain;
+    const double picometerToFurlong = 1e12 / meterToFurlong;
+    const double picometerToMile = 1e12 / meterToMile;
+    const double picometerToFathom = 1e12 / meterToFathom;
+    const double picometerToCable = 1e12 / meterToCable;
+    const double picometerToNauticalMile = 1e12 / meterToNauticalMile;
+    const double picometerToAstronomicalUnit = 1e12 / meterToAstronomicalUnit;
+    const double picometerToLightYear = 1e-12 / (9.461e15);
+    const double picometerToParsec = 1e-12 / (3.086e16);
+
+    // Conversion constants from Nanometers to other units
+    const double nanometerToPicometer = 1e3;
+    const double nanometerToMicrometer = 1e-3;
+    const double nanometerToMillimeter = 1e-6;
+    const double nanometerToCentimeter = 1e-7;
+    const double nanometerToMeter = 1e-9;
+    const double nanometerToKilometer = 1e-12;
+    const double nanometerToAngstrom = 10;
+    const double nanometerToThou = nanometerToMeter * meterToThou;
+    const double nanometerToInch = nanometerToMeter * meterToInch;
+    const double nanometerToFoot = nanometerToMeter * meterToFoot;
+    const double nanometerToYard = nanometerToMeter * meterToYard;
+    const double nanometerToChain = nanometerToMeter * meterToChain;
+    const double nanometerToFurlong = nanometerToMeter * meterToFurlong;
+    const double nanometerToMile = nanometerToMeter * meterToMile;
+    const double nanometerToFathom = nanometerToMeter * meterToFathom;
+    const double nanometerToCable = nanometerToMeter * meterToCable;
+    const double nanometerToNauticalMile =
+        nanometerToMeter * meterToNauticalMile;
+    const double nanometerToAstronomicalUnit =
+        nanometerToMeter * meterToAstronomicalUnit;
+    const double nanometerToLightYear = nanometerToMeter * meterToLightYear;
+    const double nanometerToParsec = nanometerToMeter * meterToParsec;
+// Conversion constants from Centimeters to other units
+    const double centimeterToMeter = 1e-2;
+    const double centimeterToPicometer = 1e10;
+    const double centimeterToNanometer = 1e7;
+    const double centimeterToMicrometer = 1e4;
+    const double centimeterToMillimeter = 10;
+    const double centimeterToKilometer = 1e-5;
+    const double centimeterToAngstrom = 1e8;
+    const double centimeterToThou = centimeterToMeter * meterToThou;
+    const double centimeterToInch = centimeterToMeter * meterToInch;
+    const double centimeterToFoot = centimeterToMeter * meterToFoot;
+    const double centimeterToYard = centimeterToMeter * meterToYard;
+    const double centimeterToChain = centimeterToMeter * meterToChain;
+    const double centimeterToFurlong = centimeterToMeter * meterToFurlong;
+    const double centimeterToMile = centimeterToMeter * meterToMile;
+    const double centimeterToFathom = centimeterToMeter * meterToFathom;
+    const double centimeterToCable = centimeterToMeter * meterToCable;
+    const double centimeterToNauticalMile =
+        centimeterToMeter * meterToNauticalMile;
+    const double centimeterToAstronomicalUnit =
+        centimeterToMeter * meterToAstronomicalUnit;
+    const double centimeterToLightYear = centimeterToMeter * meterToLightYear;
+    const double centimeterToParsec = centimeterToMeter * meterToParsec;
+
+    // Conversion constants from Millimeters to other units
+    const double millimeterToMeter = 1e-3;
+    const double millimeterToPicometer = 1e9;
+    const double millimeterToNanometer = 1e6;
+    const double millimeterToMicrometer = 1e3;
+    const double millimeterToCentimeter = 1e-1;
+    const double millimeterToKilometer = 1e-6;
+    const double millimeterToAngstrom = 1e7;
+    const double millimeterToThou = millimeterToMeter * meterToThou;
+    const double millimeterToInch = millimeterToMeter * meterToInch;
+    const double millimeterToFoot = millimeterToMeter * meterToFoot;
+    const double millimeterToYard = millimeterToMeter * meterToYard;
+    const double millimeterToChain = millimeterToMeter * meterToChain;
+    const double millimeterToFurlong = millimeterToMeter * meterToFurlong;
+    const double millimeterToMile = millimeterToMeter * meterToMile;
+    const double millimeterToFathom = millimeterToMeter * meterToFathom;
+    const double millimeterToCable = millimeterToMeter * meterToCable;
+    const double millimeterToNauticalMile =
+        millimeterToMeter * meterToNauticalMile;
+    const double millimeterToAstronomicalUnit =
+        millimeterToMeter * meterToAstronomicalUnit;
+    const double millimeterToLightYear = millimeterToMeter * meterToLightYear;
+    const double millimeterToParsec = millimeterToMeter * meterToParsec;
+
+    // Conversion constants from Micrometers to other units
+    const double micrometerToCentimeter = 1e-4;
+    const double micrometerToMeter = 1e-6;
+    const double micrometerToPicometer = 1e6;
+    const double micrometerToNanometer = 1e3;
+    const double micrometerToMillimeter = 1e-3;
+    const double micrometerToKilometer = 1e-9;
+    const double micrometerToAngstrom = 1e4;
+    const double micrometerToThou = micrometerToMeter * meterToThou;
+    const double micrometerToInch = micrometerToMeter * meterToInch;
+    const double micrometerToFoot = micrometerToMeter * meterToFoot;
+    const double micrometerToYard = micrometerToMeter * meterToYard;
+    const double micrometerToChain = micrometerToMeter * meterToChain;
+    const double micrometerToFurlong = micrometerToMeter * meterToFurlong;
+    const double micrometerToMile = micrometerToMeter * meterToMile;
+    const double micrometerToFathom = micrometerToMeter * meterToFathom;
+    const double micrometerToCable = micrometerToMeter * meterToCable;
+    const double micrometerToNauticalMile =
+        micrometerToMeter * meterToNauticalMile;
+    const double micrometerToAstronomicalUnit =
+        micrometerToMeter * meterToAstronomicalUnit;
+    const double micrometerToLightYear = micrometerToMeter * meterToLightYear;
+    const double micrometerToParsec = micrometerToMeter * meterToParsec;
+// Conversion constants from Kilometers to other units
+    const double kilometerToMicrometer = 1e9;
+    const double kilometerToCentimeter = 1e5;
+    const double kilometerToMeter = 1e3;
+    const double kilometerToPicometer = 1e12;
+    const double kilometerToNanometer = 1e12;
+    const double kilometerToMillimeter = 1e6;
+    const double kilometerToAngstrom = 1e13;
+    const double kilometerToThou = kilometerToMeter * meterToThou;
+    const double kilometerToInch = kilometerToMeter * meterToInch;
+    const double kilometerToFoot = kilometerToMeter * meterToFoot;
+    const double kilometerToYard = kilometerToMeter * meterToYard;
+    const double kilometerToChain = kilometerToMeter * meterToChain;
+    const double kilometerToFurlong = kilometerToMeter * meterToFurlong;
+    const double kilometerToMile = kilometerToMeter * meterToMile;
+    const double kilometerToFathom = kilometerToMeter * meterToFathom;
+    const double kilometerToCable = kilometerToMeter * meterToCable;
+    const double kilometerToNauticalMile =
+        kilometerToMeter * meterToNauticalMile;
+    const double kilometerToAstronomicalUnit =
+        kilometerToMeter * meterToAstronomicalUnit;
+    const double kilometerToLightYear = kilometerToMeter * meterToLightYear;
+    const double kilometerToParsec = kilometerToMeter * meterToParsec;
     switch (fromUnit) {
+      // METERS UNIT CONVERSION
       case 'Meters':
         switch (toUnit) {
-          case 'Centimeters':
-            toValue = fromValue * meterToCentimeter;
-            break;
-
           case 'Picometers':
             toValue = fromValue * meterToPicometer;
             break;
@@ -104,6 +241,12 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
             break;
           case 'Millimeters':
             toValue = fromValue * meterToMillimeter;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * meterToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue;
             break;
           case 'Kilometers':
             toValue = fromValue * meterToKilometer;
@@ -144,79 +287,437 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
           case 'Astronomical units':
             toValue = fromValue * meterToAstronomicalUnit;
             break;
+          case 'Light years':
+            toValue = fromValue * meterToLightYear;
+            break;
           case 'Parsecs':
             toValue = fromValue * meterToParsec;
             break;
-          default:
-            return;
         }
         break;
+// PICOMETERS UNIT CONVERSION
       case 'Picometers':
-        toValue = toUnit == 'Meters' ? fromValue / meterToPicometer : 0;
+        switch (toUnit) {
+          case 'Picometers':
+            toValue = fromValue;
+            break;
+          case 'Nanometers':
+            toValue = fromValue / picometerToNanometer;
+            break;
+          case 'Micrometers':
+            toValue = fromValue / picometerToMicrometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue / picometerToMillimeter;
+            break;
+          case 'Centimeters':
+            toValue = fromValue / picometerToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue / meterToPicometer;
+            break;
+          case 'Kilometers':
+            toValue = fromValue / picometerToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue / picometerToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue / picometerToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue / picometerToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue / picometerToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue / picometerToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue / picometerToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue / picometerToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue / picometerToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue / picometerToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue / picometerToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue / picometerToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue / picometerToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * picometerToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * picometerToParsec;
+            break;
+          // Add cases for any additional units here
+        }
         break;
-
-      case 'Centimeters':
-        toValue = toUnit == 'Meters' ? fromValue / meterToCentimeter : 0;
-        break;
+// NANOMETERS UNIT CONVERSION
       case 'Nanometers':
-        toValue = toUnit == 'Meters' ? fromValue / meterToNanometer : 0;
-        break;
-      case 'Micrometers':
-        toValue = toUnit == 'Meters' ? fromValue / meterToMicrometer : 0;
+        switch (toUnit) {
+          case 'Nanometers':
+            toValue = fromValue;
+            break;
+          case 'Picometers':
+            toValue = fromValue * nanometerToPicometer;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * nanometerToMicrometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * nanometerToMillimeter;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * nanometerToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * nanometerToMeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * nanometerToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * nanometerToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * nanometerToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * nanometerToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * nanometerToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * nanometerToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * nanometerToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * nanometerToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * nanometerToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * nanometerToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * nanometerToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * nanometerToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * nanometerToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * nanometerToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * nanometerToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
         break;
 
+      // ... repeat similar structure for Micrometers, Millimeters, etc. ...
+// CENTIMETERS UNIT CONVERSION
+      case 'Centimeters':
+        switch (toUnit) {
+          case 'Centimeters':
+            toValue = fromValue;
+            break;
+          case 'Meters':
+            toValue = fromValue * centimeterToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * centimeterToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * centimeterToNanometer;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * centimeterToMicrometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * centimeterToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * centimeterToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * centimeterToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * centimeterToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * centimeterToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * centimeterToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * centimeterToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * centimeterToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * centimeterToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * centimeterToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * centimeterToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * centimeterToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * centimeterToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * centimeterToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * centimeterToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * centimeterToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+
+// MILLIMETERS UNIT CONVERSION
       case 'Millimeters':
-        toValue = toUnit == 'Meters' ? fromValue / meterToMillimeter : 0;
-        break;
-      case 'Kilometers':
-        toValue = toUnit == 'Meters' ? fromValue / meterToKilometer : 0;
-        break;
-      case 'Angstrom':
-        toValue = toUnit == 'Meters' ? fromValue / meterToAngstrom : 0;
-        break;
-      case 'Thou':
-        toValue = toUnit == 'Meters' ? fromValue / meterToThou : 0;
-        break;
-      case 'Inches':
-        toValue = toUnit == 'Meters' ? fromValue / meterToInch : 0;
-        break;
-      case 'Feet':
-        toValue = toUnit == 'Meters' ? fromValue / meterToFoot : 0;
-        break;
-      case 'Yards':
-        toValue = toUnit == 'Meters' ? fromValue / meterToYard : 0;
-        break;
-      case 'Chains':
-        toValue = toUnit == 'Meters' ? fromValue / meterToChain : 0;
-        break;
-      case 'Furlongs':
-        toValue = toUnit == 'Meters' ? fromValue / meterToFurlong : 0;
-        break;
-      case 'Miles':
-        toValue = toUnit == 'Meters' ? fromValue / meterToMile : 0;
-        break;
-      case 'Fathoms':
-        toValue = toUnit == 'Meters' ? fromValue / meterToFathom : 0;
-        break;
-      case 'Cables':
-        toValue = toUnit == 'Meters' ? fromValue / meterToCable : 0;
-        break;
-      case 'Nautical miles':
-        toValue = toUnit == 'Meters' ? fromValue / meterToNauticalMile : 0;
-        break;
-      case 'Astronomical units':
-        toValue = toUnit == 'Meters' ? fromValue / meterToAstronomicalUnit : 0;
-        break;
-      case 'Parsecs':
-        toValue = toUnit == 'Meters' ? fromValue / meterToParsec : 0;
-        break;
-      // ... (other reverse cases)
+        switch (toUnit) {
+          case 'Millimeters':
+            toValue = fromValue;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * millimeterToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * millimeterToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * millimeterToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * millimeterToNanometer;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * millimeterToMicrometer;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * millimeterToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * millimeterToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * millimeterToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * millimeterToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * millimeterToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * millimeterToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * millimeterToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * millimeterToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * millimeterToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * millimeterToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * millimeterToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * millimeterToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * millimeterToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * millimeterToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * millimeterToParsec;
+            break;
+        }
 
-      // Add all the other cases for the reverse conversions similarly
-      // ...
-      // Add more cases here
+        break;
+
+// MICROMETERS UNIT CONVERSION
+      case 'Micrometers':
+        switch (toUnit) {
+          case 'Micrometers':
+            toValue = fromValue;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * micrometerToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * micrometerToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * micrometerToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * micrometerToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * micrometerToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * micrometerToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * micrometerToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * micrometerToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * micrometerToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * micrometerToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * micrometerToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * micrometerToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * micrometerToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * micrometerToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * micrometerToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * micrometerToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * micrometerToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * micrometerToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * micrometerToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * micrometerToParsec;
+            break;
+        }
+
+        break;
+
+      // KILOMETERS UNIT CONVERSION
+      case 'Kilometers':
+        switch (toUnit) {
+          case 'Kilometers':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * kilometerToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * kilometerToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * kilometerToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * kilometerToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * kilometerToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * kilometerToMillimeter;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * kilometerToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * kilometerToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * kilometerToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * kilometerToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * kilometerToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * kilometerToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * kilometerToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * kilometerToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * kilometerToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * kilometerToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * kilometerToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * kilometerToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * kilometerToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * kilometerToParsec;
+            break;
+        }
+
+        break;
+      // ... and so on for each unit ...
+
       default:
-        // Optional: Handle an unknown unit conversion or set toValue as zero
+        // Optionally handle unknown unit conversions
         toValue = 0;
         break;
     }
@@ -240,18 +741,20 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     setState(() {
       String tempUnit = fromUnit;
       String tempPrefix = fromPrefix;
-      String tempValue = fromController.text;
 
+      // Swap only the units and prefixes, not the values in the TextFields.
       fromUnit = toUnit;
       fromPrefix = toPrefix;
-      fromController.text = toController.text;
 
       toUnit = tempUnit;
       toPrefix = tempPrefix;
-      toController.text = tempValue;
+
+      // We do not switch the text values of the controllers anymore.
+      // fromController.text and toController.text remain unchanged.
 
       convert();
-      _conversionFormula = _getConversionFormula(); // Update formula text
+      _conversionFormula =
+          _getConversionFormula(); // Update formula text if needed
     });
   }
 
@@ -349,24 +852,30 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
                   ),
                 ],
               ),
-              const SizedBox(height: 270), // Adjust space as needed
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildUnitColumn('From', fromController, fromUnit, fromPrefix,
-                      true), // for 'From' column
-                  IconButton(
-                    icon: const Icon(
-                      Icons
-                          .swap_horiz, // Changed to swap_vert for a more intuitive design
-                      color: Color.fromARGB(255, 183, 218, 234),
-                      size: 40,
-                    ), // Size increased
-                    onPressed: swapUnits,
-                  ),
-                  _buildUnitColumn('To', toController, toUnit, toPrefix,
-                      false), // for 'To' column
-                ],
+
+              const SizedBox(height: 165),
+              // Adjusted layout for 'From' input and dropdown
+              Container(
+                padding: const EdgeInsets.only(left: 0.125, right: 0.125),
+                width: double.infinity,
+                child: _buildUnitColumn(
+                    'From', fromController, fromUnit, fromPrefix, true),
+              ),
+              // Switch icon in vertical orientation
+              IconButton(
+                icon: const Icon(
+                  Icons.swap_vert,
+                  color: Color.fromARGB(255, 183, 218, 234),
+                  size: 40,
+                ),
+                onPressed: swapUnits,
+              ),
+              // Adjusted layout for 'To' input and dropdown
+              Container(
+                padding: const EdgeInsets.only(left: 0.125, right: 0.125),
+                width: double.infinity,
+                child: _buildUnitColumn(
+                    'To', toController, toUnit, toPrefix, false),
               ),
               const SizedBox(height: 30),
               RichText(
@@ -457,9 +966,12 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     }
   }
 
+  // Update the _buildUnitColumn method to include padding and width requirements
   Widget _buildUnitColumn(String label, TextEditingController controller,
       String unit, String prefix, bool isFrom) {
-    return Expanded(
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+          horizontal: 0.125), // 12.5% padding from each side
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -510,6 +1022,8 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
               ),
             ),
           ),
+          const SizedBox(
+              height: 10), // Space between the TextField and dropdown
           _buildDropdownButton(label.toLowerCase(), unit, isFrom),
         ],
       ),
@@ -550,11 +1064,12 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
                 '${_getPrefix(value)} - $value',
                 style: const TextStyle(
                   color: Color(0xFF9CC0C5),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
+                  // fontWeight: FontWeight.bold,
+                  fontSize: 23,
                 ),
-                overflow:
-                    TextOverflow.ellipsis, // Use ellipsis for text overflow
+
+                overflow: TextOverflow.visible,
+                // Use ellipsis for text overflow
               ),
             ),
           ],
@@ -598,6 +1113,20 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
       },
       dropdownColor: const Color(0xFF303134),
       items: items,
+      selectedItemBuilder: (BuildContext context) {
+        return items.map((DropdownMenuItem<String> item) {
+          return Center(
+            // Center only the selected item
+            child: Text(
+              item.value!,
+              style: const TextStyle(
+                color: Color(0xFF9CC0C5),
+                fontSize: 23,
+              ),
+            ),
+          );
+        }).toList();
+      },
     );
   }
 }
