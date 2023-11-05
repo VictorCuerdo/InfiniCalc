@@ -226,6 +226,306 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
         kilometerToMeter * meterToAstronomicalUnit;
     const double kilometerToLightYear = kilometerToMeter * meterToLightYear;
     const double kilometerToParsec = kilometerToMeter * meterToParsec;
+
+    // Conversion constants from Angstroms to other units
+    const double angstromToMicrometer = 1e-4;
+    const double angstromToCentimeter = 1e-8;
+    const double angstromToMeter = 1e-10;
+    const double angstromToPicometer = 100;
+    const double angstromToNanometer = 0.1;
+    const double angstromToMillimeter = 1e-7;
+    const double angstromToKilometer = 1e-13;
+    const double angstromToThou = angstromToMeter * meterToThou;
+    const double angstromToInch = angstromToMeter * meterToInch;
+    const double angstromToFoot = angstromToMeter * meterToFoot;
+    const double angstromToYard = angstromToMeter * meterToYard;
+    const double angstromToChain = angstromToMeter * meterToChain;
+    const double angstromToFurlong = angstromToMeter * meterToFurlong;
+    const double angstromToMile = angstromToMeter * meterToMile;
+    const double angstromToFathom = angstromToMeter * meterToFathom;
+    const double angstromToCable = angstromToMeter * meterToCable;
+    const double angstromToNauticalMile = angstromToMeter * meterToNauticalMile;
+    const double angstromToAstronomicalUnit =
+        angstromToMeter * meterToAstronomicalUnit;
+    const double angstromToLightYear = angstromToMeter * meterToLightYear;
+    const double angstromToParsec = angstromToMeter * meterToParsec;
+// Conversion constants from Thou (thousandths of an inch) to other units
+    const double thouToMicrometer = 25.4;
+    const double thouToCentimeter = 0.0254;
+    const double thouToMeter = 0.0000254;
+    const double thouToPicometer = 25.4e9;
+    const double thouToNanometer = 25.4e6;
+    const double thouToMillimeter = 0.0254;
+    const double thouToKilometer = 2.54e-8;
+    const double thouToAngstrom = 254e7;
+    const double thouToInch = 0.001;
+    const double thouToFoot = thouToInch / 12;
+    const double thouToYard = thouToFoot / 3;
+    const double thouToChain = thouToYard / 22;
+    const double thouToFurlong = thouToChain / 10;
+    const double thouToMile = thouToYard / 1760;
+    const double thouToFathom = thouToYard / 2;
+    const double thouToCable = thouToYard / 202.5;
+    const double thouToNauticalMile = thouToYard / 2025;
+    const double thouToAstronomicalUnit = thouToMeter / 149597870700;
+    const double thouToLightYear = thouToMeter / (9.461e15);
+    const double thouToParsec = thouToMeter / (3.086e16);
+// Conversion constants from Inches to other units
+    const double inchToMicrometer = 25400;
+    const double inchToCentimeter = 2.54;
+    const double inchToMeter = 0.0254;
+    const double inchToPicometer = 2.54e10;
+    const double inchToNanometer = 2.54e7;
+    const double inchToMillimeter = 25.4;
+    const double inchToKilometer = 2.54e-5;
+    const double inchToAngstrom = 2.54e8;
+    const double inchToThou = 1000;
+    const double inchToFoot = 1 / 12.0;
+    const double inchToYard = 1 / 36.0;
+    const double inchToChain = inchToMeter / 20.1168;
+    const double inchToFurlong = inchToMeter / 201.168;
+    const double inchToMile = inchToMeter / 1609.344;
+    const double inchToFathom = inchToMeter / 1.8288;
+    const double inchToCable = inchToMeter / 185.2;
+    const double inchToNauticalMile = inchToMeter / 1852;
+    const double inchToAstronomicalUnit = inchToMeter / 149597870700;
+    const double inchToLightYear = inchToMeter / (9.461e15);
+    const double inchToParsec = inchToMeter / (3.086e16);
+// Conversion constants from Feet to other units
+    const double footToMicrometer = 304800;
+    const double footToCentimeter = 30.48;
+    const double footToMeter = 0.3048;
+    const double footToPicometer = 3.048e11;
+    const double footToNanometer = 3.048e8;
+    const double footToMillimeter = 304.8;
+    const double footToKilometer = 3.048e-4;
+    const double footToAngstrom = 3.048e9;
+    const double footToThou = 12000;
+    const double footToInch = 12;
+    const double footToYard = 1 / 3.0;
+    const double footToChain = footToMeter / 20.1168;
+    const double footToFurlong = footToMeter / 201.168;
+    const double footToMile = footToMeter / 1609.344;
+    const double footToFathom = footToMeter / 1.8288;
+    const double footToCable = footToMeter / 185.2;
+    const double footToNauticalMile = footToMeter / 1852;
+    const double footToAstronomicalUnit = footToMeter / 149597870700;
+    const double footToLightYear = footToMeter / (9.461e15);
+    const double footToParsec = footToMeter / (3.086e16);
+    // Conversion constants from Yards to other units
+    const double yardToMicrometer = 914400;
+    const double yardToCentimeter = 91.44;
+    const double yardToMeter = 0.9144;
+    const double yardToPicometer = 9.144e11;
+    const double yardToNanometer = 9.144e8;
+    const double yardToMillimeter = 914.4;
+    const double yardToKilometer = 9.144e-4;
+    const double yardToAngstrom = 9.144e9;
+    const double yardToThou = 36000;
+    const double yardToInch = 36;
+    const double yardToFoot = 3;
+    const double yardToChain = yardToMeter / 20.1168;
+    const double yardToFurlong = yardToMeter / 201.168;
+    const double yardToMile = yardToMeter / 1609.344;
+    const double yardToFathom = yardToMeter / 1.8288;
+    const double yardToCable = yardToMeter / 185.2;
+    const double yardToNauticalMile = yardToMeter / 1852;
+    const double yardToAstronomicalUnit = yardToMeter / 149597870700;
+    const double yardToLightYear = yardToMeter / (9.461e15);
+    const double yardToParsec = yardToMeter / (3.086e16);
+    // Conversion constants from Chains to other units
+    const double chainToMicrometer = 2.01168e7;
+    const double chainToCentimeter = 2011.68;
+    const double chainToMeter = 20.1168;
+    const double chainToPicometer = 2.01168e13;
+    const double chainToNanometer = 2.01168e10;
+    const double chainToMillimeter = 20116.8;
+    const double chainToKilometer = 0.0201168;
+    const double chainToAngstrom = 2.01168e11;
+    const double chainToThou = 20116800;
+    const double chainToInch = 792;
+    const double chainToFoot = 66;
+    const double chainToYard = 22;
+    const double chainToFurlong = 0.1;
+    const double chainToMile = 0.0125;
+    const double chainToFathom = 11;
+    const double chainToCable = chainToMeter / 185.2;
+    const double chainToNauticalMile = chainToMeter / 1852;
+    const double chainToAstronomicalUnit = chainToMeter / 149597870700;
+    const double chainToLightYear = chainToMeter / (9.461e15);
+    const double chainToParsec = chainToMeter / (3.086e16);
+    // Conversion constants from Furlongs to other units
+    const double furlongToMicrometer = 2.01168e8;
+    const double furlongToCentimeter = 20116.8;
+    const double furlongToMeter = 201.168;
+    const double furlongToPicometer = 2.01168e14;
+    const double furlongToNanometer = 2.01168e11;
+    const double furlongToMillimeter = 201168;
+    const double furlongToKilometer = 0.201168;
+    const double furlongToAngstrom = 2.01168e12;
+    const double furlongToThou = 2.01168e9;
+    const double furlongToInch = 7920;
+    const double furlongToFoot = 660;
+    const double furlongToYard = 220;
+    const double furlongToChain = 10;
+    const double furlongToMile = 0.125;
+    const double furlongToFathom = 110;
+    const double furlongToCable = furlongToMeter / 185.2;
+    const double furlongToNauticalMile = furlongToMeter / 1852;
+    const double furlongToAstronomicalUnit = furlongToMeter / 149597870700;
+    const double furlongToLightYear = furlongToMeter / (9.461e15);
+    const double furlongToParsec = furlongToMeter / (3.086e16);
+    // Conversion constants from Miles to other units
+    const double mileToMicrometer = 1.609344e9;
+    const double mileToCentimeter = 1.609344e5;
+    const double mileToMeter = 1609.344;
+    const double mileToPicometer = 1.609344e15;
+    const double mileToNanometer = 1.609344e12;
+    const double mileToMillimeter = 1.609344e6;
+    const double mileToKilometer = 1.609344;
+    const double mileToAngstrom = 1.609344e13;
+    const double mileToThou = 1.609344e7;
+    const double mileToInch = 63360;
+    const double mileToFoot = 5280;
+    const double mileToYard = 1760;
+    const double mileToChain = mileToMeter / 20.1168;
+    const double mileToFurlong = 8;
+    const double mileToFathom = mileToYard * 2;
+    const double mileToCable = mileToMeter / 185.2;
+    const double mileToNauticalMile = mileToMeter / 1852;
+    const double mileToAstronomicalUnit = mileToMeter / 149597870700;
+    const double mileToLightYear = mileToMeter / (9.461e15);
+    const double mileToParsec = mileToMeter / (3.086e16);
+    // Conversion constants from Fathoms to other units
+    const double fathomToMicrometer = 1828800;
+    const double fathomToCentimeter = 182.88;
+    const double fathomToMeter = 1.8288;
+    const double fathomToPicometer = 1.8288e12;
+    const double fathomToNanometer = 1.8288e9;
+    const double fathomToMillimeter = 1828.8;
+    const double fathomToKilometer = 0.0018288;
+    const double fathomToAngstrom = 1.8288e10;
+    const double fathomToThou = 72000;
+    const double fathomToInch = 72;
+    const double fathomToFoot = 6;
+    const double fathomToYard = 2;
+    const double fathomToChain = fathomToMeter / 20.1168;
+    const double fathomToFurlong = fathomToMeter / 201.168;
+    const double fathomToMile = fathomToMeter / 1609.344;
+    const double fathomToCable = fathomToMeter / 185.2;
+    const double fathomToNauticalMile = fathomToMeter / 1852;
+    const double fathomToAstronomicalUnit = fathomToMeter / 149597870700;
+    const double fathomToLightYear = fathomToMeter / (9.461e15);
+    const double fathomToParsec = fathomToMeter / (3.086e16);
+    // Conversion constants from Cables to other units
+    const double cableToMicrometer = 185200000;
+    const double cableToCentimeter = 185200;
+    const double cableToMeter = 185.2;
+    const double cableToPicometer = 1.852e14;
+    const double cableToNanometer = 1.852e11;
+    const double cableToMillimeter = 185200;
+    const double cableToKilometer = 0.1852;
+    const double cableToAngstrom = 1.852e12;
+    const double cableToThou = 7.28346457e6;
+    const double cableToInch = 7283.46457;
+    const double cableToFoot = 607.788714;
+    const double cableToYard = 202.596238;
+    const double cableToChain =
+        9.1; // Approximate value, since one cable is roughly 1/10 of a chain
+    const double cableToFurlong = cableToMeter / 201.168;
+    const double cableToMile = cableToMeter / 1609.344;
+    const double cableToFathom = cableToMeter / 1.8288;
+    const double cableToNauticalMile =
+        1 / 10.0; // There are approximately 10 cables in a nautical mile
+    const double cableToAstronomicalUnit = cableToMeter / 149597870700;
+    const double cableToLightYear = cableToMeter / (9.461e15);
+    const double cableToParsec = cableToMeter / (3.086e16);
+    // Conversion constants from Nautical Miles to other units
+    const double nauticalMileToMicrometer = 1.852e9;
+    const double nauticalMileToCentimeter = 1.852e5;
+    const double nauticalMileToMeter = 1852;
+    const double nauticalMileToPicometer = 1.852e15;
+    const double nauticalMileToNanometer = 1.852e12;
+    const double nauticalMileToMillimeter = 1.852e6;
+    const double nauticalMileToKilometer = 1.852;
+    const double nauticalMileToAngstrom = 1.852e13;
+    const double nauticalMileToThou = 1.852e8;
+    const double nauticalMileToInch = 72913.3858;
+    const double nauticalMileToFoot = 6076.11549;
+    const double nauticalMileToYard = 2025.37183;
+    const double nauticalMileToChain = nauticalMileToMeter / 20.1168;
+    const double nauticalMileToFurlong = nauticalMileToMeter / 201.168;
+    const double nauticalMileToMile = nauticalMileToMeter / 1609.344;
+    const double nauticalMileToFathom = nauticalMileToMeter / 1.8288;
+    const double nauticalMileToCable =
+        10; // Nautical miles to cables is a defined conversion
+    const double nauticalMileToAstronomicalUnit =
+        nauticalMileToMeter / 149597870700;
+    const double nauticalMileToLightYear = nauticalMileToMeter / (9.461e15);
+    const double nauticalMileToParsec = nauticalMileToMeter / (3.086e16);
+    // Conversion constants from Astronomical Units to other units
+    const double auToMicrometer = 1.496e14;
+    const double auToCentimeter = 1.496e12;
+    const double auToMeter = 1.496e11;
+    const double auToPicometer = 1.496e23;
+    const double auToNanometer = 1.496e17;
+    const double auToMillimeter = 1.496e14;
+    const double auToKilometer = 1.496e8;
+    const double auToAngstrom = 1.496e21;
+    const double auToThou = 5.889e12;
+    const double auToInch = 5.889e10;
+    const double auToFoot = 4.908e9;
+    const double auToYard = 1.636e9;
+    const double auToChain = 7.472e7;
+    const double auToFurlong = 9.340e6;
+    const double auToMile = 9.296e7;
+    const double auToFathom = 8.172e8;
+    const double auToCable = 7.728e7;
+    const double auToNauticalMile = 8.05e7;
+    const double auToLightYear = auToMeter / (9.461e15);
+    const double auToParsec = auToMeter / (3.086e16);
+    // Conversion constants from Light Years to other units
+    const double lightYearToMicrometer = 9.461e21;
+    const double lightYearToCentimeter = 9.461e17;
+    const double lightYearToMeter = 9.461e15;
+    const double lightYearToPicometer = 9.461e27;
+    const double lightYearToNanometer = 9.461e24;
+    const double lightYearToMillimeter = 9.461e18;
+    const double lightYearToKilometer = 9.461e12;
+    const double lightYearToAngstrom = 9.461e25;
+    const double lightYearToThou = 3.724e20;
+    const double lightYearToInch = 3.724e19;
+    const double lightYearToFoot = 3.103e18;
+    const double lightYearToYard = 1.034e18;
+    const double lightYearToChain = 4.708e16;
+    const double lightYearToFurlong = 5.885e15;
+    const double lightYearToMile = 5.879e12;
+    const double lightYearToFathom = 5.182e17;
+    const double lightYearToCable = 4.845e14;
+    const double lightYearToNauticalMile = 5.108e12;
+    const double lightYearToAstronomicalUnit = lightYearToMeter / 149597870700;
+    const double lightYearToParsec = lightYearToMeter / 3.086e16;
+    // Conversion constants from Parsecs to other units
+    const double parsecToMicrometer = 3.086e22;
+    const double parsecToCentimeter = 3.086e18;
+    const double parsecToMeter = 3.086e16;
+    const double parsecToPicometer = 3.086e28;
+    const double parsecToNanometer = 3.086e25;
+    const double parsecToMillimeter = 3.086e19;
+    const double parsecToKilometer = 3.086e13;
+    const double parsecToAngstrom = 3.086e27;
+    const double parsecToThou = 1.21483369e21;
+    const double parsecToInch = 1.21483369e20;
+    const double parsecToFoot = 1.01236141e19;
+    const double parsecToYard = 3.37453804e18;
+    const double parsecToChain = 1.53824524e17;
+    const double parsecToFurlong = 1.92280655e16;
+    const double parsecToMile = 1.91735122e13;
+    const double parsecToFathom = 1.68626902e18;
+    const double parsecToCable = 1.56974849e15;
+    const double parsecToNauticalMile = 1.67219021e13;
+    const double parsecToAstronomicalUnit = parsecToMeter / 149597870700;
+    const double parsecToLightYear = parsecToMeter / 9.461e15;
     switch (fromUnit) {
       // METERS UNIT CONVERSION
       case 'Meters':
@@ -714,8 +1014,969 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
         }
 
         break;
-      // ... and so on for each unit ...
 
+      // ANGSTROM UNIT CONVERSION
+      case 'Angstrom':
+        switch (toUnit) {
+          case 'Angstrom':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * angstromToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * angstromToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * angstromToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * angstromToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * angstromToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * angstromToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * angstromToKilometer;
+            break;
+          case 'Thou':
+            toValue = fromValue * angstromToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * angstromToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * angstromToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * angstromToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * angstromToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * angstromToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * angstromToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * angstromToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * angstromToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * angstromToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * angstromToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * angstromToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * angstromToParsec;
+            break;
+        }
+
+        break;
+// THOU UNIT CONVERSION
+      case 'Thou':
+        switch (toUnit) {
+          case 'Thou':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * thouToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * thouToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * thouToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * thouToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * thouToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * thouToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * thouToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * thouToAngstrom;
+            break;
+          case 'Inches':
+            toValue = fromValue * thouToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * thouToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * thouToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * thouToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * thouToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * thouToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * thouToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * thouToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * thouToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * thouToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * thouToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * thouToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+      // ... and so on for each unit ...
+      case 'Inches':
+        switch (toUnit) {
+          case 'Inches':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * inchToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * inchToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * inchToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * inchToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * inchToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * inchToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * inchToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * inchToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * inchToThou;
+            break;
+          case 'Feet':
+            toValue = fromValue * inchToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * inchToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * inchToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * inchToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * inchToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * inchToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * inchToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * inchToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * inchToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * inchToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * inchToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+
+      case 'Feet':
+        switch (toUnit) {
+          case 'Feet':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * footToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * footToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * footToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * footToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * footToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * footToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * footToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * footToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * footToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * footToInch;
+            break;
+          case 'Yards':
+            toValue = fromValue * footToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * footToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * footToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * footToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * footToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * footToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * footToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * footToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * footToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * footToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+      case 'Yards':
+        switch (toUnit) {
+          case 'Yards':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * yardToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * yardToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * yardToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * yardToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * yardToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * yardToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * yardToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * yardToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * yardToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * yardToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * yardToFoot;
+            break;
+          case 'Chains':
+            toValue = fromValue * yardToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * yardToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * yardToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * yardToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * yardToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * yardToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * yardToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * yardToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * yardToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+      case 'Chains':
+        switch (toUnit) {
+          case 'Chains':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * chainToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * chainToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * chainToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * chainToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * chainToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * chainToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * chainToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * chainToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * chainToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * chainToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * chainToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * chainToYard;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * chainToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * chainToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * chainToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * chainToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * chainToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * chainToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * chainToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * chainToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+      case 'Furlongs':
+        switch (toUnit) {
+          case 'Furlongs':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * furlongToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * furlongToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * furlongToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * furlongToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * furlongToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * furlongToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * furlongToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * furlongToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * furlongToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * furlongToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * furlongToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * furlongToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * furlongToChain;
+            break;
+          case 'Miles':
+            toValue = fromValue * furlongToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * furlongToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * furlongToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * furlongToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * furlongToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * furlongToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * furlongToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+
+      case 'Miles':
+        switch (toUnit) {
+          case 'Miles':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * mileToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * mileToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * mileToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * mileToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * mileToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * mileToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * mileToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * mileToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * mileToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * mileToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * mileToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * mileToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * mileToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * mileToFurlong;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * mileToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * mileToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * mileToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * mileToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * mileToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * mileToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+
+      case 'Fathoms':
+        switch (toUnit) {
+          case 'Fathoms':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * fathomToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * fathomToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * fathomToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * fathomToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * fathomToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * fathomToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * fathomToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * fathomToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * fathomToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * fathomToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * fathomToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * fathomToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * fathomToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * fathomToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * fathomToMile;
+            break;
+          case 'Cables':
+            toValue = fromValue * fathomToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * fathomToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * fathomToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * fathomToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * fathomToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+      case 'Cables':
+        switch (toUnit) {
+          case 'Cables':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * cableToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * cableToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * cableToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * cableToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * cableToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * cableToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * cableToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * cableToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * cableToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * cableToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * cableToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * cableToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * cableToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * cableToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * cableToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * cableToFathom;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * cableToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * cableToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * cableToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * cableToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+      //CASE FOR NAUTICAL MILES
+      case 'Nautical miles':
+        switch (toUnit) {
+          case 'Nautical miles':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * nauticalMileToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * nauticalMileToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * nauticalMileToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * nauticalMileToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * nauticalMileToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * nauticalMileToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * nauticalMileToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * nauticalMileToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * nauticalMileToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * nauticalMileToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * nauticalMileToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * nauticalMileToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * nauticalMileToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * nauticalMileToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * nauticalMileToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * nauticalMileToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * nauticalMileToCable;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * nauticalMileToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * nauticalMileToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * nauticalMileToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+
+      case 'Astronomical units':
+        switch (toUnit) {
+          case 'Astronomical units':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * auToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * auToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * auToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * auToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * auToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * auToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * auToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * auToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * auToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * auToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * auToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * auToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * auToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * auToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * auToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * auToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * auToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * auToNauticalMile;
+            break;
+          case 'Light years':
+            toValue = fromValue * auToLightYear;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * auToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+
+      case 'Light years':
+        switch (toUnit) {
+          case 'Light years':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * lightYearToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * lightYearToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * lightYearToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * lightYearToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * lightYearToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * lightYearToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * lightYearToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * lightYearToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * lightYearToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * lightYearToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * lightYearToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * lightYearToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * lightYearToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * lightYearToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * lightYearToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * lightYearToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * lightYearToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * lightYearToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * lightYearToAstronomicalUnit;
+            break;
+          case 'Parsecs':
+            toValue = fromValue * lightYearToParsec;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
+
+      case 'Parsecs':
+        switch (toUnit) {
+          case 'Parsecs':
+            toValue = fromValue;
+            break;
+          case 'Micrometers':
+            toValue = fromValue * parsecToMicrometer;
+            break;
+          case 'Centimeters':
+            toValue = fromValue * parsecToCentimeter;
+            break;
+          case 'Meters':
+            toValue = fromValue * parsecToMeter;
+            break;
+          case 'Picometers':
+            toValue = fromValue * parsecToPicometer;
+            break;
+          case 'Nanometers':
+            toValue = fromValue * parsecToNanometer;
+            break;
+          case 'Millimeters':
+            toValue = fromValue * parsecToMillimeter;
+            break;
+          case 'Kilometers':
+            toValue = fromValue * parsecToKilometer;
+            break;
+          case 'Angstrom':
+            toValue = fromValue * parsecToAngstrom;
+            break;
+          case 'Thou':
+            toValue = fromValue * parsecToThou;
+            break;
+          case 'Inches':
+            toValue = fromValue * parsecToInch;
+            break;
+          case 'Feet':
+            toValue = fromValue * parsecToFoot;
+            break;
+          case 'Yards':
+            toValue = fromValue * parsecToYard;
+            break;
+          case 'Chains':
+            toValue = fromValue * parsecToChain;
+            break;
+          case 'Furlongs':
+            toValue = fromValue * parsecToFurlong;
+            break;
+          case 'Miles':
+            toValue = fromValue * parsecToMile;
+            break;
+          case 'Fathoms':
+            toValue = fromValue * parsecToFathom;
+            break;
+          case 'Cables':
+            toValue = fromValue * parsecToCable;
+            break;
+          case 'Nautical miles':
+            toValue = fromValue * parsecToNauticalMile;
+            break;
+          case 'Astronomical units':
+            toValue = fromValue * parsecToAstronomicalUnit;
+            break;
+          case 'Light years':
+            toValue = fromValue * parsecToLightYear;
+            break;
+          // ... repeat for each unit ...
+        }
+        break;
       default:
         // Optionally handle unknown unit conversions
         toValue = 0;
@@ -767,39 +2028,1492 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
             formula = 'Multiply the length value by 1,000,000,000,000';
             break;
           case 'Nanometers':
-            formula = ''; // Add the appropriate formula text
+            formula = 'Multiply the length value by 1,000,000,000';
             break;
           case 'Micrometers':
-            formula = ''; // Add the appropriate formula text
+            formula = 'Multiply the length value by 1,000,000';
             break;
           case 'Millimeters':
-            formula = ''; // Add the appropriate formula text
+            formula = 'Multiply the length value by 1,000';
             break;
           case 'Centimeters':
             formula = 'Multiply the length value by 100';
             break;
-          case 'Kilometers':
-            formula = ''; // Add the appropriate formula text
+          case 'Meters':
+            formula = 'The value remains unchanged';
             break;
-          // ... Continue for all units
+          case 'Kilometers':
+            formula = 'Divide the length value by 1,000';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 10,000,000,000';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 39,370.0787';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 39.3701';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 3.28084';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 1.09361';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 0.0497097';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 0.00497097';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 0.000621371';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 0.546807';
+            break;
+          case 'Cables':
+            formula = 'Multiply the length value by 0.00539957';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 0.000539957';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 149,597,870,700';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+15';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+16';
+            break;
           default:
             formula = 'Unknown conversion';
         }
         break;
+      // PICOMETERS UNIT CONVERSION
       case 'Picometers':
         switch (toUnit) {
+          case 'Picometers':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Nanometers':
+            formula = 'Divide the length value by 1,000';
+            break;
+          case 'Micrometers':
+            formula = 'Divide the length value by 1,000,000';
+            break;
+          case 'Millimeters':
+            formula = 'Divide the length value by 1,000,000,000';
+            break;
+          case 'Centimeters':
+            formula = 'Divide the length value by 10,000,000,000';
+            break;
           case 'Meters':
             formula = 'Divide the length value by 1,000,000,000,000';
             break;
-          // Add other cases for Picometers to other units
-          // ...
+          case 'Kilometers':
+            formula = 'Divide the length value by 1,000,000,000,000,000';
+            break;
+          case 'Angstrom':
+            formula = 'Divide the length value by 100';
+            break;
+          case 'Thou':
+            formula = 'Divide the length value by 25,400,000,000';
+            break;
+          case 'Inches':
+            formula = 'Divide the length value by 25,400,000,000,000';
+            break;
+          case 'Feet':
+            formula = 'Divide the length value by 304,800,000,000,000';
+            break;
+          case 'Yards':
+            formula = 'Divide the length value by 914,400,000,000,000';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 20,116,800,000,000,000';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 201,168,000,000,000,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 1,609,344,000,000,000,000';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 1,828,800,000,000,000';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 185,200,000,000,000';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 1,852,000,000,000,000,000';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.496e+23';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+28';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+28';
+            break;
+// Add cases for any additional units here
           default:
             formula = 'Unknown conversion';
+            break;
+        }
+        break; // This breaks out of the 'Picometers' case
+
+      // NANOMETERS UNIT CONVERSION
+      case 'Nanometers':
+        switch (toUnit) {
+          case 'Nanometers':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1,000';
+            break;
+          case 'Micrometers':
+            formula = 'Divide the length value by 1,000';
+            break;
+          case 'Millimeters':
+            formula = 'Divide the length value by 1,000,000';
+            break;
+          case 'Centimeters':
+            formula = 'Divide the length value by 10,000,000';
+            break;
+          case 'Meters':
+            formula = 'Divide the length value by 1,000,000,000';
+            break;
+          case 'Kilometers':
+            formula = 'Divide the length value by 1,000,000,000,000';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 10';
+            break;
+          case 'Thou (mils)':
+            formula = 'Divide the length value by 25,400,000';
+            break;
+          case 'Inches':
+            formula = 'Divide the length value by 25,400,000,000';
+            break;
+          case 'Feet':
+            formula = 'Divide the length value by 304,800,000,000';
+            break;
+          case 'Yards':
+            formula = 'Divide the length value by 914,400,000,000';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 20,116,800,000,000';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 201,168,000,000,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 1,609,344,000,000,000';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 1,828,800,000,000';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 185,200,000,000,000';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 1,852,000,000,000,000';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.496e+23';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+28';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+28';
+            break;
+
+          // ... and so on for the rest of the units ...
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+
+      case 'Centimeters':
+        switch (toUnit) {
+          case 'Centimeters':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Meters':
+            formula = 'Divide the length value by 100';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 10,000,000,000';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 10,000,000';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 10,000';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 10';
+            break;
+          case 'Kilometers':
+            formula = 'Divide the length value by 100,000';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 100,000,000';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 393.700787';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 0.393700787';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 0.032808399';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 0.010936133';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 0.0049709695';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 0.00049709695';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 0.000006213712';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 0.054680665';
+            break;
+          case 'Cables':
+            formula = 'Multiply the length value by 0.0053961182';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 0.000005399568';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 14959787070000';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+17';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+18';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+      case 'Millimeters':
+        switch (toUnit) {
+          case 'Millimeters':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Centimeters':
+            formula = 'Divide the length value by 10';
+            break;
+          case 'Meters':
+            formula = 'Divide the length value by 1,000';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1,000,000,000';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 1,000,000';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 1,000';
+            break;
+          case 'Kilometers':
+            formula = 'Divide the length value by 1,000,000';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 10,000,000';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 39.3700787';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 0.0393700787';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 0.0032808399';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 0.0010936133';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 0.0000497097';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 0.00000497097';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 0.000000621371192';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 0.000546806649';
+            break;
+          case 'Cables':
+            formula = 'Multiply the length value by 0.0000539956803';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 0.000000539956803';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.495978707e+14';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+18';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+19';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
         }
         break;
-      // ... Repeat the same structure for all initial units
+      case 'Micrometers':
+        switch (toUnit) {
+          case 'Micrometers':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1,000';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 1,000';
+            break;
+          case 'Millimeters':
+            formula = 'Divide the length value by 1,000';
+            break;
+          case 'Centimeters':
+            formula = 'Divide the length value by 10,000';
+            break;
+          case 'Meters':
+            formula = 'Divide the length value by 1,000,000';
+            break;
+          case 'Kilometers':
+            formula = 'Divide the length value by 1,000,000,000';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 10,000';
+            break;
+          case 'Thou':
+            formula = 'Divide the length value by 25.4';
+            break;
+          case 'Inches':
+            formula = 'Divide the length value by 25,400';
+            break;
+          case 'Feet':
+            formula = 'Divide the length value by 304,800';
+            break;
+          case 'Yards':
+            formula = 'Divide the length value by 914,400';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 20,116,800';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 201,168,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 1,609,344,000';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 1,828,800';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 185,200';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 1,852,000,000';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.496e+17';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+21';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+22';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Kilometers':
+        switch (toUnit) {
+          case 'Kilometers':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 1,000';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 100,000';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 1,000,000';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 1,000,000,000';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 1,000,000,000,000';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1,000,000,000,000,000';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 1e+13';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 39,370,078.7';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 39,370.0787';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 3,280.8399';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 1,093.6133';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 49.7096954';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 4.97096954';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 0.621371192';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 546.806649';
+            break;
+          case 'Cables':
+            formula = 'Multiply the length value by 5.39956803';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 0.539956803';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 149.5978707';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+12';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+13';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Angstrom':
+        switch (toUnit) {
+          case 'Angstrom':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 100';
+            break;
+          case 'Nanometers':
+            formula = 'Divide the length value by 10';
+            break;
+          case 'Micrometers':
+            formula = 'Divide the length value by 10,000';
+            break;
+          case 'Millimeters':
+            formula = 'Divide the length value by 10,000,000';
+            break;
+          case 'Centimeters':
+            formula = 'Divide the length value by 100,000,000';
+            break;
+          case 'Meters':
+            formula = 'Divide the length value by 1,000,000,000';
+            break;
+          case 'Kilometers':
+            formula = 'Divide the length value by 1,000,000,000,000';
+            break;
+          case 'Thou':
+            formula = 'Divide the length value by 254,000';
+            break;
+          case 'Inches':
+            formula = 'Divide the length value by 25,400,000';
+            break;
+          case 'Feet':
+            formula = 'Divide the length value by 304,800,000';
+            break;
+          case 'Yards':
+            formula = 'Divide the length value by 914,400,000';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 20,116,800,000';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 201,168,000,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 1,609,344,000,000';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 1,828,800,000';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 185,200,000';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 1,852,000,000,000';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.496e+20';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+25';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+26';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Thou':
+        switch (toUnit) {
+          case 'Thou':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Inches':
+            formula = 'Divide the length value by 1,000';
+            break;
+          case 'Feet':
+            formula = 'Divide the length value by 12,000';
+            break;
+          case 'Yards':
+            formula = 'Divide the length value by 36,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 63,360,000';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 0.0254';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 0.00254';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 0.0000254';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 2.54e-8';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 2.54e+7';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 2.54e+4';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 25.4';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 2.54e+5';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 792,000';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 7,920,000';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 72,000';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 729,000';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 7,290,000';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 2.54e+12';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 2.399e+20';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 7.823e+20';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Inches':
+        switch (toUnit) {
+          case 'Inches':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 1,000';
+            break;
+          case 'Feet':
+            formula = 'Divide the length value by 12';
+            break;
+          case 'Yards':
+            formula = 'Divide the length value by 36';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 63,360';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 25.4';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 2.54';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 0.0254';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 0.0000254';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 25.4e+9';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 25.4e+6';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 25,400';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 254,000,000';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 792';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 7,920';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 72';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 729.13';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 72,913.4';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 9.461e+12';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 5.879e+17';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 1.917e+18';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Feet':
+        switch (toUnit) {
+          case 'Feet':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 12';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 12,000';
+            break;
+          case 'Yards':
+            formula = 'Divide the length value by 3';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 5,280';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 304.8';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 30.48';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 0.3048';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 0.0003048';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 304.8e+9';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 304.8e+6';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 304,800';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 3.048e+9';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 66';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 660';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 6';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 607.611';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 6,076.115';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 9.461e+11';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+16';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+17';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Yards':
+        switch (toUnit) {
+          case 'Yards':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 3';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 36';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 36,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 1,760';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 914.4';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 91.44';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 0.9144';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 0.0009144';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 914.4e+9';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 914.4e+6';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 914,400';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 9.144e+9';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 22';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 220';
+            break;
+          case 'Fathoms':
+            formula = 'Divide the length value by 2';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 202.533';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 2,025.371';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 9.665e+11';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.665e+16';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.118e+17';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Chains':
+        switch (toUnit) {
+          case 'Chains':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 22';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 66';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 792';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 792,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 80';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 20,116.8';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 2,011.68';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 20.1168';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 0.0201168';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 20.1168e+12';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 20.1168e+9';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 20,116,800';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 201,168,000,000';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 10';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 11';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 9.225';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 92.25';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.341e+13';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 1.341e+18';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 4.134e+18';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Furlongs':
+        switch (toUnit) {
+          case 'Furlongs':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 10';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 220';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 660';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 7,920';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 7,920,000';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 8';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 201,168';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 20,116.8';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 201.168';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 0.201168';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 201.168e+12';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 201.168e+9';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 201,168,000';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 2.01168e+12';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 110';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 1.012';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 10.12';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.342e+12';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 1.342e+17';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 4.135e+17';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Miles':
+        switch (toUnit) {
+          case 'Miles':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 8';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 80';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 1,760';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 5,280';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 63,360';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 63,360,000';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 1.609344';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 1,609.344';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 160,934.4';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 1,609,344';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 1,609,344,000';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 1.609344e+12';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1.609344e+15';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 1.609344e+17';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 880';
+            break;
+          case 'Cables':
+            formula = 'Multiply the length value by 88.781';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 0.868976';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 9.296e+7';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 5.879e+12';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 1.917e+13';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Fathoms':
+        switch (toUnit) {
+          case 'Fathoms':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 880';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 110';
+            break;
+          case 'Chains':
+            formula = 'Divide the length value by 11';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 2';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 6';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 72';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 72,000';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 0.0018288';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 1.8288';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 182.88';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 1,828.8';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 1,828,800';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 1.8288e+9';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1.8288e+12';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 1.8288e+13';
+            break;
+          case 'Cables':
+            formula = 'Divide the length value by 101.2';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 1,012';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.22e+11';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 1.22e+16';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.77e+16';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Cables':
+        switch (toUnit) {
+          case 'Cables':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 101.2';
+            break;
+          case 'Miles':
+            formula = 'Divide the length value by 10.012';
+            break;
+          case 'Furlongs':
+            formula = 'Divide the length value by 1.2515';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 8';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 202.53';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 607.61';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 7,291.34';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 7,291,339';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 0.1852';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 185.2';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 18,520';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 185,200';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 185,200,000';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 185.2e+9';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 185.2e+12';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 1.852e+13';
+            break;
+          case 'Nautical miles':
+            formula = 'Divide the length value by 10';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.238e+12';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 1.238e+17';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.819e+17';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Nautical miles':
+        switch (toUnit) {
+          case 'Nautical miles':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Cables':
+            formula = 'Multiply the length value by 10';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 1.15078';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 9.20624';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 92.0624';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 2,025.37';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 6,076.12';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 72,913.4';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 72,913,386';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 1,012.68591';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 1.852';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 1,852';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 185,200';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 1,852,000';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 1,852,000,000';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 1.852e+12';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1.852e+15';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 1.852e+16';
+            break;
+          case 'Astronomical units':
+            formula = 'Divide the length value by 1.496e+8';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 9.461e+12';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.086e+13';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Astronomical units':
+        switch (toUnit) {
+          case 'Astronomical units':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 1.496e+8';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 9.296e+7';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 7.456e+6';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 7.456e+5';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 1.09361e+8';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 3.28084e+8';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 3.93701e+9';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 3.93701e+12';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 5.46807e+7';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 1.496e+5';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 1.496e+8';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 1.496e+10';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 1.496e+11';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 1.496e+14';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 1.496e+17';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 1.496e+20';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 1.496e+21';
+            break;
+          case 'Light years':
+            formula = 'Divide the length value by 63.241';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 206,265';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Light years':
+        switch (toUnit) {
+          case 'Light years':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Astronomical units':
+            formula = 'Multiply the length value by 63,241';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 3.724e+12';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 5.879e+12';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 4.703e+13';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 4.703e+14';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 1.057e+13';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 3.172e+13';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 3.807e+14';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 3.807e+17';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 5.286e+12';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 9.461e+12';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 9.461e+15';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 9.461e+17';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 9.461e+18';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 9.461e+21';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 9.461e+24';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 9.461e+27';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 9.461e+28';
+            break;
+          case 'Parsecs':
+            formula = 'Divide the length value by 3.262';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+      case 'Parsecs':
+        switch (toUnit) {
+          case 'Parsecs':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Light years':
+            formula = 'Multiply the length value by 3.262';
+            break;
+          case 'Astronomical units':
+            formula = 'Multiply the length value by 206,265';
+            break;
+          case 'Nautical miles':
+            formula = 'Multiply the length value by 1.917e+13';
+            break;
+          case 'Miles':
+            formula = 'Multiply the length value by 1.917e+13';
+            break;
+          case 'Furlongs':
+            formula = 'Multiply the length value by 1.534e+14';
+            break;
+          case 'Chains':
+            formula = 'Multiply the length value by 1.534e+15';
+            break;
+          case 'Yards':
+            formula = 'Multiply the length value by 3.447e+14';
+            break;
+          case 'Feet':
+            formula = 'Multiply the length value by 1.034e+15';
+            break;
+          case 'Inches':
+            formula = 'Multiply the length value by 1.240e+16';
+            break;
+          case 'Thou':
+            formula = 'Multiply the length value by 1.240e+19';
+            break;
+          case 'Fathoms':
+            formula = 'Multiply the length value by 1.724e+14';
+            break;
+          case 'Kilometers':
+            formula = 'Multiply the length value by 3.086e+13';
+            break;
+          case 'Meters':
+            formula = 'Multiply the length value by 3.086e+16';
+            break;
+          case 'Centimeters':
+            formula = 'Multiply the length value by 3.086e+18';
+            break;
+          case 'Millimeters':
+            formula = 'Multiply the length value by 3.086e+19';
+            break;
+          case 'Micrometers':
+            formula = 'Multiply the length value by 3.086e+22';
+            break;
+          case 'Nanometers':
+            formula = 'Multiply the length value by 3.086e+25';
+            break;
+          case 'Picometers':
+            formula = 'Multiply the length value by 3.086e+28';
+            break;
+          case 'Angstrom':
+            formula = 'Multiply the length value by 3.086e+29';
+            break;
+          case 'Cables':
+            formula = 'Multiply the length value by 1.666e+14';
+            break;
+
+          default:
+            formula = 'Unknown conversion';
+            break;
+        }
+        break;
+
+// ... after the last specific unit case ...
       default:
         formula = 'Select both units to see the formula';
+        break;
     }
     return formula;
   }
