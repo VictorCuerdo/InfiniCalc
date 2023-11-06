@@ -35,6 +35,8 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
   @override
   void initState() {
     super.initState();
+    fromUnit = ''; // Represent unselected state with an empty string
+    toUnit = ''; // Represent unselected state with an empty string
 
     // Add listener to fromController
     fromController.addListener(() {
@@ -52,6 +54,17 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     fromController.dispose();
     toController.dispose();
     super.dispose();
+  }
+
+  void _resetToDefault() {
+    setState(() {
+      fromController.clear();
+      toController.clear();
+      fromUnit = ''; // Set to an empty string or a valid default value
+      toUnit = ''; // Set to an empty string or a valid default value
+      _isExponentialFormat = false;
+      _conversionFormula = _getConversionFormula();
+    });
   }
 
   void _takeScreenshotAndShare() async {
@@ -3702,12 +3715,32 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
                 ),
               ),
             ],
+            // Add this IconButton where you want the reset button to appear
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _takeScreenshotAndShare, // Updated to the new function
-          backgroundColor: Colors.white,
-          child: const Icon(Icons.share, size: 36, color: Colors.black),
+        floatingActionButton: Container(
+          margin:
+              const EdgeInsets.only(bottom: 50), // Adjust the margin as needed
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Reset button - this can be styled as needed
+              FloatingActionButton(
+                heroTag: 'resetButton', // Unique tag for this FAB
+                onPressed: _resetToDefault,
+                backgroundColor: Colors.red,
+                child: const Icon(Icons.restart_alt,
+                    size: 36, color: Colors.white),
+              ),
+              // Share button
+              FloatingActionButton(
+                heroTag: 'shareButton', // Unique tag for this FAB
+                onPressed: _takeScreenshotAndShare,
+                backgroundColor: Colors.white,
+                child: const Icon(Icons.share, size: 36, color: Colors.black),
+              ),
+            ],
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
@@ -3862,30 +3895,35 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     ].map<DropdownMenuItem<String>>((String value) {
       return DropdownMenuItem<String>(
         value: value,
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Text(
-                '${_getPrefix(value)} - $value',
-                style: const TextStyle(
-                  color: Color(0xFF9CC0C5),
-                  // fontWeight: FontWeight.bold,
-                  fontSize: 23,
-                ),
-
-                overflow: TextOverflow.visible,
-                // Use ellipsis for text overflow
-              ),
-            ),
-          ],
+        child: Text(
+          '${_getPrefix(value)} - $value',
+          style: const TextStyle(
+            color: Color(0xFF9CC0C5),
+            fontSize: 23,
+          ),
+          overflow: TextOverflow.visible,
         ),
       );
     }).toList();
 
-    // Corrected to return DropdownButtonFormField with the proper items.
+    // Insert at the start of the list to act as a non-selectable hint
+    // Insert a non-selectable 'Choose a conversion unit' hint at the start.
+    items.insert(
+        0,
+        const DropdownMenuItem<String>(
+          value: '',
+          enabled: false, // An empty string represents no selection.
+          child: Text(
+            'Choose a conversion unit',
+            style: TextStyle(color: Colors.grey, fontSize: 23),
+          ), // This makes the item non-selectable.
+        ));
+
+    // Build the DropdownButtonFormField using the items list.
+    // Build the DropdownButtonFormField using the items list.
+    // Build the DropdownButtonFormField using the items list.
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
-        // This will integrate the DropdownButtonFormField within the InputDecoration
         contentPadding:
             const EdgeInsets.symmetric(vertical: 0.0, horizontal: 12.0),
         border: OutlineInputBorder(
@@ -3894,37 +3932,41 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
         ),
         filled: true,
         fillColor: const Color(0xFF303134),
-        // You can adjust other styling as needed
       ),
-      value: currentValue,
-      icon: const Icon(Icons.arrow_downward, color: Colors.white, size: 23),
-      elevation: 14,
-      isExpanded: true,
+      value: currentValue.isNotEmpty ? currentValue : null,
+      hint: const Text(
+        'Choose a conversion unit',
+        style: TextStyle(color: Colors.grey, fontSize: 23),
+        textAlign: TextAlign.center, // This is correct for Text widget
+      ),
       onChanged: (String? newValue) {
-        setState(() {
-          if (isFrom) {
-            fromUnit = newValue!;
+        if (newValue != null && newValue.isNotEmpty) {
+          setState(() {
+            if (isFrom) {
+              fromUnit = newValue;
+              fromPrefix = _getPrefix(newValue);
+            } else {
+              toUnit = newValue;
+              toPrefix = _getPrefix(newValue);
+            }
             fromController.clear();
-            fromPrefix = _getPrefix(
-                newValue); // Update the prefix for the 'from' TextField
-          } else {
-            toUnit = newValue!;
             toController.clear();
-            toPrefix = _getPrefix(
-                newValue); // Update the prefix for the 'to' TextField
-          }
-          String unformattedText = fromController.text.replaceAll(',', '');
-          convert(unformattedText);
-        });
+            // Trigger the conversion logic if needed.
+          });
+        }
       },
       dropdownColor: const Color(0xFF303134),
       items: items,
+      isExpanded:
+          true, // This will make sure the dropdown's content is centered
+      icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
+      iconSize: 24,
       selectedItemBuilder: (BuildContext context) {
-        return items.map((DropdownMenuItem<String> item) {
+        return items.map<Widget>((DropdownMenuItem<String> item) {
           return Center(
-            // Center only the selected item
+            // Center the text for the selected item
             child: Text(
-              item.value!,
+              item.value == '' ? 'Choose a conversion unit' : item.value!,
               style: const TextStyle(
                 color: Color(0xFF9CC0C5),
                 fontSize: 23,

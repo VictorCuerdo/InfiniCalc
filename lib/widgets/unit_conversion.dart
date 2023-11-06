@@ -85,7 +85,36 @@ class _UnitConversionState extends State<UnitConversion> {
           // context.navigateTo(UnitConverterRoute());
           // Or with standard Flutter navigation:
           // Navigator.pushNamed(context, '/unit');
-          print('Navigate to $label conversion page');
+        } else if (label == 'Area') {
+          context.navigateTo('/area');
+        } else if (label == 'Volume') {
+          context.navigateTo('/volume');
+        } else if (label == 'Mass') {
+          context.navigateTo('/mass');
+        } else if (label == 'Time') {
+          context.navigateTo('/time');
+        } else if (label == 'Speed') {
+          context.navigateTo('/area');
+        } else if (label == 'Frequency') {
+          context.navigateTo('/frequency');
+        } else if (label == 'Force') {
+          context.navigateTo('/force');
+        } else if (label == 'Torque') {
+          context.navigateTo('/torque');
+        } else if (label == 'Pressure') {
+          context.navigateTo('/pressure');
+        } else if (label == 'Energy') {
+          context.navigateTo('/energy');
+        } else if (label == 'Power') {
+          context.navigateTo('/power');
+        } else if (label == 'Temperature') {
+          context.navigateTo('/temperature');
+        } else if (label == 'Angle') {
+          context.navigateTo('/angle');
+        } else if (label == 'Fuel Consumption') {
+          context.navigateTo('/fuel');
+        } else if (label == 'Data Sizes') {
+          context.navigateTo('/datas');
         }
       },
       child: Container(

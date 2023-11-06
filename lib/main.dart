@@ -2,7 +2,10 @@ import 'package:easy_localization/easy_localization.dart'; // Import easy_locali
 import 'package:flutter/material.dart';
 import 'package:infinicalc/controllers/font_size_provider.dart';
 import 'package:infinicalc/ui/home_screen.dart';
+import 'package:infinicalc/widgets/conversions/area.dart';
 import 'package:infinicalc/widgets/conversions/distance.dart';
+import 'package:infinicalc/widgets/conversions/mass.dart';
+import 'package:infinicalc/widgets/conversions/volume.dart';
 import 'package:infinicalc/widgets/help.dart';
 import 'package:infinicalc/widgets/history.dart';
 import 'package:infinicalc/widgets/settings.dart';
@@ -66,6 +69,26 @@ class InfiniCalc extends StatelessWidget {
           '/history': (context) => const HistoryScreen(),
           '/unit': (context) => const UnitConversion(),
           '/distance': (context) => const DistanceUnitConverter(),
+          '/area': (context) => const AreaUnitConverter(),
+          '/volume': (context) => const VolumeUnitConverter(),
+          '/mass': (context) => const MassUnitConverter(),
+          /*'/time': (context) => const TimeUnitConverter(),
+          '/speed': (context) => const SpeedUnitConverter(),
+          '/frequency': (context) => const FrequencyUnitConverter(),
+          '/force': (context) => const ForceUnitConverter(),
+
+          '/torque': (context) => const TorqueUnitConverter(),
+          '/pressure': (context) => const PressureUnitConverter(),
+          '/energy': (context) => const EnergyUnitConverter(),
+          '/power': (context) => const PowerUnitConverter(),
+          '/temperature': (context) => const TemperatureUnitConverter(),
+          '/angle': (context) => const AngleUnitConverter(),
+          
+          '/fuel': (context) => const FuelUnitConverter(),
+          '/datas': (context) => const DatasUnitConverter(),
+          
+          
+          */
         },
         localizationsDelegates:
             context.localizationDelegates, // Add localization delegates
