@@ -5,6 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infinicalc/controllers/navigation_utils.dart';
+import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
@@ -22,18 +23,26 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
   // Removed duplicate declarations of TextEditingController
   final TextEditingController fromController = TextEditingController();
   final TextEditingController toController = TextEditingController();
-
+  bool _isExponentialFormat = false;
+  // Flag to indicate if the change is due to user input
+  bool _isUserInput = true;
   // Using string variables for prefixes
   String fromPrefix = 'm';
   String toPrefix = 'cm';
   final ScreenshotController screenshotController = ScreenshotController();
   String _conversionFormula = '';
+
   @override
   void initState() {
     super.initState();
-    // Add the convert function as a listener to both text controllers.
-    fromController.addListener(convert);
-    toController.addListener(convert);
+
+    // Add listener to fromController
+    fromController.addListener(() {
+      if (_isUserInput) {
+        convert(fromController.text); // Pass the raw text to convert
+      }
+    });
+
     // Initialize the conversion formula text
     _conversionFormula = _getConversionFormula();
   }
@@ -59,14 +68,13 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     }
   }
 
-  void convert() {
-    if (fromController.text.isEmpty) return;
-    var fromValue = double.tryParse(fromController.text);
-    if (fromValue == null)
-      return; // If it can't be parsed into a number, return.
-    double toValue = 0; // Initialize toValue to a default value
-
-    // Conversion constants for Meters to other units
+  void convert(String text) {
+    String normalizedText = text.replaceAll(',', '.');
+    if (normalizedText.isEmpty) return;
+    var fromValue = double.tryParse(normalizedText);
+    if (fromValue == null) return;
+    double toValue = 0; // Your conversion logic here
+// region myVariables
     const double meterToCentimeter = 100;
     const double meterToPicometer = 1e12;
     const double meterToNanometer = 1e9;
@@ -526,6 +534,7 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
     const double parsecToNauticalMile = 1.67219021e13;
     const double parsecToAstronomicalUnit = parsecToMeter / 149597870700;
     const double parsecToLightYear = parsecToMeter / 9.461e15;
+    // endregion
     switch (fromUnit) {
       // METERS UNIT CONVERSION
       case 'Meters':
@@ -1983,19 +1992,67 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
         break;
     }
 
-    setState(() {
-      toController.text = _formatNumber(toValue);
-      _conversionFormula =
-          _getConversionFormula(); // Make sure this function handles the new units
-    });
+    // Update toController text and conversion formula only if necessary.
+    if (_isUserInput) {
+      setState(() {
+        // Update the display with formatted or exponential number as needed.
+        toController.text = _formatNumber(toValue, forDisplay: true);
+        _conversionFormula = _getConversionFormula();
+      });
+    }
   }
 
-  String _formatNumber(double value) {
-    String str = value.toStringAsFixed(10); // Adjust the precision as needed
-    // RegExp pattern to remove trailing zeros and optionally the decimal point
-    RegExp regExp = RegExp(r"([.]*0+)(?!.*\d)");
-    str = str.replaceAll(regExp, '');
-    return str;
+  String _formatNumber(double value, {bool forDisplay = false}) {
+    if (_isExponentialFormat && forDisplay) {
+      // Return the number in exponential format.
+      return value.toStringAsExponential(2);
+    } else if (forDisplay) {
+      // Format the number for display with commas and a sensible number of decimal places.
+      NumberFormat numberFormat = NumberFormat.decimalPattern();
+      return numberFormat.format(value);
+    } else {
+      // Return a plain string representation of the number for internal use.
+      return value.toString();
+    }
+  }
+
+  String _formatWithCommas(String integerPart) {
+    // Use a buffer to build the formatted string for the integer part with commas.
+    StringBuffer formattedInt = StringBuffer();
+    int commaPosition = 3;
+    int offset = integerPart.length % commaPosition;
+    for (int i = 0; i < integerPart.length; i++) {
+      if (i % commaPosition == 0 && i > 0) {
+        formattedInt.write(',');
+      }
+      formattedInt.write(integerPart[i]);
+    }
+    return formattedInt.toString();
+  }
+
+  void _handleInputFormatting(TextEditingController controller,
+      {bool forDisplay = false}) {
+    String text = controller.text;
+    if (text.isNotEmpty) {
+      // Allow for a single decimal point or comma in the input
+      if ((text.contains('.') && text.indexOf('.') != text.length - 1) ||
+          (text.contains(',') && text.indexOf(',') != text.length - 1)) {
+        try {
+          String normalizedText = text.replaceAll(',', '.');
+          double value = double.parse(normalizedText);
+          _isUserInput = false;
+          String formattedText = _formatNumber(value, forDisplay: forDisplay);
+          controller.value = TextEditingValue(
+            text: formattedText,
+            selection: TextSelection.collapsed(offset: formattedText.length),
+          );
+        } catch (e) {
+          // Handle parsing error, if any.
+        } finally {
+          _isUserInput = true;
+        }
+      }
+    }
   }
 
   void swapUnits() {
@@ -2013,7 +2070,8 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
       // We do not switch the text values of the controllers anymore.
       // fromController.text and toController.text remain unchanged.
 
-      convert();
+      String unformattedText = fromController.text.replaceAll(',', '');
+      convert(unformattedText);
       _conversionFormula =
           _getConversionFormula(); // Update formula text if needed
     });
@@ -3567,7 +3625,33 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
                 ],
               ),
 
-              const SizedBox(height: 165),
+              const SizedBox(height: 150),
+              // Inserted just before the 'From' input field
+              SwitchListTile(
+                title: const Text(
+                  'See result in exponential format',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+                value: _isExponentialFormat,
+                onChanged: (bool value) {
+                  setState(() {
+                    _isExponentialFormat = value;
+                    // Force the text to update with the new formatting.
+                    double? lastValue = double.tryParse(
+                        fromController.text.replaceAll(',', ''));
+                    if (lastValue != null) {
+                      fromController.text =
+                          _formatNumber(lastValue, forDisplay: true);
+                    }
+                    // Re-trigger conversion to update the toController with formatted text.
+                    convert(fromController.text);
+                  });
+                },
+                activeColor: Colors.lightBlue,
+                activeTrackColor: Colors.lightBlue.shade200,
+              ),
+
+              const SizedBox(height: 10),
               // Adjusted layout for 'From' input and dropdown
               Container(
                 padding: const EdgeInsets.only(left: 0.125, right: 0.125),
@@ -3691,10 +3775,16 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
         children: [
           TextField(
             controller: controller,
-            keyboardType: TextInputType.number,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
             textAlign: TextAlign.center,
-            onSubmitted: (value) =>
-                convert(), // Use your existing convert function
+            onChanged: (value) {
+              // Only invoke formatting when the user has stopped typing.
+              // Remove the auto-formatting logic from here.
+              _isUserInput =
+                  true; // Set this flag to true to indicate user input.
+              convert(
+                  value); // Call convert directly with the current input value.
+            },
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -3736,6 +3826,7 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
               ),
             ),
           ),
+
           const SizedBox(
               height: 10), // Space between the TextField and dropdown
           _buildDropdownButton(label.toLowerCase(), unit, isFrom),
@@ -3822,7 +3913,8 @@ class _DistanceUnitConverterState extends State<DistanceUnitConverter> {
             toPrefix = _getPrefix(
                 newValue); // Update the prefix for the 'to' TextField
           }
-          convert();
+          String unformattedText = fromController.text.replaceAll(',', '');
+          convert(unformattedText);
         });
       },
       dropdownColor: const Color(0xFF303134),
