@@ -720,9 +720,1358 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
     const double ounceForceInchToOunceForceFoot =
         0.08333333333333333; // since 1 ft = 12 in
     const double ounceForceInchToOunceForceInch = 1; // by definition
-
     // endregion
-    switch (fromUnit) {}
+
+    switch (fromUnit) {
+      case 'Micronewton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * micronewtonMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * micronewtonMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * micronewtonMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * micronewtonMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * micronewtonMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * micronewtonMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * micronewtonMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * micronewtonMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * micronewtonMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * micronewtonMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * micronewtonMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * micronewtonMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * micronewtonMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * micronewtonMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * micronewtonMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * micronewtonMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * micronewtonMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * micronewtonMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * micronewtonMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * micronewtonMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Millinewton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * millinewtonMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * millinewtonMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * millinewtonMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * millinewtonMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * millinewtonMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * millinewtonMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * millinewtonMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * millinewtonMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * millinewtonMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * millinewtonMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * millinewtonMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * millinewtonMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * millinewtonMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * millinewtonMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * millinewtonMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * millinewtonMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * millinewtonMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * millinewtonMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * millinewtonMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * millinewtonMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Newton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * newtonMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * newtonMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * newtonMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * newtonMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * newtonMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * newtonMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * newtonMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * newtonMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * newtonMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * newtonMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * newtonMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * newtonMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * newtonMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * newtonMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * newtonMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * newtonMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * newtonMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * newtonMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * newtonMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * newtonMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Kilonewton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * kilonewtonMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * kilonewtonMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * kilonewtonMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * kilonewtonMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * kilonewtonMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * kilonewtonMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * kilonewtonMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * kilonewtonMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * kilonewtonMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * kilonewtonMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * kilonewtonMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * kilonewtonMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * kilonewtonMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * kilonewtonMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * kilonewtonMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * kilonewtonMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * kilonewtonMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * kilonewtonMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * kilonewtonMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * kilonewtonMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Meganewton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * meganewtonMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * meganewtonMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * meganewtonMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * meganewtonMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * meganewtonMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * meganewtonMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * meganewtonMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * meganewtonMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * meganewtonMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * meganewtonMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * meganewtonMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * meganewtonMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * meganewtonMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * meganewtonMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * meganewtonMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * meganewtonMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * meganewtonMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * meganewtonMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * meganewtonMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * meganewtonMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Newton Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * newtonCentimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * newtonCentimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * newtonCentimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * newtonCentimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * newtonCentimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * newtonCentimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * newtonCentimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * newtonCentimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * newtonCentimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * newtonCentimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * newtonCentimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * newtonCentimeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * newtonCentimeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * newtonCentimeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * newtonCentimeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * newtonCentimeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * newtonCentimeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * newtonCentimeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * newtonCentimeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * newtonCentimeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Newton Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * newtonMillimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * newtonMillimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * newtonMillimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * newtonMillimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * newtonMillimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * newtonMillimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * newtonMillimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * newtonMillimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * newtonMillimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * newtonMillimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * newtonMillimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * newtonMillimeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * newtonMillimeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * newtonMillimeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * newtonMillimeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * newtonMillimeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * newtonMillimeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * newtonMillimeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * newtonMillimeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * newtonMillimeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Gram-force Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * gramForceMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * gramForceMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * gramForceMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * gramForceMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * gramForceMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * gramForceMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * gramForceMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * gramForceMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * gramForceMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * gramForceMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * gramForceMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * gramForceMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * gramForceMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * gramForceMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * gramForceMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * gramForceMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * gramForceMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * gramForceMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * gramForceMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * gramForceMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Gram-force Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * gramForceCentimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * gramForceCentimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * gramForceCentimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * gramForceCentimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * gramForceCentimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * gramForceCentimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * gramForceCentimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * gramForceCentimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * gramForceCentimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * gramForceCentimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * gramForceCentimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * gramForceCentimeterToKilogramForceCentimeter;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+      //fix missing ones
+
+      case 'Gram-force Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * gramForceMillimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * gramForceMillimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * gramForceMillimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * gramForceMillimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * gramForceMillimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * gramForceMillimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * gramForceMillimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * gramForceMillimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * gramForceMillimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * gramForceMillimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * gramForceMillimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * gramForceMillimeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * gramForceMillimeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * gramForceMillimeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * gramForceMillimeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * gramForceMillimeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * gramForceMillimeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * gramForceMillimeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * gramForceMillimeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * gramForceMillimeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Kilogram-force Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * kilogramForceMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * kilogramForceMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * kilogramForceMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * kilogramForceMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * kilogramForceMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * kilogramForceMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * kilogramForceMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * kilogramForceMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * kilogramForceMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * kilogramForceMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * kilogramForceMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * kilogramForceMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * kilogramForceMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * kilogramForceMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * kilogramForceMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * kilogramForceMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * kilogramForceMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * kilogramForceMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * kilogramForceMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * kilogramForceMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Kilogram-force Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * kilogramForceCentimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * kilogramForceCentimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * kilogramForceCentimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * kilogramForceCentimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * kilogramForceCentimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * kilogramForceCentimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * kilogramForceCentimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * kilogramForceCentimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * kilogramForceCentimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * kilogramForceCentimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * kilogramForceCentimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue =
+                fromValue * kilogramForceCentimeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue =
+                fromValue * kilogramForceCentimeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * kilogramForceCentimeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * kilogramForceCentimeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * kilogramForceCentimeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * kilogramForceCentimeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * kilogramForceCentimeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * kilogramForceCentimeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * kilogramForceCentimeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Kilogram-force Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * kilogramForceMillimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * kilogramForceMillimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * kilogramForceMillimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * kilogramForceMillimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * kilogramForceMillimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * kilogramForceMillimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * kilogramForceMillimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * kilogramForceMillimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * kilogramForceMillimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * kilogramForceMillimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * kilogramForceMillimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue =
+                fromValue * kilogramForceMillimeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue =
+                fromValue * kilogramForceMillimeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * kilogramForceMillimeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * kilogramForceMillimeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * kilogramForceMillimeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * kilogramForceMillimeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * kilogramForceMillimeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * kilogramForceMillimeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * kilogramForceMillimeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Dyne Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * dyneMeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * dyneMeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * dyneMeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * dyneMeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * dyneMeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * dyneMeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * dyneMeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * dyneMeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * dyneMeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * dyneMeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * dyneMeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * dyneMeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * dyneMeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * dyneMeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * dyneMeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * dyneMeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * dyneMeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * dyneMeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * dyneMeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * dyneMeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Dyne Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * dyneCentimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * dyneCentimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * dyneCentimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * dyneCentimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * dyneCentimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * dyneCentimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * dyneCentimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * dyneCentimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * dyneCentimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * dyneCentimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * dyneCentimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * dyneCentimeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * dyneCentimeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * dyneCentimeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * dyneCentimeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * dyneCentimeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * dyneCentimeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * dyneCentimeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * dyneCentimeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * dyneCentimeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Dyne Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * dyneMillimeterToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * dyneMillimeterToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * dyneMillimeterToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * dyneMillimeterToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * dyneMillimeterToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * dyneMillimeterToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * dyneMillimeterToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * dyneMillimeterToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * dyneMillimeterToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * dyneMillimeterToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * dyneMillimeterToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * dyneMillimeterToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * dyneMillimeterToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * dyneMillimeterToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * dyneMillimeterToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * dyneMillimeterToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * dyneMillimeterToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * dyneMillimeterToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * dyneMillimeterToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * dyneMillimeterToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Pound-force Foot':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * poundForceFootToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * poundForceFootToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * poundForceFootToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * poundForceFootToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * poundForceFootToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * poundForceFootToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * poundForceFootToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * poundForceFootToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * poundForceFootToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * poundForceFootToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * poundForceFootToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * poundForceFootToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * poundForceFootToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * poundForceFootToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * poundForceFootToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * poundForceFootToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * poundForceFootToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * poundForceFootToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * poundForceFootToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * poundForceFootToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Pound-force Inch':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * poundForceInchToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * poundForceInchToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * poundForceInchToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * poundForceInchToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * poundForceInchToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * poundForceInchToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * poundForceInchToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * poundForceInchToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * poundForceInchToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * poundForceInchToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * poundForceInchToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * poundForceInchToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * poundForceInchToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * poundForceInchToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * poundForceInchToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * poundForceInchToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * poundForceInchToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue =
+                fromValue; // No conversion needed if from and to units are the same
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * poundForceInchToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * poundForceInchToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Ounce-force Foot':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * ounceForceFootToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * ounceForceFootToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * ounceForceFootToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * ounceForceFootToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * ounceForceFootToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * ounceForceFootToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * ounceForceFootToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * ounceForceFootToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * ounceForceFootToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * ounceForceFootToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * ounceForceFootToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * ounceForceFootToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * ounceForceFootToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * ounceForceFootToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * ounceForceFootToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * ounceForceFootToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * ounceForceFootToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * ounceForceFootToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue =
+                fromValue; // No conversion needed if from and to units are the same
+            break;
+          case 'Ounce-force Inch':
+            toValue = fromValue * ounceForceFootToOunceForceInch;
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      case 'Ounce-force Inch':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            toValue = fromValue * ounceForceInchToMicronewtonMeter;
+            break;
+          case 'Millinewton Meter':
+            toValue = fromValue * ounceForceInchToMillinewtonMeter;
+            break;
+          case 'Newton Meter':
+            toValue = fromValue * ounceForceInchToNewtonMeter;
+            break;
+          case 'Kilonewton Meter':
+            toValue = fromValue * ounceForceInchToKilonewtonMeter;
+            break;
+          case 'Meganewton Meter':
+            toValue = fromValue * ounceForceInchToMeganewtonMeter;
+            break;
+          case 'Newton Centimeter':
+            toValue = fromValue * ounceForceInchToNewtonCentimeter;
+            break;
+          case 'Newton Millimeter':
+            toValue = fromValue * ounceForceInchToNewtonMillimeter;
+            break;
+          case 'Gram-force Meter':
+            toValue = fromValue * ounceForceInchToGramForceMeter;
+            break;
+          case 'Gram-force Centimeter':
+            toValue = fromValue * ounceForceInchToGramForceCentimeter;
+            break;
+          case 'Gram-force Millimeter':
+            toValue = fromValue * ounceForceInchToGramForceMillimeter;
+            break;
+          case 'Kilogram-force Meter':
+            toValue = fromValue * ounceForceInchToKilogramForceMeter;
+            break;
+          case 'Kilogram-force Centimeter':
+            toValue = fromValue * ounceForceInchToKilogramForceCentimeter;
+            break;
+          case 'Kilogram-force Millimeter':
+            toValue = fromValue * ounceForceInchToKilogramForceMillimeter;
+            break;
+          case 'Dyne Meter':
+            toValue = fromValue * ounceForceInchToDyneMeter;
+            break;
+          case 'Dyne Centimeter':
+            toValue = fromValue * ounceForceInchToDyneCentimeter;
+            break;
+          case 'Dyne Millimeter':
+            toValue = fromValue * ounceForceInchToDyneMillimeter;
+            break;
+          case 'Pound-force Foot':
+            toValue = fromValue * ounceForceInchToPoundForceFoot;
+            break;
+          case 'Pound-force Inch':
+            toValue = fromValue * ounceForceInchToPoundForceInch;
+            break;
+          case 'Ounce-force Foot':
+            toValue = fromValue * ounceForceInchToOunceForceFoot;
+            break;
+          case 'Ounce-force Inch':
+            toValue =
+                fromValue; // No conversion needed if from and to units are the same
+            break;
+          default:
+            // Handle the default case or throw an error
+            break;
+        }
+        break;
+
+      default:
+        // Optionally handle unknown unit conversions
+        toValue = 0;
+        break;
+    }
 
     // Update toController text and conversion formula only if necessary.
     if (_isUserInput) {
@@ -812,1498 +2161,47 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
   String _getConversionFormula() {
     String formula;
     switch (fromUnit) {
-      case 'Meters':
+      case 'Square Metres':
         switch (toUnit) {
-          case 'Picometers':
-            formula = 'Multiply the length value by 1,000,000,000,000';
+          case 'Square Millimetres':
+            formula = 'Multiply the area value by 1,000,000';
             break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1,000,000,000';
+          case 'Square Centimetres':
+            formula = 'Multiply the area value by 10,000';
             break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 1,000,000';
+          case 'Ares':
+            formula = 'Divide the area value by 100';
             break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 1,000';
+          case 'Hectares':
+            formula = 'Divide the area value by 10,000';
             break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 100';
+          case 'Square Kilometres':
+            formula = 'Divide the area value by 1,000,000';
             break;
-          case 'Meters':
+          case 'Square Inches':
+            formula = 'Multiply the area value by 1,550.0031';
+            break;
+          case 'Square Feet':
+            formula = 'Multiply the area value by 10.7639104';
+            break;
+          case 'Square Yards':
+            formula = 'Multiply the area value by 1.19599005';
+            break;
+          case 'Acres':
+            formula = 'Divide the area value by 4,046.85642';
+            break;
+          case 'Square Miles':
+            formula = 'Divide the area value by 2,589,988.11';
+            break;
+          case 'Square Metres': // No conversion needed if from and to units are the same
             formula = 'The value remains unchanged';
-            break;
-          case 'Kilometers':
-            formula = 'Divide the length value by 1,000';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 10,000,000,000';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 39,370.0787';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 39.3701';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 3.28084';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 1.09361';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 0.0497097';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 0.00497097';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 0.000621371';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 0.546807';
-            break;
-          case 'Cables':
-            formula = 'Multiply the length value by 0.00539957';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 0.000539957';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 149,597,870,700';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+15';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+16';
             break;
           default:
             formula = 'Unknown conversion';
         }
         break;
-      // PICOMETERS UNIT CONVERSION
-      case 'Picometers':
-        switch (toUnit) {
-          case 'Picometers':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Nanometers':
-            formula = 'Divide the length value by 1,000';
-            break;
-          case 'Micrometers':
-            formula = 'Divide the length value by 1,000,000';
-            break;
-          case 'Millimeters':
-            formula = 'Divide the length value by 1,000,000,000';
-            break;
-          case 'Centimeters':
-            formula = 'Divide the length value by 10,000,000,000';
-            break;
-          case 'Meters':
-            formula = 'Divide the length value by 1,000,000,000,000';
-            break;
-          case 'Kilometers':
-            formula = 'Divide the length value by 1,000,000,000,000,000';
-            break;
-          case 'Angstrom':
-            formula = 'Divide the length value by 100';
-            break;
-          case 'Thou':
-            formula = 'Divide the length value by 25,400,000,000';
-            break;
-          case 'Inches':
-            formula = 'Divide the length value by 25,400,000,000,000';
-            break;
-          case 'Feet':
-            formula = 'Divide the length value by 304,800,000,000,000';
-            break;
-          case 'Yards':
-            formula = 'Divide the length value by 914,400,000,000,000';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 20,116,800,000,000,000';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 201,168,000,000,000,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 1,609,344,000,000,000,000';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 1,828,800,000,000,000';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 185,200,000,000,000';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 1,852,000,000,000,000,000';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.496e+23';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+28';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+28';
-            break;
-// Add cases for any additional units here
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break; // This breaks out of the 'Picometers' case
-
-      // NANOMETERS UNIT CONVERSION
-      case 'Nanometers':
-        switch (toUnit) {
-          case 'Nanometers':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1,000';
-            break;
-          case 'Micrometers':
-            formula = 'Divide the length value by 1,000';
-            break;
-          case 'Millimeters':
-            formula = 'Divide the length value by 1,000,000';
-            break;
-          case 'Centimeters':
-            formula = 'Divide the length value by 10,000,000';
-            break;
-          case 'Meters':
-            formula = 'Divide the length value by 1,000,000,000';
-            break;
-          case 'Kilometers':
-            formula = 'Divide the length value by 1,000,000,000,000';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 10';
-            break;
-          case 'Thou (mils)':
-            formula = 'Divide the length value by 25,400,000';
-            break;
-          case 'Inches':
-            formula = 'Divide the length value by 25,400,000,000';
-            break;
-          case 'Feet':
-            formula = 'Divide the length value by 304,800,000,000';
-            break;
-          case 'Yards':
-            formula = 'Divide the length value by 914,400,000,000';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 20,116,800,000,000';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 201,168,000,000,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 1,609,344,000,000,000';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 1,828,800,000,000';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 185,200,000,000,000';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 1,852,000,000,000,000';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.496e+23';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+28';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+28';
-            break;
-
-          // ... and so on for the rest of the units ...
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-
-      case 'Centimeters':
-        switch (toUnit) {
-          case 'Centimeters':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Meters':
-            formula = 'Divide the length value by 100';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 10,000,000,000';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 10,000,000';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 10,000';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 10';
-            break;
-          case 'Kilometers':
-            formula = 'Divide the length value by 100,000';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 100,000,000';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 393.700787';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 0.393700787';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 0.032808399';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 0.010936133';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 0.0049709695';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 0.00049709695';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 0.000006213712';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 0.054680665';
-            break;
-          case 'Cables':
-            formula = 'Multiply the length value by 0.0053961182';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 0.000005399568';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 14959787070000';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+17';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+18';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-      case 'Millimeters':
-        switch (toUnit) {
-          case 'Millimeters':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Centimeters':
-            formula = 'Divide the length value by 10';
-            break;
-          case 'Meters':
-            formula = 'Divide the length value by 1,000';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1,000,000,000';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1,000,000';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 1,000';
-            break;
-          case 'Kilometers':
-            formula = 'Divide the length value by 1,000,000';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 10,000,000';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 39.3700787';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 0.0393700787';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 0.0032808399';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 0.0010936133';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 0.0000497097';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 0.00000497097';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 0.000000621371192';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 0.000546806649';
-            break;
-          case 'Cables':
-            formula = 'Multiply the length value by 0.0000539956803';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 0.000000539956803';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.495978707e+14';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+18';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+19';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Micrometers':
-        switch (toUnit) {
-          case 'Micrometers':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1,000';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1,000';
-            break;
-          case 'Millimeters':
-            formula = 'Divide the length value by 1,000';
-            break;
-          case 'Centimeters':
-            formula = 'Divide the length value by 10,000';
-            break;
-          case 'Meters':
-            formula = 'Divide the length value by 1,000,000';
-            break;
-          case 'Kilometers':
-            formula = 'Divide the length value by 1,000,000,000';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 10,000';
-            break;
-          case 'Thou':
-            formula = 'Divide the length value by 25.4';
-            break;
-          case 'Inches':
-            formula = 'Divide the length value by 25,400';
-            break;
-          case 'Feet':
-            formula = 'Divide the length value by 304,800';
-            break;
-          case 'Yards':
-            formula = 'Divide the length value by 914,400';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 20,116,800';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 201,168,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 1,609,344,000';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 1,828,800';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 185,200';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 1,852,000,000';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.496e+17';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+21';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+22';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Kilometers':
-        switch (toUnit) {
-          case 'Kilometers':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 1,000';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 100,000';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 1,000,000';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 1,000,000,000';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1,000,000,000,000';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1,000,000,000,000,000';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 1e+13';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 39,370,078.7';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 39,370.0787';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 3,280.8399';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 1,093.6133';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 49.7096954';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 4.97096954';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 0.621371192';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 546.806649';
-            break;
-          case 'Cables':
-            formula = 'Multiply the length value by 5.39956803';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 0.539956803';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 149.5978707';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+12';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+13';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Angstrom':
-        switch (toUnit) {
-          case 'Angstrom':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 100';
-            break;
-          case 'Nanometers':
-            formula = 'Divide the length value by 10';
-            break;
-          case 'Micrometers':
-            formula = 'Divide the length value by 10,000';
-            break;
-          case 'Millimeters':
-            formula = 'Divide the length value by 10,000,000';
-            break;
-          case 'Centimeters':
-            formula = 'Divide the length value by 100,000,000';
-            break;
-          case 'Meters':
-            formula = 'Divide the length value by 1,000,000,000';
-            break;
-          case 'Kilometers':
-            formula = 'Divide the length value by 1,000,000,000,000';
-            break;
-          case 'Thou':
-            formula = 'Divide the length value by 254,000';
-            break;
-          case 'Inches':
-            formula = 'Divide the length value by 25,400,000';
-            break;
-          case 'Feet':
-            formula = 'Divide the length value by 304,800,000';
-            break;
-          case 'Yards':
-            formula = 'Divide the length value by 914,400,000';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 20,116,800,000';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 201,168,000,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 1,609,344,000,000';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 1,828,800,000';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 185,200,000';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 1,852,000,000,000';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.496e+20';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+25';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+26';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Thou':
-        switch (toUnit) {
-          case 'Thou':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Inches':
-            formula = 'Divide the length value by 1,000';
-            break;
-          case 'Feet':
-            formula = 'Divide the length value by 12,000';
-            break;
-          case 'Yards':
-            formula = 'Divide the length value by 36,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 63,360,000';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 0.0254';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 0.00254';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 0.0000254';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 2.54e-8';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 2.54e+7';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 2.54e+4';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 25.4';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 2.54e+5';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 792,000';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 7,920,000';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 72,000';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 729,000';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 7,290,000';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 2.54e+12';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 2.399e+20';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 7.823e+20';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Inches':
-        switch (toUnit) {
-          case 'Inches':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 1,000';
-            break;
-          case 'Feet':
-            formula = 'Divide the length value by 12';
-            break;
-          case 'Yards':
-            formula = 'Divide the length value by 36';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 63,360';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 25.4';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 2.54';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 0.0254';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 0.0000254';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 25.4e+9';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 25.4e+6';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 25,400';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 254,000,000';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 792';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 7,920';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 72';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 729.13';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 72,913.4';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 9.461e+12';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 5.879e+17';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 1.917e+18';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Feet':
-        switch (toUnit) {
-          case 'Feet':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 12';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 12,000';
-            break;
-          case 'Yards':
-            formula = 'Divide the length value by 3';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 5,280';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 304.8';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 30.48';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 0.3048';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 0.0003048';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 304.8e+9';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 304.8e+6';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 304,800';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 3.048e+9';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 66';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 660';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 6';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 607.611';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 6,076.115';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 9.461e+11';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+16';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+17';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Yards':
-        switch (toUnit) {
-          case 'Yards':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 3';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 36';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 36,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 1,760';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 914.4';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 91.44';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 0.9144';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 0.0009144';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 914.4e+9';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 914.4e+6';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 914,400';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 9.144e+9';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 22';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 220';
-            break;
-          case 'Fathoms':
-            formula = 'Divide the length value by 2';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 202.533';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 2,025.371';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 9.665e+11';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.665e+16';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.118e+17';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Chains':
-        switch (toUnit) {
-          case 'Chains':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 22';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 66';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 792';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 792,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 80';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 20,116.8';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 2,011.68';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 20.1168';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 0.0201168';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 20.1168e+12';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 20.1168e+9';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 20,116,800';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 201,168,000,000';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 10';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 11';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 9.225';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 92.25';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.341e+13';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 1.341e+18';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 4.134e+18';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Furlongs':
-        switch (toUnit) {
-          case 'Furlongs':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 10';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 220';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 660';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 7,920';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 7,920,000';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 8';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 201,168';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 20,116.8';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 201.168';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 0.201168';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 201.168e+12';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 201.168e+9';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 201,168,000';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 2.01168e+12';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 110';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 1.012';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 10.12';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.342e+12';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 1.342e+17';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 4.135e+17';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Miles':
-        switch (toUnit) {
-          case 'Miles':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 8';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 80';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 1,760';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 5,280';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 63,360';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 63,360,000';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 1.609344';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 1,609.344';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 160,934.4';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 1,609,344';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 1,609,344,000';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1.609344e+12';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1.609344e+15';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 1.609344e+17';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 880';
-            break;
-          case 'Cables':
-            formula = 'Multiply the length value by 88.781';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 0.868976';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 9.296e+7';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 5.879e+12';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 1.917e+13';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Fathoms':
-        switch (toUnit) {
-          case 'Fathoms':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 880';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 110';
-            break;
-          case 'Chains':
-            formula = 'Divide the length value by 11';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 2';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 6';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 72';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 72,000';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 0.0018288';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 1.8288';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 182.88';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 1,828.8';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 1,828,800';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1.8288e+9';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1.8288e+12';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 1.8288e+13';
-            break;
-          case 'Cables':
-            formula = 'Divide the length value by 101.2';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 1,012';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.22e+11';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 1.22e+16';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.77e+16';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Cables':
-        switch (toUnit) {
-          case 'Cables':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 101.2';
-            break;
-          case 'Miles':
-            formula = 'Divide the length value by 10.012';
-            break;
-          case 'Furlongs':
-            formula = 'Divide the length value by 1.2515';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 8';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 202.53';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 607.61';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 7,291.34';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 7,291,339';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 0.1852';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 185.2';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 18,520';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 185,200';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 185,200,000';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 185.2e+9';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 185.2e+12';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 1.852e+13';
-            break;
-          case 'Nautical miles':
-            formula = 'Divide the length value by 10';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.238e+12';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 1.238e+17';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.819e+17';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Nautical miles':
-        switch (toUnit) {
-          case 'Nautical miles':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Cables':
-            formula = 'Multiply the length value by 10';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 1.15078';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 9.20624';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 92.0624';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 2,025.37';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 6,076.12';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 72,913.4';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 72,913,386';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 1,012.68591';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 1.852';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 1,852';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 185,200';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 1,852,000';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 1,852,000,000';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1.852e+12';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1.852e+15';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 1.852e+16';
-            break;
-          case 'Astronomical units':
-            formula = 'Divide the length value by 1.496e+8';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 9.461e+12';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.086e+13';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Astronomical units':
-        switch (toUnit) {
-          case 'Astronomical units':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 1.496e+8';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 9.296e+7';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 7.456e+6';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 7.456e+5';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 1.09361e+8';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 3.28084e+8';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 3.93701e+9';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 3.93701e+12';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 5.46807e+7';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 1.496e+5';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 1.496e+8';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 1.496e+10';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 1.496e+11';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 1.496e+14';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 1.496e+17';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 1.496e+20';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 1.496e+21';
-            break;
-          case 'Light years':
-            formula = 'Divide the length value by 63.241';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 206,265';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Light years':
-        switch (toUnit) {
-          case 'Light years':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Astronomical units':
-            formula = 'Multiply the length value by 63,241';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 3.724e+12';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 5.879e+12';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 4.703e+13';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 4.703e+14';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 1.057e+13';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 3.172e+13';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 3.807e+14';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 3.807e+17';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 5.286e+12';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 9.461e+12';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 9.461e+15';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 9.461e+17';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 9.461e+18';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 9.461e+21';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 9.461e+24';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 9.461e+27';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 9.461e+28';
-            break;
-          case 'Parsecs':
-            formula = 'Divide the length value by 3.262';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-      case 'Parsecs':
-        switch (toUnit) {
-          case 'Parsecs':
-            formula = 'The value remains unchanged';
-            break;
-          case 'Light years':
-            formula = 'Multiply the length value by 3.262';
-            break;
-          case 'Astronomical units':
-            formula = 'Multiply the length value by 206,265';
-            break;
-          case 'Nautical miles':
-            formula = 'Multiply the length value by 1.917e+13';
-            break;
-          case 'Miles':
-            formula = 'Multiply the length value by 1.917e+13';
-            break;
-          case 'Furlongs':
-            formula = 'Multiply the length value by 1.534e+14';
-            break;
-          case 'Chains':
-            formula = 'Multiply the length value by 1.534e+15';
-            break;
-          case 'Yards':
-            formula = 'Multiply the length value by 3.447e+14';
-            break;
-          case 'Feet':
-            formula = 'Multiply the length value by 1.034e+15';
-            break;
-          case 'Inches':
-            formula = 'Multiply the length value by 1.240e+16';
-            break;
-          case 'Thou':
-            formula = 'Multiply the length value by 1.240e+19';
-            break;
-          case 'Fathoms':
-            formula = 'Multiply the length value by 1.724e+14';
-            break;
-          case 'Kilometers':
-            formula = 'Multiply the length value by 3.086e+13';
-            break;
-          case 'Meters':
-            formula = 'Multiply the length value by 3.086e+16';
-            break;
-          case 'Centimeters':
-            formula = 'Multiply the length value by 3.086e+18';
-            break;
-          case 'Millimeters':
-            formula = 'Multiply the length value by 3.086e+19';
-            break;
-          case 'Micrometers':
-            formula = 'Multiply the length value by 3.086e+22';
-            break;
-          case 'Nanometers':
-            formula = 'Multiply the length value by 3.086e+25';
-            break;
-          case 'Picometers':
-            formula = 'Multiply the length value by 3.086e+28';
-            break;
-          case 'Angstrom':
-            formula = 'Multiply the length value by 3.086e+29';
-            break;
-          case 'Cables':
-            formula = 'Multiply the length value by 1.666e+14';
-            break;
-
-          default:
-            formula = 'Unknown conversion';
-            break;
-        }
-        break;
-
-// ... after the last specific unit case ...
       default:
-        formula = 'Select both units to see the formula';
-        break;
+        formula = 'No conversion formula available for the selected units';
     }
     return formula;
   }
@@ -2347,7 +2245,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
                   const SizedBox(
                       width: 50), // Space between the icon and the text
                   const Text(
-                    'Convert Distance',
+                    'Convert Torque',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -2468,49 +2366,46 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
 
   String _getPrefix(String unit) {
     switch (unit) {
-      case 'Picometers':
-        return 'pm';
-      case 'Nanometers':
-        return 'nm'; // Example text
-      case 'Micrometers':
-        return 'µm'; // Just an example icon
-      case 'Millimeters':
-        return 'mm';
-      case 'Centimeters':
-        return 'cm'; // Just an example icon
-      case 'Meters':
-        return 'm';
-      case 'Kilometers':
-        return 'km'; // Just an example icon
-      case 'Angstrom':
-        return 'Å';
-      case 'Thou':
-        return 'thou';
-      case 'Inches':
-        return 'in'; // Just an example icon
-      case 'Feet':
-        return 'ft';
-      case 'Yards':
-        return 'yd'; // Just an example icon
-      case 'Chains':
-        return 'ch';
-      case 'Furlongs':
-        return 'fur';
-      case 'Miles':
-        return 'mi'; // Just an example icon
-      case 'Fathoms':
-        return 'fth';
-      case 'Cables':
-        return 'cable'; // Just an example icon
-      case 'Nautical miles':
-        return 'NM';
-      case 'Astronomical units':
-        return 'au';
-      case 'Light years':
-        return 'ly'; // Just an example icon
-      case 'Parsecs':
-        return 'pc';
-
+      case 'Micronewton Meter':
+        return 'µNm';
+      case 'Millinewton Meter':
+        return 'mNm';
+      case 'Newton Meter':
+        return 'Nm';
+      case 'Kilonewton Meter':
+        return 'kNm';
+      case 'Meganewton Meter':
+        return 'MNm';
+      case 'Newton Centimeter':
+        return 'Ncm';
+      case 'Newton Millimeter':
+        return 'Nmm';
+      case 'Gram-force Meter':
+        return 'gf·m';
+      case 'Gram-force Centimeter':
+        return 'gf·cm';
+      case 'Gram-force Millimeter':
+        return 'gf·mm';
+      case 'Kilogram-force Meter':
+        return 'kgf·m';
+      case 'Kilogram-force Centimeter':
+        return 'kgf·cm';
+      case 'Kilogram-force Millimeter':
+        return 'kgf·mm';
+      case 'Dyne Meter':
+        return 'dyn·m';
+      case 'Dyne Centimeter':
+        return 'dyn·cm';
+      case 'Dyne Millimeter':
+        return 'dyn·mm';
+      case 'Pound-force Foot':
+        return 'lbf·ft';
+      case 'Pound-force Inch':
+        return 'lbf·in';
+      case 'Ounce-force Foot':
+        return 'ozf·ft';
+      case 'Ounce-force Inch':
+        return 'ozf·in';
       default:
         return '';
     }
@@ -2590,27 +2485,26 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
   // Correct the method signature by adding the isFrom parameter
   Widget _buildDropdownButton(String type, String currentValue, bool isFrom) {
     List<DropdownMenuItem<String>> items = <String>[
-      'Picometers',
-      'Nanometers',
-      'Micrometers',
-      'Millimeters',
-      'Centimeters',
-      'Meters',
-      'Kilometers',
-      'Angstrom',
-      'Thou',
-      'Inches',
-      'Feet',
-      'Yards',
-      'Chains',
-      'Furlongs',
-      'Miles',
-      'Fathoms',
-      'Cables',
-      'Nautical miles',
-      'Astronomical units',
-      'Light years',
-      'Parsecs',
+      'Micronewton Meter',
+      'Millinewton Meter',
+      'Newton Meter',
+      'Kilonewton Meter',
+      'Meganewton Meter',
+      'Newton Centimeter',
+      'Newton Millimeter',
+      'Gram-force Meter',
+      'Gram-force Centimeter',
+      'Gram-force Millimeter',
+      'Kilogram-force Meter',
+      'Kilogram-force Centimeter',
+      'Kilogram-force Millimeter',
+      'Dyne Meter',
+      'Dyne Centimeter',
+      'Dyne Millimeter',
+      'Pound-force Foot',
+      'Pound-force Inch',
+      'Ounce-force Foot',
+      'Ounce-force Inch',
     ].map<DropdownMenuItem<String>>((String value) {
       return DropdownMenuItem<String>(
         value: value,

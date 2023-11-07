@@ -9,6 +9,7 @@ import 'package:infinicalc/widgets/conversions/frequency.dart';
 import 'package:infinicalc/widgets/conversions/mass.dart';
 import 'package:infinicalc/widgets/conversions/speed.dart';
 import 'package:infinicalc/widgets/conversions/time.dart';
+import 'package:infinicalc/widgets/conversions/torque.dart';
 import 'package:infinicalc/widgets/conversions/volume.dart';
 import 'package:infinicalc/widgets/help.dart';
 import 'package:infinicalc/widgets/history.dart';
@@ -80,17 +81,14 @@ class InfiniCalc extends StatelessWidget {
           '/speed': (context) => const SpeedUnitConverter(),
           '/frequency': (context) => const FrequencyUnitConverter(),
           '/force': (context) => const ForceUnitConverter(),
-          /*'/torque': (context) => const TorqueUnitConverter(),
-          '/pressure': (context) => const PressureUnitConverter(),
+          '/torque': (context) => const TorqueUnitConverter(),
+          /*'/pressure': (context) => const PressureUnitConverter(),
           '/energy': (context) => const EnergyUnitConverter(),
           '/power': (context) => const PowerUnitConverter(),
           '/temperature': (context) => const TemperatureUnitConverter(),
           '/angle': (context) => const AngleUnitConverter(),
-          
           '/fuel': (context) => const FuelUnitConverter(),
           '/datas': (context) => const DatasUnitConverter(),
-          
-          
           */
         },
         localizationsDelegates:
