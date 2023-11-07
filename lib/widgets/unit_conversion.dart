@@ -94,7 +94,7 @@ class _UnitConversionState extends State<UnitConversion> {
         } else if (label == 'Time') {
           context.navigateTo('/time');
         } else if (label == 'Speed') {
-          context.navigateTo('/area');
+          context.navigateTo('/speed');
         } else if (label == 'Frequency') {
           context.navigateTo('/frequency');
         } else if (label == 'Force') {

@@ -4,7 +4,11 @@ import 'package:infinicalc/controllers/font_size_provider.dart';
 import 'package:infinicalc/ui/home_screen.dart';
 import 'package:infinicalc/widgets/conversions/area.dart';
 import 'package:infinicalc/widgets/conversions/distance.dart';
+import 'package:infinicalc/widgets/conversions/force.dart';
+import 'package:infinicalc/widgets/conversions/frequency.dart';
 import 'package:infinicalc/widgets/conversions/mass.dart';
+import 'package:infinicalc/widgets/conversions/speed.dart';
+import 'package:infinicalc/widgets/conversions/time.dart';
 import 'package:infinicalc/widgets/conversions/volume.dart';
 import 'package:infinicalc/widgets/help.dart';
 import 'package:infinicalc/widgets/history.dart';
@@ -72,12 +76,11 @@ class InfiniCalc extends StatelessWidget {
           '/area': (context) => const AreaUnitConverter(),
           '/volume': (context) => const VolumeUnitConverter(),
           '/mass': (context) => const MassUnitConverter(),
-          /*'/time': (context) => const TimeUnitConverter(),
+          '/time': (context) => const TimeUnitConverter(),
           '/speed': (context) => const SpeedUnitConverter(),
           '/frequency': (context) => const FrequencyUnitConverter(),
           '/force': (context) => const ForceUnitConverter(),
-
-          '/torque': (context) => const TorqueUnitConverter(),
+          /*'/torque': (context) => const TorqueUnitConverter(),
           '/pressure': (context) => const PressureUnitConverter(),
           '/energy': (context) => const EnergyUnitConverter(),
           '/power': (context) => const PowerUnitConverter(),
