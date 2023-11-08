@@ -2161,45 +2161,1293 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
   String _getConversionFormula() {
     String formula;
     switch (fromUnit) {
-      case 'Square Metres':
+      case 'Micronewton Meter':
         switch (toUnit) {
-          case 'Square Millimetres':
-            formula = 'Multiply the area value by 1,000,000';
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 0.001';
             break;
-          case 'Square Centimetres':
-            formula = 'Multiply the area value by 10,000';
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1e-6';
             break;
-          case 'Ares':
-            formula = 'Divide the area value by 100';
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 1e-9';
             break;
-          case 'Hectares':
-            formula = 'Divide the area value by 10,000';
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-12';
             break;
-          case 'Square Kilometres':
-            formula = 'Divide the area value by 1,000,000';
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 0.0001';
             break;
-          case 'Square Inches':
-            formula = 'Multiply the area value by 1,550.0031';
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 0.001';
             break;
-          case 'Square Feet':
-            formula = 'Multiply the area value by 10.7639104';
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 1.0197e-7';
             break;
-          case 'Square Yards':
-            formula = 'Multiply the area value by 1.19599005';
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 1.0197e-5';
             break;
-          case 'Acres':
-            formula = 'Divide the area value by 4,046.85642';
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 0.00010197';
             break;
-          case 'Square Miles':
-            formula = 'Divide the area value by 2,589,988.11';
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 1.0197e-10';
             break;
-          case 'Square Metres': // No conversion needed if from and to units are the same
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 1.0197e-8';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1.0197e-7';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 1';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 0.1';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 7.37562e-9';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8.85075e-8';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 1.18026e-7';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1.41631e-6';
+            break;
+          case 'Micronewton Meter': // No conversion needed if from and to units are the same
             formula = 'The value remains unchanged';
             break;
           default:
             formula = 'Unknown conversion';
         }
         break;
+
+      case 'Millinewton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.001';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 1e-6';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-9';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 0.1';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 1';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 0.10197';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 10.1971621';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 101.971621';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.00010197';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 0.0101971621';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 0.101971621';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 10,000';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 100';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.000737562';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 0.008851';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 0.0118';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 0.1416';
+            break;
+          case 'Millinewton Meter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Newton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 1,000,000';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 0.001';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-6';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 100';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 101.971621';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 10,197.1621';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 101,971.621';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.101971621';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 10.1971621';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 101.971621';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 10,000,000';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 1,000,000';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 100,000';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.737562';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8.851';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 11.8';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 141.6';
+            break;
+          case 'Newton Meter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+
+      case 'Kilonewton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 1e9';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 1e6';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1000';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 0.001';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 100000';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 1e6';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 101971.621';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 1.01971621e7';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 1.01971621e8';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 101.971621';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 10197.1621';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 101971.621';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 1e10';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 1e9';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 1e8';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 737.562';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8850.74579';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 11809.1';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 141709.2';
+            break;
+          case 'Kilonewton Meter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Meganewton Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 1e12';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 1e9';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1e6';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 1000';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 1e8';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 1e9';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 1.01971621e8';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 1.01971621e10';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 1.01971621e11';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 101971.621';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 1.01971621e7';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1.01971621e8';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 1e13';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 1e12';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 1e11';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 737562';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8850745.79';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 11809096';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 141709152';
+            break;
+          case 'Meganewton Meter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Newton Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 10000';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.01';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 1e-5';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-8';
+            break;
+          // The rest of the conversions remain as they are for Newton Meter, but divided by 100
+          case 'Newton Centimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+
+      case 'Newton Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 1,000,000';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 0.001';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-6';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 101.971621';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 10,197.1621';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 101,971.621';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.101971621';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 10.1971621';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 101.971621';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 10,000,000';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 1,000,000';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 100,000';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.737562';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8.851';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 11.8';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 141.6';
+            break;
+          case 'Newton Millimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Gram-force Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 9,806,650';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 9,806.65';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 9.80665';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 0.00980665';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-6';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 980.665';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 9,806.65';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 100,000';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 1,000,000';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 1';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 100';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 980,665,000';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 98,066,500';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 9,806,650';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 7.23301';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 86.7962';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 115.722';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1,388.67';
+            break;
+          case 'Gram-force Meter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Gram-force Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 98,066.5';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 98.0665';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.0980665';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-5';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-8';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 9.80665';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 98.0665';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Divide the torque value by 100';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.01';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 9,806,650';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 980,665';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 98,066.5';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.0723301';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 0.867962';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 1.15722';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 13.8867';
+            break;
+          case 'Gram-force Centimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+
+      case 'Gram-force Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 9,806.65';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 9.80665';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.00980665';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-6';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-9';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 0.980665';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 9.80665';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Divide the torque value by 1,000';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Divide the torque value by 10';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.00001';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 0.001';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'The value remains unchanged';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 980,665';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 98,066.5';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 9,806.65';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.00723301';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 0.0867962';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 0.115722';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1.38867';
+            break;
+          case 'Gram-force Millimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Kilogram-force Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 9.80665e6';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 9.80665e3';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 9.80665';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 0.00980665';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-6';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 980.665';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 9,806.65';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 100,000';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 1,000,000';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 100';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 9.80665e8';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 9.80665e7';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 9.80665e6';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 7.23301';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 86.7962';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 115.722';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1,388.67';
+            break;
+          case 'Kilogram-force Meter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Kilogram-force Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 9.80665e4';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 98.0665';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.0980665';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-5';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-8';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 9.80665';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 98.0665';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 10,000';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Divide the torque value by 100';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 9.80665e6';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 980,665';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 98,066.5';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.0723301';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 0.867962';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 1.15722';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 13.8867';
+            break;
+          case 'Kilogram-force Centimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+
+      case 'Kilogram-force Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 9,806,650';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 9,806.65';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 9.80665';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 0.00980665';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 9.80665e-6';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 980.665';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 9,806.65';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 1,000';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 100,000';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 1,000,000';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Divide the torque value by 1,000';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Divide the torque value by 10';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 9.80665e7';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 9.80665e6';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 9.80665e5';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.0723301';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 0.867962';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 1.15722';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 13.8867';
+            break;
+          case 'Kilogram-force Millimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Dyne Meter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 100';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 0.1';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1e-5';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 1e-8';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-11';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 1';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 1.01971621e-3';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 0.101971621';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 1.01971621';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 1.01971621e-6';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 1.01971621e-4';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1.01971621e-3';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Divide the torque value by 100';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 7.37562149e-6';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8.85074579e-5';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 1.18009529e-4';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1.41611435e-3';
+            break;
+          case 'Dyne Meter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Dyne Centimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 0.01';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1e-7';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 1e-10';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-13';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 0.01';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 0.1';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 1.01971621e-5';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 1.01971621e-3';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 0.0101971621';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 1.01971621e-8';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 1.01971621e-6';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1.01971621e-5';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 100';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 0.1';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 7.37562149e-8';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8.85074579e-7';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 1.18009529e-6';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1.41611435e-5';
+            break;
+          case 'Dyne Centimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+
+      case 'Dyne Millimeter':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 1';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 0.001';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1e-7';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 1e-10';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1e-13';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 0.001';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 0.01';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 1.01971621e-5';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 0.00101971621';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 0.0101971621';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 1.01971621e-8';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 1.01971621e-6';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1.01971621e-5';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 0.1';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 10';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 7.37562149e-8';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 8.85074579e-7';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 1.18009529e-6';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1.41611435e-5';
+            break;
+          case 'Dyne Millimeter': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Pound-force Foot':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 1,355,817.95';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 1,355.81795';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 1.35581795';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 0.00135581795';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1.35581795e-6';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 135.581795';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 1,355.81795';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 138,255.027';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 13,825,502.7';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 138,255,027';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 138.255027';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 13,825.5027';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 138,255.027';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 13,558,179.5';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 1,355,817.95';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 135,581.795';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 12';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 192';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 2,304';
+            break;
+          case 'Pound-force Foot': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Pound-force Inch':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 113,000.66295';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 113.00066295';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.112984829';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 0.000112984829';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 1.12984829e-7';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 11.2984829';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 112.984829';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 11,521.25225';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 1,152,125.225';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 11,521,252.25';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 11.52125225';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 1,152.125225';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 11,521.25225';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 1,130,006.6295';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 113,000.66295';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 11,300.066295';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Divide the torque value by 12';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 16';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 192';
+            break;
+          case 'Pound-force Inch': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+
+      case 'Ounce-force Foot':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 7,061.67979';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 7.06167979';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.00706167979';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 7.06167979e-6';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 7.06167979e-9';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 0.706167979';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 7.06167979';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 720.079';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 72,007.9';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 720,079';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.720079';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 72.0079';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 720.079';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 7,061,679.79';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 706,167.979';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 70,616.7979';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Divide the torque value by 16';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Divide the torque value by 192';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 12';
+            break;
+          case 'Ounce-force Foot': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+      case 'Ounce-force Inch':
+        switch (toUnit) {
+          case 'Micronewton Meter':
+            formula = 'Multiply the torque value by 588.473316';
+            break;
+          case 'Millinewton Meter':
+            formula = 'Multiply the torque value by 0.588473316';
+            break;
+          case 'Newton Meter':
+            formula = 'Multiply the torque value by 0.000588473316';
+            break;
+          case 'Kilonewton Meter':
+            formula = 'Multiply the torque value by 5.88473316e-7';
+            break;
+          case 'Meganewton Meter':
+            formula = 'Multiply the torque value by 5.88473316e-10';
+            break;
+          case 'Newton Centimeter':
+            formula = 'Multiply the torque value by 0.0588473316';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 0.588473316';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 60.00658';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 6,000.658';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 60,006.58';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.06000658';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 6.000658';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 60.00658';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 588,473.316';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 58,847.3316';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 5,884.73316';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Divide the torque value by 192';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Divide the torque value by 16';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Divide the torque value by 12';
+            break;
+          case 'Ounce-force Inch': // No conversion needed
+            formula = 'The value remains unchanged';
+            break;
+          default:
+            formula = 'Unknown conversion';
+        }
+        break;
+
       default:
         formula = 'No conversion formula available for the selected units';
     }

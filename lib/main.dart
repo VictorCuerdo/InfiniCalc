@@ -7,6 +7,7 @@ import 'package:infinicalc/widgets/conversions/distance.dart';
 import 'package:infinicalc/widgets/conversions/force.dart';
 import 'package:infinicalc/widgets/conversions/frequency.dart';
 import 'package:infinicalc/widgets/conversions/mass.dart';
+import 'package:infinicalc/widgets/conversions/pressure.dart';
 import 'package:infinicalc/widgets/conversions/speed.dart';
 import 'package:infinicalc/widgets/conversions/time.dart';
 import 'package:infinicalc/widgets/conversions/torque.dart';
@@ -82,8 +83,8 @@ class InfiniCalc extends StatelessWidget {
           '/frequency': (context) => const FrequencyUnitConverter(),
           '/force': (context) => const ForceUnitConverter(),
           '/torque': (context) => const TorqueUnitConverter(),
-          /*'/pressure': (context) => const PressureUnitConverter(),
-          '/energy': (context) => const EnergyUnitConverter(),
+          '/pressure': (context) => const PressureUnitConverter(),
+          /*'/energy': (context) => const EnergyUnitConverter(),
           '/power': (context) => const PowerUnitConverter(),
           '/temperature': (context) => const TemperatureUnitConverter(),
           '/angle': (context) => const AngleUnitConverter(),
