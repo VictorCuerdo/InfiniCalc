@@ -95,7 +95,7 @@ class _PressureUnitConverterState extends State<PressureUnitConverter> {
     const double pascalToKilopascal = 1e-3;
     const double pascalToMegapascal = 1e-6;
     const double pascalToGigapascal = 1e-9;
-
+    const double pascalToPascal = 1.0;
 // Standard atmosphere is 101325 Pa
     const double pascalToAtmospheres = 1 / 101325.0;
 
@@ -1761,6 +1761,1558 @@ class _PressureUnitConverterState extends State<PressureUnitConverter> {
                     pascalToKilogramForcePerSquareMeter);
             break;
           case 'Kilogram-force per Square Meter': // No conversion needed if from and to units are the same
+            toValue = fromValue;
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+
+// Kiloponds per Square Centimeter UNIT CONVERSION
+      case 'Kiloponds per Square Centimeter':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToMicropascal;
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToMillipascal;
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToKilogramForcePerSquareCentimeter;
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToHectopascal;
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToKilopascal;
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToMegapascal;
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToGigapascal;
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToAtmospheres;
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                (pascalToMicrobar);
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                (pascalToMillibar);
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                (pascalToBar);
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                (pascalToMillitorr);
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                (pascalToTorr);
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                (pascalToTechnicalAtmosphere);
+            break;
+          case 'Kilogram-force per Square Centimeter': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToKilogramForcePerSquareMeter;
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToPoundsPerSquareInch;
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToKilopoundsPerSquareInch;
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToMegapoundsPerSquareInch;
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToPoundsPerSquareFoot;
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToKilopoundsPerSquareFoot;
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToMegapoundsPerSquareFoot;
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToMillimetersOfMercury;
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToInchesOfMercury;
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToMillimetersOfWaterColumn;
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareCentimeter /
+                pascalToInchesOfWaterColumn;
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+
+      // Kiloponds per Square Meter UNIT CONVERSION
+      case 'Kiloponds per Square Meter':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToMicropascal;
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToMillipascal;
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToKilogramForcePerSquareMeter;
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToHectopascal;
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToKilopascal;
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToMegapascal;
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToGigapascal;
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToAtmospheres;
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                (pascalToMicrobar / pascalToPascal);
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                (pascalToMillibar / pascalToPascal);
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                (pascalToBar / pascalToPascal);
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                (pascalToMillitorr / pascalToPascal);
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                (pascalToTorr / pascalToPascal);
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                (pascalToTechnicalAtmosphere / pascalToPascal);
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToKilogramForcePerSquareCentimeter;
+            break;
+          case 'Kilogram-force per Square Meter': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToPoundsPerSquareInch;
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToKilopoundsPerSquareInch;
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToMegapoundsPerSquareInch;
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToPoundsPerSquareFoot;
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToKilopoundsPerSquareFoot;
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToMegapoundsPerSquareFoot;
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToMillimetersOfMercury;
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToInchesOfMercury;
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToMillimetersOfWaterColumn;
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                pascalToKilogramForcePerSquareMeter /
+                pascalToInchesOfWaterColumn;
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+
+// Pounds per Square Inch UNIT CONVERSION
+      case 'Pounds per Square Inch':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue =
+                fromValue * pascalToPoundsPerSquareInch / pascalToMicropascal;
+            break;
+          case 'Millipascals':
+            toValue =
+                fromValue * pascalToPoundsPerSquareInch / pascalToMillipascal;
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToPoundsPerSquareInch;
+            break;
+          case 'Hectopascals':
+            toValue =
+                fromValue * pascalToPoundsPerSquareInch / pascalToHectopascal;
+            break;
+          case 'Kilopascals':
+            toValue =
+                fromValue * pascalToPoundsPerSquareInch / pascalToKilopascal;
+            break;
+          case 'Megapascals':
+            toValue =
+                fromValue * pascalToPoundsPerSquareInch / pascalToMegapascal;
+            break;
+          case 'Gigapascals':
+            toValue =
+                fromValue * pascalToPoundsPerSquareInch / pascalToGigapascal;
+            break;
+          case 'Atmospheres':
+            toValue =
+                fromValue * pascalToPoundsPerSquareInch / pascalToAtmospheres;
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                (pascalToMicrobar / pascalToPascal);
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                (pascalToMillibar / pascalToPascal);
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                (pascalToBar / pascalToPascal);
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                (pascalToMillitorr / pascalToPascal);
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                (pascalToTorr / pascalToPascal);
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                (pascalToTechnicalAtmosphere / pascalToPascal);
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                pascalToKilogramForcePerSquareCentimeter;
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                pascalToPoundsPerSquareInch /
+                pascalToKilogramForcePerSquareMeter;
+            break;
+          case 'Pounds per Square Inch': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToPoundsPerSquareFoot);
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToMillimetersOfMercury);
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToInchesOfMercury);
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMillimetersOfWaterColumn);
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToInchesOfWaterColumn);
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+      // Kilopounds per Square Inch UNIT CONVERSION
+      case 'Kilopounds per Square Inch':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToMicropascal;
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToMillipascal;
+            break;
+          case 'Pascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToHectopascal;
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToKilopascal;
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToMegapascal;
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToGigapascal;
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToAtmospheres;
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                (pascalToMicrobar / pascalToPascal);
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                (pascalToMillibar / pascalToPascal);
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                (pascalToBar / pascalToPascal);
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                (pascalToMillitorr / pascalToPascal);
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                (pascalToTorr / pascalToPascal);
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                (pascalToTechnicalAtmosphere / pascalToPascal);
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToKilogramForcePerSquareCentimeter;
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToKilogramForcePerSquareMeter;
+            break;
+          case 'Pounds per Square Inch': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue;
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToMegapoundsPerSquareInch;
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToPoundsPerSquareFoot;
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToKilopoundsPerSquareFoot;
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToMegapoundsPerSquareFoot;
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToMillimetersOfMercury;
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToInchesOfMercury;
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToMillimetersOfWaterColumn;
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToKilopoundsPerSquareInch) /
+                pascalToInchesOfWaterColumn;
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+
+      // Megapounds per Square Inch UNIT CONVERSION
+      case 'Megapounds per Square Inch':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToMicropascal;
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToMillipascal;
+            break;
+          case 'Pascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch / pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToHectopascal;
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToKilopascal;
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToMegapascal;
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToGigapascal;
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToAtmospheres;
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                (pascalToMicrobar / pascalToPascal);
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                (pascalToMillibar / pascalToPascal);
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                (pascalToBar / pascalToPascal);
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                (pascalToMillitorr / pascalToPascal);
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                (pascalToTorr / pascalToPascal);
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                (pascalToTechnicalAtmosphere / pascalToPascal);
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToKilogramForcePerSquareCentimeter;
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToKilogramForcePerSquareMeter;
+            break;
+          case 'Pounds per Square Inch': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToKilopoundsPerSquareInch;
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue;
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToPoundsPerSquareFoot;
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToKilopoundsPerSquareFoot;
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToMegapoundsPerSquareFoot;
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToMillimetersOfMercury;
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToInchesOfMercury;
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToMillimetersOfWaterColumn;
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareInch /
+                    pascalToMegapoundsPerSquareInch) /
+                pascalToInchesOfWaterColumn;
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+      // Pounds per Square Foot UNIT CONVERSION
+      case 'Pounds per Square Foot':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot) /
+                pascalToMicropascal;
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot) /
+                pascalToMillipascal;
+            break;
+          case 'Pascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot) /
+                pascalToHectopascal;
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot) /
+                pascalToKilopascal;
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot) /
+                pascalToMegapascal;
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot) /
+                pascalToGigapascal;
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot) /
+                pascalToAtmospheres;
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    (pascalToMicrobar / pascalToPascal));
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    (pascalToMillibar / pascalToPascal));
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / (pascalToBar / pascalToPascal));
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    (pascalToMillitorr / pascalToPascal));
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / (pascalToTorr / pascalToPascal));
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    (pascalToTechnicalAtmosphere / pascalToPascal));
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToKilogramForcePerSquareCentimeter);
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToKilogramForcePerSquareMeter);
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToPoundsPerSquareInch);
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToMillimetersOfMercury);
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToInchesOfMercury);
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot /
+                    pascalToMillimetersOfWaterColumn);
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToPoundsPerSquareFoot / pascalToInchesOfWaterColumn);
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+
+// Millimetres of Mercury (0°C) UNIT CONVERSION
+      case 'Millimetres of Mercury (0°C)':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToMicropascal);
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToMillipascal);
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToMillimetersOfMercury;
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToHectopascal);
+            break;
+          case 'Kilopascals':
+            toValue =
+                fromValue * (pascalToMillimetersOfMercury / pascalToKilopascal);
+            break;
+          case 'Megapascals':
+            toValue =
+                fromValue * (pascalToMillimetersOfMercury / pascalToMegapascal);
+            break;
+          case 'Gigapascals':
+            toValue =
+                fromValue * (pascalToMillimetersOfMercury / pascalToGigapascal);
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToAtmospheres);
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    (pascalToMicrobar / pascalToPascal));
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    (pascalToMillibar / pascalToPascal));
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / (pascalToBar / pascalToPascal));
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    (pascalToMillitorr / pascalToPascal));
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    (pascalToTorr / pascalToPascal));
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    (pascalToTechnicalAtmosphere / pascalToPascal));
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    pascalToKilogramForcePerSquareCentimeter);
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    pascalToKilogramForcePerSquareMeter);
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToPoundsPerSquareInch);
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToPoundsPerSquareFoot);
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToInchesOfMercury);
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury /
+                    pascalToMillimetersOfWaterColumn);
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToMillimetersOfMercury / pascalToInchesOfWaterColumn);
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+      // Inches of Mercury (0°C) UNIT CONVERSION
+      case 'Inches of Mercury (0°C)':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue =
+                fromValue * (pascalToInchesOfMercury / pascalToMicropascal);
+            break;
+          case 'Millipascals':
+            toValue =
+                fromValue * (pascalToInchesOfMercury / pascalToMillipascal);
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToInchesOfMercury;
+            break;
+          case 'Hectopascals':
+            toValue =
+                fromValue * (pascalToInchesOfMercury / pascalToHectopascal);
+            break;
+          case 'Kilopascals':
+            toValue =
+                fromValue * (pascalToInchesOfMercury / pascalToKilopascal);
+            break;
+          case 'Megapascals':
+            toValue =
+                fromValue * (pascalToInchesOfMercury / pascalToMegapascal);
+            break;
+          case 'Gigapascals':
+            toValue =
+                fromValue * (pascalToInchesOfMercury / pascalToGigapascal);
+            break;
+          case 'Atmospheres':
+            toValue =
+                fromValue * (pascalToInchesOfMercury / pascalToAtmospheres);
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / (pascalToMicrobar / pascalToPascal));
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / (pascalToMillibar / pascalToPascal));
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / (pascalToBar / pascalToPascal));
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToInchesOfMercury /
+                    (pascalToMillitorr / pascalToPascal));
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / (pascalToTorr / pascalToPascal));
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToInchesOfMercury /
+                    (pascalToTechnicalAtmosphere / pascalToPascal));
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToInchesOfMercury /
+                    pascalToKilogramForcePerSquareCentimeter);
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToKilogramForcePerSquareMeter);
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToPoundsPerSquareInch);
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToPoundsPerSquareFoot);
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToMillimetersOfMercury);
+            break;
+          case 'Inches of Mercury (0°C)': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToMillimetersOfWaterColumn);
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToInchesOfMercury / pascalToInchesOfWaterColumn);
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+
+      // Kilopounds per Square Foot UNIT CONVERSION
+      case 'Kilopounds per Square Foot':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToMicropascal);
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToMillipascal);
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToKilopoundsPerSquareFoot;
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToHectopascal);
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToKilopascal);
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToMegapascal);
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToGigapascal);
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToAtmospheres);
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    (pascalToMicrobar / pascalToPascal));
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    (pascalToMillibar / pascalToPascal));
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    (pascalToBar / pascalToPascal));
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    (pascalToMillitorr / pascalToPascal));
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    (pascalToTorr / pascalToPascal));
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    (pascalToTechnicalAtmosphere / pascalToPascal));
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToKilogramForcePerSquareCentimeter);
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToKilogramForcePerSquareMeter);
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToPoundsPerSquareInch);
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToMillimetersOfMercury);
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToInchesOfMercury);
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot /
+                    pascalToMillimetersOfWaterColumn);
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToKilopoundsPerSquareFoot / pascalToInchesOfWaterColumn);
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+      // Megapounds per Square Foot UNIT CONVERSION
+      case 'Megapounds per Square Foot':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToMicropascal);
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToMillipascal);
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToMegapoundsPerSquareFoot;
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToHectopascal);
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToKilopascal);
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToMegapascal);
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToGigapascal);
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToAtmospheres);
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    (pascalToMicrobar / pascalToPascal));
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    (pascalToMillibar / pascalToPascal));
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    (pascalToBar / pascalToPascal));
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    (pascalToMillitorr / pascalToPascal));
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    (pascalToTorr / pascalToPascal));
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    (pascalToTechnicalAtmosphere / pascalToPascal));
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToKilogramForcePerSquareCentimeter);
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToKilogramForcePerSquareMeter);
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToPoundsPerSquareInch);
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToMillimetersOfMercury);
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToInchesOfMercury);
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot /
+                    pascalToMillimetersOfWaterColumn);
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToMegapoundsPerSquareFoot / pascalToInchesOfWaterColumn);
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+
+      // Millimetres of water column UNIT CONVERSION
+      case 'Millimetres of water column':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToMicropascal);
+            break;
+          case 'Millipascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToMillipascal);
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToMillimetersOfWaterColumn;
+            break;
+          case 'Hectopascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToHectopascal);
+            break;
+          case 'Kilopascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToKilopascal);
+            break;
+          case 'Megapascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToMegapascal);
+            break;
+          case 'Gigapascals':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToGigapascal);
+            break;
+          case 'Atmospheres':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToAtmospheres);
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    (pascalToMicrobar / pascalToPascal));
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    (pascalToMillibar / pascalToPascal));
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    (pascalToBar / pascalToPascal));
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    (pascalToMillitorr / pascalToPascal));
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    (pascalToTorr / pascalToPascal));
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    (pascalToTechnicalAtmosphere / pascalToPascal));
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToKilogramForcePerSquareCentimeter);
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToKilogramForcePerSquareMeter);
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToPoundsPerSquareInch);
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToPoundsPerSquareFoot);
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToMillimetersOfMercury);
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn / pascalToInchesOfMercury);
+            break;
+          case 'Millimetres of water column': // No conversion needed
+            toValue = fromValue;
+            break;
+          case 'Inches of water column':
+            toValue = fromValue *
+                (pascalToMillimetersOfWaterColumn /
+                    pascalToInchesOfWaterColumn);
+            break;
+          default:
+            throw ArgumentError('Unsupported unit for conversion: $toUnit');
+        }
+        break;
+      // Inches of water column UNIT CONVERSION
+      case 'Inches of water column':
+        switch (toUnit) {
+          case 'Micropascals':
+            toValue =
+                fromValue * (pascalToInchesOfWaterColumn / pascalToMicropascal);
+            break;
+          case 'Millipascals':
+            toValue =
+                fromValue * (pascalToInchesOfWaterColumn / pascalToMillipascal);
+            break;
+          case 'Pascals':
+            toValue = fromValue * pascalToInchesOfWaterColumn;
+            break;
+          case 'Hectopascals':
+            toValue =
+                fromValue * (pascalToInchesOfWaterColumn / pascalToHectopascal);
+            break;
+          case 'Kilopascals':
+            toValue =
+                fromValue * (pascalToInchesOfWaterColumn / pascalToKilopascal);
+            break;
+          case 'Megapascals':
+            toValue =
+                fromValue * (pascalToInchesOfWaterColumn / pascalToMegapascal);
+            break;
+          case 'Gigapascals':
+            toValue =
+                fromValue * (pascalToInchesOfWaterColumn / pascalToGigapascal);
+            break;
+          case 'Atmospheres':
+            toValue =
+                fromValue * (pascalToInchesOfWaterColumn / pascalToAtmospheres);
+            break;
+          case 'Microbars':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn /
+                    (pascalToMicrobar / pascalToPascal));
+            break;
+          case 'Millibars':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn /
+                    (pascalToMillibar / pascalToPascal));
+            break;
+          case 'Bars':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / (pascalToBar / pascalToPascal));
+            break;
+          case 'Millitorrs':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn /
+                    (pascalToMillitorr / pascalToPascal));
+            break;
+          case 'Torrs':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / (pascalToTorr / pascalToPascal));
+            break;
+          case 'Technical Atmospheres':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn /
+                    (pascalToTechnicalAtmosphere / pascalToPascal));
+            break;
+          case 'Kilogram-force per Square Centimeter':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn /
+                    pascalToKilogramForcePerSquareCentimeter);
+            break;
+          case 'Kilogram-force per Square Meter':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn /
+                    pascalToKilogramForcePerSquareMeter);
+            break;
+          case 'Pounds per Square Inch':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToPoundsPerSquareInch);
+            break;
+          case 'Kilopounds per Square Inch':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToKilopoundsPerSquareInch);
+            break;
+          case 'Megapounds per Square Inch':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToMegapoundsPerSquareInch);
+            break;
+          case 'Pounds per Square Foot':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToPoundsPerSquareFoot);
+            break;
+          case 'Kilopounds per Square Foot':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToKilopoundsPerSquareFoot);
+            break;
+          case 'Megapounds per Square Foot':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToMegapoundsPerSquareFoot);
+            break;
+          case 'Millimetres of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToMillimetersOfMercury);
+            break;
+          case 'Inches of Mercury (0°C)':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn / pascalToInchesOfMercury);
+            break;
+          case 'Millimetres of water column':
+            toValue = fromValue *
+                (pascalToInchesOfWaterColumn /
+                    pascalToMillimetersOfWaterColumn);
+            break;
+          case 'Inches of water column': // No conversion needed
             toValue = fromValue;
             break;
           default:
@@ -4842,8 +6394,8 @@ class _PressureUnitConverterState extends State<PressureUnitConverter> {
   // Correct the method signature by adding the isFrom parameter
   Widget _buildDropdownButton(String type, String currentValue, bool isFrom) {
     List<DropdownMenuItem<String>> items = <String>[
-      'Micropascals'
-          'Millipascals',
+      'Micropascals',
+      'Millipascals',
       'Pascals',
       'Hectopascals',
       'Kilopascals',

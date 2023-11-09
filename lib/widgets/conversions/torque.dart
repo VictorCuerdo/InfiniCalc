@@ -88,6 +88,9 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
     if (fromValue == null) return;
     double toValue = 0; // Your conversion logic here
 // region myVariables
+    const double micronewtonMeterToGramForceMeter =
+        9.80665; // 1 gf·m = 9.80665 µN·m
+
     const double micronewtonMeterToMicronewtonMeter = 1;
     const double micronewtonMeterToMillinewtonMeter = 1e-3;
     const double micronewtonMeterToNewtonMeter = 1e-6;
@@ -95,26 +98,40 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
     const double micronewtonMeterToMeganewtonMeter = 1e-12;
     const double micronewtonMeterToNewtonCentimeter = 1e-4;
     const double micronewtonMeterToNewtonMillimeter = 1e-3;
-    const double micronewtonMeterToGramForceMeter =
-        1.019716212977928e-4; // 1 Nm = 101.9716212977928 gf·m
+
+    //const double micronewtonMeterToGramForceMeter = 1.019716212977928e-4; // 1 Nm = 101.9716212977928 gf·m
     const double micronewtonMeterToGramForceCentimeter =
         1.019716212977928e-2; // 1 Nm = 10197.16212977928 gf·cm
     const double micronewtonMeterToGramForceMillimeter =
         1.019716212977928e-1; // 1 Nm = 101971.6212977928 gf·mm
+    //**** */
     const double micronewtonMeterToKilogramForceMeter =
         1.019716212977928e-7; // 1 Nm = 0.1019716212977928 kgf·m
+
+    const double micronewtonMeterToDyneCentimeter = 10;
+    const double micronewtonMeterToPoundForceInch =
+        1.1298482904455898e-7; // 1 lb·in = 8.85074579 N·m = 8.85074579e6 µN·m
+
+    const double newtonMeterToDyneCentimeter = 1e7; // 1 N·m = 10^7 dyn·cm
+
+    const double kilogramForceMeterToMicronewtonMeter = 9.80665e9;
+
+    const double kilogramForceCentimeterToDyneMeter =
+        980665; // since 1 dyne·m = 1000 gf·cm
+
+    const double kilogramForceMillimeterToDyneMeter =
+        98066.5; // since 1 dyne·m = 1000 gf·mm
+
     const double micronewtonMeterToKilogramForceCentimeter =
         1.019716212977928e-5; // 1 Nm = 10.19716212977928 kgf·cm
     const double micronewtonMeterToKilogramForceMillimeter =
         1.019716212977928e-4; // 1 Nm = 101.9716212977928 kgf·mm
     const double micronewtonMeterToDyneMeter =
         10; // 1 Nm = 10^7 dyne·cm, 1 dyne·cm = 10^-7 Nm and 1 dyne·m = 10^-5 Nm
-    const double micronewtonMeterToDyneCentimeter = 1e3; // 1 Nm = 10^7 dyne·cm
     const double micronewtonMeterToDyneMillimeter = 1e4; // 1 dyne·mm = 10^-6 Nm
     const double micronewtonMeterToPoundForceFoot =
         7.375621492772e-8; // 1 Nm = 0.7375621492772 lb·ft
-    const double micronewtonMeterToPoundForceInch =
-        8.850745791327184e-7; // 1 Nm = 8.850745791327184 lb·in
+
     const double micronewtonMeterToOunceForceFoot =
         1.180094786104e-6; // 1 lb·ft = 16 oz·ft, hence 1 Nm = 0.7375621492772 * 16 oz·ft
     const double micronewtonMeterToOunceForceInch =
@@ -161,7 +178,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
     const double newtonMeterToKilogramForceMillimeter =
         101.9716212978; // 1 Nm = 101.9716212978 kgf·mm
     const double newtonMeterToDyneMeter = 1e7;
-    const double newtonMeterToDyneCentimeter = 1e5;
+
     const double newtonMeterToDyneMillimeter = 1e6;
     const double newtonMeterToPoundForceFoot =
         0.7375621492773; // 1 Nm = 0.7375621492773 lbf·ft
@@ -389,7 +406,6 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
     const double gramForceMillimeterToOunceForceInch =
         0.01388737942489; // using the conversion 1 gf·mm to ozf·in
 
-    const double kilogramForceMeterToMicronewtonMeter = 9.80665e6;
     const double kilogramForceMeterToMillinewtonMeter = 9.80665e3;
     const double kilogramForceMeterToNewtonMeter = 9.80665;
     const double kilogramForceMeterToKilonewtonMeter = 0.00980665;
@@ -439,8 +455,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
         1; // by definition
     const double kilogramForceCentimeterToKilogramForceMillimeter =
         10; // since 1 cm = 10 mm
-    const double kilogramForceCentimeterToDyneMeter =
-        980665; // since 1 dyne·m = 1000 gf·cm
+
     const double kilogramForceCentimeterToDyneCentimeter =
         98066500; // since 1 dyne·cm = 1 kgf·cm
     const double kilogramForceCentimeterToDyneMillimeter =
@@ -475,8 +490,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
         0.1; // since 10 mm = 1 cm
     const double kilogramForceMillimeterToKilogramForceMillimeter =
         1; // by definition
-    const double kilogramForceMillimeterToDyneMeter =
-        98066.5; // since 1 dyne·m = 1000 gf·mm
+
     const double kilogramForceMillimeterToDyneCentimeter =
         9806650; // since 1 dyne·cm = 10 gf·mm
     const double kilogramForceMillimeterToDyneMillimeter =
@@ -2510,9 +2524,50 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
           case 'Meganewton Meter':
             formula = 'Multiply the torque value by 1e-8';
             break;
-          // The rest of the conversions remain as they are for Newton Meter, but divided by 100
           case 'Newton Centimeter': // No conversion needed
             formula = 'The value remains unchanged';
+            break;
+          case 'Newton Millimeter':
+            formula = 'Multiply the torque value by 0.1';
+            break;
+          case 'Gram-force Meter':
+            formula = 'Multiply the torque value by 0.101972';
+            break;
+          case 'Gram-force Centimeter':
+            formula = 'Multiply the torque value by 10.1972';
+            break;
+          case 'Gram-force Millimeter':
+            formula = 'Multiply the torque value by 1019.72';
+            break;
+          case 'Kilogram-force Meter':
+            formula = 'Multiply the torque value by 0.000101972';
+            break;
+          case 'Kilogram-force Centimeter':
+            formula = 'Multiply the torque value by 10.1972e-6';
+            break;
+          case 'Kilogram-force Millimeter':
+            formula = 'Multiply the torque value by 1019.72e-6';
+            break;
+          case 'Dyne Meter':
+            formula = 'Multiply the torque value by 100000';
+            break;
+          case 'Dyne Centimeter':
+            formula = 'Multiply the torque value by 10000';
+            break;
+          case 'Dyne Millimeter':
+            formula = 'Multiply the torque value by 1000';
+            break;
+          case 'Pound-force Foot':
+            formula = 'Multiply the torque value by 0.00737562';
+            break;
+          case 'Pound-force Inch':
+            formula = 'Multiply the torque value by 0.0885074';
+            break;
+          case 'Ounce-force Foot':
+            formula = 'Multiply the torque value by 0.118110';
+            break;
+          case 'Ounce-force Inch':
+            formula = 'Multiply the torque value by 1.41732';
             break;
           default:
             formula = 'Unknown conversion';
