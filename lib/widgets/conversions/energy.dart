@@ -640,7 +640,6 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
     const double TonnesOfTNTToHorsepowerHours = 1558.565104;
     const double TonnesOfTNTToBarrelsOfOilEquivalent = 0.683899904;
     const double TonnesOfTNTToTonnesOfOilEquivalent = 0.0999331664;
-    const double TonnesOfTNTToTonnesOfTNT = 1.0; // Identity
     const double TonnesOfTNTToKilotonnesOfTNT = 0.001;
     const double TonnesOfTNTToMegatonnesOfTNT = 1e-6;
     const double TonnesOfTNTToErgs = 4.184e+16;
@@ -670,7 +669,6 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
     const double KilotonnesOfTNTToBarrelsOfOilEquivalent = 683.899904;
     const double KilotonnesOfTNTToTonnesOfOilEquivalent = 99.9331664;
     const double KilotonnesOfTNTToTonnesOfTNT = 1000.0;
-    const double KilotonnesOfTNTToKilotonnesOfTNT = 1.0; // Identity
     const double KilotonnesOfTNTToMegatonnesOfTNT = 0.001;
     const double KilotonnesOfTNTToErgs = 4.184e+19;
     const double KilotonnesOfTNTToElectronvolt = 2.6114436e+31;
@@ -700,7 +698,6 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
     const double MegatonnesOfTNTToTonnesOfOilEquivalent = 99933.1664;
     const double MegatonnesOfTNTToTonnesOfTNT = 1e+6;
     const double MegatonnesOfTNTToKilotonnesOfTNT = 1000.0;
-    const double MegatonnesOfTNTToMegatonnesOfTNT = 1.0; // Identity
     const double MegatonnesOfTNTToErgs = 4.184e+22;
     const double MegatonnesOfTNTToElectronvolt = 2.6114436e+34;
     const double MegatonnesOfTNTToKiloelectronvolt = 2.6114436e+31;
@@ -730,7 +727,7 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
     const double ErgsToTonnesOfTNT = 2.39006e-17;
     const double ErgsToKilotonnesOfTNT = 2.39006e-20;
     const double ErgsToMegatonnesOfTNT = 2.39006e-23;
-    const double ErgsToErgs = 1.0; // Identity
+
     const double ErgsToElectronvolt = 6.2415e+11;
     const double ErgsToKiloelectronvolt = 6.2415e+8;
     const double ErgsToMegaelectronvolt = 624150.0;
@@ -760,10 +757,6 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
     const double ElectronvoltToKilotonnesOfTNT = 3.8293e-32;
     const double ElectronvoltToMegatonnesOfTNT = 3.8293e-35;
     const double ElectronvoltToErgs = 1.60218e-12;
-    const double Electronvolt = 1.0; // Identity for electronvolt
-    const double Kiloelectronvolt = 0.001;
-    const double Megaelectronvolt = 1e-6;
-    const double Gigaelectronvolt = 1e-9;
 
 //KILOELECTRONVOLT
     const double KiloelectronvoltToNanojoules = 1.60218e-7;
@@ -3177,82 +3170,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Nanojoules':
         switch (toUnit) {
           case 'Nanojoules':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-6';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Divide the energy value by 1e-9';
             break;
           case 'Kilojoules':
-            formula = '';
+            formula = 'Divide the energy value by 1e-12';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Divide the energy value by 1e-15';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Divide the energy value by 1e-9';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3,6e+12';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3,6e+15';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3,6e+18';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 4,184e+9';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 4,184e+12';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Divide the energy value by  1,356e+6';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 1,055e+9';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 1,055e+14';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.7250614122937e-16';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 6,118e+18';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 4,187e+19';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4,184e+18';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4,184e+21';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4,184e+24';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Divide the energy value by 100';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6,242e+9';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6241509.074461';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6242';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.24151';
             break;
           default:
             throw 'Unknown formula: $toUnit';
@@ -5574,57 +5567,57 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
   String _getPrefix(String unit) {
     switch (unit) {
       case 'Nanojoules':
-        return 'm²';
+        return 'nJ';
       case 'Microjoules':
-        return 'mm²';
+        return 'µJ';
       case 'Millijoules':
-        return 'cm²';
+        return 'mJ';
       case 'Joules':
-        return 'a';
+        return 'J';
       case 'Kilojoules':
-        return 'ha';
+        return 'kJ';
       case 'Megajoules':
-        return 'km²';
+        return 'MJ';
       case 'Newton-metres':
-        return 'in²';
+        return 'N⋅m';
       case 'Watt-hours':
-        return 'ft²';
+        return 'Wh';
       case 'Kilowatt-hours':
-        return 'yd²';
+        return 'kW⋅h';
       case 'Megawatt-hours':
-        return 'ac';
+        return 'MWh';
       case 'Calories':
-        return 'mi²';
+        return 'cal';
       case 'Kilocalories':
-        return 'm²';
+        return 'kcal';
       case 'Foot-pounds Force':
-        return 'mm²';
+        return 'ft⋅lbf';
       case 'British Thermal Units (ISO)':
-        return 'cm²';
+        return 'BTU';
       case 'Therms':
-        return 'a';
+        return 'thm';
       case 'Horsepower Hours':
-        return 'ha';
+        return 'hp⋅h';
       case 'Barrels of Oil Equivalent':
-        return 'km²';
+        return 'BOE';
       case 'Tonnes of Oil Equivalent':
-        return 'in²';
+        return 'toe';
       case 'Tonnes of TNT':
-        return 'ft²';
+        return 'ton of TNT';
       case 'Kilotonnes of TNT':
-        return 'yd²';
+        return 'KT TNT';
       case 'Megatonnes of TNT':
-        return 'ac';
+        return 'MT TNT';
       case 'Ergs':
-        return 'mi²';
+        return 'erg';
       case 'Electronvolt':
-        return 'ft²';
+        return 'eV';
       case 'Kiloelectronvolt':
-        return 'yd²';
+        return 'keV';
       case 'Megaelectronvolt':
-        return 'ac';
+        return 'MeV';
       case 'Gigaelectronvolt':
-        return 'mi²';
+        return 'GeV';
       default:
         return '';
     }
