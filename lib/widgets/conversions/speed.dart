@@ -479,7 +479,7 @@ class _SpeedUnitConverterState extends State<SpeedUnitConverter> {
     // Use a buffer to build the formatted string for the integer part with commas.
     StringBuffer formattedInt = StringBuffer();
     int commaPosition = 3;
-    int offset = integerPart.length % commaPosition;
+
     for (int i = 0; i < integerPart.length; i++) {
       if (i % commaPosition == 0 && i > 0) {
         formattedInt.write(',');
@@ -1089,22 +1089,18 @@ class _SpeedUnitConverterState extends State<SpeedUnitConverter> {
       );
     }).toList();
 
-    // Insert at the start of the list to act as a non-selectable hint
-    // Insert a non-selectable 'Choose a conversion unit' hint at the start.
     items.insert(
-        0,
-        const DropdownMenuItem<String>(
-          value: '',
-          enabled: false, // An empty string represents no selection.
-          child: Text(
-            'Choose a conversion unit',
-            style: TextStyle(color: Colors.grey, fontSize: 23),
-          ), // This makes the item non-selectable.
-        ));
+      0,
+      const DropdownMenuItem<String>(
+        value: '',
+        enabled: false,
+        child: Text(
+          'Choose a conversion unit',
+          style: TextStyle(color: Colors.grey, fontSize: 23),
+        ),
+      ),
+    );
 
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         contentPadding:
@@ -1120,7 +1116,7 @@ class _SpeedUnitConverterState extends State<SpeedUnitConverter> {
       hint: const Text(
         'Choose a conversion unit',
         style: TextStyle(color: Colors.grey, fontSize: 23),
-        textAlign: TextAlign.center, // This is correct for Text widget
+        textAlign: TextAlign.center,
       ),
       onChanged: (String? newValue) {
         if (newValue != null && newValue.isNotEmpty) {
@@ -1132,22 +1128,20 @@ class _SpeedUnitConverterState extends State<SpeedUnitConverter> {
               toUnit = newValue;
               toPrefix = _getPrefix(newValue);
             }
-            fromController.clear();
-            toController.clear();
-            // Trigger the conversion logic if needed.
+            // Do not clear the text fields here to retain the input value
+            // Trigger the conversion logic if needed with the new unit but same value
+            convert(fromController.text);
           });
         }
       },
       dropdownColor: const Color(0xFF303134),
       items: items,
-      isExpanded:
-          true, // This will make sure the dropdown's content is centered
+      isExpanded: true,
       icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
       iconSize: 24,
       selectedItemBuilder: (BuildContext context) {
         return items.map<Widget>((DropdownMenuItem<String> item) {
           return Center(
-            // Center the text for the selected item
             child: Text(
               item.value == '' ? 'Choose a conversion unit' : item.value!,
               style: const TextStyle(

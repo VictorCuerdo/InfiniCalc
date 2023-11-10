@@ -105,23 +105,6 @@ class _MassUnitConverterState extends State<MassUnitConverter> {
     const double microgramToCarat = 5e-3;
     const double microgramToTroyOunce = 3.21507e-8;
 
-// 1 gram is the base unit
-    const double kilogramToGram = 1e3;
-    const double tonneToGram = 1e6;
-    const double grainToGram = 0.06479891;
-    const double ounceToGram = 28.34952;
-    const double poundToGram = 453.59237;
-    const double stoneToGram = 6350.29318;
-    const double quarterToGram =
-        12700.58636; // Assuming it's the British quarter
-    const double hundredweightLMPToGram =
-        50802.34544; // Long hundredweight (Imperial)
-    const double hundredweightUSToGram = 45359.237; // Short hundredweight (US)
-    const double longTonLMPToGram = 1016046.9088; // Long ton (Imperial)
-    const double shortTonUSToGram = 907184.74; // Short ton (US)
-    const double caratToGram = 0.2;
-    const double troyOunceToGram = 31.1034768;
-
 // Using these constants, you can convert from any of these units to grams and then to any other unit.
     switch (fromUnit) {
       case 'Micrograms':
@@ -1190,7 +1173,7 @@ class _MassUnitConverterState extends State<MassUnitConverter> {
     // Use a buffer to build the formatted string for the integer part with commas.
     StringBuffer formattedInt = StringBuffer();
     int commaPosition = 3;
-    int offset = integerPart.length % commaPosition;
+
     for (int i = 0; i < integerPart.length; i++) {
       if (i % commaPosition == 0 && i > 0) {
         formattedInt.write(',');
@@ -2439,22 +2422,18 @@ class _MassUnitConverterState extends State<MassUnitConverter> {
       );
     }).toList();
 
-    // Insert at the start of the list to act as a non-selectable hint
-    // Insert a non-selectable 'Choose a conversion unit' hint at the start.
     items.insert(
-        0,
-        const DropdownMenuItem<String>(
-          value: '',
-          enabled: false, // An empty string represents no selection.
-          child: Text(
-            'Choose a conversion unit',
-            style: TextStyle(color: Colors.grey, fontSize: 23),
-          ), // This makes the item non-selectable.
-        ));
+      0,
+      const DropdownMenuItem<String>(
+        value: '',
+        enabled: false,
+        child: Text(
+          'Choose a conversion unit',
+          style: TextStyle(color: Colors.grey, fontSize: 23),
+        ),
+      ),
+    );
 
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         contentPadding:
@@ -2470,7 +2449,7 @@ class _MassUnitConverterState extends State<MassUnitConverter> {
       hint: const Text(
         'Choose a conversion unit',
         style: TextStyle(color: Colors.grey, fontSize: 23),
-        textAlign: TextAlign.center, // This is correct for Text widget
+        textAlign: TextAlign.center,
       ),
       onChanged: (String? newValue) {
         if (newValue != null && newValue.isNotEmpty) {
@@ -2482,22 +2461,20 @@ class _MassUnitConverterState extends State<MassUnitConverter> {
               toUnit = newValue;
               toPrefix = _getPrefix(newValue);
             }
-            fromController.clear();
-            toController.clear();
-            // Trigger the conversion logic if needed.
+            // Do not clear the text fields here to retain the input value
+            // Trigger the conversion logic if needed with the new unit but same value
+            convert(fromController.text);
           });
         }
       },
       dropdownColor: const Color(0xFF303134),
       items: items,
-      isExpanded:
-          true, // This will make sure the dropdown's content is centered
+      isExpanded: true,
       icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
       iconSize: 24,
       selectedItemBuilder: (BuildContext context) {
         return items.map<Widget>((DropdownMenuItem<String> item) {
           return Center(
-            // Center the text for the selected item
             child: Text(
               item.value == '' ? 'Choose a conversion unit' : item.value!,
               style: const TextStyle(

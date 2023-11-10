@@ -48,6 +48,7 @@ class _UnitConversionState extends State<UnitConversion> {
     {'image': 'assets/images/angle.png', 'label': 'Angle'},
     {'image': 'assets/images/combustible.png', 'label': 'Fuel Consumption'},
     {'image': 'assets/images/data.png', 'label': 'Data Sizes'},
+    {'image': 'assets/images/settings.png', 'label': 'Settings'},
     // ... other items ...
   ];
 

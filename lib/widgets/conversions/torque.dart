@@ -355,22 +355,6 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
         1e-5; // since 1 kgf·m = 100 gf·cm
     const double gramForceCentimeterToKilogramForceCentimeter =
         0.001; // since 1 kgf·cm = 1000 gf·cm
-    const double gramForceCentimeterToKilogramForceMillimeter =
-        0.01; // since 1 kgf·mm = 100 gf·cm
-    const double gramForceCentimeterToDyneMeter =
-        9806.65; // since 1 dyne·m = 100 gf·cm
-    const double gramForceCentimeterToDyneCentimeter =
-        980665; // since 1 dyne·cm = 1 gf·cm
-    const double gramForceCentimeterToDyneMillimeter =
-        9806650; // since 1 dyne·mm = 10 gf·cm
-    const double gramForceCentimeterToPoundForceFoot =
-        0.000723301374515; // since 1 lbf·ft = 13825.4954376 gf·cm
-    const double gramForceCentimeterToPoundForceInch =
-        0.00867961649818; // since 1 lbf·in = 1150.00000062 gf·cm
-    const double gramForceCentimeterToOunceForceFoot =
-        0.0115728161874; // since 1 ozf·ft = 862.000000049 gf·cm
-    const double gramForceCentimeterToOunceForceInch =
-        0.138878394489; // since 1 ozf·in = 71.6666666712 gf·cm
 
     const double gramForceMillimeterToMicronewtonMeter = 9.80665;
     const double gramForceMillimeterToMillinewtonMeter = 0.00980665;
@@ -665,7 +649,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
         1152124692.682998; // since 1 dyn·mm = 0.00000868055555556 lbf·in
     const double poundForceInchToPoundForceFoot =
         0.08333333333333333; // since 1 ft = 12 in
-    const double poundForceInchToPoundForceInch = 1; // by definition
+
     const double poundForceInchToOunceForceFoot =
         1.333333333333333; // since 1 lbf = 16 ozf
     const double poundForceInchToOunceForceInch = 16; // since 1 lbf = 16 ozf
@@ -699,7 +683,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
         0.0625; // since 1 lbf·ft = 16 ozf·ft
     const double ounceForceFootToPoundForceInch =
         0.75; // since 1 lbf·in = 16 ozf·in and 1 ft = 12 in
-    const double ounceForceFootToOunceForceFoot = 1; // by definition
+
     const double ounceForceFootToOunceForceInch = 12; // since 1 ft = 12 in
 
     const double ounceForceInchToMicronewtonMeter = 706.5517858565288;
@@ -733,7 +717,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
         0.0625; // since 1 lbf·in = 16 ozf·in
     const double ounceForceInchToOunceForceFoot =
         0.08333333333333333; // since 1 ft = 12 in
-    const double ounceForceInchToOunceForceInch = 1; // by definition
+
     // endregion
 
     switch (fromUnit) {
@@ -2115,7 +2099,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
     // Use a buffer to build the formatted string for the integer part with commas.
     StringBuffer formattedInt = StringBuffer();
     int commaPosition = 3;
-    int offset = integerPart.length % commaPosition;
+
     for (int i = 0; i < integerPart.length; i++) {
       if (i % commaPosition == 0 && i > 0) {
         formattedInt.write(',');
@@ -3822,22 +3806,18 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
       );
     }).toList();
 
-    // Insert at the start of the list to act as a non-selectable hint
-    // Insert a non-selectable 'Choose a conversion unit' hint at the start.
     items.insert(
-        0,
-        const DropdownMenuItem<String>(
-          value: '',
-          enabled: false, // An empty string represents no selection.
-          child: Text(
-            'Choose a conversion unit',
-            style: TextStyle(color: Colors.grey, fontSize: 23),
-          ), // This makes the item non-selectable.
-        ));
+      0,
+      const DropdownMenuItem<String>(
+        value: '',
+        enabled: false,
+        child: Text(
+          'Choose a conversion unit',
+          style: TextStyle(color: Colors.grey, fontSize: 23),
+        ),
+      ),
+    );
 
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         contentPadding:
@@ -3853,7 +3833,7 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
       hint: const Text(
         'Choose a conversion unit',
         style: TextStyle(color: Colors.grey, fontSize: 23),
-        textAlign: TextAlign.center, // This is correct for Text widget
+        textAlign: TextAlign.center,
       ),
       onChanged: (String? newValue) {
         if (newValue != null && newValue.isNotEmpty) {
@@ -3865,22 +3845,20 @@ class _TorqueUnitConverterState extends State<TorqueUnitConverter> {
               toUnit = newValue;
               toPrefix = _getPrefix(newValue);
             }
-            fromController.clear();
-            toController.clear();
-            // Trigger the conversion logic if needed.
+            // Do not clear the text fields here to retain the input value
+            // Trigger the conversion logic if needed with the new unit but same value
+            convert(fromController.text);
           });
         }
       },
       dropdownColor: const Color(0xFF303134),
       items: items,
-      isExpanded:
-          true, // This will make sure the dropdown's content is centered
+      isExpanded: true,
       icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
       iconSize: 24,
       selectedItemBuilder: (BuildContext context) {
         return items.map<Widget>((DropdownMenuItem<String> item) {
           return Center(
-            // Center the text for the selected item
             child: Text(
               item.value == '' ? 'Choose a conversion unit' : item.value!,
               style: const TextStyle(

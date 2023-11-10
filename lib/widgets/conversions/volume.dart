@@ -77,7 +77,7 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
       await imagePath.writeAsBytes(imageBytes);
       // Using shareXFiles
       await Share.shareXFiles([XFile(imagePath.path)],
-          text: 'Check out my area result!');
+          text: 'Check out my volume result!');
     }
   }
 
@@ -87,38 +87,6 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
     var fromValue = double.tryParse(normalizedText);
     if (fromValue == null) return;
     double toValue = 0; // Your conversion logic here
-// Conversion constants for Cubic Centimetres (cc) to other units
-    const double ccToMillilitre = 1; // 1 cc is 1 ml
-    const double ccToLitre = 1e-3; // 1,000 cc is 1 L
-    const double ccToCubicDecimetre = 1e-3; // 1,000 cc is 1 dm³
-    const double ccToHectolitre = 1e-5; // 100,000 cc is 1 hL
-    const double ccToCubicMetre = 1e-6; // 1,000,000 cc is 1 m³
-    const double ccToCubicInch =
-        0.0610237; // 1 cc is approx 0.0610237 cubic inches
-    const double ccToCubicFoot =
-        3.53147e-5; // 1 cc is approx 0.0000353147 cubic feet
-    const double ccToCubicYard =
-        1.30795e-6; // 1 cc is approx 0.00000130795 cubic yards
-// Imperial Liquid Volume to cc
-    const double teaspoonLmpToCc = 5.91939; // 1 imperial teaspoon is 5.91939 cc
-    const double tablespoonLmpToCc =
-        17.7582; // 1 imperial tablespoon is 17.7582 cc
-    const double fluidOunceLmpToCc =
-        28.4131; // 1 imperial fluid ounce is 28.4131 cc
-    const double cupLmpToCc = 284.131; // 1 imperial cup is 284.131 cc
-    const double pintLmpToCc = 568.261; // 1 imperial pint is 568.261 cc
-    const double quartLmpToCc = 1136.52; // 1 imperial quart is 1136.52 cc
-    const double gallonLmpToCc = 4546.09; // 1 imperial gallon is 4546.09 cc
-// U.S. Liquid Volume to cc
-    const double teaspoonUsToCc = 4.92892; // 1 US teaspoon is 4.92892 cc
-    const double tablespoonUsToCc = 14.7868; // 1 US tablespoon is 14.7868 cc
-    const double fluidOunceUsToCc = 29.5735; // 1 US fluid ounce is 29.5735 cc
-    const double cupUsToCc = 236.588; // 1 US cup is 236.588 cc
-    const double pintUsToCc = 473.176; // 1 US pint is 473.176 cc
-    const double quartUsToCc = 946.353; // 1 US quart is 946.353 cc
-    const double gallonUsToCc = 3785.41; // 1 US gallon is 3785.41 cc
-// Barrels to cc (assuming U.S. liquid barrel)
-    const double barrelToCc = 119240; // 1 barrel is 119,240 cc
 
     switch (fromUnit) {
       // Litres (L) UNIT CONVERSION
@@ -2318,7 +2286,7 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
     // Use a buffer to build the formatted string for the integer part with commas.
     StringBuffer formattedInt = StringBuffer();
     int commaPosition = 3;
-    int offset = integerPart.length % commaPosition;
+
     for (int i = 0; i < integerPart.length; i++) {
       if (i % commaPosition == 0 && i > 0) {
         formattedInt.write(',');
@@ -3817,136 +3785,133 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
       controller: screenshotController,
       child: Scaffold(
         backgroundColor: const Color(0xFF464648),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SizedBox(height: 20), // Adjust space as needed
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      context.navigateTo(
-                          '/unit'); // Assuming you have this route defined somewhere
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      size: 40,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  const SizedBox(
-                      width: 50), // Space between the icon and the text
-                  const Text(
-                    'Convert Volume',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 150),
-              // Inserted just before the 'From' input field
-              SwitchListTile(
-                title: const Text(
-                  'See result in exponential format',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-                value: _isExponentialFormat,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isExponentialFormat = value;
-                    // Force the text to update with the new formatting.
-                    double? lastValue = double.tryParse(
-                        fromController.text.replaceAll(',', ''));
-                    if (lastValue != null) {
-                      fromController.text =
-                          _formatNumber(lastValue, forDisplay: true);
-                    }
-                    // Re-trigger conversion to update the toController with formatted text.
-                    convert(fromController.text);
-                  });
-                },
-                activeColor: Colors.lightBlue,
-                activeTrackColor: Colors.lightBlue.shade200,
-              ),
-
-              const SizedBox(height: 10),
-              // Adjusted layout for 'From' input and dropdown
-              Container(
-                padding: const EdgeInsets.only(left: 0.125, right: 0.125),
-                width: double.infinity,
-                child: _buildUnitColumn(
-                    'From', fromController, fromUnit, fromPrefix, true),
-              ),
-              // Switch icon in vertical orientation
-              IconButton(
-                icon: const Icon(
-                  Icons.swap_vert,
-                  color: Color.fromARGB(255, 183, 218, 234),
-                  size: 40,
-                ),
-                onPressed: swapUnits,
-              ),
-              // Adjusted layout for 'To' input and dropdown
-              Container(
-                padding: const EdgeInsets.only(left: 0.125, right: 0.125),
-                width: double.infinity,
-                child: _buildUnitColumn(
-                    'To', toController, toUnit, toPrefix, false),
-              ),
-              const SizedBox(height: 30),
-              RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
+        resizeToAvoidBottomInset:
+            true, // Adjust the body size when the keyboard is visible
+        body: SingleChildScrollView(
+          // Allow the body to be scrollable
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 20), // Adjust space as needed
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const TextSpan(
-                      text: 'Formula:  ',
-                      style: TextStyle(
-                        color:
-                            Colors.orange, // Set the color for 'Hola' to white
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    IconButton(
+                      onPressed: () {
+                        context.navigateTo(
+                            '/unit'); // Assuming you have this route defined somewhere
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        size: 40,
+                        color: Colors.grey,
                       ),
                     ),
-                    TextSpan(
-                      text:
-                          _conversionFormula, // Keep the original formula style
-                      style: const TextStyle(
+                    const SizedBox(
+                        width: 45), // Space between the icon and the text
+                    const Text(
+                      'Convert Volume',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 18,
-                        fontStyle: FontStyle.normal,
                       ),
                     ),
                   ],
                 ),
-              ),
-            ],
-            // Add this IconButton where you want the reset button to appear
+                const SizedBox(height: 150),
+                SwitchListTile(
+                  title: const Text(
+                    'See result in exponential format',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                  value: _isExponentialFormat,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _isExponentialFormat = value;
+                      double? lastValue = double.tryParse(
+                          fromController.text.replaceAll(',', ''));
+                      if (lastValue != null) {
+                        fromController.text =
+                            _formatNumber(lastValue, forDisplay: true);
+                      }
+                      convert(fromController.text);
+                    });
+                  },
+                  activeColor: Colors.lightBlue,
+                  activeTrackColor: Colors.lightBlue.shade200,
+                ),
+                const SizedBox(height: 10),
+                Container(
+                  padding: const EdgeInsets.only(left: 0.125, right: 0.125),
+                  width: double.infinity,
+                  child: _buildUnitColumn(
+                      'From', fromController, fromUnit, fromPrefix, true),
+                ),
+                IconButton(
+                  icon: const Icon(
+                    Icons.swap_vert,
+                    color: Color.fromARGB(255, 183, 218, 234),
+                    size: 40,
+                  ),
+                  onPressed: swapUnits,
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 0.125, right: 0.125),
+                  width: double.infinity,
+                  child: _buildUnitColumn(
+                      'To', toController, toUnit, toPrefix, false),
+                ),
+                const SizedBox(height: 30),
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: [
+                      const TextSpan(
+                        text: 'Formula:  ',
+                        style: TextStyle(
+                          color: Colors.orange,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: _conversionFormula,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         floatingActionButton: Container(
-          margin:
-              const EdgeInsets.only(bottom: 50), // Adjust the margin as needed
+          margin: const EdgeInsets.only(bottom: 50),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              // Reset button - this can be styled as needed
               FloatingActionButton(
-                heroTag: 'resetButton', // Unique tag for this FAB
+                highlightElevation:
+                    BouncingScrollSimulation.maxSpringTransferVelocity,
+                enableFeedback: true,
+                splashColor: Colors.lightGreen,
+                tooltip: 'Reset default settings',
+                heroTag: 'resetButton',
                 onPressed: _resetToDefault,
                 backgroundColor: Colors.red,
                 child: const Icon(Icons.restart_alt,
                     size: 36, color: Colors.white),
               ),
-              // Share button
               FloatingActionButton(
-                heroTag: 'shareButton', // Unique tag for this FAB
+                tooltip: 'Share a screenshot of your results!',
+                heroTag: 'shareButton',
                 onPressed: _takeScreenshotAndShare,
                 backgroundColor: Colors.white,
                 child: const Icon(Icons.share, size: 36, color: Colors.black),
@@ -4014,7 +3979,6 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
     }
   }
 
-  // Update the _buildUnitColumn method to include padding and width requirements
   Widget _buildUnitColumn(String label, TextEditingController controller,
       String unit, String prefix, bool isFrom) {
     return Padding(
@@ -4023,60 +3987,107 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          TextField(
-            controller: controller,
-            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            textAlign: TextAlign.center,
-            onChanged: (value) {
-              // Only invoke formatting when the user has stopped typing.
-              // Remove the auto-formatting logic from here.
-              _isUserInput =
-                  true; // Set this flag to true to indicate user input.
-              convert(
-                  value); // Call convert directly with the current input value.
-            },
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-            decoration: InputDecoration(
-              labelText: label, // Keep the label
-              filled: true,
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blue, width: 3.0),
-              ),
-              //floatingLabelBehavior: FloatingLabelBehavior.always,
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-              isDense: true,
-              prefix: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  AutoSizeText(
-                    '$prefix ',
-                    style: const TextStyle(
-                      color: Colors.lightBlue,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                    ),
-                    maxLines: 1,
+          isFrom
+              ? TextField(
+                  // If it's the 'From' field, allow input
+                  controller: controller,
+                  keyboardType:
+                      const TextInputType.numberWithOptions(decimal: true),
+                  textAlign: TextAlign.center,
+                  onChanged: (value) {
+                    _isUserInput =
+                        true; // Set this flag to true to indicate user input.
+                    convert(
+                        value); // Call convert directly with the current input value.
+                  },
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
-                  // You can add more Widgets here if you need to
-                ],
-              ),
-              suffixIcon: IconButton(
-                icon: const Icon(Icons.content_copy),
-                onPressed: () => copyToClipboard(controller.text, context),
-              ),
-            ),
-          ),
-
+                  decoration: InputDecoration(
+                    labelText: label,
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue, width: 3.0),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 10.0),
+                    isDense: true,
+                    prefix: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        AutoSizeText(
+                          '$prefix ',
+                          style: const TextStyle(
+                            color: Colors.lightBlue,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                          ),
+                          maxLines: 1,
+                        ),
+                      ],
+                    ),
+                    suffixIcon: IconButton(
+                      icon: const Icon(Icons.content_copy),
+                      onPressed: () =>
+                          copyToClipboard(controller.text, context),
+                    ),
+                  ),
+                )
+              : TextFormField(
+                  // If it's the 'To' field, make it read-only
+                  controller: controller,
+                  keyboardType:
+                      const TextInputType.numberWithOptions(decimal: true),
+                  textAlign: TextAlign.center,
+                  enabled: false, // This disables the field
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  decoration: InputDecoration(
+                    labelText: label,
+                    filled: true,
+                    fillColor: Colors
+                        .grey[300], // A lighter color to indicate it's disabled
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    disabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue, width: 3.0),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 10.0),
+                    isDense: true,
+                    prefix: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        AutoSizeText(
+                          '$prefix ',
+                          style: const TextStyle(
+                            color: Colors.lightBlue,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                          ),
+                          maxLines: 1,
+                        ),
+                      ],
+                    ),
+                    suffixIcon: IconButton(
+                      icon: const Icon(Icons.content_copy),
+                      onPressed: () =>
+                          copyToClipboard(controller.text, context),
+                    ),
+                  ),
+                ),
           const SizedBox(
               height: 10), // Space between the TextField and dropdown
           _buildDropdownButton(label.toLowerCase(), unit, isFrom),
@@ -4126,22 +4137,18 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
       );
     }).toList();
 
-    // Insert at the start of the list to act as a non-selectable hint
-    // Insert a non-selectable 'Choose a conversion unit' hint at the start.
     items.insert(
-        0,
-        const DropdownMenuItem<String>(
-          value: '',
-          enabled: false, // An empty string represents no selection.
-          child: Text(
-            'Choose a conversion unit',
-            style: TextStyle(color: Colors.grey, fontSize: 23),
-          ), // This makes the item non-selectable.
-        ));
+      0,
+      const DropdownMenuItem<String>(
+        value: '',
+        enabled: false,
+        child: Text(
+          'Choose a conversion unit',
+          style: TextStyle(color: Colors.grey, fontSize: 23),
+        ),
+      ),
+    );
 
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         contentPadding:
@@ -4157,7 +4164,7 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
       hint: const Text(
         'Choose a conversion unit',
         style: TextStyle(color: Colors.grey, fontSize: 23),
-        textAlign: TextAlign.center, // This is correct for Text widget
+        textAlign: TextAlign.center,
       ),
       onChanged: (String? newValue) {
         if (newValue != null && newValue.isNotEmpty) {
@@ -4169,22 +4176,20 @@ class _VolumeUnitConverterState extends State<VolumeUnitConverter> {
               toUnit = newValue;
               toPrefix = _getPrefix(newValue);
             }
-            fromController.clear();
-            toController.clear();
-            // Trigger the conversion logic if needed.
+            // Do not clear the text fields here to retain the input value
+            // Trigger the conversion logic if needed with the new unit but same value
+            convert(fromController.text);
           });
         }
       },
       dropdownColor: const Color(0xFF303134),
       items: items,
-      isExpanded:
-          true, // This will make sure the dropdown's content is centered
+      isExpanded: true,
       icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
       iconSize: 24,
       selectedItemBuilder: (BuildContext context) {
         return items.map<Widget>((DropdownMenuItem<String> item) {
           return Center(
-            // Center the text for the selected item
             child: Text(
               item.value == '' ? 'Choose a conversion unit' : item.value!,
               style: const TextStyle(

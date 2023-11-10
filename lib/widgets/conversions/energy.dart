@@ -89,749 +89,737 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
     double toValue = 0; // Your conversion logic here
 
 //NANOJOULES
-    const double NanojoulesToMicrojoules = 1e-6;
-    const double NanojoulesToMillijoules = 0.001;
-    const double NanojoulesToJoules = 1.0;
-    const double NanojoulesToKilojoules = 1e3;
-    const double NanojoulesToMegajoules = 1e6;
-    const double NanojoulesToNewtonMetres =
+    const double nanojoulesToMicrojoules = 1e-6;
+    const double nanojoulesToMillijoules = 0.001;
+    const double nanojoulesToJoules = 1.0;
+    const double nanojoulesToKilojoules = 1e3;
+    const double nanojoulesToMegajoules = 1e6;
+    const double nanojoulesToNewtonMetres =
         1.0; // Newton-metres are equivalent to Joules.
-    const double NanojoulesToWattHours = 2.77778e-7;
-    const double NanojoulesToKilowattHours = 2.77778e-10;
-    const double NanojoulesToMegawattHours = 2.77778e-13;
-    const double NanojoulesToCalories = 0.239006;
-    const double NanojoulesToKilocalories = 0.000239006;
-    const double NanojoulesToFootPoundsForce = 0.737562;
-    const double NanojoulesToBritishThermalUnitsISO = 0.000947817;
-    const double NanojoulesToTherms = 9.47817e-9;
-    const double NanojoulesToHorsepowerHours = 3.72506e-7;
-    const double NanojoulesToBarrelsOfOilEquivalent = 1.63456e-10;
-    const double NanojoulesToTonnesOfOilEquivalent = 2.38846e-11;
-    const double NanojoulesToTonnesOfTNT = 2.39006e-10;
-    const double NanojoulesToKilotonnesOfTNT = 2.39006e-13;
-    const double NanojoulesToMegatonnesOfTNT = 2.39006e-16;
-    const double NanojoulesToErgs = 1e-7;
-    const double NanojoulesToElectronvolt = 6.24150;
-    const double NanojoulesToKiloelectronvolt = 0.00624150;
-    const double NanojoulesToMegaelectronvolt = 6.24150e-6;
-    const double NanojoulesToGigaelectronvolt = 6.24150e-9;
+    const double nanojoulesToWattHours = 2.77778e-7;
+    const double nanojoulesToKilowattHours = 2.77778e-10;
+    const double nanojoulesToMegawattHours = 2.77778e-13;
+    const double nanojoulesToCalories = 0.239006;
+    const double nanojoulesToKilocalories = 0.000239006;
+    const double nanojoulesToFootPoundsForce = 0.737562;
+    const double nanojoulesToBritishThermalUnitsISO = 0.000947817;
+    const double nanojoulesToTherms = 9.47817e-9;
+    const double nanojoulesToHorsepowerHours = 3.72506e-7;
+    const double nanojoulesToBarrelsOfOilEquivalent = 1.63456e-10;
+    const double nanojoulesToTonnesOfOilEquivalent = 2.38846e-11;
+    const double nanojoulesToTonnesOfTNT = 2.39006e-10;
+    const double nanojoulesToKilotonnesOfTNT = 2.39006e-13;
+    const double nanojoulesToMegatonnesOfTNT = 2.39006e-16;
+    const double nanojoulesToErgs = 1e-7;
+    const double nanojoulesToElectronvolt = 6.24150;
+    const double nanojoulesToKiloelectronvolt = 0.00624150;
+    const double nanojoulesToMegaelectronvolt = 6.24150e-6;
+    const double nanojoulesToGigaelectronvolt = 6.24150e-9;
 
 //MICROJOULES
 
-    const double MicrojoulesToNanojoules = 1000.0;
-    const double MicrojoulesToMicrojoules = 1e-6;
-    const double MicrojoulesToMillijoules = 0.001;
-    const double MicrojoulesToJoules = 1.0;
-    const double MicrojoulesToKilojoules = 1000.0;
-    const double MicrojoulesToMegajoules = 1e6;
-    const double MicrojoulesToNewtonMetres =
+    const double microjoulesToNanojoules = 1000.0;
+    const double microjoulesToMicrojoules = 1e-6;
+    const double microjoulesToMillijoules = 0.001;
+    const double microjoulesToJoules = 1.0;
+    const double microjoulesToKilojoules = 1000.0;
+    const double microjoulesToMegajoules = 1e6;
+    const double microjoulesToNewtonMetres =
         1.0; // Newton-metres are equivalent to Joules.
-    const double MicrojoulesToWattHours = 0.0002777777777777778;
-    const double MicrojoulesToKilowattHours = 2.77778e-7;
-    const double MicrojoulesToMegawattHours = 2.77778e-10;
-    const double MicrojoulesToCalories = 0.239006;
-    const double MicrojoulesToKilocalories = 0.000239006;
-    const double MicrojoulesToFootPoundsForce = 0.737562;
-    const double MicrojoulesToBritishThermalUnitsISO = 0.000947817;
-    const double MicrojoulesToTherms = 9.47817e-9;
-    const double MicrojoulesToHorsepowerHours = 3.72506e-7;
-    const double MicrojoulesToBarrelsOfOilEquivalent = 1.63456e-10;
-    const double MicrojoulesToTonnesOfOilEquivalent = 2.38846e-11;
-    const double MicrojoulesToTonnesOfTNT = 2.39006e-10;
-    const double MicrojoulesToKilotonnesOfTNT = 2.39006e-13;
-    const double MicrojoulesToMegatonnesOfTNT = 2.39006e-16;
-    const double MicrojoulesToErgs = 1e-5;
-    const double MicrojoulesToElectronvolt = 6.2415e6;
-    const double MicrojoulesToKiloelectronvolt = 6241.5;
-    const double MicrojoulesToMegaelectronvolt = 6.2415;
-    const double MicrojoulesToGigaelectronvolt = 0.0062415;
+    const double microjoulesToWattHours = 0.0002777777777777778;
+    const double microjoulesToKilowattHours = 2.77778e-7;
+    const double microjoulesToMegawattHours = 2.77778e-10;
+    const double microjoulesToCalories = 0.239006;
+    const double microjoulesToKilocalories = 0.000239006;
+    const double microjoulesToFootPoundsForce = 0.737562;
+    const double microjoulesToBritishThermalUnitsISO = 0.000947817;
+    const double microjoulesToTherms = 9.47817e-9;
+    const double microjoulesToHorsepowerHours = 3.72506e-7;
+    const double microjoulesToBarrelsOfOilEquivalent = 1.63456e-10;
+    const double microjoulesToTonnesOfOilEquivalent = 2.38846e-11;
+    const double microjoulesToTonnesOfTNT = 2.39006e-10;
+    const double microjoulesToKilotonnesOfTNT = 2.39006e-13;
+    const double microjoulesToMegatonnesOfTNT = 2.39006e-16;
+    const double microjoulesToErgs = 1e-5;
+    const double microjoulesToElectronvolt = 6.2415e6;
+    const double microjoulesToKiloelectronvolt = 6241.5;
+    const double microjoulesToMegaelectronvolt = 6.2415;
+    const double microjoulesToGigaelectronvolt = 0.0062415;
 
 //MILLIJOULES
-    const double MillijoulesToNanojoules = 1000000.0;
-    const double MillijoulesToMicrojoules = 1000.0;
-    const double MillijoulesToMillijoules = 1.0;
-    const double MillijoulesToJoules = 0.001;
-    const double MillijoulesToKilojoules = 1e-6;
-    const double MillijoulesToMegajoules = 1e-9;
-    const double MillijoulesToNewtonMetres =
+    const double millijoulesToNanojoules = 1000000.0;
+    const double millijoulesToMicrojoules = 1000.0;
+    const double millijoulesToMillijoules = 1.0;
+    const double millijoulesToJoules = 0.001;
+    const double millijoulesToKilojoules = 1e-6;
+    const double millijoulesToMegajoules = 1e-9;
+    const double millijoulesToNewtonMetres =
         0.001; // Newton-metres are equivalent to Joules.
-    const double MillijoulesToWattHours = 2.77778e-7;
-    const double MillijoulesToKilowattHours = 2.77778e-10;
-    const double MillijoulesToMegawattHours = 2.77778e-13;
-    const double MillijoulesToCalories = 0.000239006;
-    const double MillijoulesToKilocalories = 2.39006e-7;
-    const double MillijoulesToFootPoundsForce = 0.000737562;
-    const double MillijoulesToBritishThermalUnitsISO = 9.47817e-7;
-    const double MillijoulesToTherms = 9.47817e-12;
-    const double MillijoulesToHorsepowerHours = 3.72506e-10;
-    const double MillijoulesToBarrelsOfOilEquivalent = 1.63456e-13;
-    const double MillijoulesToTonnesOfOilEquivalent = 2.38846e-14;
-    const double MillijoulesToTonnesOfTNT = 2.39006e-13;
-    const double MillijoulesToKilotonnesOfTNT = 2.39006e-16;
-    const double MillijoulesToMegatonnesOfTNT = 2.39006e-19;
-    const double MillijoulesToErgs = 10000.0;
-    const double MillijoulesToElectronvolt = 6241500000000000.0;
-    const double MillijoulesToKiloelectronvolt = 6241500000000.0;
-    const double MillijoulesToMegaelectronvolt = 6241500000.0;
-    const double MillijoulesToGigaelectronvolt = 6241500.0;
+    const double millijoulesToWattHours = 2.77778e-7;
+    const double millijoulesToKilowattHours = 2.77778e-10;
+    const double millijoulesToMegawattHours = 2.77778e-13;
+    const double millijoulesToCalories = 0.000239006;
+    const double millijoulesToKilocalories = 2.39006e-7;
+    const double millijoulesToFootPoundsForce = 0.000737562;
+    const double millijoulesToBritishThermalUnitsISO = 9.47817e-7;
+    const double millijoulesToTherms = 9.47817e-12;
+    const double millijoulesToHorsepowerHours = 3.72506e-10;
+    const double millijoulesToBarrelsOfOilEquivalent = 1.63456e-13;
+    const double millijoulesToTonnesOfOilEquivalent = 2.38846e-14;
+    const double millijoulesToTonnesOfTNT = 2.39006e-13;
+    const double millijoulesToKilotonnesOfTNT = 2.39006e-16;
+    const double millijoulesToMegatonnesOfTNT = 2.39006e-19;
+    const double millijoulesToErgs = 10000.0;
+    const double millijoulesToElectronvolt = 6241500000000000.0;
+    const double millijoulesToKiloelectronvolt = 6241500000000.0;
+    const double millijoulesToMegaelectronvolt = 6241500000.0;
+    const double millijoulesToGigaelectronvolt = 6241500.0;
 
 //JOULES
-    const double JoulesToNanojoules = 1000000000.0;
-    const double JoulesToMicrojoules = 1000000.0;
-    const double JoulesToMillijoules = 1000.0;
-    const double JoulesToJoules = 1.0;
-    const double JoulesToKilojoules = 0.001;
-    const double JoulesToMegajoules = 1e-6;
-    const double JoulesToNewtonMetres =
+    const double joulesToNanojoules = 1000000000.0;
+    const double joulesToMicrojoules = 1000000.0;
+    const double joulesToMillijoules = 1000.0;
+    const double joulesToJoules = 1.0;
+    const double joulesToKilojoules = 0.001;
+    const double joulesToMegajoules = 1e-6;
+    const double joulesToNewtonMetres =
         1.0; // Newton-metres are equivalent to Joules.
-    const double JoulesToWattHours = 0.000277778;
-    const double JoulesToKilowattHours = 2.77778e-7;
-    const double JoulesToMegawattHours = 2.77778e-10;
-    const double JoulesToCalories = 0.239006;
-    const double JoulesToKilocalories = 0.000239006;
-    const double JoulesToFootPoundsForce = 0.737562;
-    const double JoulesToBritishThermalUnitsISO = 0.000947817;
-    const double JoulesToTherms = 9.47817e-9;
-    const double JoulesToHorsepowerHours = 3.72506e-7;
-    const double JoulesToBarrelsOfOilEquivalent = 1.63456e-10;
-    const double JoulesToTonnesOfOilEquivalent = 2.38846e-11;
-    const double JoulesToTonnesOfTNT = 2.39006e-10;
-    const double JoulesToKilotonnesOfTNT = 2.39006e-13;
-    const double JoulesToMegatonnesOfTNT = 2.39006e-16;
-    const double JoulesToErgs = 10000000.0;
-    const double JoulesToElectronvolt = 6.2415e+18;
-    const double JoulesToKiloelectronvolt = 6241500000000000.0;
-    const double JoulesToMegaelectronvolt = 6241500000000.0;
-    const double JoulesToGigaelectronvolt = 6241500000.0;
+    const double joulesToWattHours = 0.000277778;
+    const double joulesToKilowattHours = 2.77778e-7;
+    const double joulesToMegawattHours = 2.77778e-10;
+    const double joulesToCalories = 0.239006;
+    const double joulesToKilocalories = 0.000239006;
+    const double joulesToFootPoundsForce = 0.737562;
+    const double joulesToBritishThermalUnitsISO = 0.000947817;
+    const double joulesToTherms = 9.47817e-9;
+    const double joulesToHorsepowerHours = 3.72506e-7;
+    const double joulesToBarrelsOfOilEquivalent = 1.63456e-10;
+    const double joulesToTonnesOfOilEquivalent = 2.38846e-11;
+    const double joulesToTonnesOfTNT = 2.39006e-10;
+    const double joulesToKilotonnesOfTNT = 2.39006e-13;
+    const double joulesToMegatonnesOfTNT = 2.39006e-16;
+    const double joulesToErgs = 10000000.0;
+    const double joulesToElectronvolt = 6.2415e+18;
+    const double joulesToKiloelectronvolt = 6241500000000000.0;
+    const double joulesToMegaelectronvolt = 6241500000000.0;
+    const double joulesToGigaelectronvolt = 6241500000.0;
 
 //KILOJOULES
-    const double KilojoulesToNanojoules = 1e12;
-    const double KilojoulesToMicrojoules = 1e9;
-    const double KilojoulesToMillijoules = 1e6;
-    const double KilojoulesToJoules = 1e3;
-    const double KilojoulesToKilojoules = 1.0; // Identity
-    const double KilojoulesToMegajoules = 0.001;
-    const double KilojoulesToNewtonMetres =
+    const double kilojoulesToNanojoules = 1e12;
+    const double kilojoulesToMicrojoules = 1e9;
+    const double kilojoulesToMillijoules = 1e6;
+    const double kilojoulesToJoules = 1e3;
+    const double kilojoulesToKilojoules = 1.0; // Identity
+    const double kilojoulesToMegajoules = 0.001;
+    const double kilojoulesToNewtonMetres =
         1e3; // Newton-metres are equivalent to Joules.
-    const double KilojoulesToWattHours = 0.277778;
-    const double KilojoulesToKilowattHours = 0.000277778;
-    const double KilojoulesToMegawattHours = 2.77778e-7;
-    const double KilojoulesToCalories = 239.006;
-    const double KilojoulesToKilocalories = 0.239006;
-    const double KilojoulesToFootPoundsForce = 737.562;
-    const double KilojoulesToBritishThermalUnitsISO = 0.947817;
-    const double KilojoulesToTherms = 9.47817e-6;
-    const double KilojoulesToHorsepowerHours = 0.000372506;
-    const double KilojoulesToBarrelsOfOilEquivalent = 1.63456e-7;
-    const double KilojoulesToTonnesOfOilEquivalent = 2.38846e-8;
-    const double KilojoulesToTonnesOfTNT = 2.39006e-7;
-    const double KilojoulesToKilotonnesOfTNT = 2.39006e-10;
-    const double KilojoulesToMegatonnesOfTNT = 2.39006e-13;
-    const double KilojoulesToErgs = 1e10;
-    const double KilojoulesToElectronvolt = 6.2415e21;
-    const double KilojoulesToKiloelectronvolt = 6.2415e18;
-    const double KilojoulesToMegaelectronvolt = 6.2415e15;
-    const double KilojoulesToGigaelectronvolt = 6.2415e12;
+    const double kilojoulesToWattHours = 0.277778;
+    const double kilojoulesToKilowattHours = 0.000277778;
+    const double kilojoulesToMegawattHours = 2.77778e-7;
+    const double kilojoulesToCalories = 239.006;
+    const double kilojoulesToKilocalories = 0.239006;
+    const double kilojoulesToFootPoundsForce = 737.562;
+    const double kilojoulesToBritishThermalUnitsISO = 0.947817;
+    const double kilojoulesToTherms = 9.47817e-6;
+    const double kilojoulesToHorsepowerHours = 0.000372506;
+    const double kilojoulesToBarrelsOfOilEquivalent = 1.63456e-7;
+    const double kilojoulesToTonnesOfOilEquivalent = 2.38846e-8;
+    const double kilojoulesToTonnesOfTNT = 2.39006e-7;
+    const double kilojoulesToKilotonnesOfTNT = 2.39006e-10;
+    const double kilojoulesToMegatonnesOfTNT = 2.39006e-13;
+    const double kilojoulesToErgs = 1e10;
+    const double kilojoulesToElectronvolt = 6.2415e21;
+    const double kilojoulesToKiloelectronvolt = 6.2415e18;
+    const double kilojoulesToMegaelectronvolt = 6.2415e15;
+    const double kilojoulesToGigaelectronvolt = 6.2415e12;
 
 //MEGAJOULES
-    const double MegajoulesToNanojoules = 1e15;
-    const double MegajoulesToMicrojoules = 1e12;
-    const double MegajoulesToMillijoules = 1e9;
-    const double MegajoulesToJoules = 1e6;
-    const double MegajoulesToKilojoules = 1e3;
-    const double MegajoulesToMegajoules = 1.0; // Identity
-    const double MegajoulesToNewtonMetres =
+    const double megajoulesToNanojoules = 1e15;
+    const double megajoulesToMicrojoules = 1e12;
+    const double megajoulesToMillijoules = 1e9;
+    const double megajoulesToJoules = 1e6;
+    const double megajoulesToKilojoules = 1e3;
+
+    const double megajoulesToNewtonMetres =
         1e6; // Newton-metres are equivalent to Joules.
-    const double MegajoulesToWattHours = 277.778;
-    const double MegajoulesToKilowattHours = 0.277778;
-    const double MegajoulesToMegawattHours = 0.000277778;
-    const double MegajoulesToCalories = 239006.0;
-    const double MegajoulesToKilocalories = 239.006;
-    const double MegajoulesToFootPoundsForce = 737562.0;
-    const double MegajoulesToBritishThermalUnitsISO = 947.817;
-    const double MegajoulesToTherms = 0.00947817;
-    const double MegajoulesToHorsepowerHours = 0.372506;
-    const double MegajoulesToBarrelsOfOilEquivalent = 0.000163456;
-    const double MegajoulesToTonnesOfOilEquivalent = 2.38846e-5;
-    const double MegajoulesToTonnesOfTNT = 0.000239006;
-    const double MegajoulesToKilotonnesOfTNT = 2.39006e-7;
-    const double MegajoulesToMegatonnesOfTNT = 2.39006e-10;
-    const double MegajoulesToErgs = 1e13;
-    const double MegajoulesToElectronvolt = 6.2415e24;
-    const double MegajoulesToKiloelectronvolt = 6.2415e21;
-    const double MegajoulesToMegaelectronvolt = 6.2415e18;
-    const double MegajoulesToGigaelectronvolt = 6.2415e15;
+    const double megajoulesToWattHours = 277.778;
+    const double megajoulesToKilowattHours = 0.277778;
+    const double megajoulesToMegawattHours = 0.000277778;
+    const double megajoulesToCalories = 239006.0;
+    const double megajoulesToKilocalories = 239.006;
+    const double megajoulesToFootPoundsForce = 737562.0;
+    const double megajoulesToBritishThermalUnitsISO = 947.817;
+    const double megajoulesToTherms = 0.00947817;
+    const double megajoulesToHorsepowerHours = 0.372506;
+    const double megajoulesToBarrelsOfOilEquivalent = 0.000163456;
+    const double megajoulesToTonnesOfOilEquivalent = 2.38846e-5;
+    const double megajoulesToTonnesOfTNT = 0.000239006;
+    const double megajoulesToKilotonnesOfTNT = 2.39006e-7;
+    const double megajoulesToMegatonnesOfTNT = 2.39006e-10;
+    const double megajoulesToErgs = 1e13;
+    const double megajoulesToElectronvolt = 6.2415e24;
+    const double megajoulesToKiloelectronvolt = 6.2415e21;
+    const double megajoulesToMegaelectronvolt = 6.2415e18;
+    const double megajoulesToGigaelectronvolt = 6.2415e15;
 
 //NEWTON METRES
-    const double NewtonMetresToNanojoules = 1e9;
-    const double NewtonMetresToMicrojoules = 1e6;
-    const double NewtonMetresToMillijoules = 1e3;
-    const double NewtonMetresToJoules = 1.0; // Identity
-    const double NewtonMetresToKilojoules = 0.001;
-    const double NewtonMetresToMegajoules = 1e-6;
-    const double NewtonMetresToNewtonMetres =
-        1.0; // Newton-metres are equivalent to Joules.
-    const double NewtonMetresToWattHours = 0.000277778;
-    const double NewtonMetresToKilowattHours = 2.77778e-7;
-    const double NewtonMetresToMegawattHours = 2.77778e-10;
-    const double NewtonMetresToCalories = 0.239006;
-    const double NewtonMetresToKilocalories = 0.000239006;
-    const double NewtonMetresToFootPoundsForce = 0.737562;
-    const double NewtonMetresToBritishThermalUnitsISO = 0.000947817;
-    const double NewtonMetresToTherms = 9.47817e-9;
-    const double NewtonMetresToHorsepowerHours = 3.72506e-7;
-    const double NewtonMetresToBarrelsOfOilEquivalent = 1.63456e-10;
-    const double NewtonMetresToTonnesOfOilEquivalent = 2.38846e-11;
-    const double NewtonMetresToTonnesOfTNT = 2.39006e-10;
-    const double NewtonMetresToKilotonnesOfTNT = 2.39006e-13;
-    const double NewtonMetresToMegatonnesOfTNT = 2.39006e-16;
-    const double NewtonMetresToErgs = 1e7;
-    const double NewtonMetresToElectronvolt = 6.2415e+18;
-    const double NewtonMetresToKiloelectronvolt = 6.2415e+15;
-    const double NewtonMetresToMegaelectronvolt = 6.2415e+12;
-    const double NewtonMetresToGigaelectronvolt = 6.2415e+9;
+    const double newtonmetresToNanojoules = 1e9;
+    const double newtonmetresToMicrojoules = 1e6;
+    const double newtonmetresToMillijoules = 1e3;
+    const double newtonmetresToJoules = 1.0; // Identity
+    const double newtonmetresToKilojoules = 0.001;
+    const double newtonmetresToMegajoules = 1e-6;
+    const double newtonmetresToWattHours = 0.000277778;
+    const double newtonmetresToKilowattHours = 2.77778e-7;
+    const double newtonmetresToMegawattHours = 2.77778e-10;
+    const double newtonmetresToCalories = 0.239006;
+    const double newtonmetresToKilocalories = 0.000239006;
+    const double newtonmetresToFootPoundsForce = 0.737562;
+    const double newtonmetresToBritishThermalUnitsISO = 0.000947817;
+    const double newtonmetresToTherms = 9.47817e-9;
+    const double newtonmetresToHorsepowerHours = 3.72506e-7;
+    const double newtonmetresToBarrelsOfOilEquivalent = 1.63456e-10;
+    const double newtonmetresToTonnesOfOilEquivalent = 2.38846e-11;
+    const double newtonmetresToTonnesOfTNT = 2.39006e-10;
+    const double newtonmetresToKilotonnesOfTNT = 2.39006e-13;
+    const double newtonmetresToMegatonnesOfTNT = 2.39006e-16;
+    const double newtonmetresToErgs = 1e7;
+    const double newtonmetresToElectronvolt = 6.2415e+18;
+    const double newtonmetresToKiloelectronvolt = 6.2415e+15;
+    const double newtonmetresToMegaelectronvolt = 6.2415e+12;
+    const double newtonmetresToGigaelectronvolt = 6.2415e+9;
 
 //WATTHOURS
-    const double WattHoursToNanojoules = 3.6e12;
-    const double WattHoursToMicrojoules = 3.6e9;
-    const double WattHoursToMillijoules = 3.6e6;
-    const double WattHoursToJoules = 3600.0;
-    const double WattHoursToKilojoules = 3.6;
-    const double WattHoursToMegajoules = 0.0036;
-    const double WattHoursToNewtonMetres =
+    const double watthoursToNanojoules = 3.6e12;
+    const double watthoursToMicrojoules = 3.6e9;
+    const double watthoursToMillijoules = 3.6e6;
+    const double watthoursToJoules = 3600.0;
+    const double watthoursToKilojoules = 3.6;
+    const double watthoursToMegajoules = 0.0036;
+    const double watthoursToNewtonMetres =
         3600.0; // Newton-metres are equivalent to Joules.
-    const double WattHoursToWattHours = 1.0; // Identity
-    const double WattHoursToKilowattHours = 0.001;
-    const double WattHoursToMegawattHours = 1e-6;
-    const double WattHoursToCalories = 860.4216;
-    const double WattHoursToKilocalories = 0.8604216;
-    const double WattHoursToFootPoundsForce = 2655.2232;
-    const double WattHoursToBritishThermalUnitsISO = 3.4121412;
-    const double WattHoursToTherms = 3.4121412e-5;
-    const double WattHoursToHorsepowerHours = 0.0013410216;
-    const double WattHoursToBarrelsOfOilEquivalent = 5.884416e-7;
-    const double WattHoursToTonnesOfOilEquivalent = 8.598456e-8;
-    const double WattHoursToTonnesOfTNT = 8.604216e-7;
-    const double WattHoursToKilotonnesOfTNT = 8.604216e-10;
-    const double WattHoursToMegatonnesOfTNT = 8.604216e-13;
-    const double WattHoursToErgs = 3.6e10;
-    const double WattHoursToElectronvolt = 2.24694e+22;
-    const double WattHoursToKiloelectronvolt = 2.24694e+19;
-    const double WattHoursToMegaelectronvolt = 2.24694e+16;
-    const double WattHoursToGigaelectronvolt = 2.24694e+13;
+    const double watthoursToKilowattHours = 0.001;
+    const double watthoursToMegawattHours = 1e-6;
+    const double watthoursToCalories = 860.4216;
+    const double watthoursToKilocalories = 0.8604216;
+    const double watthoursToFootPoundsForce = 2655.2232;
+    const double watthoursToBritishThermalUnitsISO = 3.4121412;
+    const double watthoursToTherms = 3.4121412e-5;
+    const double watthoursToHorsepowerHours = 0.0013410216;
+    const double watthoursToBarrelsOfOilEquivalent = 5.884416e-7;
+    const double watthoursToTonnesOfOilEquivalent = 8.598456e-8;
+    const double watthoursToTonnesOfTNT = 8.604216e-7;
+    const double watthoursToKilotonnesOfTNT = 8.604216e-10;
+    const double watthoursToMegatonnesOfTNT = 8.604216e-13;
+    const double watthoursToErgs = 3.6e10;
+    const double watthoursToElectronvolt = 2.24694e+22;
+    const double watthoursToKiloelectronvolt = 2.24694e+19;
+    const double watthoursToMegaelectronvolt = 2.24694e+16;
+    const double watthoursToGigaelectronvolt = 2.24694e+13;
 
 //KILOWATT HOURS
-    const double KilowattHoursToNanojoules = 3.6e15;
-    const double KilowattHoursToMicrojoules = 3.6e12;
-    const double KilowattHoursToMillijoules = 3.6e9;
-    const double KilowattHoursToJoules = 3.6e6;
-    const double KilowattHoursToKilojoules = 3600.0;
-    const double KilowattHoursToMegajoules = 3.6;
-    const double KilowattHoursToNewtonMetres =
+    const double kilowatthoursToNanojoules = 3.6e15;
+    const double kilowatthoursToMicrojoules = 3.6e12;
+    const double kilowatthoursToMillijoules = 3.6e9;
+    const double kilowatthoursToJoules = 3.6e6;
+    const double kilowatthoursToKilojoules = 3600.0;
+    const double kilowatthoursToMegajoules = 3.6;
+    const double kilowatthoursToNewtonMetres =
         3.6e6; // Newton-metres are equivalent to Joules.
-    const double KilowattHoursToWattHours = 1000.0;
-    const double KilowattHoursToKilowattHours = 1.0; // Identity
-    const double KilowattHoursToMegawattHours = 0.001;
-    const double KilowattHoursToCalories = 860421.6;
-    const double KilowattHoursToKilocalories = 860.4216;
-    const double KilowattHoursToFootPoundsForce = 2655223.2;
-    const double KilowattHoursToBritishThermalUnitsISO = 3412.1412;
-    const double KilowattHoursToTherms = 0.034121412;
-    const double KilowattHoursToHorsepowerHours = 1.3410216;
-    const double KilowattHoursToBarrelsOfOilEquivalent = 0.0005884416;
-    const double KilowattHoursToTonnesOfOilEquivalent = 0.00008598456;
-    const double KilowattHoursToTonnesOfTNT = 0.0008604216;
-    const double KilowattHoursToKilotonnesOfTNT = 8.604216e-7;
-    const double KilowattHoursToMegatonnesOfTNT = 8.604216e-10;
-    const double KilowattHoursToErgs = 3.6e13;
-    const double KilowattHoursToElectronvolt = 2.24694e+25;
-    const double KilowattHoursToKiloelectronvolt = 2.24694e+22;
-    const double KilowattHoursToMegaelectronvolt = 2.24694e+19;
-    const double KilowattHoursToGigaelectronvolt = 2.24694e+16;
+    const double kilowatthoursToWattHours = 1000.0;
+    const double kilowatthoursToMegawattHours = 0.001;
+    const double kilowatthoursToCalories = 860421.6;
+    const double kilowatthoursToKilocalories = 860.4216;
+    const double kilowatthoursToFootPoundsForce = 2655223.2;
+    const double kilowatthoursToBritishThermalUnitsISO = 3412.1412;
+    const double kilowatthoursToTherms = 0.034121412;
+    const double kilowatthoursToHorsepowerHours = 1.3410216;
+    const double kilowatthoursToBarrelsOfOilEquivalent = 0.0005884416;
+    const double kilowatthoursToTonnesOfOilEquivalent = 0.00008598456;
+    const double kilowatthoursToTonnesOfTNT = 0.0008604216;
+    const double kilowatthoursToKilotonnesOfTNT = 8.604216e-7;
+    const double kilowatthoursToMegatonnesOfTNT = 8.604216e-10;
+    const double kilowatthoursToErgs = 3.6e13;
+    const double kilowatthoursToElectronvolt = 2.24694e+25;
+    const double kilowatthoursToKiloelectronvolt = 2.24694e+22;
+    const double kilowatthoursToMegaelectronvolt = 2.24694e+19;
+    const double kilowatthoursToGigaelectronvolt = 2.24694e+16;
 
 //MEGAWATT HOURS
-    const double MegawattHoursToNanojoules = 3.6e18;
-    const double MegawattHoursToMicrojoules = 3.6e15;
-    const double MegawattHoursToMillijoules = 3.6e12;
-    const double MegawattHoursToJoules = 3.6e9;
-    const double MegawattHoursToKilojoules = 3.6e6;
-    const double MegawattHoursToMegajoules = 3600.0;
-    const double MegawattHoursToNewtonMetres =
+    const double megawatthoursToNanojoules = 3.6e18;
+    const double megawatthoursToMicrojoules = 3.6e15;
+    const double megawatthoursToMillijoules = 3.6e12;
+    const double megawatthoursToJoules = 3.6e9;
+    const double megawatthoursToKilojoules = 3.6e6;
+    const double megawatthoursToMegajoules = 3600.0;
+    const double megawatthoursToNewtonMetres =
         3.6e9; // Newton-metres are equivalent to Joules.
-    const double MegawattHoursToWattHours = 1e6;
-    const double MegawattHoursToKilowattHours = 1000.0;
-    const double MegawattHoursToMegawattHours = 1.0; // Identity
-    const double MegawattHoursToCalories = 8.604216e8;
-    const double MegawattHoursToKilocalories = 860421.6;
-    const double MegawattHoursToFootPoundsForce = 2.6552232e9;
-    const double MegawattHoursToBritishThermalUnitsISO = 3.4121412e6;
-    const double MegawattHoursToTherms = 34121.412;
-    const double MegawattHoursToHorsepowerHours = 1341.0216;
-    const double MegawattHoursToBarrelsOfOilEquivalent = 0.5884416;
-    const double MegawattHoursToTonnesOfOilEquivalent = 0.08598456;
-    const double MegawattHoursToTonnesOfTNT = 0.8604216;
-    const double MegawattHoursToKilotonnesOfTNT = 0.0008604216;
-    const double MegawattHoursToMegatonnesOfTNT = 8.604216e-7;
-    const double MegawattHoursToErgs = 3.6e16;
-    const double MegawattHoursToElectronvolt = 2.24694e+28;
-    const double MegawattHoursToKiloelectronvolt = 2.24694e+25;
-    const double MegawattHoursToMegaelectronvolt = 2.24694e+22;
-    const double MegawattHoursToGigaelectronvolt = 2.24694e+19;
+    const double megawatthoursToWattHours = 1e6;
+    const double megawatthoursToKilowattHours = 1000.0;
+    const double megawatthoursToMegawattHours = 1.0; // Identity
+    const double megawatthoursToCalories = 8.604216e8;
+    const double megawatthoursToKilocalories = 860421.6;
+    const double megawatthoursToFootPoundsForce = 2.6552232e9;
+    const double megawatthoursToBritishThermalUnitsISO = 3.4121412e6;
+    const double megawatthoursToTherms = 34121.412;
+    const double megawatthoursToHorsepowerHours = 1341.0216;
+    const double megawatthoursToBarrelsOfOilEquivalent = 0.5884416;
+    const double megawatthoursToTonnesOfOilEquivalent = 0.08598456;
+    const double megawatthoursToTonnesOfTNT = 0.8604216;
+    const double megawatthoursToKilotonnesOfTNT = 0.0008604216;
+    const double megawatthoursToMegatonnesOfTNT = 8.604216e-7;
+    const double megawatthoursToErgs = 3.6e16;
+    const double megawatthoursToElectronvolt = 2.24694e+28;
+    const double megawatthoursToKiloelectronvolt = 2.24694e+25;
+    const double megawatthoursToMegaelectronvolt = 2.24694e+22;
+    const double megawatthoursToGigaelectronvolt = 2.24694e+19;
 
 //CALORIES
-    const double CaloriesToNanojoules = 4.184e9;
-    const double CaloriesToMicrojoules = 4.184e6;
-    const double CaloriesToMillijoules = 4184.0;
-    const double CaloriesToJoules = 4.184;
-    const double CaloriesToKilojoules = 0.004184;
-    const double CaloriesToMegajoules = 4.184e-6;
-    const double CaloriesToNewtonMetres =
+    const double caloriesToNanojoules = 4.184e9;
+    const double caloriesToMicrojoules = 4.184e6;
+    const double caloriesToMillijoules = 4184.0;
+    const double caloriesToJoules = 4.184;
+    const double caloriesToKilojoules = 0.004184;
+    const double caloriesToMegajoules = 4.184e-6;
+    const double caloriesToNewtonMetres =
         4.184; // Newton-metres are equivalent to Joules.
-    const double CaloriesToWattHours = 0.001162223152;
-    const double CaloriesToKilowattHours = 1.162223152e-6;
-    const double CaloriesToMegawattHours = 1.162223152e-9;
-    const double CaloriesToCalories = 1.0; // Identity
-    const double CaloriesToKilocalories = 0.001;
-    const double CaloriesToFootPoundsForce = 3.085959408;
-    const double CaloriesToBritishThermalUnitsISO = 0.003965666328;
-    const double CaloriesToTherms = 3.965666328e-8;
-    const double CaloriesToHorsepowerHours = 1.558565104e-6;
-    const double CaloriesToBarrelsOfOilEquivalent = 6.83899904e-10;
-    const double CaloriesToTonnesOfOilEquivalent = 9.99331664e-11;
-    const double CaloriesToTonnesOfTNT = 1.000001104e-9;
-    const double CaloriesToKilotonnesOfTNT = 1.000001104e-12;
-    const double CaloriesToMegatonnesOfTNT = 1.000001104e-15;
-    const double CaloriesToErgs = 4.184e7;
-    const double CaloriesToElectronvolt = 2.6114436e+19;
-    const double CaloriesToKiloelectronvolt = 2.6114436e+16;
-    const double CaloriesToMegaelectronvolt = 2.6114436e+13;
-    const double CaloriesToGigaelectronvolt = 2.6114436e+10;
+    const double caloriesToWattHours = 0.001162223152;
+    const double caloriesToKilowattHours = 1.162223152e-6;
+    const double caloriesToMegawattHours = 1.162223152e-9;
+    const double caloriesToKilocalories = 0.001;
+    const double caloriesToFootPoundsForce = 3.085959408;
+    const double caloriesToBritishThermalUnitsISO = 0.003965666328;
+    const double caloriesToTherms = 3.965666328e-8;
+    const double caloriesToHorsepowerHours = 1.558565104e-6;
+    const double caloriesToBarrelsOfOilEquivalent = 6.83899904e-10;
+    const double caloriesToTonnesOfOilEquivalent = 9.99331664e-11;
+    const double caloriesToTonnesOfTNT = 1.000001104e-9;
+    const double caloriesToKilotonnesOfTNT = 1.000001104e-12;
+    const double caloriesToMegatonnesOfTNT = 1.000001104e-15;
+    const double caloriesToErgs = 4.184e7;
+    const double caloriesToElectronvolt = 2.6114436e+19;
+    const double caloriesToKiloelectronvolt = 2.6114436e+16;
+    const double caloriesToMegaelectronvolt = 2.6114436e+13;
+    const double caloriesToGigaelectronvolt = 2.6114436e+10;
 
 //KILOCALORIES
-    const double KilocaloriesToNanojoules = 4.184e12;
-    const double KilocaloriesToMicrojoules = 4.184e9;
-    const double KilocaloriesToMillijoules = 4.184e6;
-    const double KilocaloriesToJoules = 4184.0;
-    const double KilocaloriesToKilojoules = 4.184;
-    const double KilocaloriesToMegajoules = 0.004184;
-    const double KilocaloriesToNewtonMetres =
+    const double kilocaloriesToNanojoules = 4.184e12;
+    const double kilocaloriesToMicrojoules = 4.184e9;
+    const double kilocaloriesToMillijoules = 4.184e6;
+    const double kilocaloriesToJoules = 4184.0;
+    const double kilocaloriesToKilojoules = 4.184;
+    const double kilocaloriesToMegajoules = 0.004184;
+    const double kilocaloriesToNewtonMetres =
         4184.0; // Newton-metres are equivalent to Joules.
-    const double KilocaloriesToWattHours = 1.162223152;
-    const double KilocaloriesToKilowattHours = 0.001162223152;
-    const double KilocaloriesToMegawattHours = 1.162223152e-6;
-    const double KilocaloriesToCalories = 1000.0;
-    const double KilocaloriesToKilocalories = 1.0; // Identity
-    const double KilocaloriesToFootPoundsForce = 3085.959408;
-    const double KilocaloriesToBritishThermalUnitsISO = 3.965666328;
-    const double KilocaloriesToTherms = 3.965666328e-5;
-    const double KilocaloriesToHorsepowerHours = 0.001558565104;
-    const double KilocaloriesToBarrelsOfOilEquivalent = 6.83899904e-7;
-    const double KilocaloriesToTonnesOfOilEquivalent = 9.99331664e-8;
-    const double KilocaloriesToTonnesOfTNT = 1.000001104e-6;
-    const double KilocaloriesToKilotonnesOfTNT = 1.000001104e-9;
-    const double KilocaloriesToMegatonnesOfTNT = 1.000001104e-12;
-    const double KilocaloriesToErgs = 4.184e10;
-    const double KilocaloriesToElectronvolt = 2.6114436e+22;
-    const double KilocaloriesToKiloelectronvolt = 2.6114436e+19;
-    const double KilocaloriesToMegaelectronvolt = 2.6114436e+16;
-    const double KilocaloriesToGigaelectronvolt = 2.6114436e+13;
+    const double kilocaloriesToWattHours = 1.162223152;
+    const double kilocaloriesToKilowattHours = 0.001162223152;
+    const double kilocaloriesToMegawattHours = 1.162223152e-6;
+    const double kilocaloriesToCalories = 1000.0;
+    const double kilocaloriesToFootPoundsForce = 3085.959408;
+    const double kilocaloriesToBritishThermalUnitsISO = 3.965666328;
+    const double kilocaloriesToTherms = 3.965666328e-5;
+    const double kilocaloriesToHorsepowerHours = 0.001558565104;
+    const double kilocaloriesToBarrelsOfOilEquivalent = 6.83899904e-7;
+    const double kilocaloriesToTonnesOfOilEquivalent = 9.99331664e-8;
+    const double kilocaloriesToTonnesOfTNT = 1.000001104e-6;
+    const double kilocaloriesToKilotonnesOfTNT = 1.000001104e-9;
+    const double kilocaloriesToMegatonnesOfTNT = 1.000001104e-12;
+    const double kilocaloriesToErgs = 4.184e10;
+    const double kilocaloriesToElectronvolt = 2.6114436e+22;
+    const double kilocaloriesToKiloelectronvolt = 2.6114436e+19;
+    const double kilocaloriesToMegaelectronvolt = 2.6114436e+16;
+    const double kilocaloriesToGigaelectronvolt = 2.6114436e+13;
 
 //FOOTPOUNDS FORCE
-    const double FootPoundsForceToNanojoules = 1.3558179483314004e9;
-    const double FootPoundsForceToMicrojoules = 1.3558179483314004e6;
-    const double FootPoundsForceToMillijoules = 1355.8179483314004;
-    const double FootPoundsForceToJoules = 1.3558179483314004;
-    const double FootPoundsForceToKilojoules = 0.0013558179483314004;
-    const double FootPoundsForceToMegajoules = 1.3558179483314004e-6;
-    const double FootPoundsForceToNewtonMetres =
+    const double footpoundsforceToNanojoules = 1.3558179483314004e9;
+    const double footpoundsforceToMicrojoules = 1.3558179483314004e6;
+    const double footpoundsforceToMillijoules = 1355.8179483314004;
+    const double footpoundsforceToJoules = 1.3558179483314004;
+    const double footpoundsforceToKilojoules = 0.0013558179483314004;
+    const double footpoundsforceToMegajoules = 1.3558179483314004e-6;
+    const double footpoundsforceToNewtonMetres =
         1.3558179483314004; // Newton-metres are equivalent to Joules.
-    const double FootPoundsForceToWattHours = 0.00037661639805159974;
-    const double FootPoundsForceToKilowattHours = 3.7661639805159974e-7;
-    const double FootPoundsForceToMegawattHours = 3.7661639805159974e-10;
-    const double FootPoundsForceToCalories = 0.3240486245588947;
-    const double FootPoundsForceToKilocalories = 0.0003240486245588947;
-    const double FootPoundsForceToFootPoundsForce = 1.0; // Identity
-    const double FootPoundsForceToBritishThermalUnitsISO = 0.001285067300333623;
-    const double FootPoundsForceToTherms = 1.285067300333623e-8;
-    const double FootPoundsForceToHorsepowerHours = 5.050503206611366e-7;
-    const double FootPoundsForceToBarrelsOfOilEquivalent =
+    const double footpoundsforceToWattHours = 0.00037661639805159974;
+    const double footpoundsforceToKilowattHours = 3.7661639805159974e-7;
+    const double footpoundsforceToMegawattHours = 3.7661639805159974e-10;
+    const double footpoundsforceToCalories = 0.3240486245588947;
+    const double footpoundsforceToKilocalories = 0.0003240486245588947;
+    const double footpoundsforceToFootPoundsForce = 1.0; // Identity
+    const double footpoundsforceToBritishThermalUnitsISO = 0.001285067300333623;
+    const double footpoundsforceToTherms = 1.285067300333623e-8;
+    const double footpoundsforceToHorsepowerHours = 5.050503206611366e-7;
+    const double footpoundsforceToBarrelsOfOilEquivalent =
         2.2161657856245736e-10;
-    const double FootPoundsForceToTonnesOfOilEquivalent = 3.238316936871616e-11;
-    const double FootPoundsForceToTonnesOfTNT = 3.240486245588947e-10;
-    const double FootPoundsForceToKilotonnesOfTNT = 3.240486245588947e-13;
-    const double FootPoundsForceToMegatonnesOfTNT = 3.240486245588947e-16;
-    const double FootPoundsForceToErgs = 1.3558179483314004e7;
-    const double FootPoundsForceToElectronvolt = 8.462337724510435e+18;
-    const double FootPoundsForceToKiloelectronvolt = 8.462337724510435e+15;
-    const double FootPoundsForceToMegaelectronvolt = 8.462337724510435e+12;
-    const double FootPoundsForceToGigaelectronvolt = 8.462337724510435e+9;
+    const double footpoundsforceToTonnesOfOilEquivalent = 3.238316936871616e-11;
+    const double footpoundsforceToTonnesOfTNT = 3.240486245588947e-10;
+    const double footpoundsforceToKilotonnesOfTNT = 3.240486245588947e-13;
+    const double footpoundsforceToMegatonnesOfTNT = 3.240486245588947e-16;
+    const double footpoundsforceToErgs = 1.3558179483314004e7;
+    const double footpoundsforceToElectronvolt = 8.462337724510435e+18;
+    const double footpoundsforceToKiloelectronvolt = 8.462337724510435e+15;
+    const double footpoundsforceToMegaelectronvolt = 8.462337724510435e+12;
+    const double footpoundsforceToGigaelectronvolt = 8.462337724510435e+9;
 
 //BRITISH THERMAL UNITS ISO
-    const double BritishThermalUnitsISOTonanojoules = 1.05505585262e12;
-    const double BritishThermalUnitsISOTomicrojoules = 1.05505585262e9;
-    const double BritishThermalUnitsISOTomillijoules = 1.05505585262e6;
-    const double BritishThermalUnitsISOTOjoules = 1.05505585262e3;
-    const double BritishThermalUnitsISOTOkilojoules = 1.05505585262;
-    const double BritishThermalUnitsISOTOMegajoules = 1.05505585262e-3;
-    const double BritishThermalUnitsISOTONewtonMetres =
+    const double britishthermalunitsISOTOnanojoules = 1.05505585262e12;
+    const double britishthermalunitsISOTOmicrojoules = 1.05505585262e9;
+    const double britishthermalunitsISOTOmillijoules = 1.05505585262e6;
+    const double britishthermalunitsISOTOjoules = 1.05505585262e3;
+    const double britishthermalunitsISOTOkilojoules = 1.05505585262;
+    const double britishthermalunitsISOTONewtonMetres =
         1.05505585262e3; // Newton-metres are equivalent to Joules.
-    const double BritishThermalUnitsISOTOWattHours = 0.2930713046290784;
-    const double BritishThermalUnitsISOTOKilowattHours = 0.00029307130462907836;
-    const double BritishThermalUnitsISOTOMegawattHours = 2.9307130462907833e-7;
-    const double BritishThermalUnitsISOTOCalories = 252.16467911129573;
-    const double BritishThermalUnitsISOTOKilocalories = 0.2521646791112957;
-    const double BritishThermalUnitsISOTOFootPoundsForce = 778.1691047701125;
-    const double BritishThermalUnitsISOTOBritishThermalUnitsISO =
-        1.0; // Identity
-    const double BritishThermalUnitsISOTOtherms = 9.999998730627305e-6;
-    const double BritishThermalUnitsISOTOHorsepowerHours =
+    const double britishthermalunitsISOTOWattHours = 0.2930713046290784;
+    const double britishthermalunitsISOTOKilowattHours = 0.00029307130462907836;
+    const double britishthermalunitsISOTOMegawattHours = 2.9307130462907833e-7;
+    const double britishthermalunitsISOTOCalories = 252.16467911129573;
+    const double britishthermalunitsISOTOKilocalories = 0.2521646791112957;
+    const double britishthermalunitsISOTOFootPoundsForce = 778.1691047701125;
+    const double britishthermalunitsISOTOtherms = 9.999998730627305e-6;
+    const double britishthermalunitsISOTOHorsepowerHours =
         0.0003930146354360657;
-    const double BritishThermalUnitsISOTOBarrelsOfOilEquivalent =
+    const double britishthermalunitsISOTOBarrelsOfOilEquivalent =
         1.724552094458547e-7;
-    const double BritishThermalUnitsISOTOTonnesOfOilEquivalent =
+    const double britishthermalunitsISOTOTonnesOfOilEquivalent =
         2.5199587017487652e-8;
-    const double BritishThermalUnitsISOTOTonnesOfTNT = 2.521646791112957e-7;
-    const double BritishThermalUnitsISOTOKilotonnesOfTNT =
+    const double britishthermalunitsISOTOTonnesOfTNT = 2.521646791112957e-7;
+    const double britishthermalunitsISOTOKilotonnesOfTNT =
         2.5216467911129576e-10;
-    const double BritishThermalUnitsISOTOMegatonnesOfTNT =
+    const double britishthermalunitsISOTOMegatonnesOfTNT =
         2.5216467911129573e-13;
-    const double BritishThermalUnitsISOTOErgs = 1.05505585262e10;
-    const double BritishThermalUnitsISOTOElectronvolt = 6.58513110412773e+21;
-    const double BritishThermalUnitsISOTOKiloelectronvolt =
+    const double britishthermalunitsISOTOErgs = 1.05505585262e10;
+    const double britishthermalunitsISOTOElectronvolt = 6.58513110412773e+21;
+    const double britishthermalunitsISOTOKiloelectronvolt =
         6.58513110412773e+18;
-    const double BritishThermalUnitsISOTOMegaelectronvolt =
+    const double britishthermalunitsISOTOMegaelectronvolt =
         6.58513110412773e+15;
-    const double BritishThermalUnitsISOTOGigaelectronvolt =
+    const double britishthermalunitsISOTOGigaelectronvolt =
         6.58513110412773e+12;
 
 //THERMS
-    const double ThermsToNanojoules = 1.05506e+17;
-    const double ThermsToMicrojoules = 1.05506e+14;
-    const double ThermsToMillijoules = 1.05506e+11;
-    const double ThermsToJoules = 1.05506e+8;
-    const double ThermsToKilojoules = 1.05506e+5;
-    const double ThermsToMegajoules = 105.506;
-    const double ThermsToNewtonMetres =
+    const double thermsToNanojoules = 1.05506e+17;
+    const double thermsToMicrojoules = 1.05506e+14;
+    const double thermsToMillijoules = 1.05506e+11;
+    const double thermsToJoules = 1.05506e+8;
+    const double thermsToKilojoules = 1.05506e+5;
+    const double thermsToMegajoules = 105.506;
+    const double thermsToNewtonMetres =
         1.05506e+8; // Newton-metres are equivalent to Joules.
-    const double ThermsToWattHours = 29307.245668;
-    const double ThermsToKilowattHours = 29.307245668;
-    const double ThermsToMegawattHours = 0.029307245668;
-    const double ThermsToCalories = 2.5216567036e+7;
-    const double ThermsToKilocalories = 25216.567036;
-    const double ThermsToFootPoundsForce = 7.7817216372e+7;
-    const double ThermsToBritishThermalUnitsISO = 100000.380402;
-    const double ThermsToTherms = 1.0; // Identity
-    const double ThermsToHorsepowerHours = 39.301618036;
-    const double ThermsToBarrelsOfOilEquivalent = 0.017245588736;
-    const double ThermsToTonnesOfOilEquivalent = 0.0025199686076;
-    const double ThermsToTonnesOfTNT = 0.025216567036;
-    const double ThermsToKilotonnesOfTNT = 2.5216567036e-5;
-    const double ThermsToMegatonnesOfTNT = 2.5216567036e-8;
-    const double ThermsToErgs = 1.05506e+15;
-    const double ThermsToElectronvolt = 6.58515699e+26;
-    const double ThermsToKiloelectronvolt = 6.58515699e+23;
-    const double ThermsToMegaelectronvolt = 6.58515699e+20;
-    const double ThermsToGigaelectronvolt = 6.58515699e+17;
+    const double thermsToWattHours = 29307.245668;
+    const double thermsToKilowattHours = 29.307245668;
+    const double thermsToMegawattHours = 0.029307245668;
+    const double thermsToCalories = 2.5216567036e+7;
+    const double thermsToKilocalories = 25216.567036;
+    const double thermsToFootPoundsForce = 7.7817216372e+7;
+    const double thermsToBritishThermalUnitsISO = 100000.380402;
+    const double thermsToHorsepowerHours = 39.301618036;
+    const double thermsToBarrelsOfOilEquivalent = 0.017245588736;
+    const double thermsToTonnesOfOilEquivalent = 0.0025199686076;
+    const double thermsToTonnesOfTNT = 0.025216567036;
+    const double thermsToKilotonnesOfTNT = 2.5216567036e-5;
+    const double thermsToMegatonnesOfTNT = 2.5216567036e-8;
+    const double thermsToErgs = 1.05506e+15;
+    const double thermsToElectronvolt = 6.58515699e+26;
+    const double thermsToKiloelectronvolt = 6.58515699e+23;
+    const double thermsToMegaelectronvolt = 6.58515699e+20;
+    const double thermsToGigaelectronvolt = 6.58515699e+17;
 
 //HORSEPOWER HOURS
-    const double HorsepowerHoursToNanojoules = 7.457e+11;
-    const double HorsepowerHoursToMicrojoules = 7.457e+8;
-    const double HorsepowerHoursToMillijoules = 7.457e+5;
-    const double HorsepowerHoursToJoules = 745.7;
-    const double HorsepowerHoursToKilojoules = 0.7457;
-    const double HorsepowerHoursToMegajoules = 0.0007457;
-    const double HorsepowerHoursToNewtonMetres =
+    const double horsepowerhoursToNanojoules = 7.457e+11;
+    const double horsepowerhoursToMicrojoules = 7.457e+8;
+    const double horsepowerhoursToMillijoules = 7.457e+5;
+    const double horsepowerhoursToJoules = 745.7;
+    const double horsepowerhoursToKilojoules = 0.7457;
+    const double horsepowerhoursToMegajoules = 0.0007457;
+    const double horsepowerhoursToNewtonMetres =
         745.7; // Newton-metres are equivalent to Joules.
-    const double HorsepowerHoursToWattHours = 0.2071390546;
-    const double HorsepowerHoursToKilowattHours = 0.0002071390546;
-    const double HorsepowerHoursToMegawattHours = 2.071390546e-7;
-    const double HorsepowerHoursToCalories = 178.2267742;
-    const double HorsepowerHoursToKilocalories = 0.1782267742;
-    const double HorsepowerHoursToFootPoundsForce = 550.0; // approximately
-    const double HorsepowerHoursToBritishThermalUnitsISO = 0.7067871369;
-    const double HorsepowerHoursToTherms = 7.067871369e-6;
-    const double HorsepowerHoursToHorsepowerHours = 1.0; // Identity
-    const double HorsepowerHoursToBarrelsOfOilEquivalent = 1.218891392e-7;
-    const double HorsepowerHoursToTonnesOfOilEquivalent = 1.781074622e-8;
-    const double HorsepowerHoursToTonnesOfTNT = 1.782267742e-7;
-    const double HorsepowerHoursToKilotonnesOfTNT = 1.782267742e-10;
-    const double HorsepowerHoursToMegatonnesOfTNT = 1.782267742e-13;
-    const double HorsepowerHoursToErgs = 7.457e+9;
-    const double HorsepowerHoursToElectronvolt = 4.65428655e+21;
-    const double HorsepowerHoursToKiloelectronvolt = 4.65428655e+18;
-    const double HorsepowerHoursToMegaelectronvolt = 4.65428655e+15;
-    const double HorsepowerHoursToGigaelectronvolt = 4.65428655e+12;
+    const double horsepowerhoursToWattHours = 0.2071390546;
+    const double horsepowerhoursToKilowattHours = 0.0002071390546;
+    const double horsepowerhoursToMegawattHours = 2.071390546e-7;
+    const double horsepowerhoursToCalories = 178.2267742;
+    const double horsepowerhoursToKilocalories = 0.1782267742;
+    const double horsepowerhoursToFootPoundsForce = 550.0; // approximately
+    const double horsepowerhoursToBritishThermalUnitsISO = 0.7067871369;
+    const double horsepowerhoursToTherms = 7.067871369e-6;
+    const double horsepowerhoursToHorsepowerHours = 1.0; // Identity
+    const double horsepowerhoursToBarrelsOfOilEquivalent = 1.218891392e-7;
+    const double horsepowerhoursToTonnesOfOilEquivalent = 1.781074622e-8;
+    const double horsepowerhoursToTonnesOfTNT = 1.782267742e-7;
+    const double horsepowerhoursToKilotonnesOfTNT = 1.782267742e-10;
+    const double horsepowerhoursToMegatonnesOfTNT = 1.782267742e-13;
+    const double horsepowerhoursToErgs = 7.457e+9;
+    const double horsepowerhoursToElectronvolt = 4.65428655e+21;
+    const double horsepowerhoursToKiloelectronvolt = 4.65428655e+18;
+    const double horsepowerhoursToMegaelectronvolt = 4.65428655e+15;
+    const double horsepowerhoursToGigaelectronvolt = 4.65428655e+12;
 //BARRELS OF OIL EQUIVALENT
-    const double BarrelsOfOilEquivalentToNanojoules = 6.1194e+18;
-    const double BarrelsOfOilEquivalentToMicrojoules = 6.1194e+15;
-    const double BarrelsOfOilEquivalentToMillijoules = 6.1194e+12;
-    const double BarrelsOfOilEquivalentToJoules = 6.1194e+9;
-    const double BarrelsOfOilEquivalentToKilojoules = 6.1194e+6;
-    const double BarrelsOfOilEquivalentToMegajoules = 6119.4;
-    const double BarrelsOfOilEquivalentToNewtonMetres =
+    const double barrelsofoilequivalentToNanojoules = 6.1194e+18;
+    const double barrelsofoilequivalentToMicrojoules = 6.1194e+15;
+    const double barrelsofoilequivalentToMillijoules = 6.1194e+12;
+    const double barrelsofoilequivalentToJoules = 6.1194e+9;
+    const double barrelsofoilequivalentToKilojoules = 6.1194e+6;
+    const double barrelsofoilequivalentToMegajoules = 6119.4;
+    const double barrelsofoilequivalentToNewtonMetres =
         6.1194e+9; // Newton-metres are equivalent to Joules.
-    const double BarrelsOfOilEquivalentToWattHours = 1699834.6932;
-    const double BarrelsOfOilEquivalentToKilowattHours = 1699.8346932;
-    const double BarrelsOfOilEquivalentToMegawattHours = 1.6998346932;
-    const double BarrelsOfOilEquivalentToCalories = 1.4625733164e+9;
-    const double BarrelsOfOilEquivalentToKilocalories = 1462573.3164;
-    const double BarrelsOfOilEquivalentToFootPoundsForce = 4.5134369028e+9;
-    const double BarrelsOfOilEquivalentToBritishThermalUnitsISO = 5800071.3498;
-    const double BarrelsOfOilEquivalentToTherms = 58.000713498;
-    const double BarrelsOfOilEquivalentToHorsepowerHours = 2279.5132164;
-    const double BarrelsOfOilEquivalentToBarrelsOfOilEquivalent =
-        1.0; // Identity
-    const double BarrelsOfOilEquivalentToTonnesOfOilEquivalent = 0.14615942124;
-    const double BarrelsOfOilEquivalentToTonnesOfTNT = 1.4625733164;
-    const double BarrelsOfOilEquivalentToKilotonnesOfTNT = 0.0014625733164;
-    const double BarrelsOfOilEquivalentToMegatonnesOfTNT = 1.4625733164e-6;
-    const double BarrelsOfOilEquivalentToErgs = 6.1194e+16;
-    const double BarrelsOfOilEquivalentToElectronvolt = 3.81942351e+28;
-    const double BarrelsOfOilEquivalentToKiloelectronvolt = 3.81942351e+25;
-    const double BarrelsOfOilEquivalentToMegaelectronvolt = 3.81942351e+22;
-    const double BarrelsOfOilEquivalentToGigaelectronvolt = 3.81942351e+19;
+    const double barrelsofoilequivalentToWattHours = 1699834.6932;
+    const double barrelsofoilequivalentToKilowattHours = 1699.8346932;
+    const double barrelsofoilequivalentToMegawattHours = 1.6998346932;
+    const double barrelsofoilequivalentToCalories = 1.4625733164e+9;
+    const double barrelsofoilequivalentToKilocalories = 1462573.3164;
+    const double barrelsofoilequivalentToFootPoundsForce = 4.5134369028e+9;
+    const double barrelsofoilequivalentToBritishThermalUnitsISO = 5800071.3498;
+    const double barrelsofoilequivalentToTherms = 58.000713498;
+    const double barrelsofoilequivalentToHorsepowerHours = 2279.5132164;
+    const double barrelsofoilequivalentToTonnesOfOilEquivalent = 0.14615942124;
+    const double barrelsofoilequivalentToTonnesOfTNT = 1.4625733164;
+    const double barrelsofoilequivalentToKilotonnesOfTNT = 0.0014625733164;
+    const double barrelsofoilequivalentToMegatonnesOfTNT = 1.4625733164e-6;
+    const double barrelsofoilequivalentToErgs = 6.1194e+16;
+    const double barrelsofoilequivalentToElectronvolt = 3.81942351e+28;
+    const double barrelsofoilequivalentToKiloelectronvolt = 3.81942351e+25;
+    const double barrelsofoilequivalentToMegaelectronvolt = 3.81942351e+22;
+    const double barrelsofoilequivalentToGigaelectronvolt = 3.81942351e+19;
 
 //TONS OF OIL EQUIVALENT
-    const double TonnesOfOilEquivalentToNanojoules = 4.1868e+19;
-    const double TonnesOfOilEquivalentToMicrojoules = 4.1868e+16;
-    const double TonnesOfOilEquivalentToMillijoules = 4.1868e+13;
-    const double TonnesOfOilEquivalentToJoules = 4.1868e+10;
-    const double TonnesOfOilEquivalentToKilojoules = 4.1868e+7;
-    const double TonnesOfOilEquivalentToMegajoules = 41868.0;
-    const double TonnesOfOilEquivalentToNewtonMetres =
+    const double tonnesofoilequivalentToNanojoules = 4.1868e+19;
+    const double tonnesofoilequivalentToMicrojoules = 4.1868e+16;
+    const double tonnesofoilequivalentToMillijoules = 4.1868e+13;
+    const double tonnesofoilequivalentToJoules = 4.1868e+10;
+    const double tonnesofoilequivalentToKilojoules = 4.1868e+7;
+    const double tonnesofoilequivalentToMegajoules = 41868.0;
+    const double tonnesofoilequivalentToNewtonMetres =
         4.1868e+10; // Newton-metres are equivalent to Joules.
-    const double TonnesOfOilEquivalentToWattHours = 11630009.304;
-    const double TonnesOfOilEquivalentToKilowattHours = 11630.009304;
-    const double TonnesOfOilEquivalentToMegawattHours = 11.630009304;
-    const double TonnesOfOilEquivalentToCalories = 1.0006703208e+10;
-    const double TonnesOfOilEquivalentToKilocalories = 10006703.208;
-    const double TonnesOfOilEquivalentToFootPoundsForce = 3.0880245816e+10;
-    const double TonnesOfOilEquivalentToBritishThermalUnitsISO = 39683202.156;
-    const double TonnesOfOilEquivalentToTherms = 396.83202156;
-    const double TonnesOfOilEquivalentToHorsepowerHours = 15596.081208;
-    const double TonnesOfOilEquivalentToBarrelsOfOilEquivalent = 6.843575808;
-    const double TonnesOfOilEquivalentToTonnesOfOilEquivalent = 1.0; // Identity
-    const double TonnesOfOilEquivalentToTonnesOfTNT = 10.006703208;
-    const double TonnesOfOilEquivalentToKilotonnesOfTNT = 0.010006703208;
-    const double TonnesOfOilEquivalentToMegatonnesOfTNT = 1.0006703208e-5;
-    const double TonnesOfOilEquivalentToErgs = 4.1868e+17;
-    const double TonnesOfOilEquivalentToElectronvolt = 2.61319122e+29;
-    const double TonnesOfOilEquivalentToKiloelectronvolt = 2.61319122e+26;
-    const double TonnesOfOilEquivalentToMegaelectronvolt = 2.61319122e+23;
-    const double TonnesOfOilEquivalentToGigaelectronvolt = 2.61319122e+20;
+    const double tonnesofoilequivalentToWattHours = 11630009.304;
+    const double tonnesofoilequivalentToKilowattHours = 11630.009304;
+    const double tonnesofoilequivalentToMegawattHours = 11.630009304;
+    const double tonnesofoilequivalentToCalories = 1.0006703208e+10;
+    const double tonnesofoilequivalentToKilocalories = 10006703.208;
+    const double tonnesofoilequivalentToFootPoundsForce = 3.0880245816e+10;
+    const double tonnesofoilequivalentToBritishThermalUnitsISO = 39683202.156;
+    const double tonnesofoilequivalentToTherms = 396.83202156;
+    const double tonnesofoilequivalentToHorsepowerHours = 15596.081208;
+    const double tonnesofoilequivalentToBarrelsOfOilEquivalent = 6.843575808;
+    const double tonnesofoilequivalentToTonnesOfOilEquivalent = 1.0; // Identity
+    const double tonnesofoilequivalentToTonnesOfTNT = 10.006703208;
+    const double tonnesofoilequivalentToKilotonnesOfTNT = 0.010006703208;
+    const double tonnesofoilequivalentToMegatonnesOfTNT = 1.0006703208e-5;
+    const double tonnesofoilequivalentToErgs = 4.1868e+17;
+    const double tonnesofoilequivalentToElectronvolt = 2.61319122e+29;
+    const double tonnesofoilequivalentToKiloelectronvolt = 2.61319122e+26;
+    const double tonnesofoilequivalentToMegaelectronvolt = 2.61319122e+23;
+    const double tonnesofoilequivalentToGigaelectronvolt = 2.61319122e+20;
 
 //TONNES OF TNT
-    const double TonnesOfTNTToNanojoules = 4.184e+18;
-    const double TonnesOfTNTToMicrojoules = 4.184e+15;
-    const double TonnesOfTNTToMillijoules = 4.184e+12;
-    const double TonnesOfTNTToJoules = 4.184e+9;
-    const double TonnesOfTNTToKilojoules = 4.184e+6;
-    const double TonnesOfTNTToMegajoules = 4184.0;
-    const double TonnesOfTNTToNewtonMetres =
+    const double tonnesofTNTToNanojoules = 4.184e+18;
+    const double tonnesofTNTToMicrojoules = 4.184e+15;
+    const double tonnesofTNTToMillijoules = 4.184e+12;
+    const double tonnesofTNTToJoules = 4.184e+9;
+    const double tonnesofTNTToKilojoules = 4.184e+6;
+    const double tonnesofTNTToMegajoules = 4184.0;
+    const double tonnesofTNTToNewtonMetres =
         4.184e+9; // Newton-metres are equivalent to Joules.
-    const double TonnesOfTNTToWattHours = 1162223.152;
-    const double TonnesOfTNTToKilowattHours = 1162.223152;
-    const double TonnesOfTNTToMegawattHours = 1.162223152;
-    const double TonnesOfTNTToCalories = 1e+9; // approximately
-    const double TonnesOfTNTToKilocalories = 1e+6; // approximately
-    const double TonnesOfTNTToFootPoundsForce = 3.085959408e+9;
-    const double TonnesOfTNTToBritishThermalUnitsISO = 3965666.328;
-    const double TonnesOfTNTToTherms = 39.65666328;
-    const double TonnesOfTNTToHorsepowerHours = 1558.565104;
-    const double TonnesOfTNTToBarrelsOfOilEquivalent = 0.683899904;
-    const double TonnesOfTNTToTonnesOfOilEquivalent = 0.0999331664;
-    const double TonnesOfTNTToKilotonnesOfTNT = 0.001;
-    const double TonnesOfTNTToMegatonnesOfTNT = 1e-6;
-    const double TonnesOfTNTToErgs = 4.184e+16;
-    const double TonnesOfTNTToElectronvolt = 2.6114436e+28;
-    const double TonnesOfTNTToKiloelectronvolt = 2.6114436e+25;
-    const double TonnesOfTNTToMegaelectronvolt = 2.6114436e+22;
-    const double TonnesOfTNTToGigaelectronvolt = 2.6114436e+19;
+    const double tonnesofTNTToWattHours = 1162223.152;
+    const double tonnesofTNTToKilowattHours = 1162.223152;
+    const double tonnesofTNTToMegawattHours = 1.162223152;
+    const double tonnesofTNTToCalories = 1e+9; // approximately
+    const double tonnesofTNTToKilocalories = 1e+6; // approximately
+    const double tonnesofTNTToFootPoundsForce = 3.085959408e+9;
+    const double tonnesofTNTToBritishThermalUnitsISO = 3965666.328;
+    const double tonnesofTNTToTherms = 39.65666328;
+    const double tonnesofTNTToHorsepowerHours = 1558.565104;
+    const double tonnesofTNTToBarrelsOfOilEquivalent = 0.683899904;
+    const double tonnesofTNTToTonnesOfOilEquivalent = 0.0999331664;
+    const double tonnesofTNTToKilotonnesOfTNT = 0.001;
+    const double tonnesofTNTToMegatonnesOfTNT = 1e-6;
+    const double tonnesofTNTToErgs = 4.184e+16;
+    const double tonnesofTNTToElectronvolt = 2.6114436e+28;
+    const double tonnesofTNTToKiloelectronvolt = 2.6114436e+25;
+    const double tonnesofTNTToMegaelectronvolt = 2.6114436e+22;
+    const double tonnesofTNTToGigaelectronvolt = 2.6114436e+19;
 
 //KILOTONNES
-    const double KilotonnesOfTNTToNanojoules = 4.184e+21;
-    const double KilotonnesOfTNTToMicrojoules = 4.184e+18;
-    const double KilotonnesOfTNTToMillijoules = 4.184e+15;
-    const double KilotonnesOfTNTToJoules = 4.184e+12;
-    const double KilotonnesOfTNTToKilojoules = 4.184e+9;
-    const double KilotonnesOfTNTToMegajoules = 4.184e+6;
-    const double KilotonnesOfTNTToNewtonMetres =
+    const double kilotonnesofTNTToNanojoules = 4.184e+21;
+    const double kilotonnesofTNTToMicrojoules = 4.184e+18;
+    const double kilotonnesofTNTToMillijoules = 4.184e+15;
+    const double kilotonnesofTNTToJoules = 4.184e+12;
+    const double kilotonnesofTNTToKilojoules = 4.184e+9;
+    const double kilotonnesofTNTToMegajoules = 4.184e+6;
+    const double kilotonnesofTNTToNewtonMetres =
         4.184e+12; // Newton-metres are equivalent to Joules.
-    const double KilotonnesOfTNTToWattHours = 1.162223152e+9;
-    const double KilotonnesOfTNTToKilowattHours = 1.162223152e+6;
-    const double KilotonnesOfTNTToMegawattHours = 1162.223152;
-    const double KilotonnesOfTNTToCalories = 1e+12; // approximately
-    const double KilotonnesOfTNTToKilocalories = 1e+9; // approximately
-    const double KilotonnesOfTNTToFootPoundsForce = 3.085959408e+12;
-    const double KilotonnesOfTNTToBritishThermalUnitsISO = 3.965666328e+9;
-    const double KilotonnesOfTNTToTherms = 39656.66328;
-    const double KilotonnesOfTNTToHorsepowerHours = 1.558565104e+6;
-    const double KilotonnesOfTNTToBarrelsOfOilEquivalent = 683.899904;
-    const double KilotonnesOfTNTToTonnesOfOilEquivalent = 99.9331664;
-    const double KilotonnesOfTNTToTonnesOfTNT = 1000.0;
-    const double KilotonnesOfTNTToMegatonnesOfTNT = 0.001;
-    const double KilotonnesOfTNTToErgs = 4.184e+19;
-    const double KilotonnesOfTNTToElectronvolt = 2.6114436e+31;
-    const double KilotonnesOfTNTToKiloelectronvolt = 2.6114436e+28;
-    const double KilotonnesOfTNTToMegaelectronvolt = 2.6114436e+25;
-    const double KilotonnesOfTNTToGigaelectronvolt = 2.6114436e+22;
+    const double kilotonnesofTNTToWattHours = 1.162223152e+9;
+    const double kilotonnesofTNTToKilowattHours = 1.162223152e+6;
+    const double kilotonnesofTNTToMegawattHours = 1162.223152;
+    const double kilotonnesofTNTToCalories = 1e+12; // approximately
+    const double kilotonnesofTNTToKilocalories = 1e+9; // approximately
+    const double kilotonnesofTNTToFootPoundsForce = 3.085959408e+12;
+    const double kilotonnesofTNTToBritishThermalUnitsISO = 3.965666328e+9;
+    const double kilotonnesofTNTToTherms = 39656.66328;
+    const double kilotonnesofTNTToHorsepowerHours = 1.558565104e+6;
+    const double kilotonnesofTNTToBarrelsOfOilEquivalent = 683.899904;
+    const double kilotonnesofTNTToTonnesOfOilEquivalent = 99.9331664;
+    const double kilotonnesofTNTToTonnesOfTNT = 1000.0;
+    const double kilotonnesofTNTToMegatonnesOfTNT = 0.001;
+    const double kilotonnesofTNTToErgs = 4.184e+19;
+    const double kilotonnesofTNTToElectronvolt = 2.6114436e+31;
+    const double kilotonnesofTNTToKiloelectronvolt = 2.6114436e+28;
+    const double kilotonnesofTNTToMegaelectronvolt = 2.6114436e+25;
+    const double kilotonnesofTNTToGigaelectronvolt = 2.6114436e+22;
 
 //MEGATONNES OF TNT
-    const double MegatonnesOfTNTToNanojoules = 4.184e+24;
-    const double MegatonnesOfTNTToMicrojoules = 4.184e+21;
-    const double MegatonnesOfTNTToMillijoules = 4.184e+18;
-    const double MegatonnesOfTNTToJoules = 4.184e+15;
-    const double MegatonnesOfTNTToKilojoules = 4.184e+12;
-    const double MegatonnesOfTNTToMegajoules = 4.184e+9;
-    const double MegatonnesOfTNTToNewtonMetres =
+    const double megatonnesofTNTToNanojoules = 4.184e+24;
+    const double megatonnesofTNTToMicrojoules = 4.184e+21;
+    const double megatonnesofTNTToMillijoules = 4.184e+18;
+    const double megatonnesofTNTToJoules = 4.184e+15;
+    const double megatonnesofTNTToKilojoules = 4.184e+12;
+    const double megatonnesofTNTToMegajoules = 4.184e+9;
+    const double megatonnesofTNTToNewtonMetres =
         4.184e+15; // Newton-metres are equivalent to Joules.
-    const double MegatonnesOfTNTToWattHours = 1.162223152e+9;
-    const double MegatonnesOfTNTToKilowattHours = 1.162223152e+6;
-    const double MegatonnesOfTNTToMegawattHours = 1162.223152;
-    const double MegatonnesOfTNTToCalories = 1e+15; // approximately
-    const double MegatonnesOfTNTToKilocalories = 1e+12; // approximately
-    const double MegatonnesOfTNTToFootPoundsForce = 3.085959408e+15;
-    const double MegatonnesOfTNTToBritishThermalUnitsISO = 3.965666328e+12;
-    const double MegatonnesOfTNTToTherms = 39656663.28;
-    const double MegatonnesOfTNTToHorsepowerHours = 1.558565104e+9;
-    const double MegatonnesOfTNTToBarrelsOfOilEquivalent = 683899.904;
-    const double MegatonnesOfTNTToTonnesOfOilEquivalent = 99933.1664;
-    const double MegatonnesOfTNTToTonnesOfTNT = 1e+6;
-    const double MegatonnesOfTNTToKilotonnesOfTNT = 1000.0;
-    const double MegatonnesOfTNTToErgs = 4.184e+22;
-    const double MegatonnesOfTNTToElectronvolt = 2.6114436e+34;
-    const double MegatonnesOfTNTToKiloelectronvolt = 2.6114436e+31;
-    const double MegatonnesOfTNTToMegaelectronvolt = 2.6114436e+28;
-    const double MegatonnesOfTNTToGigaelectronvolt = 2.6114436e+25;
+    const double megatonnesofTNTToWattHours = 1.162223152e+9;
+    const double megatonnesofTNTToKilowattHours = 1.162223152e+6;
+    const double megatonnesofTNTToMegawattHours = 1162.223152;
+    const double megatonnesofTNTToCalories = 1e+15; // approximately
+    const double megatonnesofTNTToKilocalories = 1e+12; // approximately
+    const double megatonnesofTNTToFootPoundsForce = 3.085959408e+15;
+    const double megatonnesofTNTToBritishThermalUnitsISO = 3.965666328e+12;
+    const double megatonnesofTNTToTherms = 39656663.28;
+    const double megatonnesofTNTToHorsepowerHours = 1.558565104e+9;
+    const double megatonnesofTNTToBarrelsOfOilEquivalent = 683899.904;
+    const double megatonnesofTNTToTonnesOfOilEquivalent = 99933.1664;
+    const double megatonnesofTNTToTonnesOfTNT = 1e+6;
+    const double megatonnesofTNTToKilotonnesOfTNT = 1000.0;
+    const double megatonnesofTNTToErgs = 4.184e+22;
+    const double megatonnesofTNTToElectronvolt = 2.6114436e+34;
+    const double megatonnesofTNTToKiloelectronvolt = 2.6114436e+31;
+    const double megatonnesofTNTToMegaelectronvolt = 2.6114436e+28;
+    const double megatonnesofTNTToGigaelectronvolt = 2.6114436e+25;
 
 //ERGS
-    const double ErgsToNanojoules = 100.0;
-    const double ErgsToMicrojoules = 0.1;
-    const double ErgsToMillijoules = 0.0001;
-    const double ErgsToJoules = 1e-7;
-    const double ErgsToKilojoules = 1e-10;
-    const double ErgsToMegajoules = 1e-13;
-    const double ErgsToNewtonMetres =
+    const double ergsToNanojoules = 100.0;
+    const double ergsToMicrojoules = 0.1;
+    const double ergsToMillijoules = 0.0001;
+    const double ergsToJoules = 1e-7;
+    const double ergsToKilojoules = 1e-10;
+    const double ergsToMegajoules = 1e-13;
+    const double ergsToNewtonMetres =
         1e-7; // Newton-metres are equivalent to Joules.
-    const double ErgsToWattHours = 2.77778e-11;
-    const double ErgsToKilowattHours = 2.77778e-14;
-    const double ErgsToMegawattHours = 2.77778e-17;
-    const double ErgsToCalories = 2.39006e-8;
-    const double ErgsToKilocalories = 2.39006e-11;
-    const double ErgsToFootPoundsForce = 7.37562e-8;
-    const double ErgsToBritishThermalUnitsISO = 9.47817e-11;
-    const double ErgsToTherms = 9.47817e-16;
-    const double ErgsToHorsepowerHours = 3.72506e-14;
-    const double ErgsToBarrelsOfOilEquivalent = 1.63456e-17;
-    const double ErgsToTonnesOfOilEquivalent = 2.38846e-18;
-    const double ErgsToTonnesOfTNT = 2.39006e-17;
-    const double ErgsToKilotonnesOfTNT = 2.39006e-20;
-    const double ErgsToMegatonnesOfTNT = 2.39006e-23;
+    const double ergsToWattHours = 2.77778e-11;
+    const double ergsToKilowattHours = 2.77778e-14;
+    const double ergsToMegawattHours = 2.77778e-17;
+    const double ergsToCalories = 2.39006e-8;
+    const double ergsToKilocalories = 2.39006e-11;
+    const double ergsToFootPoundsForce = 7.37562e-8;
+    const double ergsToBritishThermalUnitsISO = 9.47817e-11;
+    const double ergsToTherms = 9.47817e-16;
+    const double ergsToHorsepowerHours = 3.72506e-14;
+    const double ergsToBarrelsOfOilEquivalent = 1.63456e-17;
+    const double ergsToTonnesOfOilEquivalent = 2.38846e-18;
+    const double ergsToTonnesOfTNT = 2.39006e-17;
+    const double ergsToKilotonnesOfTNT = 2.39006e-20;
+    const double ergsToMegatonnesOfTNT = 2.39006e-23;
 
-    const double ErgsToElectronvolt = 6.2415e+11;
-    const double ErgsToKiloelectronvolt = 6.2415e+8;
-    const double ErgsToMegaelectronvolt = 624150.0;
-    const double ErgsToGigaelectronvolt = 624.15;
+    const double ergsToElectronvolt = 6.2415e+11;
+    const double ergsToKiloelectronvolt = 6.2415e+8;
+    const double ergsToMegaelectronvolt = 624150.0;
+    const double ergsToGigaelectronvolt = 624.15;
 
 //ELECTRONVOLT
-    const double ElectronvoltToNanojoules = 1.60218e-10;
-    const double ElectronvoltToMicrojoules = 1.60218e-13;
-    const double ElectronvoltToMillijoules = 1.60218e-16;
-    const double ElectronvoltToJoules = 1.60218e-19;
-    const double ElectronvoltToKilojoules = 1.60218e-22;
-    const double ElectronvoltToMegajoules = 1.60218e-25;
-    const double ElectronvoltToNewtonMetres =
+    const double electronvoltToNanojoules = 1.60218e-10;
+    const double electronvoltToMicrojoules = 1.60218e-13;
+    const double electronvoltToMillijoules = 1.60218e-16;
+    const double electronvoltToJoules = 1.60218e-19;
+    const double electronvoltToKilojoules = 1.60218e-22;
+    const double electronvoltToMegajoules = 1.60218e-25;
+    const double electronvoltToNewtonMetres =
         1.60218e-19; // Newton-metres are equivalent to Joules.
-    const double ElectronvoltToWattHours = 4.4505e-23;
-    const double ElectronvoltToKilowattHours = 4.4505e-26;
-    const double ElectronvoltToMegawattHours = 4.4505e-29;
-    const double ElectronvoltToCalories = 3.8293e-20;
-    const double ElectronvoltToKilocalories = 3.8293e-23;
-    const double ElectronvoltToFootPoundsForce = 1.1817e-19;
-    const double ElectronvoltToBritishThermalUnitsISO = 1.51857e-22;
-    const double ElectronvoltToTherms = 1.51857e-27;
-    const double ElectronvoltToHorsepowerHours = 5.9682e-26;
-    const double ElectronvoltToBarrelsOfOilEquivalent = 2.6188e-29;
-    const double ElectronvoltToTonnesOfOilEquivalent = 3.8267e-30;
-    const double ElectronvoltToTonnesOfTNT = 3.8293e-29;
-    const double ElectronvoltToKilotonnesOfTNT = 3.8293e-32;
-    const double ElectronvoltToMegatonnesOfTNT = 3.8293e-35;
-    const double ElectronvoltToErgs = 1.60218e-12;
+    const double electronvoltToWattHours = 4.4505e-23;
+    const double electronvoltToKilowattHours = 4.4505e-26;
+    const double electronvoltToMegawattHours = 4.4505e-29;
+    const double electronvoltToCalories = 3.8293e-20;
+    const double electronvoltToKilocalories = 3.8293e-23;
+    const double electronvoltToFootPoundsForce = 1.1817e-19;
+    const double electronvoltToBritishThermalUnitsISO = 1.51857e-22;
+    const double electronvoltToTherms = 1.51857e-27;
+    const double electronvoltToHorsepowerHours = 5.9682e-26;
+    const double electronvoltToBarrelsOfOilEquivalent = 2.6188e-29;
+    const double electronvoltToTonnesOfOilEquivalent = 3.8267e-30;
+    const double electronvoltToTonnesOfTNT = 3.8293e-29;
+    const double electronvoltToKilotonnesOfTNT = 3.8293e-32;
+    const double electronvoltToMegatonnesOfTNT = 3.8293e-35;
+    const double electronvoltToErgs = 1.60218e-12;
 
 //KILOELECTRONVOLT
-    const double KiloelectronvoltToNanojoules = 1.60218e-7;
-    const double KiloelectronvoltToMicrojoules = 1.60218e-10;
-    const double KiloelectronvoltToMillijoules = 1.60218e-13;
-    const double KiloelectronvoltToJoules = 1.60218e-16;
-    const double KiloelectronvoltToKilojoules = 1.60218e-19;
-    const double KiloelectronvoltToMegajoules = 1.60218e-22;
-    const double KiloelectronvoltToNewtonMetres =
+    const double kiloelectronvoltToNanojoules = 1.60218e-7;
+    const double kiloelectronvoltToMicrojoules = 1.60218e-10;
+    const double kiloelectronvoltToMillijoules = 1.60218e-13;
+    const double kiloelectronvoltToJoules = 1.60218e-16;
+    const double kiloelectronvoltToKilojoules = 1.60218e-19;
+    const double kiloelectronvoltToMegajoules = 1.60218e-22;
+    const double kiloelectronvoltToNewtonMetres =
         1.60218e-16; // Newton-metres are equivalent to Joules.
-    const double KiloelectronvoltToWattHours = 4.4505e-20;
-    const double KiloelectronvoltToKilowattHours = 4.4505e-23;
-    const double KiloelectronvoltToMegawattHours = 4.4505e-26;
-    const double KiloelectronvoltToCalories = 3.8293e-17;
-    const double KiloelectronvoltToKilocalories = 3.8293e-20;
-    const double KiloelectronvoltToFootPoundsForce = 1.1817e-16;
-    const double KiloelectronvoltToBritishThermalUnitsISO = 1.51857e-19;
-    const double KiloelectronvoltToTherms = 1.51857e-24;
-    const double KiloelectronvoltToHorsepowerHours = 5.9682e-23;
-    const double KiloelectronvoltToBarrelsOfOilEquivalent = 2.6188e-26;
-    const double KiloelectronvoltToTonnesOfOilEquivalent = 3.8267e-27;
-    const double KiloelectronvoltToTonnesOfTNT = 3.8293e-26;
-    const double KiloelectronvoltToKilotonnesOfTNT = 3.8293e-29;
-    const double KiloelectronvoltToMegatonnesOfTNT = 3.8293e-32;
-    const double KiloelectronvoltToErgs = 1.60218e-9;
+    const double kiloelectronvoltToWattHours = 4.4505e-20;
+    const double kiloelectronvoltToKilowattHours = 4.4505e-23;
+    const double kiloelectronvoltToMegawattHours = 4.4505e-26;
+    const double kiloelectronvoltToCalories = 3.8293e-17;
+    const double kiloelectronvoltToKilocalories = 3.8293e-20;
+    const double kiloelectronvoltToFootPoundsForce = 1.1817e-16;
+    const double kiloelectronvoltToBritishThermalUnitsISO = 1.51857e-19;
+    const double kiloelectronvoltToTherms = 1.51857e-24;
+    const double kiloelectronvoltToHorsepowerHours = 5.9682e-23;
+    const double kiloelectronvoltToBarrelsOfOilEquivalent = 2.6188e-26;
+    const double kiloelectronvoltToTonnesOfOilEquivalent = 3.8267e-27;
+    const double kiloelectronvoltToTonnesOfTNT = 3.8293e-26;
+    const double kiloelectronvoltToKilotonnesOfTNT = 3.8293e-29;
+    const double kiloelectronvoltToMegatonnesOfTNT = 3.8293e-32;
+    const double kiloelectronvoltToErgs = 1.60218e-9;
 
 //MEGAELECTRONVOLT
-    const double MegaelectronvoltToNanojoules = 0.000160218;
-    const double MegaelectronvoltToMicrojoules = 1.60218e-7;
-    const double MegaelectronvoltToMillijoules = 1.60218e-10;
-    const double MegaelectronvoltToJoules = 1.60218e-13;
-    const double MegaelectronvoltToKilojoules = 1.60218e-16;
-    const double MegaelectronvoltToMegajoules = 1.60218e-19;
-    const double MegaelectronvoltToNewtonMetres =
+    const double megaelectronvoltToNanojoules = 0.000160218;
+    const double megaelectronvoltToMicrojoules = 1.60218e-7;
+    const double megaelectronvoltToMillijoules = 1.60218e-10;
+    const double megaelectronvoltToJoules = 1.60218e-13;
+    const double megaelectronvoltToKilojoules = 1.60218e-16;
+    const double megaelectronvoltToMegajoules = 1.60218e-19;
+    const double megaelectronvoltToNewtonMetres =
         1.60218e-13; // Newton-metres are equivalent to Joules.
-    const double MegaelectronvoltToWattHours = 4.4505e-17;
-    const double MegaelectronvoltToKilowattHours = 4.4505e-20;
-    const double MegaelectronvoltToMegawattHours = 4.4505e-23;
-    const double MegaelectronvoltToCalories = 3.8293e-14;
-    const double MegaelectronvoltToKilocalories = 3.8293e-17;
-    const double MegaelectronvoltToFootPoundsForce = 1.1817e-13;
-    const double MegaelectronvoltToBritishThermalUnitsISO = 1.51857e-16;
-    const double MegaelectronvoltToTherms = 1.51857e-21;
-    const double MegaelectronvoltToHorsepowerHours = 5.9682e-20;
-    const double MegaelectronvoltToBarrelsOfOilEquivalent = 2.6188e-23;
-    const double MegaelectronvoltToTonnesOfOilEquivalent = 3.8267e-24;
-    const double MegaelectronvoltToTonnesOfTNT = 3.8293e-23;
-    const double MegaelectronvoltToKilotonnesOfTNT = 3.8293e-26;
-    const double MegaelectronvoltToMegatonnesOfTNT = 3.8293e-29;
-    const double MegaelectronvoltToErgs = 1.60218e-6;
+    const double megaelectronvoltToWattHours = 4.4505e-17;
+    const double megaelectronvoltToKilowattHours = 4.4505e-20;
+    const double megaelectronvoltToMegawattHours = 4.4505e-23;
+    const double megaelectronvoltToCalories = 3.8293e-14;
+    const double megaelectronvoltToKilocalories = 3.8293e-17;
+    const double megaelectronvoltToFootPoundsForce = 1.1817e-13;
+    const double megaelectronvoltToBritishThermalUnitsISO = 1.51857e-16;
+    const double megaelectronvoltToTherms = 1.51857e-21;
+    const double megaelectronvoltToHorsepowerHours = 5.9682e-20;
+    const double megaelectronvoltToBarrelsOfOilEquivalent = 2.6188e-23;
+    const double megaelectronvoltToTonnesOfOilEquivalent = 3.8267e-24;
+    const double megaelectronvoltToTonnesOfTNT = 3.8293e-23;
+    const double megaelectronvoltToKilotonnesOfTNT = 3.8293e-26;
+    const double megaelectronvoltToMegatonnesOfTNT = 3.8293e-29;
+    const double megaelectronvoltToErgs = 1.60218e-6;
 
 //GIGAELECTRONVOLT
-    const double GigaelectronvoltToNanojoules = 0.160218;
-    const double GigaelectronvoltToMicrojoules = 0.000160218;
-    const double GigaelectronvoltToMillijoules = 1.60218e-7;
-    const double GigaelectronvoltToJoules = 1.60218e-10;
-    const double GigaelectronvoltToKilojoules = 1.60218e-13;
-    const double GigaelectronvoltToMegajoules = 1.60218e-16;
-    const double GigaelectronvoltToNewtonMetres =
+    const double gigaelectronvoltToNanojoules = 0.160218;
+    const double gigaelectronvoltToMicrojoules = 0.000160218;
+    const double gigaelectronvoltToMillijoules = 1.60218e-7;
+    const double gigaelectronvoltToJoules = 1.60218e-10;
+    const double gigaelectronvoltToKilojoules = 1.60218e-13;
+    const double gigaelectronvoltToMegajoules = 1.60218e-16;
+    const double gigaelectronvoltToNewtonMetres =
         1.60218e-10; // Newton-metres are equivalent to Joules.
-    const double GigaelectronvoltToWattHours = 4.4505e-14;
-    const double GigaelectronvoltToKilowattHours = 4.4505e-17;
-    const double GigaelectronvoltToMegawattHours = 4.4505e-20;
-    const double GigaelectronvoltToCalories = 3.8293e-11;
-    const double GigaelectronvoltToKilocalories = 3.8293e-14;
-    const double GigaelectronvoltToFootPoundsForce = 1.1817e-10;
-    const double GigaelectronvoltToBritishThermalUnitsISO = 1.51857e-13;
-    const double GigaelectronvoltToTherms = 1.51857e-18;
-    const double GigaelectronvoltToHorsepowerHours = 5.9682e-17;
-    const double GigaelectronvoltToBarrelsOfOilEquivalent = 2.6188e-20;
-    const double GigaelectronvoltToTonnesOfOilEquivalent = 3.8267e-21;
-    const double GigaelectronvoltToTonnesOfTNT = 3.8293e-20;
-    const double GigaelectronvoltToKilotonnesOfTNT = 3.8293e-23;
-    const double GigaelectronvoltToMegatonnesOfTNT = 3.8293e-26;
-    const double GigaelectronvoltToErgs = 1.60218e-3;
+    const double gigaelectronvoltToWattHours = 4.4505e-14;
+    const double gigaelectronvoltToKilowattHours = 4.4505e-17;
+    const double gigaelectronvoltToMegawattHours = 4.4505e-20;
+    const double gigaelectronvoltToCalories = 3.8293e-11;
+    const double gigaelectronvoltToKilocalories = 3.8293e-14;
+    const double gigaelectronvoltToFootPoundsForce = 1.1817e-10;
+    const double gigaelectronvoltToBritishThermalUnitsISO = 1.51857e-13;
+    const double gigaelectronvoltToTherms = 1.51857e-18;
+    const double gigaelectronvoltToHorsepowerHours = 5.9682e-17;
+    const double gigaelectronvoltToBarrelsOfOilEquivalent = 2.6188e-20;
+    const double gigaelectronvoltToTonnesOfOilEquivalent = 3.8267e-21;
+    const double gigaelectronvoltToTonnesOfTNT = 3.8293e-20;
+    const double gigaelectronvoltToKilotonnesOfTNT = 3.8293e-23;
+    const double gigaelectronvoltToMegatonnesOfTNT = 3.8293e-26;
+    const double gigaelectronvoltToErgs = 1.60218e-3;
 
     switch (fromUnit) {
 //NANOJOULES
@@ -841,79 +829,79 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
             toValue = fromValue;
             break;
           case 'Microjoules':
-            toValue = fromValue * NanojoulesToMicrojoules;
+            toValue = fromValue * nanojoulesToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * NanojoulesToMillijoules;
+            toValue = fromValue * nanojoulesToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * NanojoulesToJoules;
+            toValue = fromValue * nanojoulesToJoules;
             break;
           case 'Kilojoules':
-            toValue = fromValue * NanojoulesToKilojoules;
+            toValue = fromValue * nanojoulesToKilojoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * NanojoulesToMegajoules;
+            toValue = fromValue * nanojoulesToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * NanojoulesToNewtonMetres;
+            toValue = fromValue * nanojoulesToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * NanojoulesToWattHours;
+            toValue = fromValue * nanojoulesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * NanojoulesToKilowattHours;
+            toValue = fromValue * nanojoulesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * NanojoulesToMegawattHours;
+            toValue = fromValue * nanojoulesToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * NanojoulesToCalories;
+            toValue = fromValue * nanojoulesToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * NanojoulesToKilocalories;
+            toValue = fromValue * nanojoulesToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * NanojoulesToFootPoundsForce;
+            toValue = fromValue * nanojoulesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * NanojoulesToBritishThermalUnitsISO;
+            toValue = fromValue * nanojoulesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * NanojoulesToTherms;
+            toValue = fromValue * nanojoulesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * NanojoulesToHorsepowerHours;
+            toValue = fromValue * nanojoulesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * NanojoulesToBarrelsOfOilEquivalent;
+            toValue = fromValue * nanojoulesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * NanojoulesToTonnesOfOilEquivalent;
+            toValue = fromValue * nanojoulesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * NanojoulesToTonnesOfTNT;
+            toValue = fromValue * nanojoulesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * NanojoulesToKilotonnesOfTNT;
+            toValue = fromValue * nanojoulesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * NanojoulesToMegatonnesOfTNT;
+            toValue = fromValue * nanojoulesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * NanojoulesToErgs;
+            toValue = fromValue * nanojoulesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * NanojoulesToElectronvolt;
+            toValue = fromValue * nanojoulesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * NanojoulesToKiloelectronvolt;
+            toValue = fromValue * nanojoulesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * NanojoulesToMegaelectronvolt;
+            toValue = fromValue * nanojoulesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * NanojoulesToGigaelectronvolt;
+            toValue = fromValue * nanojoulesToGigaelectronvolt;
             break;
           default:
             throw 'Unknown unit: $toUnit';
@@ -928,79 +916,79 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
             break;
 
           case 'Nanojoules':
-            toValue = fromValue * MicrojoulesToNanojoules;
+            toValue = fromValue * microjoulesToNanojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * MicrojoulesToMillijoules;
+            toValue = fromValue * microjoulesToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * MicrojoulesToJoules;
+            toValue = fromValue * microjoulesToJoules;
             break;
           case 'Kilojoules':
-            toValue = fromValue * MicrojoulesToKilojoules;
+            toValue = fromValue * microjoulesToKilojoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * MicrojoulesToMegajoules;
+            toValue = fromValue * microjoulesToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * MicrojoulesToNewtonMetres;
+            toValue = fromValue * microjoulesToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * MicrojoulesToWattHours;
+            toValue = fromValue * microjoulesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * MicrojoulesToKilowattHours;
+            toValue = fromValue * microjoulesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * MicrojoulesToMegawattHours;
+            toValue = fromValue * microjoulesToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * MicrojoulesToCalories;
+            toValue = fromValue * microjoulesToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * MicrojoulesToKilocalories;
+            toValue = fromValue * microjoulesToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * MicrojoulesToFootPoundsForce;
+            toValue = fromValue * microjoulesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * MicrojoulesToBritishThermalUnitsISO;
+            toValue = fromValue * microjoulesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * MicrojoulesToTherms;
+            toValue = fromValue * microjoulesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * MicrojoulesToHorsepowerHours;
+            toValue = fromValue * microjoulesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * MicrojoulesToBarrelsOfOilEquivalent;
+            toValue = fromValue * microjoulesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * MicrojoulesToTonnesOfOilEquivalent;
+            toValue = fromValue * microjoulesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * MicrojoulesToTonnesOfTNT;
+            toValue = fromValue * microjoulesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * MicrojoulesToKilotonnesOfTNT;
+            toValue = fromValue * microjoulesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * MicrojoulesToMegatonnesOfTNT;
+            toValue = fromValue * microjoulesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * MicrojoulesToErgs;
+            toValue = fromValue * microjoulesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * MicrojoulesToElectronvolt;
+            toValue = fromValue * microjoulesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * MicrojoulesToKiloelectronvolt;
+            toValue = fromValue * microjoulesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * MicrojoulesToMegaelectronvolt;
+            toValue = fromValue * microjoulesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * MicrojoulesToGigaelectronvolt;
+            toValue = fromValue * microjoulesToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1014,79 +1002,79 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
             break;
 
           case 'Nanojoules':
-            toValue = fromValue * MillijoulesToNanojoules;
+            toValue = fromValue * millijoulesToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * MillijoulesToMicrojoules;
+            toValue = fromValue * millijoulesToMicrojoules;
             break;
           case 'Joules':
-            toValue = fromValue * MillijoulesToJoules;
+            toValue = fromValue * millijoulesToJoules;
             break;
           case 'Kilojoules':
-            toValue = fromValue * MillijoulesToKilojoules;
+            toValue = fromValue * millijoulesToKilojoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * MillijoulesToMegajoules;
+            toValue = fromValue * millijoulesToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * MillijoulesToNewtonMetres;
+            toValue = fromValue * millijoulesToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * MillijoulesToWattHours;
+            toValue = fromValue * millijoulesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * MillijoulesToKilowattHours;
+            toValue = fromValue * millijoulesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * MillijoulesToMegawattHours;
+            toValue = fromValue * millijoulesToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * MillijoulesToCalories;
+            toValue = fromValue * millijoulesToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * MillijoulesToKilocalories;
+            toValue = fromValue * millijoulesToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * MillijoulesToFootPoundsForce;
+            toValue = fromValue * millijoulesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * MillijoulesToBritishThermalUnitsISO;
+            toValue = fromValue * millijoulesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * MillijoulesToTherms;
+            toValue = fromValue * millijoulesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * MillijoulesToHorsepowerHours;
+            toValue = fromValue * millijoulesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * MillijoulesToBarrelsOfOilEquivalent;
+            toValue = fromValue * millijoulesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * MillijoulesToTonnesOfOilEquivalent;
+            toValue = fromValue * millijoulesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * MillijoulesToTonnesOfTNT;
+            toValue = fromValue * millijoulesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * MillijoulesToKilotonnesOfTNT;
+            toValue = fromValue * millijoulesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * MillijoulesToMegatonnesOfTNT;
+            toValue = fromValue * millijoulesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * MillijoulesToErgs;
+            toValue = fromValue * millijoulesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * MillijoulesToElectronvolt;
+            toValue = fromValue * millijoulesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * MillijoulesToKiloelectronvolt;
+            toValue = fromValue * millijoulesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * MillijoulesToMegaelectronvolt;
+            toValue = fromValue * millijoulesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * MillijoulesToGigaelectronvolt;
+            toValue = fromValue * millijoulesToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1099,84 +1087,84 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
             toValue = fromValue;
             break;
           case 'Nanojoules':
-            toValue = fromValue * JoulesToNanojoules;
+            toValue = fromValue * joulesToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * JoulesToMicrojoules;
+            toValue = fromValue * joulesToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * JoulesToMillijoules;
+            toValue = fromValue * joulesToMillijoules;
             break;
           case 'Joules':
             toValue = fromValue *
-                JoulesToJoules; // This is redundant but keeps the structure consistent
+                joulesToJoules; // This is redundant but keeps the structure consistent
             break;
           case 'Kilojoules':
-            toValue = fromValue * JoulesToKilojoules;
+            toValue = fromValue * joulesToKilojoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * JoulesToMegajoules;
+            toValue = fromValue * joulesToMegajoules;
             break;
           case 'Newton-metres':
             toValue =
-                fromValue * JoulesToNewtonMetres; // This is also redundant
+                fromValue * joulesToNewtonMetres; // This is also redundant
             break;
           case 'Watt-hours':
-            toValue = fromValue * JoulesToWattHours;
+            toValue = fromValue * joulesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * JoulesToKilowattHours;
+            toValue = fromValue * joulesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * JoulesToMegawattHours;
+            toValue = fromValue * joulesToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * JoulesToCalories;
+            toValue = fromValue * joulesToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * JoulesToKilocalories;
+            toValue = fromValue * joulesToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * JoulesToFootPoundsForce;
+            toValue = fromValue * joulesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * JoulesToBritishThermalUnitsISO;
+            toValue = fromValue * joulesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * JoulesToTherms;
+            toValue = fromValue * joulesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * JoulesToHorsepowerHours;
+            toValue = fromValue * joulesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * JoulesToBarrelsOfOilEquivalent;
+            toValue = fromValue * joulesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * JoulesToTonnesOfOilEquivalent;
+            toValue = fromValue * joulesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * JoulesToTonnesOfTNT;
+            toValue = fromValue * joulesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * JoulesToKilotonnesOfTNT;
+            toValue = fromValue * joulesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * JoulesToMegatonnesOfTNT;
+            toValue = fromValue * joulesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * JoulesToErgs;
+            toValue = fromValue * joulesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * JoulesToElectronvolt;
+            toValue = fromValue * joulesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * JoulesToKiloelectronvolt;
+            toValue = fromValue * joulesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * JoulesToMegaelectronvolt;
+            toValue = fromValue * joulesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * JoulesToGigaelectronvolt;
+            toValue = fromValue * joulesToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1190,82 +1178,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
             break;
 
           case 'Joules':
-            toValue = fromValue * KilojoulesToJoules;
+            toValue = fromValue * kilojoulesToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * KilojoulesToNanojoules;
+            toValue = fromValue * kilojoulesToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * KilojoulesToMicrojoules;
+            toValue = fromValue * kilojoulesToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * KilojoulesToMillijoules;
+            toValue = fromValue * kilojoulesToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * KilojoulesToJoules;
+            toValue = fromValue * kilojoulesToJoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * KilojoulesToMegajoules;
+            toValue = fromValue * kilojoulesToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * KilojoulesToNewtonMetres;
+            toValue = fromValue * kilojoulesToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * KilojoulesToWattHours;
+            toValue = fromValue * kilojoulesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * KilojoulesToKilowattHours;
+            toValue = fromValue * kilojoulesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * KilojoulesToMegawattHours;
+            toValue = fromValue * kilojoulesToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * KilojoulesToCalories;
+            toValue = fromValue * kilojoulesToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * KilojoulesToKilocalories;
+            toValue = fromValue * kilojoulesToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * KilojoulesToFootPoundsForce;
+            toValue = fromValue * kilojoulesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * KilojoulesToBritishThermalUnitsISO;
+            toValue = fromValue * kilojoulesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * KilojoulesToTherms;
+            toValue = fromValue * kilojoulesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * KilojoulesToHorsepowerHours;
+            toValue = fromValue * kilojoulesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * KilojoulesToBarrelsOfOilEquivalent;
+            toValue = fromValue * kilojoulesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * KilojoulesToTonnesOfOilEquivalent;
+            toValue = fromValue * kilojoulesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * KilojoulesToTonnesOfTNT;
+            toValue = fromValue * kilojoulesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * KilojoulesToKilotonnesOfTNT;
+            toValue = fromValue * kilojoulesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * KilojoulesToMegatonnesOfTNT;
+            toValue = fromValue * kilojoulesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * KilojoulesToErgs;
+            toValue = fromValue * kilojoulesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * KilojoulesToElectronvolt;
+            toValue = fromValue * kilojoulesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * KilojoulesToKiloelectronvolt;
+            toValue = fromValue * kilojoulesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * KilojoulesToMegaelectronvolt;
+            toValue = fromValue * kilojoulesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * KilojoulesToGigaelectronvolt;
+            toValue = fromValue * kilojoulesToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1275,86 +1263,86 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Megajoules':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * MegajoulesToKilojoules;
+            toValue = fromValue * megajoulesToKilojoules;
             break;
 
           case 'Joules':
-            toValue = fromValue * MegajoulesToJoules;
+            toValue = fromValue * megajoulesToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * MegajoulesToNanojoules;
+            toValue = fromValue * megajoulesToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * MegajoulesToMicrojoules;
+            toValue = fromValue * megajoulesToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * MegajoulesToMillijoules;
+            toValue = fromValue * megajoulesToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * MegajoulesToJoules;
+            toValue = fromValue * megajoulesToJoules;
             break;
           case 'Megajoules':
             toValue = fromValue;
             break;
           case 'Newton-metres':
-            toValue = fromValue * MegajoulesToNewtonMetres;
+            toValue = fromValue * megajoulesToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * MegajoulesToWattHours;
+            toValue = fromValue * megajoulesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * MegajoulesToKilowattHours;
+            toValue = fromValue * megajoulesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * MegajoulesToMegawattHours;
+            toValue = fromValue * megajoulesToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * MegajoulesToCalories;
+            toValue = fromValue * megajoulesToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * MegajoulesToKilocalories;
+            toValue = fromValue * megajoulesToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * MegajoulesToFootPoundsForce;
+            toValue = fromValue * megajoulesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * MegajoulesToBritishThermalUnitsISO;
+            toValue = fromValue * megajoulesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * MegajoulesToTherms;
+            toValue = fromValue * megajoulesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * MegajoulesToHorsepowerHours;
+            toValue = fromValue * megajoulesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * MegajoulesToBarrelsOfOilEquivalent;
+            toValue = fromValue * megajoulesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * MegajoulesToTonnesOfOilEquivalent;
+            toValue = fromValue * megajoulesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * MegajoulesToTonnesOfTNT;
+            toValue = fromValue * megajoulesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * MegajoulesToKilotonnesOfTNT;
+            toValue = fromValue * megajoulesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * MegajoulesToMegatonnesOfTNT;
+            toValue = fromValue * megajoulesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * MegajoulesToErgs;
+            toValue = fromValue * megajoulesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * MegajoulesToElectronvolt;
+            toValue = fromValue * megajoulesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * MegajoulesToKiloelectronvolt;
+            toValue = fromValue * megajoulesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * MegajoulesToMegaelectronvolt;
+            toValue = fromValue * megajoulesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * MegajoulesToGigaelectronvolt;
+            toValue = fromValue * megajoulesToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1364,86 +1352,86 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Newton-metres':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * NewtonMetresToKilojoules;
+            toValue = fromValue * newtonmetresToKilojoules;
             break;
 
           case 'Joules':
-            toValue = fromValue * NewtonMetresToJoules;
+            toValue = fromValue * newtonmetresToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * NewtonMetresToNanojoules;
+            toValue = fromValue * newtonmetresToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * NewtonMetresToMicrojoules;
+            toValue = fromValue * newtonmetresToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * NewtonMetresToMillijoules;
+            toValue = fromValue * newtonmetresToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * NewtonMetresToJoules;
+            toValue = fromValue * newtonmetresToJoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * NewtonMetresToMegajoules;
+            toValue = fromValue * newtonmetresToMegajoules;
             break;
           case 'Newton-metres':
             toValue = fromValue;
             break;
           case 'Watt-hours':
-            toValue = fromValue * NewtonMetresToWattHours;
+            toValue = fromValue * newtonmetresToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * NewtonMetresToKilowattHours;
+            toValue = fromValue * newtonmetresToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * NewtonMetresToMegawattHours;
+            toValue = fromValue * newtonmetresToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * NewtonMetresToCalories;
+            toValue = fromValue * newtonmetresToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * NewtonMetresToKilocalories;
+            toValue = fromValue * newtonmetresToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * NewtonMetresToFootPoundsForce;
+            toValue = fromValue * newtonmetresToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * NewtonMetresToBritishThermalUnitsISO;
+            toValue = fromValue * newtonmetresToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * NewtonMetresToTherms;
+            toValue = fromValue * newtonmetresToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * NewtonMetresToHorsepowerHours;
+            toValue = fromValue * newtonmetresToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * NewtonMetresToBarrelsOfOilEquivalent;
+            toValue = fromValue * newtonmetresToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * NewtonMetresToTonnesOfOilEquivalent;
+            toValue = fromValue * newtonmetresToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * NewtonMetresToTonnesOfTNT;
+            toValue = fromValue * newtonmetresToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * NewtonMetresToKilotonnesOfTNT;
+            toValue = fromValue * newtonmetresToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * NewtonMetresToMegatonnesOfTNT;
+            toValue = fromValue * newtonmetresToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * NewtonMetresToErgs;
+            toValue = fromValue * newtonmetresToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * NewtonMetresToElectronvolt;
+            toValue = fromValue * newtonmetresToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * NewtonMetresToKiloelectronvolt;
+            toValue = fromValue * newtonmetresToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * NewtonMetresToMegaelectronvolt;
+            toValue = fromValue * newtonmetresToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * NewtonMetresToGigaelectronvolt;
+            toValue = fromValue * newtonmetresToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1453,85 +1441,85 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Watt-hours':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * WattHoursToKilojoules;
+            toValue = fromValue * watthoursToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * WattHoursToJoules;
+            toValue = fromValue * watthoursToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * WattHoursToNanojoules;
+            toValue = fromValue * watthoursToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * WattHoursToMicrojoules;
+            toValue = fromValue * watthoursToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * WattHoursToMillijoules;
+            toValue = fromValue * watthoursToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * WattHoursToJoules;
+            toValue = fromValue * watthoursToJoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * WattHoursToMegajoules;
+            toValue = fromValue * watthoursToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * WattHoursToNewtonMetres;
+            toValue = fromValue * watthoursToNewtonMetres;
             break;
           case 'Watt-hours':
             toValue = fromValue;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * WattHoursToKilowattHours;
+            toValue = fromValue * watthoursToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * WattHoursToMegawattHours;
+            toValue = fromValue * watthoursToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * WattHoursToCalories;
+            toValue = fromValue * watthoursToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * WattHoursToKilocalories;
+            toValue = fromValue * watthoursToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * WattHoursToFootPoundsForce;
+            toValue = fromValue * watthoursToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * WattHoursToBritishThermalUnitsISO;
+            toValue = fromValue * watthoursToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * WattHoursToTherms;
+            toValue = fromValue * watthoursToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * WattHoursToHorsepowerHours;
+            toValue = fromValue * watthoursToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * WattHoursToBarrelsOfOilEquivalent;
+            toValue = fromValue * watthoursToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * WattHoursToTonnesOfOilEquivalent;
+            toValue = fromValue * watthoursToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * WattHoursToTonnesOfTNT;
+            toValue = fromValue * watthoursToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * WattHoursToKilotonnesOfTNT;
+            toValue = fromValue * watthoursToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * WattHoursToMegatonnesOfTNT;
+            toValue = fromValue * watthoursToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * WattHoursToErgs;
+            toValue = fromValue * watthoursToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * WattHoursToElectronvolt;
+            toValue = fromValue * watthoursToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * WattHoursToKiloelectronvolt;
+            toValue = fromValue * watthoursToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * WattHoursToMegaelectronvolt;
+            toValue = fromValue * watthoursToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * WattHoursToGigaelectronvolt;
+            toValue = fromValue * watthoursToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1541,85 +1529,85 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Kilowatt-hours':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * KilowattHoursToKilojoules;
+            toValue = fromValue * kilowatthoursToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * KilowattHoursToJoules;
+            toValue = fromValue * kilowatthoursToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * KilowattHoursToNanojoules;
+            toValue = fromValue * kilowatthoursToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * KilowattHoursToMicrojoules;
+            toValue = fromValue * kilowatthoursToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * KilowattHoursToMillijoules;
+            toValue = fromValue * kilowatthoursToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * KilowattHoursToJoules;
+            toValue = fromValue * kilowatthoursToJoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * KilowattHoursToMegajoules;
+            toValue = fromValue * kilowatthoursToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * KilowattHoursToNewtonMetres;
+            toValue = fromValue * kilowatthoursToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * KilowattHoursToWattHours;
+            toValue = fromValue * kilowatthoursToWattHours;
             break;
           case 'Kilowatt-hours':
             toValue = fromValue;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * KilowattHoursToMegawattHours;
+            toValue = fromValue * kilowatthoursToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * KilowattHoursToCalories;
+            toValue = fromValue * kilowatthoursToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * KilowattHoursToKilocalories;
+            toValue = fromValue * kilowatthoursToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * KilowattHoursToFootPoundsForce;
+            toValue = fromValue * kilowatthoursToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * KilowattHoursToBritishThermalUnitsISO;
+            toValue = fromValue * kilowatthoursToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * KilowattHoursToTherms;
+            toValue = fromValue * kilowatthoursToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * KilowattHoursToHorsepowerHours;
+            toValue = fromValue * kilowatthoursToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * KilowattHoursToBarrelsOfOilEquivalent;
+            toValue = fromValue * kilowatthoursToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * KilowattHoursToTonnesOfOilEquivalent;
+            toValue = fromValue * kilowatthoursToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * KilowattHoursToTonnesOfTNT;
+            toValue = fromValue * kilowatthoursToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * KilowattHoursToKilotonnesOfTNT;
+            toValue = fromValue * kilowatthoursToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * KilowattHoursToMegatonnesOfTNT;
+            toValue = fromValue * kilowatthoursToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * KilowattHoursToErgs;
+            toValue = fromValue * kilowatthoursToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * KilowattHoursToElectronvolt;
+            toValue = fromValue * kilowatthoursToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * KilowattHoursToKiloelectronvolt;
+            toValue = fromValue * kilowatthoursToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * KilowattHoursToMegaelectronvolt;
+            toValue = fromValue * kilowatthoursToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * KilowattHoursToGigaelectronvolt;
+            toValue = fromValue * kilowatthoursToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1628,85 +1616,85 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Megawatt-hours':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * MegawattHoursToKilojoules;
+            toValue = fromValue * megawatthoursToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * MegawattHoursToJoules;
+            toValue = fromValue * megawatthoursToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * MegawattHoursToNanojoules;
+            toValue = fromValue * megawatthoursToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * MegawattHoursToMicrojoules;
+            toValue = fromValue * megawatthoursToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * MegawattHoursToMillijoules;
+            toValue = fromValue * megawatthoursToMillijoules;
             break;
           case 'Joules':
-            toValue = fromValue * MegawattHoursToJoules;
+            toValue = fromValue * megawatthoursToJoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * MegawattHoursToMegajoules;
+            toValue = fromValue * megawatthoursToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * MegawattHoursToNewtonMetres;
+            toValue = fromValue * megawatthoursToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * MegawattHoursToWattHours;
+            toValue = fromValue * megawatthoursToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * MegawattHoursToKilowattHours;
+            toValue = fromValue * megawatthoursToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * MegawattHoursToMegawattHours;
+            toValue = fromValue * megawatthoursToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * MegawattHoursToCalories;
+            toValue = fromValue * megawatthoursToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * MegawattHoursToKilocalories;
+            toValue = fromValue * megawatthoursToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * MegawattHoursToFootPoundsForce;
+            toValue = fromValue * megawatthoursToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * MegawattHoursToBritishThermalUnitsISO;
+            toValue = fromValue * megawatthoursToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * MegawattHoursToTherms;
+            toValue = fromValue * megawatthoursToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * MegawattHoursToHorsepowerHours;
+            toValue = fromValue * megawatthoursToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * MegawattHoursToBarrelsOfOilEquivalent;
+            toValue = fromValue * megawatthoursToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * MegawattHoursToTonnesOfOilEquivalent;
+            toValue = fromValue * megawatthoursToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * MegawattHoursToTonnesOfTNT;
+            toValue = fromValue * megawatthoursToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * MegawattHoursToKilotonnesOfTNT;
+            toValue = fromValue * megawatthoursToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * MegawattHoursToMegatonnesOfTNT;
+            toValue = fromValue * megawatthoursToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * MegawattHoursToErgs;
+            toValue = fromValue * megawatthoursToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * MegawattHoursToElectronvolt;
+            toValue = fromValue * megawatthoursToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * MegawattHoursToKiloelectronvolt;
+            toValue = fromValue * megawatthoursToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * MegawattHoursToMegaelectronvolt;
+            toValue = fromValue * megawatthoursToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * MegawattHoursToGigaelectronvolt;
+            toValue = fromValue * megawatthoursToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1716,82 +1704,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Calories':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * CaloriesToKilojoules;
+            toValue = fromValue * caloriesToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * CaloriesToJoules;
+            toValue = fromValue * caloriesToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * CaloriesToNanojoules;
+            toValue = fromValue * caloriesToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * CaloriesToMicrojoules;
+            toValue = fromValue * caloriesToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * CaloriesToMillijoules;
+            toValue = fromValue * caloriesToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * CaloriesToMegajoules;
+            toValue = fromValue * caloriesToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * CaloriesToNewtonMetres;
+            toValue = fromValue * caloriesToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * CaloriesToWattHours;
+            toValue = fromValue * caloriesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * CaloriesToKilowattHours;
+            toValue = fromValue * caloriesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * CaloriesToMegawattHours;
+            toValue = fromValue * caloriesToMegawattHours;
             break;
           case 'Calories':
             toValue = fromValue;
             break;
           case 'Kilocalories':
-            toValue = fromValue * CaloriesToKilocalories;
+            toValue = fromValue * caloriesToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * CaloriesToFootPoundsForce;
+            toValue = fromValue * caloriesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * CaloriesToBritishThermalUnitsISO;
+            toValue = fromValue * caloriesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * CaloriesToTherms;
+            toValue = fromValue * caloriesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * CaloriesToHorsepowerHours;
+            toValue = fromValue * caloriesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * CaloriesToBarrelsOfOilEquivalent;
+            toValue = fromValue * caloriesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * CaloriesToTonnesOfOilEquivalent;
+            toValue = fromValue * caloriesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * CaloriesToTonnesOfTNT;
+            toValue = fromValue * caloriesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * CaloriesToKilotonnesOfTNT;
+            toValue = fromValue * caloriesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * CaloriesToMegatonnesOfTNT;
+            toValue = fromValue * caloriesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * CaloriesToErgs;
+            toValue = fromValue * caloriesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * CaloriesToElectronvolt;
+            toValue = fromValue * caloriesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * CaloriesToKiloelectronvolt;
+            toValue = fromValue * caloriesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * CaloriesToMegaelectronvolt;
+            toValue = fromValue * caloriesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * CaloriesToGigaelectronvolt;
+            toValue = fromValue * caloriesToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1801,82 +1789,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Kilocalories':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * KilocaloriesToKilojoules;
+            toValue = fromValue * kilocaloriesToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * KilocaloriesToJoules;
+            toValue = fromValue * kilocaloriesToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * KilocaloriesToNanojoules;
+            toValue = fromValue * kilocaloriesToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * KilocaloriesToMicrojoules;
+            toValue = fromValue * kilocaloriesToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * KilocaloriesToMillijoules;
+            toValue = fromValue * kilocaloriesToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * KilocaloriesToMegajoules;
+            toValue = fromValue * kilocaloriesToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * KilocaloriesToNewtonMetres;
+            toValue = fromValue * kilocaloriesToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * KilocaloriesToWattHours;
+            toValue = fromValue * kilocaloriesToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * KilocaloriesToKilowattHours;
+            toValue = fromValue * kilocaloriesToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * KilocaloriesToMegawattHours;
+            toValue = fromValue * kilocaloriesToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * KilocaloriesToCalories;
+            toValue = fromValue * kilocaloriesToCalories;
             break;
           case 'Kilocalories':
             toValue = fromValue;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * KilocaloriesToFootPoundsForce;
+            toValue = fromValue * kilocaloriesToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * KilocaloriesToBritishThermalUnitsISO;
+            toValue = fromValue * kilocaloriesToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * KilocaloriesToTherms;
+            toValue = fromValue * kilocaloriesToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * KilocaloriesToHorsepowerHours;
+            toValue = fromValue * kilocaloriesToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * KilocaloriesToBarrelsOfOilEquivalent;
+            toValue = fromValue * kilocaloriesToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * KilocaloriesToTonnesOfOilEquivalent;
+            toValue = fromValue * kilocaloriesToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * KilocaloriesToTonnesOfTNT;
+            toValue = fromValue * kilocaloriesToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * KilocaloriesToKilotonnesOfTNT;
+            toValue = fromValue * kilocaloriesToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * KilocaloriesToMegatonnesOfTNT;
+            toValue = fromValue * kilocaloriesToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * KilocaloriesToErgs;
+            toValue = fromValue * kilocaloriesToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * KilocaloriesToElectronvolt;
+            toValue = fromValue * kilocaloriesToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * KilocaloriesToKiloelectronvolt;
+            toValue = fromValue * kilocaloriesToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * KilocaloriesToMegaelectronvolt;
+            toValue = fromValue * kilocaloriesToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * KilocaloriesToGigaelectronvolt;
+            toValue = fromValue * kilocaloriesToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1886,82 +1874,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Foot-pounds Force':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * FootPoundsForceToKilojoules;
+            toValue = fromValue * footpoundsforceToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * FootPoundsForceToJoules;
+            toValue = fromValue * footpoundsforceToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * FootPoundsForceToNanojoules;
+            toValue = fromValue * footpoundsforceToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * FootPoundsForceToMicrojoules;
+            toValue = fromValue * footpoundsforceToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * FootPoundsForceToMillijoules;
+            toValue = fromValue * footpoundsforceToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * FootPoundsForceToMegajoules;
+            toValue = fromValue * footpoundsforceToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * FootPoundsForceToNewtonMetres;
+            toValue = fromValue * footpoundsforceToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * FootPoundsForceToWattHours;
+            toValue = fromValue * footpoundsforceToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * FootPoundsForceToKilowattHours;
+            toValue = fromValue * footpoundsforceToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * FootPoundsForceToMegawattHours;
+            toValue = fromValue * footpoundsforceToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * FootPoundsForceToCalories;
+            toValue = fromValue * footpoundsforceToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * FootPoundsForceToKilocalories;
+            toValue = fromValue * footpoundsforceToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * FootPoundsForceToFootPoundsForce;
+            toValue = fromValue * footpoundsforceToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * FootPoundsForceToBritishThermalUnitsISO;
+            toValue = fromValue * footpoundsforceToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * FootPoundsForceToTherms;
+            toValue = fromValue * footpoundsforceToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * FootPoundsForceToHorsepowerHours;
+            toValue = fromValue * footpoundsforceToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * FootPoundsForceToBarrelsOfOilEquivalent;
+            toValue = fromValue * footpoundsforceToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * FootPoundsForceToTonnesOfOilEquivalent;
+            toValue = fromValue * footpoundsforceToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * FootPoundsForceToTonnesOfTNT;
+            toValue = fromValue * footpoundsforceToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * FootPoundsForceToKilotonnesOfTNT;
+            toValue = fromValue * footpoundsforceToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * FootPoundsForceToMegatonnesOfTNT;
+            toValue = fromValue * footpoundsforceToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * FootPoundsForceToErgs;
+            toValue = fromValue * footpoundsforceToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * FootPoundsForceToElectronvolt;
+            toValue = fromValue * footpoundsforceToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * FootPoundsForceToKiloelectronvolt;
+            toValue = fromValue * footpoundsforceToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * FootPoundsForceToMegaelectronvolt;
+            toValue = fromValue * footpoundsforceToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * FootPoundsForceToGigaelectronvolt;
+            toValue = fromValue * footpoundsforceToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -1971,83 +1959,83 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'British Thermal Units (ISO)':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * BritishThermalUnitsISOTOkilojoules;
+            toValue = fromValue * britishthermalunitsISOTOkilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * BritishThermalUnitsISOTOjoules;
+            toValue = fromValue * britishthermalunitsISOTOjoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * BritishThermalUnitsISOTonanojoules;
+            toValue = fromValue * britishthermalunitsISOTOnanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * BritishThermalUnitsISOTomicrojoules;
+            toValue = fromValue * britishthermalunitsISOTOmicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * BritishThermalUnitsISOTomillijoules;
+            toValue = fromValue * britishthermalunitsISOTOmillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * FootPoundsForceToMegajoules;
+            toValue = fromValue * footpoundsforceToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * BritishThermalUnitsISOTONewtonMetres;
+            toValue = fromValue * britishthermalunitsISOTONewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * BritishThermalUnitsISOTOWattHours;
+            toValue = fromValue * britishthermalunitsISOTOWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * BritishThermalUnitsISOTOKilowattHours;
+            toValue = fromValue * britishthermalunitsISOTOKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * BritishThermalUnitsISOTOMegawattHours;
+            toValue = fromValue * britishthermalunitsISOTOMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * BritishThermalUnitsISOTOCalories;
+            toValue = fromValue * britishthermalunitsISOTOCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * BritishThermalUnitsISOTOKilocalories;
+            toValue = fromValue * britishthermalunitsISOTOKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * BritishThermalUnitsISOTOFootPoundsForce;
+            toValue = fromValue * britishthermalunitsISOTOFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
             toValue = fromValue;
             break;
           case 'Therms':
-            toValue = fromValue * BritishThermalUnitsISOTOtherms;
+            toValue = fromValue * britishthermalunitsISOTOtherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * BritishThermalUnitsISOTOHorsepowerHours;
+            toValue = fromValue * britishthermalunitsISOTOHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
             toValue =
-                fromValue * BritishThermalUnitsISOTOBarrelsOfOilEquivalent;
+                fromValue * britishthermalunitsISOTOBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * BritishThermalUnitsISOTOTonnesOfOilEquivalent;
+            toValue = fromValue * britishthermalunitsISOTOTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * BritishThermalUnitsISOTOTonnesOfTNT;
+            toValue = fromValue * britishthermalunitsISOTOTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * BritishThermalUnitsISOTOKilotonnesOfTNT;
+            toValue = fromValue * britishthermalunitsISOTOKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * BritishThermalUnitsISOTOMegatonnesOfTNT;
+            toValue = fromValue * britishthermalunitsISOTOMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * BritishThermalUnitsISOTOErgs;
+            toValue = fromValue * britishthermalunitsISOTOErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * BritishThermalUnitsISOTOElectronvolt;
+            toValue = fromValue * britishthermalunitsISOTOElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * BritishThermalUnitsISOTOKiloelectronvolt;
+            toValue = fromValue * britishthermalunitsISOTOKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * BritishThermalUnitsISOTOMegaelectronvolt;
+            toValue = fromValue * britishthermalunitsISOTOMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * BritishThermalUnitsISOTOGigaelectronvolt;
+            toValue = fromValue * britishthermalunitsISOTOGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2057,82 +2045,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Therms':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * ThermsToKilojoules;
+            toValue = fromValue * thermsToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * ThermsToJoules;
+            toValue = fromValue * thermsToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * ThermsToNanojoules;
+            toValue = fromValue * thermsToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * ThermsToMicrojoules;
+            toValue = fromValue * thermsToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * ThermsToMillijoules;
+            toValue = fromValue * thermsToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * ThermsToMegajoules;
+            toValue = fromValue * thermsToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * ThermsToNewtonMetres;
+            toValue = fromValue * thermsToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * ThermsToWattHours;
+            toValue = fromValue * thermsToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * ThermsToKilowattHours;
+            toValue = fromValue * thermsToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * ThermsToMegawattHours;
+            toValue = fromValue * thermsToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * ThermsToCalories;
+            toValue = fromValue * thermsToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * ThermsToKilocalories;
+            toValue = fromValue * thermsToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * ThermsToFootPoundsForce;
+            toValue = fromValue * thermsToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * ThermsToBritishThermalUnitsISO;
+            toValue = fromValue * thermsToBritishThermalUnitsISO;
             break;
           case 'Therms':
             toValue = fromValue;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * ThermsToHorsepowerHours;
+            toValue = fromValue * thermsToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * ThermsToBarrelsOfOilEquivalent;
+            toValue = fromValue * thermsToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * ThermsToTonnesOfOilEquivalent;
+            toValue = fromValue * thermsToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * ThermsToTonnesOfTNT;
+            toValue = fromValue * thermsToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * ThermsToKilotonnesOfTNT;
+            toValue = fromValue * thermsToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * ThermsToMegatonnesOfTNT;
+            toValue = fromValue * thermsToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * ThermsToErgs;
+            toValue = fromValue * thermsToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * ThermsToElectronvolt;
+            toValue = fromValue * thermsToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * ThermsToKiloelectronvolt;
+            toValue = fromValue * thermsToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * ThermsToMegaelectronvolt;
+            toValue = fromValue * thermsToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * ThermsToGigaelectronvolt;
+            toValue = fromValue * thermsToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2142,82 +2130,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Horsepower Hours':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * HorsepowerHoursToKilojoules;
+            toValue = fromValue * horsepowerhoursToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * HorsepowerHoursToJoules;
+            toValue = fromValue * horsepowerhoursToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * HorsepowerHoursToNanojoules;
+            toValue = fromValue * horsepowerhoursToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * HorsepowerHoursToMicrojoules;
+            toValue = fromValue * horsepowerhoursToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * HorsepowerHoursToMillijoules;
+            toValue = fromValue * horsepowerhoursToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * HorsepowerHoursToMegajoules;
+            toValue = fromValue * horsepowerhoursToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * HorsepowerHoursToNewtonMetres;
+            toValue = fromValue * horsepowerhoursToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * HorsepowerHoursToWattHours;
+            toValue = fromValue * horsepowerhoursToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * HorsepowerHoursToKilowattHours;
+            toValue = fromValue * horsepowerhoursToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * HorsepowerHoursToMegawattHours;
+            toValue = fromValue * horsepowerhoursToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * HorsepowerHoursToCalories;
+            toValue = fromValue * horsepowerhoursToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * HorsepowerHoursToKilocalories;
+            toValue = fromValue * horsepowerhoursToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * HorsepowerHoursToFootPoundsForce;
+            toValue = fromValue * horsepowerhoursToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * HorsepowerHoursToBritishThermalUnitsISO;
+            toValue = fromValue * horsepowerhoursToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * HorsepowerHoursToTherms;
+            toValue = fromValue * horsepowerhoursToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * HorsepowerHoursToHorsepowerHours;
+            toValue = fromValue * horsepowerhoursToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * HorsepowerHoursToBarrelsOfOilEquivalent;
+            toValue = fromValue * horsepowerhoursToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * HorsepowerHoursToTonnesOfOilEquivalent;
+            toValue = fromValue * horsepowerhoursToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * HorsepowerHoursToTonnesOfTNT;
+            toValue = fromValue * horsepowerhoursToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * HorsepowerHoursToKilotonnesOfTNT;
+            toValue = fromValue * horsepowerhoursToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * HorsepowerHoursToMegatonnesOfTNT;
+            toValue = fromValue * horsepowerhoursToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * HorsepowerHoursToErgs;
+            toValue = fromValue * horsepowerhoursToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * HorsepowerHoursToElectronvolt;
+            toValue = fromValue * horsepowerhoursToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * HorsepowerHoursToKiloelectronvolt;
+            toValue = fromValue * horsepowerhoursToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * HorsepowerHoursToMegaelectronvolt;
+            toValue = fromValue * horsepowerhoursToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * HorsepowerHoursToGigaelectronvolt;
+            toValue = fromValue * horsepowerhoursToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2227,83 +2215,83 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Barrels of Oil Equivalent':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * BarrelsOfOilEquivalentToKilojoules;
+            toValue = fromValue * barrelsofoilequivalentToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * BarrelsOfOilEquivalentToJoules;
+            toValue = fromValue * barrelsofoilequivalentToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * BarrelsOfOilEquivalentToNanojoules;
+            toValue = fromValue * barrelsofoilequivalentToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * BarrelsOfOilEquivalentToMicrojoules;
+            toValue = fromValue * barrelsofoilequivalentToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * BarrelsOfOilEquivalentToMillijoules;
+            toValue = fromValue * barrelsofoilequivalentToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * BarrelsOfOilEquivalentToMegajoules;
+            toValue = fromValue * barrelsofoilequivalentToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * BarrelsOfOilEquivalentToNewtonMetres;
+            toValue = fromValue * barrelsofoilequivalentToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * BarrelsOfOilEquivalentToWattHours;
+            toValue = fromValue * barrelsofoilequivalentToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * BarrelsOfOilEquivalentToKilowattHours;
+            toValue = fromValue * barrelsofoilequivalentToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * BarrelsOfOilEquivalentToMegawattHours;
+            toValue = fromValue * barrelsofoilequivalentToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * BarrelsOfOilEquivalentToCalories;
+            toValue = fromValue * barrelsofoilequivalentToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * BarrelsOfOilEquivalentToKilocalories;
+            toValue = fromValue * barrelsofoilequivalentToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * BarrelsOfOilEquivalentToFootPoundsForce;
+            toValue = fromValue * barrelsofoilequivalentToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
             toValue =
-                fromValue * BarrelsOfOilEquivalentToBritishThermalUnitsISO;
+                fromValue * barrelsofoilequivalentToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * BarrelsOfOilEquivalentToTherms;
+            toValue = fromValue * barrelsofoilequivalentToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * BarrelsOfOilEquivalentToHorsepowerHours;
+            toValue = fromValue * barrelsofoilequivalentToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
             toValue = fromValue;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * BarrelsOfOilEquivalentToTonnesOfOilEquivalent;
+            toValue = fromValue * barrelsofoilequivalentToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * BarrelsOfOilEquivalentToTonnesOfTNT;
+            toValue = fromValue * barrelsofoilequivalentToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * BarrelsOfOilEquivalentToKilotonnesOfTNT;
+            toValue = fromValue * barrelsofoilequivalentToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * BarrelsOfOilEquivalentToMegatonnesOfTNT;
+            toValue = fromValue * barrelsofoilequivalentToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * BarrelsOfOilEquivalentToErgs;
+            toValue = fromValue * barrelsofoilequivalentToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * BarrelsOfOilEquivalentToElectronvolt;
+            toValue = fromValue * barrelsofoilequivalentToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * BarrelsOfOilEquivalentToKiloelectronvolt;
+            toValue = fromValue * barrelsofoilequivalentToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * BarrelsOfOilEquivalentToMegaelectronvolt;
+            toValue = fromValue * barrelsofoilequivalentToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * BarrelsOfOilEquivalentToGigaelectronvolt;
+            toValue = fromValue * barrelsofoilequivalentToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2313,82 +2301,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Tonnes of Oil Equivalent':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * TonnesOfOilEquivalentToKilojoules;
+            toValue = fromValue * tonnesofoilequivalentToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * TonnesOfOilEquivalentToJoules;
+            toValue = fromValue * tonnesofoilequivalentToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * TonnesOfOilEquivalentToNanojoules;
+            toValue = fromValue * tonnesofoilequivalentToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * TonnesOfOilEquivalentToMicrojoules;
+            toValue = fromValue * tonnesofoilequivalentToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * TonnesOfOilEquivalentToMillijoules;
+            toValue = fromValue * tonnesofoilequivalentToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * TonnesOfOilEquivalentToMegajoules;
+            toValue = fromValue * tonnesofoilequivalentToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * TonnesOfOilEquivalentToNewtonMetres;
+            toValue = fromValue * tonnesofoilequivalentToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * TonnesOfOilEquivalentToWattHours;
+            toValue = fromValue * tonnesofoilequivalentToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * TonnesOfOilEquivalentToKilowattHours;
+            toValue = fromValue * tonnesofoilequivalentToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * TonnesOfOilEquivalentToMegawattHours;
+            toValue = fromValue * tonnesofoilequivalentToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * TonnesOfOilEquivalentToCalories;
+            toValue = fromValue * tonnesofoilequivalentToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * TonnesOfOilEquivalentToKilocalories;
+            toValue = fromValue * tonnesofoilequivalentToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * TonnesOfOilEquivalentToFootPoundsForce;
+            toValue = fromValue * tonnesofoilequivalentToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * TonnesOfOilEquivalentToBritishThermalUnitsISO;
+            toValue = fromValue * tonnesofoilequivalentToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * TonnesOfOilEquivalentToTherms;
+            toValue = fromValue * tonnesofoilequivalentToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * TonnesOfOilEquivalentToHorsepowerHours;
+            toValue = fromValue * tonnesofoilequivalentToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * TonnesOfOilEquivalentToBarrelsOfOilEquivalent;
+            toValue = fromValue * tonnesofoilequivalentToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * TonnesOfOilEquivalentToTonnesOfOilEquivalent;
+            toValue = fromValue * tonnesofoilequivalentToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * TonnesOfOilEquivalentToTonnesOfTNT;
+            toValue = fromValue * tonnesofoilequivalentToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * TonnesOfOilEquivalentToKilotonnesOfTNT;
+            toValue = fromValue * tonnesofoilequivalentToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * TonnesOfOilEquivalentToMegatonnesOfTNT;
+            toValue = fromValue * tonnesofoilequivalentToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * TonnesOfOilEquivalentToErgs;
+            toValue = fromValue * tonnesofoilequivalentToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * TonnesOfOilEquivalentToElectronvolt;
+            toValue = fromValue * tonnesofoilequivalentToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * TonnesOfOilEquivalentToKiloelectronvolt;
+            toValue = fromValue * tonnesofoilequivalentToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * TonnesOfOilEquivalentToMegaelectronvolt;
+            toValue = fromValue * tonnesofoilequivalentToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * TonnesOfOilEquivalentToGigaelectronvolt;
+            toValue = fromValue * tonnesofoilequivalentToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2398,82 +2386,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Tonnes of TNT':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * TonnesOfTNTToKilojoules;
+            toValue = fromValue * tonnesofTNTToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * TonnesOfTNTToJoules;
+            toValue = fromValue * tonnesofTNTToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * TonnesOfTNTToNanojoules;
+            toValue = fromValue * tonnesofTNTToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * TonnesOfTNTToMicrojoules;
+            toValue = fromValue * tonnesofTNTToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * TonnesOfTNTToMillijoules;
+            toValue = fromValue * tonnesofTNTToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * TonnesOfTNTToMegajoules;
+            toValue = fromValue * tonnesofTNTToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * TonnesOfTNTToNewtonMetres;
+            toValue = fromValue * tonnesofTNTToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * TonnesOfTNTToWattHours;
+            toValue = fromValue * tonnesofTNTToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * TonnesOfTNTToKilowattHours;
+            toValue = fromValue * tonnesofTNTToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * TonnesOfTNTToMegawattHours;
+            toValue = fromValue * tonnesofTNTToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * TonnesOfTNTToCalories;
+            toValue = fromValue * tonnesofTNTToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * TonnesOfTNTToKilocalories;
+            toValue = fromValue * tonnesofTNTToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * TonnesOfTNTToFootPoundsForce;
+            toValue = fromValue * tonnesofTNTToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * TonnesOfTNTToBritishThermalUnitsISO;
+            toValue = fromValue * tonnesofTNTToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * TonnesOfTNTToTherms;
+            toValue = fromValue * tonnesofTNTToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * TonnesOfTNTToHorsepowerHours;
+            toValue = fromValue * tonnesofTNTToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * TonnesOfTNTToBarrelsOfOilEquivalent;
+            toValue = fromValue * tonnesofTNTToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * TonnesOfTNTToTonnesOfOilEquivalent;
+            toValue = fromValue * tonnesofTNTToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
             toValue = fromValue;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * TonnesOfTNTToKilotonnesOfTNT;
+            toValue = fromValue * tonnesofTNTToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * TonnesOfTNTToMegatonnesOfTNT;
+            toValue = fromValue * tonnesofTNTToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * TonnesOfTNTToErgs;
+            toValue = fromValue * tonnesofTNTToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * TonnesOfTNTToElectronvolt;
+            toValue = fromValue * tonnesofTNTToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * TonnesOfTNTToKiloelectronvolt;
+            toValue = fromValue * tonnesofTNTToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * TonnesOfTNTToMegaelectronvolt;
+            toValue = fromValue * tonnesofTNTToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * TonnesOfTNTToGigaelectronvolt;
+            toValue = fromValue * tonnesofTNTToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2483,82 +2471,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Kilotonnes of TNT':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * KilotonnesOfTNTToKilojoules;
+            toValue = fromValue * kilotonnesofTNTToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * KilotonnesOfTNTToJoules;
+            toValue = fromValue * kilotonnesofTNTToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * KilotonnesOfTNTToNanojoules;
+            toValue = fromValue * kilotonnesofTNTToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * KilotonnesOfTNTToMicrojoules;
+            toValue = fromValue * kilotonnesofTNTToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * KilotonnesOfTNTToMillijoules;
+            toValue = fromValue * kilotonnesofTNTToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * KilotonnesOfTNTToMegajoules;
+            toValue = fromValue * kilotonnesofTNTToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * KilotonnesOfTNTToNewtonMetres;
+            toValue = fromValue * kilotonnesofTNTToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * KilotonnesOfTNTToWattHours;
+            toValue = fromValue * kilotonnesofTNTToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * KilotonnesOfTNTToKilowattHours;
+            toValue = fromValue * kilotonnesofTNTToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * KilotonnesOfTNTToMegawattHours;
+            toValue = fromValue * kilotonnesofTNTToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * KilotonnesOfTNTToCalories;
+            toValue = fromValue * kilotonnesofTNTToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * KilotonnesOfTNTToKilocalories;
+            toValue = fromValue * kilotonnesofTNTToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * KilotonnesOfTNTToFootPoundsForce;
+            toValue = fromValue * kilotonnesofTNTToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * KilotonnesOfTNTToBritishThermalUnitsISO;
+            toValue = fromValue * kilotonnesofTNTToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * KilotonnesOfTNTToTherms;
+            toValue = fromValue * kilotonnesofTNTToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * KilotonnesOfTNTToHorsepowerHours;
+            toValue = fromValue * kilotonnesofTNTToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * KilotonnesOfTNTToBarrelsOfOilEquivalent;
+            toValue = fromValue * kilotonnesofTNTToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * KilotonnesOfTNTToTonnesOfOilEquivalent;
+            toValue = fromValue * kilotonnesofTNTToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * KilotonnesOfTNTToTonnesOfTNT;
+            toValue = fromValue * kilotonnesofTNTToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
             toValue = fromValue;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * KilotonnesOfTNTToMegatonnesOfTNT;
+            toValue = fromValue * kilotonnesofTNTToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * KilotonnesOfTNTToErgs;
+            toValue = fromValue * kilotonnesofTNTToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * KilotonnesOfTNTToElectronvolt;
+            toValue = fromValue * kilotonnesofTNTToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * KilotonnesOfTNTToKiloelectronvolt;
+            toValue = fromValue * kilotonnesofTNTToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * KilotonnesOfTNTToMegaelectronvolt;
+            toValue = fromValue * kilotonnesofTNTToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * KilotonnesOfTNTToGigaelectronvolt;
+            toValue = fromValue * kilotonnesofTNTToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2568,82 +2556,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Megatonnes of TNT':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * MegatonnesOfTNTToKilojoules;
+            toValue = fromValue * megatonnesofTNTToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * MegatonnesOfTNTToJoules;
+            toValue = fromValue * megatonnesofTNTToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * MegatonnesOfTNTToNanojoules;
+            toValue = fromValue * megatonnesofTNTToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * MegatonnesOfTNTToMicrojoules;
+            toValue = fromValue * megatonnesofTNTToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * MegatonnesOfTNTToMillijoules;
+            toValue = fromValue * megatonnesofTNTToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * MegatonnesOfTNTToMegajoules;
+            toValue = fromValue * megatonnesofTNTToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * MegatonnesOfTNTToNewtonMetres;
+            toValue = fromValue * megatonnesofTNTToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * MegatonnesOfTNTToWattHours;
+            toValue = fromValue * megatonnesofTNTToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * MegatonnesOfTNTToKilowattHours;
+            toValue = fromValue * megatonnesofTNTToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * MegatonnesOfTNTToMegawattHours;
+            toValue = fromValue * megatonnesofTNTToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * MegatonnesOfTNTToCalories;
+            toValue = fromValue * megatonnesofTNTToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * MegatonnesOfTNTToKilocalories;
+            toValue = fromValue * megatonnesofTNTToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * MegatonnesOfTNTToFootPoundsForce;
+            toValue = fromValue * megatonnesofTNTToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * MegatonnesOfTNTToBritishThermalUnitsISO;
+            toValue = fromValue * megatonnesofTNTToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * MegatonnesOfTNTToTherms;
+            toValue = fromValue * megatonnesofTNTToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * MegatonnesOfTNTToHorsepowerHours;
+            toValue = fromValue * megatonnesofTNTToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * MegatonnesOfTNTToBarrelsOfOilEquivalent;
+            toValue = fromValue * megatonnesofTNTToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * MegatonnesOfTNTToTonnesOfOilEquivalent;
+            toValue = fromValue * megatonnesofTNTToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * MegatonnesOfTNTToTonnesOfTNT;
+            toValue = fromValue * megatonnesofTNTToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * MegatonnesOfTNTToKilotonnesOfTNT;
+            toValue = fromValue * megatonnesofTNTToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
             toValue = fromValue;
             break;
           case 'Ergs':
-            toValue = fromValue * MegatonnesOfTNTToErgs;
+            toValue = fromValue * megatonnesofTNTToErgs;
             break;
           case 'Electronvolt':
-            toValue = fromValue * MegatonnesOfTNTToElectronvolt;
+            toValue = fromValue * megatonnesofTNTToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * MegatonnesOfTNTToKiloelectronvolt;
+            toValue = fromValue * megatonnesofTNTToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * MegatonnesOfTNTToMegaelectronvolt;
+            toValue = fromValue * megatonnesofTNTToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * MegatonnesOfTNTToGigaelectronvolt;
+            toValue = fromValue * megatonnesofTNTToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2653,82 +2641,82 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Ergs':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * ErgsToKilojoules;
+            toValue = fromValue * ergsToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * ErgsToJoules;
+            toValue = fromValue * ergsToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * ErgsToNanojoules;
+            toValue = fromValue * ergsToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * ErgsToMicrojoules;
+            toValue = fromValue * ergsToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * ErgsToMillijoules;
+            toValue = fromValue * ergsToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * ErgsToMegajoules;
+            toValue = fromValue * ergsToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * ErgsToNewtonMetres;
+            toValue = fromValue * ergsToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * ErgsToWattHours;
+            toValue = fromValue * ergsToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * ErgsToKilowattHours;
+            toValue = fromValue * ergsToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * ErgsToMegawattHours;
+            toValue = fromValue * ergsToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * ErgsToCalories;
+            toValue = fromValue * ergsToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * ErgsToKilocalories;
+            toValue = fromValue * ergsToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * ErgsToFootPoundsForce;
+            toValue = fromValue * ergsToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * ErgsToBritishThermalUnitsISO;
+            toValue = fromValue * ergsToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * ErgsToTherms;
+            toValue = fromValue * ergsToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * ErgsToHorsepowerHours;
+            toValue = fromValue * ergsToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * ErgsToBarrelsOfOilEquivalent;
+            toValue = fromValue * ergsToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * ErgsToTonnesOfOilEquivalent;
+            toValue = fromValue * ergsToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * ErgsToTonnesOfTNT;
+            toValue = fromValue * ergsToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * ErgsToKilotonnesOfTNT;
+            toValue = fromValue * ergsToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * ErgsToMegatonnesOfTNT;
+            toValue = fromValue * ergsToMegatonnesOfTNT;
             break;
           case 'Ergs':
             toValue = fromValue;
             break;
           case 'Electronvolt':
-            toValue = fromValue * ErgsToElectronvolt;
+            toValue = fromValue * ergsToElectronvolt;
             break;
           case 'Kiloelectronvolt':
-            toValue = fromValue * ErgsToKiloelectronvolt;
+            toValue = fromValue * ergsToKiloelectronvolt;
             break;
           case 'Megaelectronvolt':
-            toValue = fromValue * ErgsToMegaelectronvolt;
+            toValue = fromValue * ergsToMegaelectronvolt;
             break;
           case 'Gigaelectronvolt':
-            toValue = fromValue * ErgsToGigaelectronvolt;
+            toValue = fromValue * ergsToGigaelectronvolt;
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
@@ -2738,70 +2726,70 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Electronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * ElectronvoltToKilojoules;
+            toValue = fromValue * electronvoltToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * ElectronvoltToJoules;
+            toValue = fromValue * electronvoltToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * ElectronvoltToNanojoules;
+            toValue = fromValue * electronvoltToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * ElectronvoltToMicrojoules;
+            toValue = fromValue * electronvoltToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * ElectronvoltToMillijoules;
+            toValue = fromValue * electronvoltToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * ElectronvoltToMegajoules;
+            toValue = fromValue * electronvoltToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * ElectronvoltToNewtonMetres;
+            toValue = fromValue * electronvoltToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * ElectronvoltToWattHours;
+            toValue = fromValue * electronvoltToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * ElectronvoltToKilowattHours;
+            toValue = fromValue * electronvoltToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * ElectronvoltToMegawattHours;
+            toValue = fromValue * electronvoltToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * ElectronvoltToCalories;
+            toValue = fromValue * electronvoltToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * ElectronvoltToKilocalories;
+            toValue = fromValue * electronvoltToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * ElectronvoltToFootPoundsForce;
+            toValue = fromValue * electronvoltToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * ElectronvoltToBritishThermalUnitsISO;
+            toValue = fromValue * electronvoltToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * ElectronvoltToTherms;
+            toValue = fromValue * electronvoltToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * ElectronvoltToHorsepowerHours;
+            toValue = fromValue * electronvoltToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * ElectronvoltToBarrelsOfOilEquivalent;
+            toValue = fromValue * electronvoltToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * ElectronvoltToTonnesOfOilEquivalent;
+            toValue = fromValue * electronvoltToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * ElectronvoltToTonnesOfTNT;
+            toValue = fromValue * electronvoltToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * ElectronvoltToKilotonnesOfTNT;
+            toValue = fromValue * electronvoltToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * ElectronvoltToMegatonnesOfTNT;
+            toValue = fromValue * electronvoltToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * ElectronvoltToErgs;
+            toValue = fromValue * electronvoltToErgs;
             break;
           case 'Electronvolt':
             toValue = fromValue;
@@ -2823,70 +2811,70 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Kiloelectronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * KiloelectronvoltToKilojoules;
+            toValue = fromValue * kiloelectronvoltToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * KiloelectronvoltToJoules;
+            toValue = fromValue * kiloelectronvoltToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * KiloelectronvoltToNanojoules;
+            toValue = fromValue * kiloelectronvoltToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * KiloelectronvoltToMicrojoules;
+            toValue = fromValue * kiloelectronvoltToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * KiloelectronvoltToMillijoules;
+            toValue = fromValue * kiloelectronvoltToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * KiloelectronvoltToMegajoules;
+            toValue = fromValue * kiloelectronvoltToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * KiloelectronvoltToNewtonMetres;
+            toValue = fromValue * kiloelectronvoltToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * KiloelectronvoltToWattHours;
+            toValue = fromValue * kiloelectronvoltToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * KiloelectronvoltToKilowattHours;
+            toValue = fromValue * kiloelectronvoltToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * KiloelectronvoltToMegawattHours;
+            toValue = fromValue * kiloelectronvoltToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * KiloelectronvoltToCalories;
+            toValue = fromValue * kiloelectronvoltToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * KiloelectronvoltToKilocalories;
+            toValue = fromValue * kiloelectronvoltToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * KiloelectronvoltToFootPoundsForce;
+            toValue = fromValue * kiloelectronvoltToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * KiloelectronvoltToBritishThermalUnitsISO;
+            toValue = fromValue * kiloelectronvoltToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * KiloelectronvoltToTherms;
+            toValue = fromValue * kiloelectronvoltToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * KiloelectronvoltToHorsepowerHours;
+            toValue = fromValue * kiloelectronvoltToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * KiloelectronvoltToBarrelsOfOilEquivalent;
+            toValue = fromValue * kiloelectronvoltToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * KiloelectronvoltToTonnesOfOilEquivalent;
+            toValue = fromValue * kiloelectronvoltToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * KiloelectronvoltToTonnesOfTNT;
+            toValue = fromValue * kiloelectronvoltToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * KiloelectronvoltToKilotonnesOfTNT;
+            toValue = fromValue * kiloelectronvoltToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * KiloelectronvoltToMegatonnesOfTNT;
+            toValue = fromValue * kiloelectronvoltToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * KiloelectronvoltToErgs;
+            toValue = fromValue * kiloelectronvoltToErgs;
             break;
           case 'Electronvolt':
             toValue = fromValue * 1000;
@@ -2907,70 +2895,70 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Megaelectronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * MegaelectronvoltToKilojoules;
+            toValue = fromValue * megaelectronvoltToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * MegaelectronvoltToJoules;
+            toValue = fromValue * megaelectronvoltToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * MegaelectronvoltToNanojoules;
+            toValue = fromValue * megaelectronvoltToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * MegaelectronvoltToMicrojoules;
+            toValue = fromValue * megaelectronvoltToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * MegaelectronvoltToMillijoules;
+            toValue = fromValue * megaelectronvoltToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * MegaelectronvoltToMegajoules;
+            toValue = fromValue * megaelectronvoltToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * MegaelectronvoltToNewtonMetres;
+            toValue = fromValue * megaelectronvoltToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * MegaelectronvoltToWattHours;
+            toValue = fromValue * megaelectronvoltToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * MegaelectronvoltToKilowattHours;
+            toValue = fromValue * megaelectronvoltToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * MegaelectronvoltToMegawattHours;
+            toValue = fromValue * megaelectronvoltToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * MegaelectronvoltToCalories;
+            toValue = fromValue * megaelectronvoltToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * MegaelectronvoltToKilocalories;
+            toValue = fromValue * megaelectronvoltToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * MegaelectronvoltToFootPoundsForce;
+            toValue = fromValue * megaelectronvoltToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * MegaelectronvoltToBritishThermalUnitsISO;
+            toValue = fromValue * megaelectronvoltToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * MegaelectronvoltToTherms;
+            toValue = fromValue * megaelectronvoltToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * MegaelectronvoltToHorsepowerHours;
+            toValue = fromValue * megaelectronvoltToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * MegaelectronvoltToBarrelsOfOilEquivalent;
+            toValue = fromValue * megaelectronvoltToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * MegaelectronvoltToTonnesOfOilEquivalent;
+            toValue = fromValue * megaelectronvoltToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * MegaelectronvoltToTonnesOfTNT;
+            toValue = fromValue * megaelectronvoltToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * MegaelectronvoltToKilotonnesOfTNT;
+            toValue = fromValue * megaelectronvoltToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * MegaelectronvoltToMegatonnesOfTNT;
+            toValue = fromValue * megaelectronvoltToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * MegaelectronvoltToErgs;
+            toValue = fromValue * megaelectronvoltToErgs;
             break;
           case 'Electronvolt':
             toValue = fromValue * 1000000;
@@ -2992,70 +2980,70 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       case 'Gigaelectronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            toValue = fromValue * GigaelectronvoltToKilojoules;
+            toValue = fromValue * gigaelectronvoltToKilojoules;
             break;
           case 'Joules':
-            toValue = fromValue * GigaelectronvoltToJoules;
+            toValue = fromValue * gigaelectronvoltToJoules;
             break;
           case 'Nanojoules':
-            toValue = fromValue * GigaelectronvoltToNanojoules;
+            toValue = fromValue * gigaelectronvoltToNanojoules;
             break;
           case 'Microjoules':
-            toValue = fromValue * GigaelectronvoltToMicrojoules;
+            toValue = fromValue * gigaelectronvoltToMicrojoules;
             break;
           case 'Millijoules':
-            toValue = fromValue * GigaelectronvoltToMillijoules;
+            toValue = fromValue * gigaelectronvoltToMillijoules;
             break;
           case 'Megajoules':
-            toValue = fromValue * GigaelectronvoltToMegajoules;
+            toValue = fromValue * gigaelectronvoltToMegajoules;
             break;
           case 'Newton-metres':
-            toValue = fromValue * GigaelectronvoltToNewtonMetres;
+            toValue = fromValue * gigaelectronvoltToNewtonMetres;
             break;
           case 'Watt-hours':
-            toValue = fromValue * GigaelectronvoltToWattHours;
+            toValue = fromValue * gigaelectronvoltToWattHours;
             break;
           case 'Kilowatt-hours':
-            toValue = fromValue * GigaelectronvoltToKilowattHours;
+            toValue = fromValue * gigaelectronvoltToKilowattHours;
             break;
           case 'Megawatt-hours':
-            toValue = fromValue * GigaelectronvoltToMegawattHours;
+            toValue = fromValue * gigaelectronvoltToMegawattHours;
             break;
           case 'Calories':
-            toValue = fromValue * GigaelectronvoltToCalories;
+            toValue = fromValue * gigaelectronvoltToCalories;
             break;
           case 'Kilocalories':
-            toValue = fromValue * GigaelectronvoltToKilocalories;
+            toValue = fromValue * gigaelectronvoltToKilocalories;
             break;
           case 'Foot-pounds Force':
-            toValue = fromValue * GigaelectronvoltToFootPoundsForce;
+            toValue = fromValue * gigaelectronvoltToFootPoundsForce;
             break;
           case 'British Thermal Units (ISO)':
-            toValue = fromValue * GigaelectronvoltToBritishThermalUnitsISO;
+            toValue = fromValue * gigaelectronvoltToBritishThermalUnitsISO;
             break;
           case 'Therms':
-            toValue = fromValue * GigaelectronvoltToTherms;
+            toValue = fromValue * gigaelectronvoltToTherms;
             break;
           case 'Horsepower Hours':
-            toValue = fromValue * GigaelectronvoltToHorsepowerHours;
+            toValue = fromValue * gigaelectronvoltToHorsepowerHours;
             break;
           case 'Barrels of Oil Equivalent':
-            toValue = fromValue * GigaelectronvoltToBarrelsOfOilEquivalent;
+            toValue = fromValue * gigaelectronvoltToBarrelsOfOilEquivalent;
             break;
           case 'Tonnes of Oil Equivalent':
-            toValue = fromValue * GigaelectronvoltToTonnesOfOilEquivalent;
+            toValue = fromValue * gigaelectronvoltToTonnesOfOilEquivalent;
             break;
           case 'Tonnes of TNT':
-            toValue = fromValue * GigaelectronvoltToTonnesOfTNT;
+            toValue = fromValue * gigaelectronvoltToTonnesOfTNT;
             break;
           case 'Kilotonnes of TNT':
-            toValue = fromValue * GigaelectronvoltToKilotonnesOfTNT;
+            toValue = fromValue * gigaelectronvoltToKilotonnesOfTNT;
             break;
           case 'Megatonnes of TNT':
-            toValue = fromValue * GigaelectronvoltToMegatonnesOfTNT;
+            toValue = fromValue * gigaelectronvoltToMegatonnesOfTNT;
             break;
           case 'Ergs':
-            toValue = fromValue * GigaelectronvoltToErgs;
+            toValue = fromValue * gigaelectronvoltToErgs;
             break;
           case 'Electronvolt':
             toValue = fromValue * 1000000000;
@@ -3173,7 +3161,7 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
             formula = 'The value remains unchanged';
             break;
           case 'Microjoules':
-            formula = 'Divide the energy value by 1000';
+            formula = 'Divide the energy value by 1e-3';
             break;
           case 'Millijoules':
             formula = 'Multiply the energy value by 1e-6';
@@ -3191,2215 +3179,2214 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
             formula = 'Divide the energy value by 1e-9';
             break;
           case 'Watt-hours':
-            formula = 'Divide the energy value by 3,6e+12';
+            formula = 'Divide the energy value by 3.6e+12';
             break;
           case 'Kilowatt-hours':
-            formula = 'Divide the energy value by 3,6e+15';
+            formula = 'Divide the energy value by 3.6e+15';
             break;
           case 'Megawatt-hours':
-            formula = 'Divide the energy value by 3,6e+18';
+            formula = 'Divide the energy value by 3.6e+18';
             break;
           case 'Calories':
-            formula = 'Divide the energy value by 4,184e+9';
+            formula = 'Divide the energy value by 4.184e+9';
             break;
           case 'Kilocalories':
-            formula = 'Divide the energy value by 4,184e+12';
+            formula = 'Divide the energy value by 4.184e+12';
             break;
           case 'Foot-pounds Force':
-            formula = 'Divide the energy value by  1,356e+6';
+            formula = 'Divide the energy value by 1.356e+6';
             break;
           case 'British Thermal Units (ISO)':
-            formula = 'Divide the energy value by 1,055e+9';
+            formula = 'Divide the energy value by 1.055e+9';
             break;
           case 'Therms':
-            formula = 'Divide the energy value by 1,055e+14';
+            formula = 'Divide the energy value by 1.055e+14';
             break;
           case 'Horsepower Hours':
             formula = 'Multiply the energy value by 3.7250614122937e-16';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = 'Divide the energy value by 6,118e+18';
+            formula = 'Divide the energy value by 6.118e+18';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = 'Divide the energy value by 4,187e+19';
+            formula = 'Divide the energy value by 4.187e+19';
             break;
           case 'Tonnes of TNT':
-            formula = 'Divide the energy value by 4,184e+18';
+            formula = 'Divide the energy value by 4.184e+18';
             break;
           case 'Kilotonnes of TNT':
-            formula = 'Divide the energy value by 4,184e+21';
+            formula = 'Divide the energy value by 4.184e+21';
             break;
           case 'Megatonnes of TNT':
-            formula = 'Divide the energy value by 4,184e+24';
+            formula = 'Divide the energy value by 4.184e+24';
             break;
           case 'Ergs':
             formula = 'Divide the energy value by 100';
             break;
           case 'Electronvolt':
-            formula = 'Multiply the energy value by 6,242e+9';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           case 'Kiloelectronvolt':
-            formula = 'Multiply the energy value by 6241509.074461';
+            formula = 'Multiply the energy value by 6.241509074461e+6';
             break;
           case 'Megaelectronvolt':
-            formula = 'Multiply the energy value by 6242';
+            formula = 'Multiply the energy value by 6.242e+6';
             break;
           case 'Gigaelectronvolt':
-            formula = 'Multiply the energy value by 6.24151';
+            formula = 'Multiply the energy value by 6.24151e+6';
             break;
           default:
             throw 'Unknown formula: $toUnit';
         }
         break;
+      // Add cases for other units here.
 
-//MICROJOULES
       case 'Microjoules':
         switch (toUnit) {
           case 'Microjoules':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
-
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Divide the energy value by 1e-6';
             break;
           case 'Kilojoules':
-            formula = '';
+            formula = 'Divide the energy value by 1e-9';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Divide the energy value by 1e-12';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Divide the energy value by 1e-6';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+9';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+12';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+15';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+6';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+9';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Divide the energy value by 1.356e+3';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 1.055e+6';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 1.055e+11';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.7250614122937e-10';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 6.118e+15';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 4.187e+16';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+15';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+18';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+21';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^7';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+6';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+3';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//MILLIJOULES
+// MILLIJOULES
       case 'Millijoules':
         switch (toUnit) {
           case 'Millijoules':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
-
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Kilojoules':
-            formula = '';
+            formula = 'Divide the energy value by 1e+6';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Divide the energy value by 1e+9';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+6';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+9';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+12';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 4184';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+6';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Divide the energy value by 1356';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 1055';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 1.055e+8';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Divide the energy value by 2.68452e+9';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 6.118e+12';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 4.187e+13';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+12';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+15';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+18';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^10';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+15';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+6';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//JOULES
+// JOULES
       case 'Joules':
         switch (toUnit) {
           case 'Joules':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+9';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Millijoules':
-            formula = '';
-            break;
-          case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Kilojoules':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Divide the energy value by 1e+6';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3600';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+6';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+9';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 4184';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+6';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 0.737562149277';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 1055.06';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 105506000';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Divide the energy value by 2.685e+6';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 6.12e+9';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 4.187e+10';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+9';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+12';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+15';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^7';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+6';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+3';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//KILOJOULES
+// KILOJOULES
       case 'Kilojoules':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
-
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+3';
             break;
           case 'Millijoules':
-            formula = '';
-            break;
-          case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+6';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+9';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+12';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 4184';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+6';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Divide the energy value by 1356';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 1055';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 1.055e+8';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Divide the energy value by 2.68452e+9';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 6.118e+12';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 4.187e+13';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+12';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+15';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+18';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^10';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+15';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+6';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//MEGAJOULES
+// MEGAJOULES
       case 'Megajoules':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+9';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+12';
             break;
           case 'Millijoules':
-            formula = '';
-            break;
-          case 'Joules':
-            formula = '';
-            break;
-          case 'Megajoules':
-            formula = '';
-            break;
-          case 'Newton-metres':
-            formula = '';
-            break;
-          case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+9';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+6';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+9';
+            break;
+          case 'Newton-metres':
+            formula = 'Multiply the energy value by 1e+6';
+            break;
+          case 'Watt-hours':
+            formula = 'Divide the energy value by 3.6e+3';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 4184e+6';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+12';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Divide the energy value by 1356e+3';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 1055e+6';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 1.055e+11';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Divide the energy value by 2.68452e+12';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 6.118e+15';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 4.187e+16';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+15';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+18';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+21';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^13';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+18';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+15';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//NEWTON METRES
+// NEWTON METRES
       case 'Newton-metres':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+9';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Millijoules':
-            formula = '';
-            break;
-          case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3600';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+6';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 3.6e+9';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 4184';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+6';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 0.737562149277';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 1055.06';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 1.055e+8';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Divide the energy value by 2.685e+6';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 6.118e+9';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 4.187e+10';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+9';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+12';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 4.184e+15';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^7';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+6';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+3';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//WATTHOURS
+// WATT-HOURS
       case 'Watt-hours':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 3600';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+12';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+9';
             break;
           case 'Millijoules':
-            formula = '';
-            break;
-          case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+6';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Divide the energy value by 3600';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 3600';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 1e+6';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Divide the energy value by 860';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Divide the energy value by 860000';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 2655.22';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Divide the energy value by 3.412';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Divide the energy value by 341214';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Divide the energy value by 745.7';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 1.591e+6';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Divide the energy value by 1.085e+7';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 860000';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 8.6e+8';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Divide the energy value by 8.6e+11';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^10';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+18';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+15';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//KILOWATT HOURS
+// KILOWATT HOURS
       case 'Kilowatt-hours':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+6';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+9';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+15';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+12';
             break;
           case 'Millijoules':
-            formula = '';
-            break;
-          case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+9';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 0.0036';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 3600';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Divide the energy value by 1000';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 860421';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 860.421';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 2655223.73741';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3412.142';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 34.1214';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 745.7';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 1591120';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 10850000';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 860421';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 8.60421e+8';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 8.60421e+11';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^12';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+18';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+15';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+9';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
-//MEGAWATT HOURS
+        break;
+
+// MEGAWATT HOURS
       case 'Megawatt-hours':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+9';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+12';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+18';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+15';
             break;
           case 'Millijoules':
-            formula = '';
-            break;
-          case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+12';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 3600';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 3.6e+9';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 860421000';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 860421';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 2655223737.41';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3412142';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 34121.42';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 745700';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 1591120000';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 10850000000';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 860421000';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 8.60421e+11';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 8.60421e+14';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 10^15';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+21';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+18';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+15';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+12';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//CALORIES
+// CALORIES
       case 'Calories':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 4184';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+12';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+9';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+6';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 0.004184';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 4184';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001163';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163e-6';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 3.088';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 0.003968';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 9.478e-6';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.930e-7';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 2.519e-8';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 1.706e-7';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 0.000001163';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163e-9';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163e-12';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+10';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+19';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+16';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+13';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+10';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//KILOCALORIES
+// KILOCALORIES
       case 'Kilocalories':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 4184';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+12';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+9';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+6';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 0.004184';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 4184';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001163';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163e-6';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 3088';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3.968';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 9.478e-3';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.93e-4';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 2.519e-5';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 1.706e-4';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001163';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163e-6';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.163e-9';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+13';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+22';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+19';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+16';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.611e+13';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//FOOTPOUNDS FORCE
+// FOOT-POUNDS FORCE
       case 'Foot-pounds Force':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 0.00135582';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.35582';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.35582e+9';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.35582e+6';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1355.82';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 0.00000135582';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1.35582';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.000376616';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.76616e-7';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.76616e-10';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 0.000323831';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.23831e-7';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3.23831e-7';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 7.7782e-10';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.93072e-12';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 2.50304e-13';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 1.696e-12';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 3.76616e-10';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 3.76616e-13';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 3.76616e-16';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 1.35582e+10';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 8.46235e+18';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 8.46235e+15';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 8.46235e+12';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 8.46235e+9';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//BRITISH THERMAL UNITS ISO
+// BRITISH THERMAL UNITS (ISO)
       case 'British Thermal Units (ISO)':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1055.06';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506e+9';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506e+6';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1055060';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 0.00105506';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1055.06';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.293071';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-4';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-7';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 0.251997';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 0.000251997';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 777.82';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 2.38846e-6';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 9.76841e-8';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 6.23012e-9';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 4.22064e-8';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-7';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-10';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-13';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506e+13';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+21';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+18';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+15';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+12';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//THERMS
+// THERMS
       case 'Therms':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 105505.6';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 105505600';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506e+14';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506e+11';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506e+8';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 105.506';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 105505.6';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 29.3071';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.0293071';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-5';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 25199.7';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 25.1997';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 77782000';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 2388.46';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.000372506';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 2.37258e-6';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60934e-5';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-5';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-8';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.93071e-11';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 1.05506e+17';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+27';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+24';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+21';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.585e+18';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//HORSEPOWER HOURS
+// HORSEPOWER HOURS
       case 'Horsepower Hours':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 2.68452';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 2684520';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 2.68452e+15';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 2.68452e+12';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 2.68452e+9';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 2684.52';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 2684520';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 746.572';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.746572';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 7.46572e-4';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 641.186';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 0.641186';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 1980000';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 60';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 3725.76';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 6.35514e-6';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 4.30755e-5';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 7.46572e-4';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 7.46572e-7';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 7.46572e-10';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 2.68452e+17';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1.67772e+28';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1.67772e+25';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1.67772e+22';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1.67772e+19';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//BARRELS OF OIL EQUIVALENT
+// BARRELS OF OIL EQUIVALENT
       case 'Barrels of Oil Equivalent':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 62331.5';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 6.23315e+7';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 6.23315e+16';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 6.23315e+13';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 6.23315e+10';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 62.3315';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 6.23315e+7';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 17,328';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 17.328';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.017328';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 14849.1';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 14.8491';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 4.60614e+7';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 1392.92';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 0.188552';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.000284343';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 0.13636';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 0.017328';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.7328e-5';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.7328e-8';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 6.23315e+13';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8988e+23';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8988e+20';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8988e+17';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8988e+14';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//TONS OF OIL EQUIVALENT
+// TONNES OF OIL EQUIVALENT
       case 'Tonnes of Oil Equivalent':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 45656.4';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.5664e+7';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.5664e+16';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.5664e+13';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.5664e+10';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 45.6564';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 4.5664e+7';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 12,682.5';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 12.6825';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.0126825';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 10849.6';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 10.8496';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 3.36463e+7';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 1016.12';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 0.137952';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.000208036';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 7.3293';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 0.0126825';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.26825e-5';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1.26825e-8';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 4.5664e+13';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.85612e+23';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.85612e+20';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.85612e+17';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.85612e+14';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//TONNES OF TNT
+// TONNES OF TNT
       case 'Tonnes of TNT':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4184';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+6';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+15';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+12';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+9';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+6';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.1626';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.0011626';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.1626e-6';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 1';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 2.9891e+6';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 0.94782';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 0.00010039';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.5184e-7';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 0.00023885';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 0.00010039';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-6';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+12';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+22';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+19';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+16';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+13';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//KILOTONNES
+// KILOTONNES OF TNT
       case 'Kilotonnes of TNT':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+9';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+12';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+21';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+18';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+15';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+6';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+12';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1162620';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1162.62';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.16262';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 2.989e+9';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 947.82';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 0.10039';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 0.00015184';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 0.023885';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 0.010039';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+18';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+28';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+25';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+22';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+19';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//MEGATONNES OF TNT
+// MEGATONNES OF TNT
       case 'Megatonnes of TNT':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+12';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+15';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+24';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+21';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+18';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+9';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+15';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.16262e+12';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.16262e+9';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.16262e+6';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+12';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+9';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 2.989e+12';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 9.4782e+11';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 1.0039e+10';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 1.5184e+6';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 238850';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 100390';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 4.184e+21';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+31';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+28';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+25';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 2.621e+22';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//ERGS
+// ERGS
       case 'Ergs':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-7';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-10';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-19';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-16';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-13';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-16';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-10';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 2.7778e-14';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 2.7778e-17';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 2.7778e-20';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 2.3885e-14';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 2.3885e-17';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 7.3756e-11';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 2.326e-14';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 2.4877e-15';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 3.725e-20';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 5.869e-18';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 2.4877e-15';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.5e-13';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.5e-7';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 2.5e-10';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+11';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+8';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 6.242e+5';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 624.2';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//ELECTRONVOLT
+// ELECTRONVOLT
       case 'Electronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-16';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-19';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-10';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-13';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-16';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-25';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-19';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-23';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-26';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-29';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-20';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-23';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 1.1817e-19';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3.725e-23';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-24';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 5.9814e-30';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 9.417e-28';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-24';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-22';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-16';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-19';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+8';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-6';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-9';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//KILOELECTRONVOLT
+// KILOELECTRONVOLT
       case 'Kiloelectronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-13';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-16';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-7';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-10';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-13';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-22';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-16';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-20';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-23';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-26';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-17';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-20';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 1.1817e-16';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3.725e-20';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-21';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 5.9814e-27';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 9.417e-25';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-21';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-19';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-13';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-16';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+5';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-6';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
-//MEGAELECTRONVOLT
+        break;
+
+// MEGAELECTRONVOLT
       case 'Megaelectronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-10';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-13';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-4';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-7';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-10';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-19';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-13';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-17';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-20';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-23';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-14';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-17';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 1.1817e-13';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3.725e-17';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-18';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 5.9814e-24';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 9.417e-22';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-18';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-16';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-10';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-13';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+5';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+6';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 0.001';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
+        break;
 
-//GIGAELECTRONVOLT
+// GIGAELECTRONVOLT
       case 'Gigaelectronvolt':
         switch (toUnit) {
           case 'Kilojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-7';
             break;
           case 'Joules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-10';
             break;
           case 'Nanojoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-1';
             break;
           case 'Microjoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-4';
             break;
           case 'Millijoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-7';
             break;
           case 'Megajoules':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-16';
             break;
           case 'Newton-metres':
-            formula = '';
+            formula = 'Multiply the energy value by 1.60219e-10';
             break;
           case 'Watt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-14';
             break;
           case 'Kilowatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-17';
             break;
           case 'Megawatt-hours':
-            formula = '';
+            formula = 'Multiply the energy value by 4.4505e-20';
             break;
           case 'Calories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-11';
             break;
           case 'Kilocalories':
-            formula = '';
+            formula = 'Multiply the energy value by 3.8267e-14';
             break;
           case 'Foot-pounds Force':
-            formula = '';
+            formula = 'Multiply the energy value by 1.1817e-10';
             break;
           case 'British Thermal Units (ISO)':
-            formula = '';
+            formula = 'Multiply the energy value by 3.725e-14';
             break;
           case 'Therms':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-15';
             break;
           case 'Horsepower Hours':
-            formula = '';
+            formula = 'Multiply the energy value by 5.9814e-21';
             break;
           case 'Barrels of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 9.417e-19';
             break;
           case 'Tonnes of Oil Equivalent':
-            formula = '';
+            formula = 'Multiply the energy value by 3.9877e-15';
             break;
           case 'Tonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-13';
             break;
           case 'Kilotonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-7';
             break;
           case 'Megatonnes of TNT':
-            formula = '';
+            formula = 'Multiply the energy value by 4.0181e-10';
             break;
           case 'Ergs':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+8';
             break;
           case 'Electronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1e+3';
             break;
           case 'Kiloelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1e-3';
             break;
           case 'Megaelectronvolt':
-            formula = '';
+            formula = 'Multiply the energy value by 1000';
             break;
           case 'Gigaelectronvolt':
-            formula = '';
+            formula = 'The value remains unchanged';
             break;
           default:
             throw Exception('Unknown unit: $toUnit');
         }
-
         break;
+
       default:
         formula = 'No conversion formula available for the selected units';
     }
@@ -5737,22 +5724,18 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       );
     }).toList();
 
-    // Insert at the start of the list to act as a non-selectable hint
-    // Insert a non-selectable 'Choose a conversion unit' hint at the start.
     items.insert(
-        0,
-        const DropdownMenuItem<String>(
-          value: '',
-          enabled: false, // An empty string represents no selection.
-          child: Text(
-            'Choose a conversion unit',
-            style: TextStyle(color: Colors.grey, fontSize: 23),
-          ), // This makes the item non-selectable.
-        ));
+      0,
+      const DropdownMenuItem<String>(
+        value: '',
+        enabled: false,
+        child: Text(
+          'Choose a conversion unit',
+          style: TextStyle(color: Colors.grey, fontSize: 23),
+        ),
+      ),
+    );
 
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
-    // Build the DropdownButtonFormField using the items list.
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         contentPadding:
@@ -5768,7 +5751,7 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
       hint: const Text(
         'Choose a conversion unit',
         style: TextStyle(color: Colors.grey, fontSize: 23),
-        textAlign: TextAlign.center, // This is correct for Text widget
+        textAlign: TextAlign.center,
       ),
       onChanged: (String? newValue) {
         if (newValue != null && newValue.isNotEmpty) {
@@ -5780,22 +5763,20 @@ class _EnergyUnitConverterState extends State<EnergyUnitConverter> {
               toUnit = newValue;
               toPrefix = _getPrefix(newValue);
             }
-            fromController.clear();
-            toController.clear();
-            // Trigger the conversion logic if needed.
+            // Do not clear the text fields here to retain the input value
+            // Trigger the conversion logic if needed with the new unit but same value
+            convert(fromController.text);
           });
         }
       },
       dropdownColor: const Color(0xFF303134),
       items: items,
-      isExpanded:
-          true, // This will make sure the dropdown's content is centered
+      isExpanded: true,
       icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
       iconSize: 24,
       selectedItemBuilder: (BuildContext context) {
         return items.map<Widget>((DropdownMenuItem<String> item) {
           return Center(
-            // Center the text for the selected item
             child: Text(
               item.value == '' ? 'Choose a conversion unit' : item.value!,
               style: const TextStyle(
